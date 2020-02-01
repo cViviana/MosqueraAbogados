@@ -31,6 +31,8 @@ Route::view('/login','administrador/login')->name('login');
 
 Route::view('/registro','administrador/registro')->name('registro');
 
+Route::post('mail','MailController@postMail');
+
 Route::prefix('admin')->group(
   function(){
     Route::view('/crearTipodocumento','administrador/tipoDocumento')->name('crearTipodocumento');
