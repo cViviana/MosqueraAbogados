@@ -12,21 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('usuario-general/home');
 });
-
-Route::view('/nosotros','/nosotros')->name('nosotros');
-
-Route::view('/servicios','/servicios')->name('servicios');
-
-Route::view('/profesionales','/profesionales')->name('profesionales');
-
-Route::view('/noticias','/noticias')->name('noticias');
-
-Route::view('/noticia-1','/noticia-1')->name('noticia-1');
-
-Route::view('/contacto','/contacto')->name('contacto');
-
+Route::view('/nosotros','usuario-general/nosotros')->name('nosotros');
+Route::view('/servicios','usuario-general/servicios')->name('servicios');
+Route::view('/profesionales','usuario-general/profesionales')->name('profesionales');
+Route::view('/noticias','usuario-general/noticias')->name('noticias');
+Route::view('/noticia-1','usuario-general/noticia-1')->name('noticia-1');
+Route::view('/contacto','usuario-general/contacto')->name('contacto');
 Route::view('/login','administrador/login')->name('login');
 
 Route::view('/registro','administrador/registro')->name('registro');
@@ -39,3 +32,7 @@ Route::prefix('admin')->group(
     Route::post('/guardarTipoDocumento','admin\tipoController@guardarControlador')->name('guardarTipoDocumento');
   }
 );
+
+
+/* --- Rutas para CRUD de procesos judiciales */
+Route::resource('/admin/registrar-proceso-judicial', 'admin\ProcesosJudiciales\ProcesoJudicialController');
