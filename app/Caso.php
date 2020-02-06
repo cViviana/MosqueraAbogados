@@ -16,4 +16,9 @@ class Caso extends Model
     public function clienteDemandado(){
       return $this->belongsTo('App\Cliente','demandado', 'radicado');
     }
+    public function Dirige (){
+      return $this->belongsToMany('App\Caso','dirige','dir_radicado',
+        'dir_cedula');
+      //...belongsToMany([modelo],[nombre_tabla_pivote], [nombre_fk1], [nombre_fk2]);
+    }
 }

@@ -15,8 +15,11 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    protected $primaryKey = 'cedula';
+    protected $keyTyper='string';
     protected $fillable = [
-        'name', 'email', 'password',
+        'nombre', 'email', 'password','cedula','telefono'
     ];
 
     /**
@@ -36,4 +39,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function Dirige (){
+      return $this->belongsToMany('App\Caso','dirige','dir_radicado',
+        'dir_cedula');
+      //...belongsToMany([modelo],[nombre_tabla_pivote], [nombre_fk1], [nombre_fk2]);
+    }
+  
 }
