@@ -6,6 +6,10 @@ class Roll extends Model
   protected $table='roll';
   protected $fillable=['nombre'];
 
+  public function rollPoseeUsuario(){
+     return $this->hasMany('App\User','us_roll','id');
+  }
+
   public function guardar($nombre){
 
       $roll = Roll::where('nombre', $nombre)->first();

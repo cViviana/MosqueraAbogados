@@ -10,7 +10,7 @@ class Ubicacion extends Model
   protected $fillable=['numArchivero','numGabeta'];
 
   public function ubicacionEstaDoc(){
-     return $this->hasMany('app\Ubicacion','ubicacion_id','id');
+     return $this->hasMany('app\Documento','ubicacion_id','id');
   }
 
   public function guardar(Ubicacion $ubic){
