@@ -60,16 +60,5 @@
             </ul>
         </div>
     </div>
-    <div class="container_pagina">
-        <h2 class="texto_titulo">MI PERFIL</h2>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="-sm-6 col-md-4 foto-perfil">
-                    <img src="../img/profile.png" alt="" class="foto-perfil" />
-                    
-                    <br>
-                </div>
-            </div>
-        </div>
-    </div>
+    @yield('registrar-proceso-judicial')
 </body>

@@ -24,11 +24,6 @@ Route::view('/login','administrador/login')->name('login');
 
 Route::view('/registro','administrador/registro')->name('registro');
 
-Route::view('/perfil','administrador/perfil')->name('perfil');
-
-Route::view('/registrarCliente','administrador/procesos-judiciales/registrarCliente')->name('registrarCliente');
-Route::view('/registrarContraparte','administrador/procesos-judiciales/registrarContraparte')->name('registrarContraparte');
-
 
 Route::post('mail','MailController@postMail');
 
