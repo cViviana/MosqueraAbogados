@@ -8,6 +8,8 @@
 }
 
 .texto_titulo{
+    margin-top: 5%;
+    font-size: 250%;
     text-align: center;
     font-family: myriad;
     color: white;
@@ -19,24 +21,17 @@
     font-family: sans-serif;
     color: white;
 }
-.inputfile {
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
-}
 
 .texto_campos{
-    font-size: 125%;
-    margin-left: 2%;
+    font-size: 100%;
+    margin-left: 0%;
     margin-right: 2%;
-    font-family: myriad;
+    font-family: verdana;
+    color: rgb(162, 170, 177);
 }
   
 .texto_boton{
-    font-size: 100%;
+    font-size: 320%;
     text-align: right;
     margin-left: 2%;
     margin-right: 2%;
@@ -46,6 +41,19 @@
 .container_pagina{
     margin-left: 15% ;
     margin-right: 10%;
+}
+
+.container_formulario{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 0%;
+    margin-bottom: 5%;
+    background: rgba(121, 116, 116, 0.5);
+}
+
+.mascara{
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .titulo_menu{

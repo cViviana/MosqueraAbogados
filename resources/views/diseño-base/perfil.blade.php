@@ -41,6 +41,7 @@
                 <ul class="sub-menu collapse" id="casos">
                     <li class="active"><a href="#">Registrar Caso</a></li>
                     <li><a href="#">Listar Casos</a></li>
+                    <li><a href="#">Subir Documento</a></li>
                 </ul>
 
                 <li data-toggle="collapse" data-target="#clientes" class="collapsed">
