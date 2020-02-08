@@ -1,4 +1,6 @@
 @extends('diseño-base.plantilla-base')
+@section('titulo','Contacto')
+@section('resaltar-contacto','active')
 
 @section('contacto')
 	<!--================Home Banner Area =================-->

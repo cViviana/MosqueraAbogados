@@ -1,4 +1,6 @@
 @extends('diseño-base.perfil')
+@section('titulo','Procesos Judiciales')
+
 
 @section('registrar-proceso-judicial')
     <div class="container_pagina">

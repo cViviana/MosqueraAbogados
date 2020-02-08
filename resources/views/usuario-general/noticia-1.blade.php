@@ -1,5 +1,8 @@
 @extends('diseño-base.plantilla-base')
 
+@section('titulo','Noticias')
+@section('resaltar-noticias','active')
+
 @section('noticia-1')
 
     <!--================Home Banner Area =================-->
