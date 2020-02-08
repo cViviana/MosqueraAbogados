@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="icon" href="img/favicon-1.png" type="image/png">
-	<title>MOSQUERA ABOGADOS</title>
+	<title>Mosquera Abogados | @yield('titulo')</title>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 	<link rel="stylesheet" href="{{ asset('vendors/linericon/style.css') }}">
@@ -47,12 +47,12 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item active"><a class="nav-link" href="/">Inicio</a></li>
-							<li class="nav-item"><a class="nav-link" href="{{route('nosotros')}}">Nuestra Firma</a></li>
-							<li class="nav-item"><a class="nav-link" href="{{route('servicios')}}">Nuestros Servicios</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{route('profesionales')}}">Nuestros Profesionales</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{route('noticias')}}">Noticias</a></li>
-							<li class="nav-item"><a class="nav-link" href="{{route('contacto')}}">Contacto</a></li>
+							<li class="nav-item @yield('resaltar-home')"><a class="nav-link" href="/">Inicio</a></li>
+							<li class="nav-item @yield('resaltar-nosotros')"><a class="nav-link" href="{{route('nosotros')}}">Nuestra Firma</a></li>
+							<li class="nav-item @yield('resaltar-servicios')"><a class="nav-link" href="{{route('servicios')}}">Nuestros Servicios</a></li>
+                            <li class="nav-item @yield('resaltar-profesionales')"><a class="nav-link" href="{{route('profesionales')}}">Nuestros Profesionales</a></li>
+                            <li class="nav-item @yield('resaltar-noticias')"><a class="nav-link" href="{{route('noticias')}}">Noticias</a></li>
+							<li class="nav-item @yield('resaltar-contacto')"><a class="nav-link" href="{{route('contacto')}}">Contacto</a></li>
 						</ul>
 						<ul class="nav navbar-nav ml-auto">
 							<div class="social-icons d-flex align-items-center">

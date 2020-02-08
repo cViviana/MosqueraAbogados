@@ -1,5 +1,8 @@
 @extends('diseño-base.plantilla-base')
 
+@section('titulo','Inicio')
+@section('resaltar-home','active')
+
 @section('home')
 	<!--================ Start Home Banner Area =================-->
 	<section class="home_banner_area overlay">

@@ -1,5 +1,8 @@
 @extends('diseño-base.plantilla-base')
 
+@section('titulo','Servicios')
+@section('resaltar-servicios','active')
+
 @section('servicios')
     <!--================Home Banner Area =================-->
     <section class="banner_area ">
