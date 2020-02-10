@@ -39,7 +39,6 @@
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
                             <input type="text" class="form-control" placeholder="Usuario">
-                            
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
@@ -48,7 +47,7 @@
                             <input type="password" class="form-control" placeholder="Contraseña">
                         </div>
                         <div class="row align-items-center remember">
-                            <input type="checkbox">Rrecordar Cuenta
+                            <input type="checkbox">Recordar Cuenta
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Iniciar Sesión" class="btn float-right login_btn">

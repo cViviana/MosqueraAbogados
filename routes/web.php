@@ -40,3 +40,4 @@ Route::prefix('admin')->group(
 Route::resource('/admin/registrar-proceso-judicial', 'admin\ProcesosJudiciales\ProcesoJudicialController');
 
 Route::resource('/admin/registrarCliente', 'admin\ProcesosJudiciales\registrarClienteController');
+Route::resource('/admin/registrarContraparte', 'admin\ProcesosJudiciales\registrarContraparteController');

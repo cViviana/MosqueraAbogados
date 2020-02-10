@@ -5,7 +5,7 @@ namespace App\Http\Controllers\admin\ProcesosJudiciales;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class registrarContraparte extends Controller
+class registrarContraparteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class registrarContraparte extends Controller
      */
     public function create()
     {
-        return view('administrador.procesos-judiciales.registrarCliente');
+        return view('administrador.procesos-judiciales.registrarContraparte');
     }
 
     /**
