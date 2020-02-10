@@ -5,7 +5,7 @@ namespace App\Http\Controllers\admin\ProcesosJudiciales;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ProcesoJudicialController extends Controller
+class RegistrarContraparteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ProcesoJudicialController extends Controller
      */
     public function index()
     {
-        return "LEÉME, estamos en index, agrega a la ruta '/create'";
+        return "LÉEME, estamos en index, agrega a la ruta '/create'";
     }
 
     /**
@@ -24,7 +24,7 @@ class ProcesoJudicialController extends Controller
      */
     public function create()
     {
-        return view('administrador.procesos-judiciales.registrar-proceso-judicial');
+        return view('administrador.procesos-judiciales.registrarContraparte');
     }
 
     /**
