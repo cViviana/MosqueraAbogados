@@ -19,7 +19,6 @@ class Tipo extends Model
     public function guardar(Tipo $t){
       $t->save();
       $mensaje="se guardo correctamete la tipo";
-      return view('crearTipodocumento');
-      //->with('men',$mensaje);
+      return view('administrador.Tipodocumento')->with('men',$mensaje);
     }
 }
