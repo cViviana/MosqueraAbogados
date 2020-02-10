@@ -32,9 +32,6 @@
           <input type="text" id='nombre'name='nombre' class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
         <button type="submit" class="btn btn-primary">agregar</button>
-        <div  class = " container " >
-          @include ('flash :: mensaje')
-        </div >
     </form>
   </body>
 </html>
