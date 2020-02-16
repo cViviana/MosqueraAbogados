@@ -61,5 +61,9 @@
             </ul>
         </div>
     </div>
+    @yield('perfil')
     @yield('registrar-proceso-judicial')
+    @yield('registrarCliente')
+    @yield('registrarContraparte')
+    @yield('subirDocumento')
 </body>

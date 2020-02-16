@@ -26,6 +26,7 @@ Route::view('/registro','administrador/registro')->name('registro');
 Route::view('/tipoDocumento','administrador/tipoDocumento')->name('tipoDocumento');
 Route::view('/perfil_usuario','administrador/perfil_usuario')->name('perfil_usuario');
 
+
 Route::post('mail','MailController@postMail');
 
 Route::prefix('admin')->group(
@@ -38,7 +39,7 @@ Route::prefix('admin')->group(
 
 /* --- Rutas para CRUD de procesos judiciales */
 Route::resource('/admin/registrar-proceso-judicial', 'admin\ProcesosJudiciales\ProcesoJudicialController');
-
 Route::resource('/admin/registrarCliente', 'admin\ProcesosJudiciales\RegistrarClienteController');
 Route::resource('/admin/registrarContraparte', 'admin\ProcesosJudiciales\RegistrarContraparteController');
 
+Route::view('/subirDocumento','administrador/procesos-judiciales/subirDocumento')->name('subirDocumento');

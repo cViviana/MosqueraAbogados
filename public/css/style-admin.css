@@ -15,12 +15,41 @@
     color: white;
 }
 
+.texto_titulo_perfil{
+    margin-top: 0%;
+    margin-left: 8%;
+    margin-right: 8%;
+    font-size: 200%;
+    text-align: center;
+    font-family: myriad;
+    color: white;
+}
+
 .texto{
     margin-left: 6%;
     text-align: left;
     font-family: sans-serif;
     color: white;
 }
+
+.profile-img{
+    text-align: center;
+}
+
+.texto_perfil{
+    font-size: 120%;
+    margin-top: 2%;
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+}
+
+.vinculo{
+    font-size: 100%;
+    text-align: right;
+    color: rgb(198, 201, 206);
+}
+
 
 .texto_campos{
     font-size: 100%;
@@ -60,23 +89,15 @@
     font-family: myriad;
     color: white
 }
-  
-.estilo-text-col{
-    text-align: left;
+
+.emp-profile{
+    height: auto;
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
 }
-  
-.foto-perfil{
-    text-align: left;
-    height: 200px;
-    border-radius: 2%;
-}
-  
-.info-perfil{
-    font-size: 150%;
-    border-style: none;
-    background-color: rgba(10, 53, 88, 0.103);
-    height: 200px;
-}
+
 .nav-side-menu {
     overflow: auto;
     font-family: verdana;

@@ -1,6 +1,6 @@
 @extends('diseño-base.perfil')
 
-@section('registrar-proceso-judicial')
+@section('registrarCliente')
     <div class="container_pagina">
         <div class="texto_titulo">REGISTRAR CLIENTE</div> 
         <div class="container_formulario">
@@ -32,7 +32,7 @@
                     <input name="" class="form-control" placeholder="* Correo Electronico" type="text" required>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary">Siguiente</button>
+                <button type="submit" class="btn btn-primary">Registrar Cliente</button>
                 <div class="texto_campos">Los campos con (*) son obligatorios</div> 
             </div>
         </div>

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\admin\ProcesosJudiciales;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class registrarClienteController extends Controller
+class RegistrarClienteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class registrarClienteController extends Controller
      */
     public function index()
     {
-        return "Hi, estamos en index, agrega a la ruta '/create'";
+        return "LÉEME, estamos en index, agrega a la ruta '/create'";
     }
 
     /**
