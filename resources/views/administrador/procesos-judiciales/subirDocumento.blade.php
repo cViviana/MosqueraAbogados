@@ -1,5 +1,5 @@
 @extends('diseño-base.perfil')
-@section('registrar-proceso-judicial')
+@section('subirDocumento')
     <div class="container_pagina">
         <div class="texto_titulo">SUBIR DOCUMENTOS</div> 
         <div class="container_pagina container_formulario">

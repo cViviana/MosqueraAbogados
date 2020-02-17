@@ -41,7 +41,15 @@
                 <ul class="sub-menu collapse" id="casos">
                     <li class="active"><a href="#">Registrar Caso</a></li>
                     <li><a href="#">Listar Casos</a></li>
-                    <li><a href="#">Subir Documento</a></li>
+                    
+                    <li  data-toggle="collapse" data-target="#documentos" class="collapsed">
+                        <a href="#">Documentos<span class="arrow"></span></a>
+                    </li>
+                    <ul class="sub-menu collapse" id="documentos">
+                        <li class="active"><a href="#">Subir documento</a></li>
+                        <li><a href="#">Crear tipo</a></li>
+                        <li><a href="#">Crear ubicacion</a></li>
+                    </ul>
                 </ul>
 
                 <li data-toggle="collapse" data-target="#clientes" class="collapsed">
@@ -66,4 +74,5 @@
     @yield('registrarCliente')
     @yield('registrarContraparte')
     @yield('subirDocumento')
+    @yield('crartipodocumento')
 </body>
