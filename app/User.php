@@ -20,7 +20,7 @@ class User extends Authenticatable
     protected $primaryKey = 'cedula';
     protected $keyTyper='string';
     protected $fillable = [
-        'nombre', 'email', 'password','cedula','telefono'
+        'cedula','telefono','nombre', 'email', 'password'
     ];
 
     /**

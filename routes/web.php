@@ -43,3 +43,7 @@ Route::resource('/admin/registrarCliente', 'admin\ProcesosJudiciales\RegistrarCl
 Route::resource('/admin/registrarContraparte', 'admin\ProcesosJudiciales\RegistrarContraparteController');
 
 Route::view('/subirDocumento','administrador/procesos-judiciales/subirDocumento')->name('subirDocumento');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

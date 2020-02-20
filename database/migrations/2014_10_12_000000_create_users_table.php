@@ -23,8 +23,8 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             // llave foranea!
             //foranea de roll a usua
-            $table->unsignedBigInteger('us_roll');
-            $table->foreign('us_roll')->references('id')->on('roll');
+            //$table->unsignedBigInteger('us_roll');
+            //$table->foreign('us_roll')->references('id')->on('roll');
             $table->timestamps();
         });
     }
