@@ -20,9 +20,9 @@ Route::view('/profesionales','usuario-general/profesionales')->name('profesional
 Route::view('/noticias','usuario-general/noticias')->name('noticias');
 Route::view('/noticia-1','usuario-general/noticia-1')->name('noticia-1');
 Route::view('/contacto','usuario-general/contacto')->name('contacto');
-Route::view('/login','administrador/login')->name('login');
+//Route::view('/login','administrador/login')->name('login');
 
-Route::view('/registro','administrador/registro')->name('registro');
+//Route::view('/registro','administrador/registro')->name('registro');
 Route::view('/tipoDocumento','administrador/tipoDocumento')->name('tipoDocumento');
 Route::view('/perfil_usuario','administrador/perfil_usuario')->name('perfil_usuario');
 

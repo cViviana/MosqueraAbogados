@@ -102,6 +102,7 @@ class ComposerStaticInit1c15666c0d90b3c4eaed3db25b8dea95
             'League\\Flysystem\\' => 17,
             'League\\CommonMark\\Ext\\Table\\' => 28,
             'League\\CommonMark\\' => 18,
+            'Laravel\\Ui\\' => 11,
             'Laravel\\Tinker\\' => 15,
         ),
         'J' => 
@@ -315,6 +316,10 @@ class ComposerStaticInit1c15666c0d90b3c4eaed3db25b8dea95
         array (
             0 => __DIR__ . '/..' . '/league/commonmark/src',
         ),
+        'Laravel\\Ui\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/ui/src',
+        ),
         'Laravel\\Tinker\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
@@ -419,6 +424,7 @@ class ComposerStaticInit1c15666c0d90b3c4eaed3db25b8dea95
 
     public static $classMap = array (
         'App\\Caso' => __DIR__ . '/../..' . '/app/Caso.php',
+        'App\\Cliente' => __DIR__ . '/../..' . '/app/Cliente.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Documento' => __DIR__ . '/../..' . '/app/Documento.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -430,6 +436,8 @@ class ComposerStaticInit1c15666c0d90b3c4eaed3db25b8dea95
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\MailController' => __DIR__ . '/../..' . '/app/Http/Controllers/MailController.php',
         'App\\Http\\Controllers\\admin\\ProcesosJudiciales\\ProcesoJudicialController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/ProcesosJudiciales/ProcesoJudicialController.php',
+        'App\\Http\\Controllers\\admin\\ProcesosJudiciales\\RegistrarClienteController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/ProcesosJudiciales/registrarClienteController.php',
+        'App\\Http\\Controllers\\admin\\ProcesosJudiciales\\RegistrarContraparteController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/ProcesosJudiciales/registrarContraparteController.php',
         'App\\Http\\Controllers\\admin\\documento_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/documento_controller.php',
         'App\\Http\\Controllers\\admin\\tipoController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/tipoController.php',
         'App\\Http\\Controllers\\ubicacion_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/ubicacion_controller.php',
@@ -447,10 +455,10 @@ class ComposerStaticInit1c15666c0d90b3c4eaed3db25b8dea95
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Roll' => __DIR__ . '/../..' . '/app/Roll.php',
         'App\\Tipo' => __DIR__ . '/../..' . '/app/Tipo.php',
         'App\\Ubicacion' => __DIR__ . '/../..' . '/app/Ubicacion.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
-        'App\\ubicacion_fisica' => __DIR__ . '/../..' . '/app/ubicacion_fisica.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
         'Carbon\\CarbonInterface' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterface.php',
@@ -2123,6 +2131,13 @@ class ComposerStaticInit1c15666c0d90b3c4eaed3db25b8dea95
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
         'Laravel\\Tinker\\TinkerServiceProvider' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerServiceProvider.php',
+        'Laravel\\Ui\\AuthCommand' => __DIR__ . '/..' . '/laravel/ui/src/AuthCommand.php',
+        'Laravel\\Ui\\Presets\\Bootstrap' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Bootstrap.php',
+        'Laravel\\Ui\\Presets\\Preset' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Preset.php',
+        'Laravel\\Ui\\Presets\\React' => __DIR__ . '/..' . '/laravel/ui/src/Presets/React.php',
+        'Laravel\\Ui\\Presets\\Vue' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Vue.php',
+        'Laravel\\Ui\\UiCommand' => __DIR__ . '/..' . '/laravel/ui/src/UiCommand.php',
+        'Laravel\\Ui\\UiServiceProvider' => __DIR__ . '/..' . '/laravel/ui/src/UiServiceProvider.php',
         'League\\CommonMark\\Block\\Element\\AbstractBlock' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/AbstractBlock.php',
         'League\\CommonMark\\Block\\Element\\AbstractStringContainerBlock' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/AbstractStringContainerBlock.php',
         'League\\CommonMark\\Block\\Element\\BlockQuote' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/BlockQuote.php',
