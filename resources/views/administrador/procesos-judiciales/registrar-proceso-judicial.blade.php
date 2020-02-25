@@ -4,10 +4,12 @@
         <div class="texto_titulo">REGISTRAR CASO</div> 
         <div class="container_pagina container_formulario">
             <div class="mascara">
+            <form action="" class="texto_campos" method="post">
+            {{csrf_field()}}
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-link"></i></span>
-                    <input name="" class="form-control" placeholder="* Numero de Radicado" type="text" required>
+                    <input name='radicado' id='radicado' class="form-control" placeholder="* Numero de Radicado" type="text" required>
                 </div>
                 <br>
                 <div class="input-group">
@@ -37,12 +39,12 @@
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-comments"></i></span>
-                    <input name="" class="form-control" placeholder="* Descripcion" type="text" required>
+                    <input name='descripcion' id='descripcion' class="form-control" placeholder="* Descripcion" type="text" required>
                 </div>
                 <br>
                 <div class="input-group date" data-provide="datepicker">
                     <span class="input-group-addon"><i class="fa fa-calendar-check-o"></i></span>
-                    <input type="text" class="form-control" placeholder="* Fecha de Inicio" required>
+                    <input type="text" name='fecha_inicio' id='fecha_inicio'class="form-control" placeholder="* Fecha de Inicio" required>
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
@@ -50,7 +52,7 @@
                 <br>
                 <div class="input-group date" data-provide="datepicker">
                     <span class="input-group-addon"><i class="fa fa-calendar-check-o"></i></span>
-                    <input type="text" class="form-control" placeholder="* Fecha de Finalización" required>
+                    <input type="text" name='fecha_fin' id='fecha_fin' class="form-control" placeholder="* Fecha de Finalización" required>
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
@@ -58,6 +60,7 @@
                 <br>
                 <button type="submit" class="btn btn-primary">Registrar Caso</button>
                 <div class="texto_campos">Los campos con (*) son obligatorios</div> 
+            </form>
             </div>
         </div>
     </div>
