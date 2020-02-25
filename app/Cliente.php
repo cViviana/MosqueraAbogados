@@ -18,15 +18,21 @@ class Cliente extends Model
     }
 
 
-    public function guardar(Cliente $cliente){
-      //Buscamos el Cliente
-        $clienteAux=Cliente::find($cliente->numero);
-        if($clienteAux == null){
-          $cliente->save();
-        }else{
-          //si ya existe OJO implementación redirección
-          echo 'El cliente ya existe';
-        }
+    public function guardar(Cliente $objCliente){
+      $objCliente->save();
+      $men = "El cliente fue registrado con exito";
+      dd($men);
+    }
 
+    public function editar(Cliente $objCliente){
+      $objCliente->save();
+      $men = "El cliente fue actualizado con exito";
+      dd($men);
+    }
+
+    public function eliminar(Cliente $objCliente){
+      $objCliente->delete();
+      $men = "El cliente fue eliminado con exito";
+      dd($men);
     }
 }

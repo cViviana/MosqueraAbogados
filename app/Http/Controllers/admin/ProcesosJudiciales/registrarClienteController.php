@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin\ProcesosJudiciales;
 
+use App\Cliente;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -22,20 +23,16 @@ class RegistrarClienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('administrador.procesos-judiciales.registrarCliente');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        $obj = Cliente::find($request->numero);
+        if($obj == null){
+            $objCliente = new Cliente($request->all());
+            $objCliente->guardar($objCliente);
+            //return view('administrador.procesos-judiciales.registrarCliente');
+        }else{
+            dd("error, el id ya se encuentra registrado");
+        }
     }
 
     /**
@@ -44,9 +41,16 @@ class RegistrarClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        $objCliente = Cliente::find($request->numero);
+        if($objCliente != null){
+            $objCliente = Cliente::fill($request->all());
+            dd($objCliente);
+            //esperar que recibe el front
+        }else{
+            dd("Error, el numero de indentificación es incorrecto");            
+        }   
     }
 
     /**
@@ -55,22 +59,17 @@ class RegistrarClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        $objCliente = Cliente::find($request->numero);
+        if($objCliente != null){
+            $objCliente = Cliente::fill($request->all());
+            $objCliente->editar($objCliente);
+        }else{
+            dd("Error, el numero de indentificación es incorrecto");            
+        }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -78,8 +77,13 @@ class RegistrarClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $objCliente = Cliente::find($request->numero);
+        if($objCliente != null){
+            $objCliente->eliminar($objCliente);
+        }else{
+            dd("Error, el numero de indentificación es incorrecto");            
+        }
     }
 }
