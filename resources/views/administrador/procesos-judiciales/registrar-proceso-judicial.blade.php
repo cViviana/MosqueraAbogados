@@ -14,13 +14,13 @@
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
-                    <select class="form-control">
+                    <select name='demandante' id='demandante' class="form-control">
                         <option selected="">* Cliente</option>
                         <option>Cliente 1</option>
                         <option>Cliente 2</option>
                     </select>
                     <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
-                    <select class="form-control">
+                    <select name='demandado' id='demandado' class="form-control">
                         <option selected="">* Contraparte</option>
                         <option>Contraparte 1</option>
                         <option>Contraparte 2</option>
@@ -29,7 +29,7 @@
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-tasks"></i></span>
-                    <select class="form-control">
+                    <select name='estado' id='estado' class="form-control">
                         <option selected="">* Seleccionar el estado</option>
                         <option>Estado 1</option>
                         <option>Estado 2</option>
