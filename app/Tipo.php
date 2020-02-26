@@ -4,7 +4,6 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Documento;
-use App\Tipo;
 
 class Tipo extends Model
 {
@@ -16,9 +15,15 @@ class Tipo extends Model
        return $this->hasMany('app\Documento','tipo_id','id');
     }
 
-    public function guardar(Tipo $t){
-      $t->save();
-      $mensaje="se guardo correctamete la tipo";
-      return view('administrador.Tipodocumento')->with('men',$mensaje);
+    public function guardar(Tipo $objTipo){
+      $objTipo->save();
+    }
+
+    public function eliminar(Tipo $objTipo){
+      $objTipo->delete();
+    }
+
+    public function buscar($id){
+      return $this::find($id);
     }
 }
