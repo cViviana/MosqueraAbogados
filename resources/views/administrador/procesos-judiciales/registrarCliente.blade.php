@@ -17,8 +17,8 @@
                     <span class="input-group-addon"><i class="fa fa-list"></i></span>
                     <select name='tipo' id='tipo' class="form-control">
                         <option selected="">* Seleccionar tipo de Persona</option>
-                        <option>Persona Natural</option>
-                        <option>Persona Juridica</option>
+                        <option value="natural">Persona Natural</option>
+                        <option value="juridica">Persona Juridica</option>
                     </select>
                     <span class="input-group-addon"><i class="fa fa-id-card"></i></span>
                     <input name='numero' id='numero' class="form-control" placeholder="* Numero de Identificacion" type="text" required>
