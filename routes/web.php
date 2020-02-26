@@ -31,8 +31,20 @@ Route::post('mail','MailController@postMail');
 
 Route::prefix('admin')->group(
   function(){
+
+    //TIPO DE DOCUMENTOS
     Route::view('/crearTipodocumento','administrador/tipoDocumento')->name('crearTipodocumento');
     Route::post('/guardarTipoDocumento','admin\tipoController@guardarControlador')->name('guardarTipoDocumento');
+
+    Route::view('/editarTipo','administrador/editarTipoDocumento')->name('editarTipoDocumentoVista');
+    Route::post('/editarTipoDocumento','admin\tipoController@editarControlador')->name('editarTipoDocumento');
+
+    Route::view('/eliminarTipo','administrador/eliminarTipoDocumento')->name('eliminarTipoDocumento');
+    Route::post('/eliminarTipoDocumento','admin\tipoController@eliminarControlador')->name('eliminarTipoDocumento');
+  
+    Route::view('/listarTipo','administrador/listarTipoDocumento')->name('listarTipoDocumento');
+    Route::get('/listarTipoDocumento','admin\tipoController@listarControlador')->name('listarTipoDocumento');
+
   }
 );
 
