@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -28,7 +27,11 @@ class CreateDocumentoTable extends Migration
             //foranea de documento a ubicacion_fisica
             $table->unsignedBigInteger('ubicacion_id');
             $table->foreign('ubicacion_id')->references('id')->on('ubicacion_fisica');
+            //foranea a caso
+            $table->string('radicado_doc');
+            $table->foreign('radicado_doc')->references('radicado')->on('caso');
             $table->timestamps();
+
         });
     }
 

@@ -6,23 +6,9 @@ use App\Cliente;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class RegistrarClienteController extends Controller
+class clienteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return "LÉEME, estamos en index, agrega a la ruta '/create'";
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create(Request $request)
     {
         $obj = Cliente::find($request->numero);
@@ -43,16 +29,10 @@ class RegistrarClienteController extends Controller
      */
     public function show(Request $request)
     {
-        $objCliente = Cliente::find($request->numero);
-        if($objCliente != null){
-            $objCliente = Cliente::fill($request->all());
-            dd($objCliente);
-            //esperar que recibe el front
-        }else{
-            dd("Error, el numero de indentificación es incorrecto");            
-        }   
+        $listaCliente=Cliente::all();
+        // se envia el array a la vista desde aqui del controlador no desde la ruta web
+        return view('administrador.procesos-judiciales.registrar-proceso-judicial')->with('clientes',$listaCliente);
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -66,7 +46,7 @@ class RegistrarClienteController extends Controller
             $objCliente = Cliente::fill($request->all());
             $objCliente->editar($objCliente);
         }else{
-            dd("Error, el numero de indentificación es incorrecto");            
+            dd("Error, el numero de indentificación es incorrecto");
         }
     }
 
@@ -83,7 +63,7 @@ class RegistrarClienteController extends Controller
         if($objCliente != null){
             $objCliente->eliminar($objCliente);
         }else{
-            dd("Error, el numero de indentificación es incorrecto");            
+            dd("Error, el numero de indentificación es incorrecto");
         }
     }
 }

@@ -1,7 +1,8 @@
 @extends('diseño-base.perfil')
 @section('registrar-proceso-judicial')
+
     <div class="container_pagina">
-        <div class="texto_titulo">REGISTRAR CASO</div> 
+        <div class="texto_titulo">REGISTRAR CASO</div>
         <div class="container_pagina container_formulario">
             <div class="mascara">
             <form action="" class="texto_campos" method="post">
@@ -14,16 +15,18 @@
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
-                    <select name='demandante' id='demandante' class="form-control">
-                        <option selected="">* Cliente</option>
-                        <option>Cliente 1</option>
-                        <option>Cliente 2</option>
-                    </select>
+                      <select name='demandante' id='demandante' class="form-control">
+                          <option selected="">* Cliente</option>
+                          @foreach ($clientes as $cli)
+                          <option value= {{$cli->numero}}>{{$cli->numero}} - {{$cli->nombre}}</option>
+                           @endforeach
+                      </select>
                     <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
                     <select name='demandado' id='demandado' class="form-control">
                         <option selected="">* Contraparte</option>
-                        <option>Contraparte 1</option>
-                        <option>Contraparte 2</option>
+                          @foreach ($clientes as $cli)
+                          <option value= {{$cli->numero}}>{{$cli->numero}} - {{$cli->nombre}}</option>
+                          @endforeach
                     </select>
                 </div>
                 <br>
@@ -59,7 +62,7 @@
                 </div>
                 <br>
                 <button type="submit" class="btn btn-primary">Registrar Caso</button>
-                <div class="texto_campos">Los campos con (*) son obligatorios</div> 
+                <div class="texto_campos">Los campos con (*) son obligatorios</div>
             </form>
             </div>
         </div>
