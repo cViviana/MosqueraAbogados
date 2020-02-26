@@ -32,7 +32,6 @@
                 </li>
                 <ul class="sub-menu collapse" id="perfil">
                     <li class="active"><a href="#">Ver Perfil</a></li>
-                    <li><a href="#">Cerrar Sesion</a></li>
                 </ul>
 
                 <li  data-toggle="collapse" data-target="#casos" class="collapsed">
@@ -66,20 +65,21 @@
                     <li>Registrar Contraparte</li>
                     <li>Listar Contrapartes</li>
                 </ul>
+                <footer class="footer">
+                    <div class="sidebar-footer hidden-small text-center" align="center">
+                        <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Logout" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();" align="center" style="width:50px; height:30px">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true" style="width:100%;"></span>
+                        </button>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                        </form>
+                    </div>
+                </footer>
             </ul>
         </div>
     </div>
-		<footer>
-			<div class="sidebar-footer hidden-small text-center" align="center">
-							<button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Logout" onclick="event.preventDefault();
-														document.getElementById('logout-form').submit();" align="center" style="width:80px; height:40px">
-								<span class="glyphicon glyphicon-off" aria-hidden="true" style="width:100%;"></span>
-							</button>
-							<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-									@csrf
-							</form>
-						</div>
-		</footer>
+    
     @yield('perfil')
     @yield('registrar-proceso-judicial')
     @yield('registrarCliente')

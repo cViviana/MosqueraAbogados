@@ -39,11 +39,12 @@ Route::prefix('admin')->group(
 
 
 /* --- Rutas para CRUD de procesos judiciales */
-Route::resource('/admin/registrar-proceso-judicial', 'admin\ProcesosJudiciales\ProcesoJudicialController');
 Route::resource('/admin/registrarCliente', 'admin\ProcesosJudiciales\clienteController');
 Route::resource('/admin/registrarContraparte', 'admin\ProcesosJudiciales\RegistrarContraparteController');
 
 Route::view('/subirDocumento','administrador/procesos-judiciales/subirDocumento')->name('subirDocumento');
+Route::view('/agregarUbicacion','administrador/agregarUbicacion')->name('agregarUbicacion');
+
 
 Auth::routes();
 
