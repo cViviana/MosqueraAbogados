@@ -31,27 +31,16 @@ Route::post('mail','MailController@postMail');
 
 Route::prefix('admin')->group(
   function(){
-
-    //TIPO DE DOCUMENTOS
     Route::view('/crearTipodocumento','administrador/tipoDocumento')->name('crearTipodocumento');
     Route::post('/guardarTipoDocumento','admin\tipoController@guardarControlador')->name('guardarTipoDocumento');
-
-    Route::view('/editarTipo','administrador/editarTipoDocumento')->name('editarTipoDocumentoVista');
-    Route::post('/editarTipoDocumento','admin\tipoController@editarControlador')->name('editarTipoDocumento');
-
-    Route::view('/eliminarTipo','administrador/eliminarTipoDocumento')->name('eliminarTipoDocumento');
-    Route::post('/eliminarTipoDocumento','admin\tipoController@eliminarControlador')->name('eliminarTipoDocumento');
-  
-    Route::view('/listarTipo','administrador/listarTipoDocumento')->name('listarTipoDocumento');
-    Route::get('/listarTipoDocumento','admin\tipoController@listarControlador')->name('listarTipoDocumento');
-
+    Route::get('/crearCaso','admin\ProcesosJudiciales\clienteController@show')->name('crearCaso');
   }
 );
 
 
 /* --- Rutas para CRUD de procesos judiciales */
 Route::resource('/admin/registrar-proceso-judicial', 'admin\ProcesosJudiciales\ProcesoJudicialController');
-Route::resource('/admin/registrarCliente', 'admin\ProcesosJudiciales\RegistrarClienteController');
+Route::resource('/admin/registrarCliente', 'admin\ProcesosJudiciales\clienteController');
 Route::resource('/admin/registrarContraparte', 'admin\ProcesosJudiciales\RegistrarContraparteController');
 
 Route::view('/subirDocumento','administrador/procesos-judiciales/subirDocumento')->name('subirDocumento');
