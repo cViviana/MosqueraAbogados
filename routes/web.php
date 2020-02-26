@@ -34,6 +34,7 @@ Route::prefix('admin')->group(
     Route::view('/crearTipodocumento','administrador/tipoDocumento')->name('crearTipodocumento');
     Route::post('/guardarTipoDocumento','admin\tipoController@guardarControlador')->name('guardarTipoDocumento');
     Route::get('/crearCaso','admin\ProcesosJudiciales\clienteController@show')->name('crearCaso');
+    Route::view('/crearCliente','administrador/procesos-judiciales/registrarCliente')->name('crearCliente');
   }
 );
 
