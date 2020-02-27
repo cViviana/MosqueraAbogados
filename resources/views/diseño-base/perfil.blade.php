@@ -67,7 +67,7 @@
                 </ul>
                 <footer class="footer">
                     <div class="sidebar-footer hidden-small text-center" align="center">
-                        <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Logout" onclick="event.preventDefault();
+                        <button type="button" class="btn btn-default " data-toggle="tooltip" data-placement="top" title="Cerrar Sesion" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();" align="center" style="width:50px; height:30px">
                             <span class="glyphicon glyphicon-off" aria-hidden="true" style="width:100%;"></span>
                         </button>
