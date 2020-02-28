@@ -8,62 +8,52 @@ use Illuminate\Http\Request;
 
 class clienteController extends Controller
 {
-
-    public function create(Request $request)
-    {
-        $obj = Cliente::find($request->numero);
-        if($obj == null){
+    public function crearControlador(Request $request){
+        $aux = $this->buscar($request->numero);
+        if( $aux == null ){
             $objCliente = new Cliente($request->all());
             $objCliente->guardar($objCliente);
-            //return view('administrador.procesos-judiciales.registrarCliente');
+            $men = "El cliente se creo de forma satisfactoria";
+            return view('administrador.procesos-judiciales.registrarCliente', ['men' => $men] );
         }else{
-            dd("error, el id ya se encuentra registrado");
+            $men = "El identificador del cliente ya existe";
+            return view('administrador.procesos-judiciales.registrarCliente', ['men' => $men] );
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Request $request)
-    {
-        $listaCliente=Cliente::all();
-        // se envia el array a la vista desde aqui del controlador no desde la ruta web
-        return view('administrador.procesos-judiciales.registrar-proceso-judicial')->with('clientes',$listaCliente);
-    }
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Request $request)
-    {
-        $objCliente = Cliente::find($request->numero);
+    public function editarControlador(Request $request){
+        $objCliente = $this->buscar($request->numero);
         if($objCliente != null){
-            $objCliente = Cliente::fill($request->all());
-            $objCliente->editar($objCliente);
+            $objCliente->fill($request->all());
+            $objCliente->guardar($objCliente);
+            $men = "El cliente se actualizo de forma satisfactoria";
+            return view ("admnistrador.procesos-judiciales.editarCliente", ['men' => $men] );
         }else{
-            dd("Error, el numero de indentificación es incorrecto");
+            $men = "El identificador del cliente ya existe";
+            return view ("admnistrador.procesos-judiciales.editarCliente", ['men' => $men] );
         }
     }
 
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Request $request)
-    {
-        $objCliente = Cliente::find($request->numero);
-        if($objCliente != null){
+    public function eliminarControlador($numero){
+        $objCliente = $this->buscar($numero);
+        if ($objCliente != null){
             $objCliente->eliminar($objCliente);
+            $men = "El cliente se elimino de forma satisfactoria";
+            return view("administrador.procesos-judiciales.eliminarCliente", ['men' => $men] );
         }else{
-            dd("Error, el numero de indentificación es incorrecto");
+            $men = "El cliente se elimino de forma satisfactoria";
+            return view("administrador.procesos-judiciales.eliminarCliente", ['men' => $men] );
         }
     }
+
+    public function listarControlador(){
+        $listaCliente=Cliente::all();
+        return view('administrador.procesos-judiciales.listarClientes', ['Clientes' => $listaCliente] );
+    }
+
+    public function buscar($numero){
+        $objCliente = new Cliente();
+        return $objCliente->buscar($numero);
+    }
+
 }

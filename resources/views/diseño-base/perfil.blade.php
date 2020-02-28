@@ -57,7 +57,7 @@
                         </li>
                             <ul class="sub-menu collapse" id="clientes">
                             <li><a href="{{route('crearCliente')}}"> Registrar Cliente</a></li>
-                            <li>Listar Clientes</li>
+                            <li><a href="{{route('listarClientes')}}">Listar Clientes</li>
                         </ul>
                         <li data-toggle="collapse" data-target="#contraparte" class="collapsed">
                         <a href="#"><i class="fa fa-users"></i> Contrapartes <span class="arrow"></span></a>

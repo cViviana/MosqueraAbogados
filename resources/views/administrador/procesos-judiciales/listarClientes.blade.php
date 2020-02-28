@@ -14,6 +14,8 @@
                 <th scope="col">Eliminar</th>
             </tr>
         </thead>
+            <!--LA  variable que contiene los clientes es 'clientes'
+            debe hacer un foreach para mostrar cada dato-->
         <tbody>
             {{-- Insertar aqui codigo para traer datos sobre Clientes --}}
             <td></td>

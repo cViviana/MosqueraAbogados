@@ -5,7 +5,7 @@
         <div class="texto_titulo">REGISTRAR CLIENTE</div> 
         <div class="container_formulario">
             <div class="mascara">
-            <form action="" class="texto_campos" method="post">
+            <form action="{{route('agregarCliente')}}" class="texto_campos" method="post">
             {{csrf_field()}}
                 <br>
                 <div class="input-group">

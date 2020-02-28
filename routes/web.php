@@ -35,6 +35,20 @@ Route::prefix('admin')->group(
     Route::post('/guardarTipoDocumento','admin\tipoController@guardarControlador')->name('guardarTipoDocumento');
     Route::get('/crearCaso','admin\ProcesosJudiciales\clienteController@show')->name('crearCaso');
     Route::view('/crearCliente','administrador/procesos-judiciales/registrarCliente')->name('crearCliente');
+  
+    //CLIENTE
+    Route::view('/crearCliente','administrador/procesos-judiciales/registrarCliente')->name('crearCliente');
+    Route::post('/agregarCliente','admin\ProcesosJudiciales\clienteController@crearControlador')->name('agregarCliente');
+
+    //Route::view('/editarCliente', 'admnistrador/procesos-judiciales/editarCliente')->name('editarCliente');
+    //Route::post('/actualizarCliente', 'admin\ProcesosJudiciales\clienteController@editarControlador')->name('actualizarControlador');
+
+    //Route::view('/eliminarCliente', 'administrador/procesos-judiciales/eliminarCliente')->name('eliminarCliente');
+    //Route::post('/suprimirCliente', 'admin\ProcesosJudiciales\clienteController@eliminarControlador')->name('suprimirCliente');
+
+    Route::get('/listarClientes', 'admin\ProcesosJudiciales\clienteController@listarControlador')->name('listarClientes');
+  
+
   }
 );
 

@@ -17,22 +17,15 @@ class Cliente extends Model
        return $this->hasMany('app\Caso','demandante','numero');
     }
 
-
     public function guardar(Cliente $objCliente){
       $objCliente->save();
-      $men = "El cliente fue registrado con exito";
-      dd($men);
-    }
-
-    public function editar(Cliente $objCliente){
-      $objCliente->save();
-      $men = "El cliente fue actualizado con exito";
-      dd($men);
     }
 
     public function eliminar(Cliente $objCliente){
       $objCliente->delete();
-      $men = "El cliente fue eliminado con exito";
-      dd($men);
+    }
+
+    public function buscar($numero){
+      return $this::find($numero);
     }
 }
