@@ -14,10 +14,10 @@ class clienteController extends Controller
             $objCliente = new Cliente($request->all());
             $objCliente->guardar($objCliente);
             $men = "El cliente se creo de forma satisfactoria";
-            return view('administrador.procesos-judiciales.registrarCliente', ['men' => $men] );
+            return view('administrador.clientes.registrarCliente', ['men' => $men] );
         }else{
             $men = "El identificador del cliente ya existe";
-            return view('administrador.procesos-judiciales.registrarCliente', ['men' => $men] );
+            return view('administrador.clientes.registrarCliente', ['men' => $men] );
         }
     }
 
@@ -27,10 +27,10 @@ class clienteController extends Controller
             $objCliente->fill($request->all());
             $objCliente->guardar($objCliente);
             $men = "El cliente se actualizo de forma satisfactoria";
-            return view ("admnistrador.procesos-judiciales.editarCliente", ['men' => $men] );
+            return view ("admnistrador.clientes.editarDatosCliente", ['men' => $men] );
         }else{
             $men = "El identificador del cliente ya existe";
-            return view ("admnistrador.procesos-judiciales.editarCliente", ['men' => $men] );
+            return view ("admnistrador.clientes.editarDatosCliente", ['men' => $men] );
         }
     }
 
@@ -39,16 +39,16 @@ class clienteController extends Controller
         if ($objCliente != null){
             $objCliente->eliminar($objCliente);
             $men = "El cliente se elimino de forma satisfactoria";
-            return view("administrador.procesos-judiciales.eliminarCliente", ['men' => $men] );
+            return view("administrador.clientes.eliminarCliente", ['men' => $men] );
         }else{
             $men = "El cliente se elimino de forma satisfactoria";
-            return view("administrador.procesos-judiciales.eliminarCliente", ['men' => $men] );
+            return view("administrador.clientes.eliminarCliente", ['men' => $men] );
         }
     }
 
     public function listarControlador(){
         $listaCliente=Cliente::all();
-        return view('administrador.procesos-judiciales.listarClientes', ['Clientes' => $listaCliente] );
+        return view('administrador.clientes.listarClientes', ['Clientes' => $listaCliente] );
     }
 
     public function buscar($numero){

@@ -34,21 +34,21 @@ Route::prefix('admin')->group(
     Route::view('/crearTipodocumento','administrador/tipoDocumento')->name('crearTipodocumento');
     Route::post('/guardarTipoDocumento','admin\tipoController@guardarControlador')->name('guardarTipoDocumento');
     Route::get('/crearCaso','admin\ProcesosJudiciales\clienteController@show')->name('crearCaso');
-    Route::view('/crearCliente','administrador/procesos-judiciales/registrarCliente')->name('crearCliente');
+    Route::view('/crearCliente','administrador/clientes/registrarCliente')->name('crearCliente');
   
     //CLIENTE
-    Route::view('/crearCliente','administrador/procesos-judiciales/registrarCliente')->name('crearCliente');
+    Route::view('/crearCliente','administrador/clientes/registrarCliente')->name('crearCliente');
     Route::post('/agregarCliente','admin\ProcesosJudiciales\clienteController@crearControlador')->name('agregarCliente');
 
-    //Route::view('/editarCliente', 'admnistrador/procesos-judiciales/editarCliente')->name('editarCliente');
+    //Route::view('/editarCliente', 'admnistrador/clientes/editarCliente')->name('editarCliente');
     //Route::post('/actualizarCliente', 'admin\ProcesosJudiciales\clienteController@editarControlador')->name('actualizarControlador');
 
-    //Route::view('/eliminarCliente', 'administrador/procesos-judiciales/eliminarCliente')->name('eliminarCliente');
+    //Route::view('/eliminarCliente', 'administrador/clientes/eliminarCliente')->name('eliminarCliente');
     //Route::post('/suprimirCliente', 'admin\ProcesosJudiciales\clienteController@eliminarControlador')->name('suprimirCliente');
 
     Route::get('/listarClientes', 'admin\ProcesosJudiciales\clienteController@listarControlador')->name('listarClientes');
-  
-
+    Route::get('/cliente/actualizarDatosCliente/{numero}', 'clienteController@editarControlador');
+    Route::delete('/cliente/eliminarCliente/{numero}', 'clienteController@eliminarControlador');
   }
 );
 
@@ -63,9 +63,8 @@ Route::delete('/procesoJudicial/eliminar/{radicado}', 'ProcesoJudicialController
 Route::view('/registrarProcesoJudicial', 'administrador/procesos-judiciales/registrarProcesoJudicial');
 Route::view('/listarProcesosJudiciales', 'administrador/procesos-judiciales/listarProcesoJudicial');
 
-Route::view('/registrarContraparte','administrador/procesos-judiciales/registrarContraparte')->name('registrarContraparte');
-Route::view('/listarContraparte','administrador/procesos-judiciales/listarContraparte')->name('listarContraparte');
-Route::view('/listarClientes', 'administrador/procesos-judiciales/listarClientes');
+Route::view('/registrarContraparte','administrador/clientes/registrarContraparte')->name('registrarContraparte');
+Route::view('/listarContraparte','administrador/clientes/listarContraparte')->name('listarContraparte');
 
 Route::view('/subirDocumento','administrador/procesos-judiciales/subirDocumento')->name('subirDocumento');
 Route::view('/agregarUbicacion','administrador/agregarUbicacion')->name('agregarUbicacion');
