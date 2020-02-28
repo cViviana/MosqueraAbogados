@@ -40,8 +40,18 @@ Route::prefix('admin')->group(
 
 
 /* --- Rutas para CRUD de procesos judiciales */
-Route::resource('/admin/registrarCliente', 'admin\ProcesosJudiciales\clienteController');
-Route::resource('/admin/registrarContraparte', 'admin\ProcesosJudiciales\RegistrarContraparteController');
+
+/** Completar estas peticiones de un proceso judicial*/
+Route::get('/procesoJudicial/actualizar/{radicado}', 'ProcesoJudicialController@actualizarProcesoJudicialVista');
+Route::post('/procesoJudicial/actualizar/{radicado}', 'ProcesoJudicialController@actualizarProcesoJudicial');
+Route::delete('/procesoJudicial/eliminar/{radicado}', 'ProcesoJudicialController@eliminarProcesoJudicial');
+
+Route::view('/registrarProcesoJudicial', 'administrador/procesos-judiciales/registrarProcesoJudicial');
+Route::view('/listarProcesosJudiciales', 'administrador/procesos-judiciales/listarProcesoJudicial');
+
+Route::view('/registrarContraparte','administrador/procesos-judiciales/registrarContraparte')->name('registrarContraparte');
+Route::view('/listarContraparte','administrador/procesos-judiciales/listarContraparte')->name('listarContraparte');
+Route::view('/listarClientes', 'administrador/procesos-judiciales/listarClientes');
 
 Route::view('/subirDocumento','administrador/procesos-judiciales/subirDocumento')->name('subirDocumento');
 Route::view('/agregarUbicacion','administrador/agregarUbicacion')->name('agregarUbicacion');
