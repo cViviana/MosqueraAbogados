@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="well well-sm">
-                    <form class="form-horizontal" method="POST" action="{{ url('/electiva/actualizar',$cliente->numero) }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('actualizarCliente' ,$cliente->numero) }}">
                         {{ csrf_field() }}
                         <fieldset>
                                 <div class="form-group">

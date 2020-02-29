@@ -39,18 +39,27 @@ class clienteController extends Controller
         if ($objCliente != null){
             $objCliente->eliminar($objCliente);
             $men = "El cliente se elimino de forma satisfactoria";
-            return view("administrador.clientes.eliminarCliente", ['men' => $men] );
+            return view("administrador.clientes.listarClientes", ['men' => $men, 'Clientes' => $this->listar()] );
         }else{
             $men = "El cliente se elimino de forma satisfactoria";
-            return view("administrador.clientes.eliminarCliente", ['men' => $men] );
+            return view("administrador.clientes.listarClientes", ['men' => $men, 'Clientes' => $this->listar()] );
         }
     }
 
-    public function listarControlador(){
-        $listaCliente=Cliente::all();
-        return view('administrador.clientes.listarClientes', ['Clientes' => $listaCliente] );
+    public function clienteControlador($numero){
+        return $this->buscar($numero);
     }
 
+    public function listarControlador(){
+        return view('administrador.clientes.listarClientes', ['Clientes' => $this->listar()] );
+    }
+
+    //este metodo fue separado de listarControlar para poder reenviar los clientes cuando se eliminen
+    public function listar(){
+        return $listaCliente=Cliente::all();
+    }
+
+    //este metodo fue creado para tener solo una cracion de cliente y un camino para el FIND
     public function buscar($numero){
         $objCliente = new Cliente();
         return $objCliente->buscar($numero);

@@ -40,15 +40,15 @@ Route::prefix('admin')->group(
     Route::view('/crearCliente','administrador/clientes/registrarCliente')->name('crearCliente');
     Route::post('/agregarCliente','admin\ProcesosJudiciales\clienteController@crearControlador')->name('agregarCliente');
 
-    //Route::view('/editarCliente', 'admnistrador/clientes/editarCliente')->name('editarCliente');
-    //Route::post('/actualizarCliente', 'admin\ProcesosJudiciales\clienteController@editarControlador')->name('actualizarControlador');
+    Route::get('/editarCliente/{numero}', 'admin\ProcesosJudiciales\clienteController@clienteControlador')->name('editarCliente');
+    Route::post('/actualizarCliente', 'admin\ProcesosJudiciales\clienteController@editarControlador')->name('actualizarCliente');
 
-    //Route::view('/eliminarCliente', 'administrador/clientes/eliminarCliente')->name('eliminarCliente');
-    //Route::post('/suprimirCliente', 'admin\ProcesosJudiciales\clienteController@eliminarControlador')->name('suprimirCliente');
+    Route::get('/eliminarCliente/{numero}', 'admin\ProcesosJudiciales\clienteController@eliminarControlador')->name('eliminarCliente');
 
     Route::get('/listarClientes', 'admin\ProcesosJudiciales\clienteController@listarControlador')->name('listarClientes');
-    Route::get('/cliente/actualizarDatosCliente/{numero}', 'clienteController@editarControlador');
-    Route::delete('/cliente/eliminarCliente/{numero}', 'clienteController@eliminarControlador');
+
+    //Route::get('/cliente/actualizarDatosCliente/{numero}', 'clienteController@editarControlador');
+    //Route::delete('/cliente/eliminarCliente/{numero}', 'clienteController@eliminarControlador');
   }
 );
 
