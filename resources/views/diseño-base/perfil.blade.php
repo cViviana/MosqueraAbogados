@@ -85,6 +85,7 @@
             @yield('perfil')
             @yield('registrar-proceso-judicial')
             @yield('listar-proceso-judicial')
+            @yield('editar-datos-cliente')
             @yield('registrarCliente')
             @yield('registrarContraparte')
             @yield('subirDocumento')

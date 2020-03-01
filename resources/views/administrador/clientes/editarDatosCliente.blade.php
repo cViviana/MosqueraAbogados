@@ -2,47 +2,46 @@
 
 @section('titulo','Información de Clientes')
 @section('editar-datos-cliente')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="well well-sm">
-                    <form class="form-horizontal" method="POST" action="{{ route('actualizarCliente' ,$cliente->numero) }}">
-                        {{ csrf_field() }}
-                        <fieldset>
-                                <div class="form-group">
-                                    <label for="text">Numero</label>
-                                    <input type="number" class="form-control" id="numero" name="numero"
-                                        value="{{$cliente->numero}}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="nombre">Nombre</label>
-                                    <input type="text" class="form-control" id="nombre" name="nombre"
-                                        value="{{$cliente->nombre}}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="tipo">Tipo</label>
-                                    <input type="text" class="form-control" id="tipo" name="tipo"
-                                        value="{{$cliente->tipo}}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="telefono">Telefono</label>
-                                    <input type="text" class="form-control" id="tipo" name="tipo"
-                                        value="{{$cliente->telefono}}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="text" class="form-control" id="email" name="email"
-                                        value="{{$cliente->email}}"
-                                        placeholder="Digite su correo electronico">
-                                </div>
-                            <div class="form-group">
-                                <div class="col-md-12 text-center">
-                                    <button type="submit" class="btn btn-primary btn-lg">Actualizar datos</button>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
+    <div class="container_pagina">
+        <div class="texto_titulo">ACTUALIZAR DATOS DEL CLIENTE</div> 
+        <div class="container_formulario">
+            <div class="mascara">
+            <form action="{{route('actualizarDatosCliente')}}" class="texto_campos" method="post">
+            {{csrf_field()}}
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <input name='nombre' id='nombre' class="form-control" placeholder="* Nombre Completo" type="text" required
+                        value="{{$Cliente->nombre}}">
                 </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-list"></i></span>
+                    <select name='tipo' id='tipo' class="form-control" value="{{$Cliente->tipo}}">
+                        <option selected="">* Seleccionar tipo de Persona</option>
+                        <option value="natural">Persona Natural</option>
+                        <option value="juridica">Persona Juridica</option>
+                    </select>
+                    <span class="input-group-addon"><i class="fa fa-id-card"></i></span>
+                    <input name='numero' id='numero' class="form-control" placeholder="* Numero de Identificacion" type="text" required
+                        value="{{$Cliente->numero}}">
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-phone-square"></i></span>
+                    <input name='telefono' id='telefono' class="form-control" placeholder="* Numero de telefono" type="text" required
+                        value="{{$Cliente->telefono}}">
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                    <input name='email' id='email' class="form-control" placeholder="* Correo Electronico" type="text" required
+                        value="{{$Cliente->email}}">
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Actualizar Datos</button>
+                <div class="texto_campos">Los campos con (*) son obligatorios</div> 
+            </form>
             </div>
         </div>
     </div>

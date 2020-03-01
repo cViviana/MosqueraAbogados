@@ -46,15 +46,14 @@ Route::prefix('admin')->group(
     Route::get('/eliminarCliente/{numero}', 'admin\ProcesosJudiciales\clienteController@eliminarControlador')->name('eliminarCliente');
 
     Route::get('/listarClientes', 'admin\ProcesosJudiciales\clienteController@listarControlador')->name('listarClientes');
-
-    //Route::get('/cliente/actualizarDatosCliente/{numero}', 'clienteController@editarControlador');
-    //Route::delete('/cliente/eliminarCliente/{numero}', 'clienteController@eliminarControlador');
+    Route::delete('/cliente/eliminarCliente/{numero}', 'clienteController@eliminarControlador');
   }
 );
-
+/** NO mover a admin, aún no */
+Route::get('/cliente/mostrarDatosEnVistaActualizar/{numero}', 'admin\ProcesosJudiciales\clienteController@mostrarDatosEnVistaEditar');
+Route::post('/cliente/actualizarDatosCliente', 'admin\ProcesosJudiciales\clienteController@editarControlador')->name('actualizarDatosCliente');
 
 /* --- Rutas para CRUD de procesos judiciales */
-
 /** Completar estas peticiones de un proceso judicial*/
 Route::get('/procesoJudicial/actualizar/{radicado}', 'ProcesoJudicialController@actualizarProcesoJudicialVista');
 Route::post('/procesoJudicial/actualizar/{radicado}', 'ProcesoJudicialController@actualizarProcesoJudicial');
