@@ -12,18 +12,19 @@
         </thead>
         <!--La variable es 'ubicaciones'-->
         <tbody>
+            @foreach($ubicaciones as $ubicacion)
             <tr style="color:#0066FF">
-                <td></td>
-                <td></td>
-                <td><a href="---" class="btn btn-primary">Actualizar</a></td>
+                <td>{{$ubicacion->numero}}</td>
+                <td>{{$ubicacion->numero}}</td>
+                <td><a href="" class="btn btn-primary">Actualizar</a></td>
                 <td>
-                    <form action="---"  method="get">
+                    <form action=""  method="get">
                         @csrf
                         <button class="btn btn-danger" type="submit">Eliminar</button>
                     </form>
                 </td>
             </tr>
-            
+            @endforeach
         </tbody>
     </table>
 @endsection
