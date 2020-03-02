@@ -18,17 +18,34 @@
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
                       <select name='demandante' id='demandante' class="form-control">
+                          <option selected="">* Abogado Principal</option>
+                          <option>
+
+                          </option>
+                      </select>
+                    <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
+                    <select name='demandado' id='demandado' class="form-control">
+                        <option selected="">* Auxiliar 1</option>
+                          <option>
+                              
+                          </option>
+                    </select>
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
+                      <select name='demandante' id='demandante' class="form-control">
                           <option selected="">* Cliente</option>
-                          @foreach ($clientes as $cli)
-                          <option value= {{$cli->numero}}>{{$cli->numero}} - {{$cli->nombre}}</option>
-                           @endforeach
+                          <option>
+
+                          </option>
                       </select>
                     <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
                     <select name='demandado' id='demandado' class="form-control">
                         <option selected="">* Contraparte</option>
-                          @foreach ($clientes as $cli)
-                          <option value= {{$cli->numero}}>{{$cli->numero}} - {{$cli->nombre}}</option>
-                          @endforeach
+                          <option>
+
+                          </option>
                     </select>
                 </div>
                 <br>
