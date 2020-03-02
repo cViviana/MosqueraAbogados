@@ -16,4 +16,12 @@ class Ubicacion extends Model
   public function guardar(Ubicacion $ubic){
     $ubic->save();
   }
+
+  public function eliminar(Ubicacion $ubic){
+    $ubic->delete();
+  }
+
+  public function buscar($id){
+    return $this::find($id);
+  }
 }

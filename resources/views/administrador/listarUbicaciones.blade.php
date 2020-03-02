@@ -10,11 +10,12 @@
                 <th scope="col">Eliminar</th>
             </tr>
         </thead>
+        <!--La variable es 'ubicaciones'-->
         <tbody>
             <tr style="color:#0066FF">
                 <td></td>
                 <td></td>
-                <td><a href="------" class="btn btn-primary">Actualizar</a></td>
+                <td><a href="---" class="btn btn-primary">Actualizar</a></td>
                 <td>
                     <form action="---"  method="get">
                         @csrf
