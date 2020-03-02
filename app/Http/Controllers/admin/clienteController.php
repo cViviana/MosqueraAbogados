@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin\ProcesosJudiciales;
+namespace App\Http\Controllers\admin;
 
 use App\Cliente;
 use App\Http\Controllers\Controller;
@@ -29,7 +29,7 @@ class clienteController extends Controller
             $men = "El cliente se actualizo de forma satisfactoria";
             return view ("administrador.clientes.listarClientes", ['men' => $men, 'Clientes' => $this->listar()]  );
         }else{
-            $men = "El identificador del cliente no existe";    
+            $men = "El identificador del cliente no existe";
             return view ("administrador.clientes.listarClientes", ['men' => $men, 'Clientes' => $this->listar()] );
         }
     }
@@ -65,5 +65,4 @@ class clienteController extends Controller
         $objCliente = new Cliente();
         return $objCliente->buscar($numero);
     }
-
 }

@@ -33,19 +33,19 @@ Route::prefix('admin')->group(
   function(){
     Route::view('/crearTipodocumento','administrador/tipoDocumento')->name('crearTipodocumento');
     Route::post('/guardarTipoDocumento','admin\tipoController@guardarControlador')->name('guardarTipoDocumento');
-    Route::get('/crearCaso','admin\ProcesosJudiciales\clienteController@show')->name('crearCaso');
+    Route::view('/crearCaso','administrador/procesos-judiciales/registrarProcesoJudicial')->name('crearCaso');
     Route::view('/crearCliente','administrador/clientes/registrarCliente')->name('crearCliente');
-  
+
     //CLIENTE
     Route::view('/crearCliente','administrador/clientes/registrarCliente')->name('crearCliente');
-    Route::post('/agregarCliente','admin\ProcesosJudiciales\clienteController@crearControlador')->name('agregarCliente');
+    Route::post('/agregarCliente','admin\clienteController@crearControlador')->name('agregarCliente');
 
-    Route::get('/editarCliente/{numero}', 'admin\ProcesosJudiciales\clienteController@clienteControlador')->name('editarCliente');
-    Route::post('/actualizarCliente', 'admin\ProcesosJudiciales\clienteController@editarControlador')->name('actualizarCliente');
+    Route::get('/editarCliente/{numero}', 'admin\clienteController@clienteControlador')->name('editarCliente');
+    Route::post('/actualizarCliente', 'admin\clienteController@editarControlador')->name('actualizarCliente');
 
-    Route::get('/eliminarCliente/{numero}', 'admin\ProcesosJudiciales\clienteController@eliminarControlador')->name('eliminarCliente');
+    Route::get('/eliminarCliente/{numero}', 'admin\clienteController@eliminarControlador')->name('eliminarCliente');
 
-    Route::get('/listarClientes', 'admin\ProcesosJudiciales\clienteController@listarControlador')->name('listarClientes');
+    Route::get('/listarClientes', 'admin\clienteController@listarControlador')->name('listarClientes');
     Route::delete('/cliente/eliminarCliente/{numero}', 'clienteController@eliminarControlador');
 
     //ubicacion
@@ -59,7 +59,7 @@ Route::prefix('admin')->group(
     Route::get('/eliminarUbicacion/{id}', 'admin\ubicacionController@eliminarControlador')->name('eliminarUbicacion');
 
     Route::view('/listarUbicacion','administrador/listarUbicaciones')->name('listarUbicacion');
-    Route::get('/listarUbicacionFisica','admin\ubicacionController@listarControlador')->name('listarUbicacionFisica');    
+    Route::get('/listarUbicacionFisica','admin\ubicacionController@listarControlador')->name('listarUbicacionFisica');
 
   }
 );
