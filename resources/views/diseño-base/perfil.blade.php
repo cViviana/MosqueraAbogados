@@ -18,7 +18,7 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 
-<body class="body_admin">
+<body class="body_admin row">
         <div class="col-sm-3 col-md-3 col-lg-2 col-xl-1">
             <div class="nav-side-menu" id="menuPrincipal">
                 <div class="brand titulo_menu">
@@ -90,5 +90,7 @@
             @yield('registrarContraparte')
             @yield('subirDocumento')
             @yield('crartipodocumento')
+            @yield('listar-ubicaciones')
+            @yield('editar-ubicacion')
         </div>
 </body>
