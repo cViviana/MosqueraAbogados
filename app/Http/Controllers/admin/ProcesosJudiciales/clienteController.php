@@ -21,25 +21,17 @@ class clienteController extends Controller
         }
     }
 
-    public function mostrarDatosEnVistaEditar($numero)
-    {
-        $cliente = Cliente::findOrFail($numero);
-        return view('administrador.clientes.editarDatosCliente', ['Cliente' => $cliente]);
-    }
-
     public function editarControlador(Request $request){
         $objCliente = $this->buscar($request->numero);
         if($objCliente != null){
             $objCliente->fill($request->all());
             $objCliente->guardar($objCliente);
             $men = "El cliente se actualizo de forma satisfactoria";
-            //return view ("admnistrador.clientes.editarDatosCliente", ['men' => $men] );
+            return view ("administrador.clientes.listarClientes", ['men' => $men, 'Clientes' => $this->listar()]  );
         }else{
-            $men = "El identificador del cliente ya existe";    
-            //return view ("admnistrador.clientes.editarDatosCliente", ['men' => $men] );
+            $men = "El identificador del cliente no existe";    
+            return view ("administrador.clientes.listarClientes", ['men' => $men, 'Clientes' => $this->listar()] );
         }
-        $listaCliente = Cliente::all();
-        return view('administrador.clientes.listarClientes', ['Clientes' => $listaCliente] );
     }
 
     public function eliminarControlador($numero){
@@ -55,7 +47,8 @@ class clienteController extends Controller
     }
 
     public function clienteControlador($numero){
-        return $this->buscar($numero);
+        $cliente = $this->buscar($numero);
+        return view('administrador.clientes.editarDatosCliente', ['Cliente' => $cliente]);
     }
 
     public function listarControlador(){

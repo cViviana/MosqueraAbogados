@@ -22,7 +22,7 @@
                 <td>{{$cliente->tipo}}</td>
                 <td>{{$cliente->telefono}}</td>
                 <td>{{$cliente->email}}</td>
-                <td><a href="{{url('cliente/mostrarDatosEnVistaActualizar', $cliente->numero)}}" class="btn btn-primary">Actualizar</a></td>
+                <td><a href="{{route('editarCliente', $cliente->numero)}}" class="btn btn-primary">Actualizar</a></td>
                 <td>
                     <form action="{{ route('eliminarCliente', $cliente->numero)}}"  method="get">
                         @csrf
