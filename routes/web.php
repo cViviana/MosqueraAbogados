@@ -50,7 +50,7 @@ Route::prefix('admin')->group(
 
     //ubicacion
 
-    Route::view('/agregarUbicacion','administrador/agregarUbicacion')->name('agregarUbicacion');
+    Route::view('/agregarUbicacion','administrador/ubicacion/agregarUbicacion')->name('agregarUbicacion');
     Route::post('/agregarUbicacionFisica','admin\ubicacionController@guardarControlador')->name('agregarUbicacionFisica');
 
     Route::get('/editarUbicacion/{id}','admin\ubicacionController@ubicacionControlador')->name('editarUbicacion');
@@ -58,9 +58,7 @@ Route::prefix('admin')->group(
 
     Route::get('/eliminarUbicacion/{id}', 'admin\ubicacionController@eliminarControlador')->name('eliminarUbicacion');
 
-    Route::view('/listarUbicacion','administrador/listarUbicaciones')->name('listarUbicacion');
-    Route::get('/listarUbicacionFisica','admin\ubicacionController@listarControlador')->name('listarUbicacionFisica');
-
+    Route::get('/listarUbicacion','admin\ubicacionController@listarControlador')->name('listarUbicacion');
   }
 );
 

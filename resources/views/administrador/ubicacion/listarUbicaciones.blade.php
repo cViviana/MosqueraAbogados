@@ -14,11 +14,12 @@
         <tbody>
             @foreach($ubicaciones as $ubicacion)
             <tr style="color:#0066FF">
-                <td>{{$ubicacion->numero}}</td>
-                <td>{{$ubicacion->numero}}</td>
-                <td><a href="" class="btn btn-primary">Actualizar</a></td>
+                <td>{{$ubicacion->id}}</td>
+                <td>{{$ubicacion->numArchivero}}</td>
+                <td>{{$ubicacion->numGabeta}}</td>
+                <td><a href="{{route('editarUbicacion', $ubicacion->id)}}" class="btn btn-primary">Actualizar</a></td>
                 <td>
-                    <form action=""  method="get">
+                    <form action="{{route('eliminarUbicacion', $ubicacion->id)}}"  method="get">
                         @csrf
                         <button class="btn btn-danger" type="submit">Eliminar</button>
                     </form>
