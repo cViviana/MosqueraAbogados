@@ -7,8 +7,8 @@
     src:url(../fonts/Myriad.ttf);
 }
 
-.footer{
-    
+.tabla{
+    color: white;
 }
 
 .texto_titulo{
@@ -72,7 +72,7 @@
 }
   
 .container_pagina{
-    margin-left: 15% ;
+    margin-left: 5% ;
     margin-right: 10%;
 }
 
