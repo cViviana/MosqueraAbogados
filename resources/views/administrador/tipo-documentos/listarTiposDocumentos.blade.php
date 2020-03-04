@@ -1,36 +1,28 @@
 @extends('diseño-base.perfil')
 @section('titulo','Información de clientes')
 
-@section('CRUD-datos-cliente')
+@section('CRUD-tipos-documentos')
     <div class="container_pagina">
-        <div class="texto_titulo">LISTADO DE CLIENTES</div>
+        <div class="texto_titulo">LISTADO DE TIPOS DE DOCUMENTOS</div>
         <table class="table table-responsive  tabla">
             <thead class="thead-light container_formulario">
                 <tr>
-                    <th scope="col">Número</th>
+                    <th scope="col">Código</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Tipo</th>
-                    <th scope="col">Teléfono</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Editar</th>
-                    <th scope="col">Eliminar</th>
                 </tr>
             </thead>
             <tbody class="container_formulario">
-                @foreach($Clientes as $cliente)
+                @foreach($TiposDocumentos as $tipoDocumento)
                 <tr>
-                    <td>{{$cliente->numero}}</td>
-                    <td>{{$cliente->nombre}}</td>
-                    <td>{{$cliente->tipo}}</td>
-                    <td>{{$cliente->telefono}}</td>
-                    <td>{{$cliente->email}}</td>
+                    <td>{{$tipoDocumento->id}}</td>
+                    <td>{{$tipoDocumento->nombre}}</td>
                     <td>
-                        <a href="{{route('editarCliente', $cliente->numero)}}" class="btn btn-primary">
+                        <a href="{{route('editarTipoDocumento', $tipoDocumento->id)}}" class="btn btn-primary">
                             <span class="glyphicon glyphicon-pencil"></span>
                         </a>
                     </td>
                     <td>
-                        <form action="{{ route('eliminarCliente', $cliente->numero)}}"  method="get">
+                        <form action="{{ route('eliminarTipoDocumento', $tipoDocumento->id)}}"  method="get">
                             @csrf
                             <button class="btn btn-danger" type="submit">
                                 <span class="glyphicon glyphicon-trash"></span>

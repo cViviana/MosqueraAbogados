@@ -54,6 +54,4 @@ class tipoController extends Controller
   }
 
   //HABLR CON FRONT QUE RECIBEN EN CASO DE BUSCAR EL ID
-
-
 }

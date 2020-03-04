@@ -83,14 +83,9 @@
         </div>
         <div class="col-sm-9 col-md-9 col-lg-10 col-xl-11">
             @yield('perfil')
-            @yield('registrar-proceso-judicial')
-            @yield('listar-proceso-judicial')
-            @yield('editar-datos-cliente')
-            @yield('registrarCliente')
-            @yield('registrarContraparte')
-            @yield('subirDocumento')
-            @yield('crartipodocumento')
-            @yield('listar-ubicaciones')
-            @yield('editar-ubicacion')
+            @yield('CRUD-proceso-judicial')
+            @yield('CRUD-datos-cliente')
+            @yield('CRUD-ubicacion-documentos')
+            @yield('CRUD-tipos-documentos')
         </div>
 </body>

@@ -1,6 +1,7 @@
 @extends('diseño-base.perfil')
 @section('titulo','Editar Ubicacion')
-@section('subirDocumento')
+
+@section('CRUD-ubicacion-documentos')
   <div class="container_pagina">
     <div class="texto_titulo">
       EDITAR UBICACIÓN

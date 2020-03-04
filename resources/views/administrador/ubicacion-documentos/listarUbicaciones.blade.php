@@ -1,6 +1,7 @@
 @extends('diseño-base.perfil')
 @section('titulo','Información Ubicaciones')
-@section('listar-ubicaciones')
+
+@section('CRUD-ubicacion-documentos')
     <table class="table table-responsive table-hover">
         <thead class="thead-light">
             <tr style="color:#0066FF">

@@ -1,7 +1,7 @@
 @extends('diseño-base.perfil')
-
 @section('titulo','Procesos Judiciales')
-@section('listar-proceso-judicial')
+
+@section('CRUD-proceso-judicial')
     <table class="table table-responsive table-hover">
         <thead>
             <tr style="color:#FFFFFF">

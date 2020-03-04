@@ -1,8 +1,7 @@
 @extends('diseño-base.perfil')
-
 @section('titulo','Registrar Proceso Judicial')
-@section('registrar-proceso-judicial')
 
+@section('CRUD-proceso-judicial')
     <div class="container_pagina">
         <div class="texto_titulo">REGISTRAR CASO</div>
         <div class="container_pagina container_formulario">

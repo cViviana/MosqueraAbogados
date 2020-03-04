@@ -1,8 +1,9 @@
 @extends('diseño-base.perfil')
-@section('subirDocumento')
+
+@section('CRUD-tipos-documentos')
   <div class="container_pagina">
     <div class="texto_titulo">
-      CREAR TIPO DOCUMENTO
+      CREAR UN TIPO DE DOCUMENTO
     </div> 
     <div class="container_pagina container_formulario">
       <div class="mascara">

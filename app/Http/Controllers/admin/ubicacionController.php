@@ -12,7 +12,7 @@ class ubicacionController extends Controller
         $objUbicacion = new Ubicacion($request->all());
         $objUbicacion->guardar($objUbicacion);
         $men = "La ubicacion se guardo de forma exitosa";
-        return view('administrador.ubicacion.agregarUbicacion', [ "men" => $men] );
+        return view('administrador.ubicacion-documentos.agregarUbicacion', [ "men" => $men] );
     }
 
     public function eliminarControlador(Request $request){
@@ -20,10 +20,10 @@ class ubicacionController extends Controller
         if($objUbicacion != null ){
           $objUbicacion->eliminar($objUbicacion);
           $men = "La ubicacion fue eliminada con satisfación";
-          return view('administrador.ubicacion.listarUbicaciones', ['men' => $men, 'ubicaciones' => $this->listar()] );
+          return view('administrador.ubicacion-documentos.listarUbicaciones', ['men' => $men, 'ubicaciones' => $this->listar()] );
         }else{
           $men="El identificador ingresado es invalido ";
-          return view('administrador.ubicacion.listarUbicaciones', ['men' => $men, 'ubicaciones' => $this->listar()] );
+          return view('administrador.ubicacion-documentos.listarUbicaciones', ['men' => $men, 'ubicaciones' => $this->listar()] );
         }      
     }
 
@@ -33,20 +33,20 @@ class ubicacionController extends Controller
           $objUbicacion->fill($request->all());
           $objUbicacion->guardar($objUbicacion);
           $men = "se actualizaron los datos de forma exitosa";
-          return view('administrador.ubicacion.listarUbicaciones', ['men' => $men, 'ubicaciones' => $this->listar()] );
+          return view('administrador.ubicacion-documentos.listarUbicaciones', ['men' => $men, 'ubicaciones' => $this->listar()] );
         }else{
           $men="El identificador ingresado es invalido ";
-          return view('administrador.ubicacion.listarUbicaciones', ['men' => $men, 'ubicaciones' => $this->listar()] );
+          return view('administrador.ubicacion-documentos.listarUbicaciones', ['men' => $men, 'ubicaciones' => $this->listar()] );
         }
       }
     
     public function ubicacionControlador(Request $request){
       $objUbicacion = $this->buscar($request->id);
-      return view('administrador.ubicacion.editarUbicacion', ['ubicacion' => $objUbicacion] );
+      return view('administrador.ubicacion-documentos.editarUbicacion', ['ubicacion' => $objUbicacion] );
     }
 
     public function listarControlador(){
-      return view('administrador.ubicacion.listarUbicaciones', ["ubicaciones" => $this->listar()] );
+      return view('administrador.ubicacion-documentos.listarUbicaciones', ["ubicaciones" => $this->listar()] );
     }
 
     public function listar(){

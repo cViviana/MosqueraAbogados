@@ -48,8 +48,7 @@ Route::prefix('admin')->group(
     Route::get('/listarClientes', 'admin\clienteController@listarControlador')->name('listarClientes');
     Route::delete('/cliente/eliminarCliente/{numero}', 'clienteController@eliminarControlador');
 
-    //ubicacion
-
+    //UBICACIÓN-DUCMENTOS
     Route::view('/agregarUbicacion','administrador/ubicacion/agregarUbicacion')->name('agregarUbicacion');
     Route::post('/agregarUbicacionFisica','admin\ubicacionController@guardarControlador')->name('agregarUbicacionFisica');
 
@@ -59,6 +58,18 @@ Route::prefix('admin')->group(
     Route::get('/eliminarUbicacion/{id}', 'admin\ubicacionController@eliminarControlador')->name('eliminarUbicacion');
 
     Route::get('/listarUbicacion','admin\ubicacionController@listarControlador')->name('listarUbicacion');
+
+    //TIPO-DOCUMENTOS
+    Route::view('/crearTipoDocumento','administrador/tipo-documentos/crearTipoDocumento')->name('crearTipoDocumento');
+    Route::post('/agregarTipoDocumento','admin\clienteController@crearControlador')->name('agregarTipoDocumento');
+
+    Route::get('/editarTipoDocumento{id}', 'admin\clienteController@clienteControlador')->name('editarTipoDocumento');
+    Route::post('/tiposDocumentos', 'admin\clienteController@editarControlador')->name('tiposDocumentos');
+
+    Route::get('/eliminarTipoDocumento/{id}', 'admin\clienteController@eliminarControlador')->name('eliminarTipoDocumento');
+
+    Route::get('/listarTiposDocumentos', 'admin\clienteController@listarControlador')->name('listarTiposDocumentos');
+    Route::delete('/tipoDocumento/eliminarTipoDocumento/{id}', 'clienteController@eliminarControlador');
   }
 );
 
@@ -75,7 +86,10 @@ Route::view('/registrarContraparte','administrador/clientes/registrarContraparte
 Route::view('/listarContraparte','administrador/clientes/listarContraparte')->name('listarContraparte');
 
 Route::view('/subirDocumento','administrador/procesos-judiciales/subirDocumento')->name('subirDocumento');
-Route::view('/agregarUbicacion','administrador/agregarUbicacion')->name('agregarUbicacion');
+
+
+Route::view('/editarTipoDocumento','administrador/tipo-documentos/editarTipoDocumento')->name('editarTipoDocumento');
+Route::view('/listarTiposDocumentos','administrador/tipo-documentos/listarTiposDocumentos')->name('listarTiposDocumentos');
 
 
 Auth::routes();

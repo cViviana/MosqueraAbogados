@@ -1,7 +1,7 @@
 @extends('diseño-base.perfil')
+@section('titulo','Actualizar datos de un cliente')
 
-@section('titulo','Información de Clientes')
-@section('editar-datos-cliente')
+@section('CRUD-datos-cliente')
     <div class="container_pagina">
         <div class="texto_titulo">ACTUALIZAR DATOS DEL CLIENTE</div> 
         <div class="container_formulario">
