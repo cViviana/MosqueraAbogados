@@ -8,50 +8,54 @@ use App\Tipo;
 
 class tipoController extends Controller
 {
-  public function guardarControlador(Request $request)
-  {
+  public function guardarControlador(Request $request){
+    //validacion
     $objTipo= new Tipo($request->all());
     $objTipo->guardar($objTipo);
-    $men = "El tipo de documenot de guardo de forma exitosa";
-    return view('administrador.tipoDocumento', [ "men" => $men] );
+    $men = "El tipo de documento de guardo de forma exitosa";
+    return view('administrador.tipo-documentos.crearTipoDocumento', [ "men" => $men] );
   }
 
   public function eliminarControlador(Request $request){
-    $objTipo = $this->existe($request->id);
+    $objTipo = $this->buscar($request->id);
     if($objTipo != null ){
       $objTipo->eliminar($objTipo);
       $men = "El tipo de documento fue eliminado con satisfación";
-      return view("administrador.eliminarTipoDocumetno", ["men" => $men] );
     }else{
       $men="El identificador ingresado es invalido ";
-      return view("administrador.eliminarTipoDocumetno", ["men" => $men] );
     }      
+    return view("administrador.tipo-documentos.listarTiposDocumentos", ["men" => $men, "TiposDocumentos" => $this->listar() ] );
   }
 
   public function editarControlador(Request $request){
-    $objTipo = $this->existe($request->id);
+    $objTipo = $this->buscar($request->id);
     if( $objTipo != null ){
       $objTipo->fill($request->all());
       $objTipo->guardar($objTipo);
       $men = "se actualizaron los datos de forma exitosa";
-      return view('administrador.editarTipoDocumento', ['men' => $men] );
     }else{
       $men="El identificador ingresado es invalido ";
-      return view('administrador.editarTipoDocumento', ['men' => $men] );
     }
+    return view('administrador.tipo-documentos.listarTiposDocumentos', ['men' => $men, "TiposDocumentos" => $this->listar()] );
+  }
+
+  public function tipoControlador(Request $request){
+    $objTipo = $this->buscar($request->id);
+    return view('administrador.tipo-documentos.editarTipoDocumento', ['tipo' => $objTipo] );
   }
 
   public function listarControlador(){
-    $objTipo=Tipo::orderBy('id')->get();
-    return view('admnistrador.listarTipoDocumento', ["listaTipo" => $objTipo] );
+    return view('administrador.tipo-documentos.listarTiposDocumentos', ["TiposDocumentos" => $this->listar()] );
+  }
+
+  public function listar(){
+    return Tipo::all();
   }
 
   //Esta función nos permitirá crear TIPO y llamar a la función de buscar TIPO 
   //por un solo camino y así evitar crearlos en cada función
-  public function existe($id){
+  public function buscar($id){
     $objTipo = new Tipo();
     return $objTipo->buscar($id);
   }
-
-  //HABLR CON FRONT QUE RECIBEN EN CASO DE BUSCAR EL ID
 }

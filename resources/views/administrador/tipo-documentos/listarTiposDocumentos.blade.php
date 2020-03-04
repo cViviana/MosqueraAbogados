@@ -18,7 +18,7 @@
                     <td>{{$tipoDocumento->nombre}}</td>
                     <td>
                         <a href="{{route('editarTipoDocumento', $tipoDocumento->id)}}" class="btn btn-primary">
-                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="glyphicon glyphicon-pencil">Actualizar</span>
                         </a>
                     </td>
                     <td>
