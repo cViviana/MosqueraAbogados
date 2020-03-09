@@ -50,7 +50,7 @@ class User extends Authenticatable
       return $this->belongsTo('App\Roll','us_roll', 'cedula');
     }
 
-    public function guardar(User $usuario,$rollId){
+    /*public function guardar(User $usuario,$rollId){
       //
       $roll = Roll::find($rollId);
       echo('*'.$roll->id);
@@ -62,6 +62,14 @@ class User extends Authenticatable
         //si no esta devolver a la vista que  no se puede guardar el documento por que no exite el tipo
         echo "no esta";
       }
+    }*/
+
+    public function buscar($numero){
+      return $this::find($numero);
+    }
+
+    public function listar(){
+      return $this::all();
     }
 
 }

@@ -31,7 +31,7 @@
                         <a href="#"><i class="fa fa-user"></i> Perfil<span class="arrow"></span></a>
                         </li>
                         <ul class="sub-menu collapse" id="perfil">
-                            <li class="active"><a href="#">Ver Perfil</a></li>
+                            <li class="active"><a href="{{route('perfil_usuario')}}">Ver Perfil</a></li>
                         </ul>
 
                         <li  data-toggle="collapse" data-target="#casos" class="collapsed">

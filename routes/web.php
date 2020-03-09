@@ -31,7 +31,7 @@ Route::post('mail','MailController@postMail');
 
 Route::prefix('admin')->group(
   function(){
-    Route::view('/crearCaso','administrador/procesos-judiciales/registrarProcesoJudicial')->name('crearCaso');
+    Route::get('/crearCaso','admin\casoController@index')->name('crearCaso');
 
     //CLIENTE
     Route::view('/crearCliente','administrador/clientes/registrarCliente')->name('crearCliente');
@@ -58,7 +58,7 @@ Route::prefix('admin')->group(
 
     //TIPO-DOCUMENTOS
     Route::view('/crearTipo','administrador/tipo-documentos/crearTipoDocumento')->name('crearTipoDocumento');
-    
+
     Route::post('/agregarTipoDocumento','admin\tipoController@guardarControlador')->name('agregarTipoDocumento');
 
     Route::get('/editarTipoDocumento/{id}', 'admin\tipoController@tipoControlador')->name('editarTipoDocumento');
@@ -67,6 +67,7 @@ Route::prefix('admin')->group(
     Route::get('/eliminarTipoDocumento/{id}', 'admin\tipoController@eliminarControlador')->name('eliminarTipoDocumento');
 
     Route::get('/listarTipoDocumentos', 'admin\tipoController@listarControlador')->name('listarTiposDocumentos');
+
   }
 );
 

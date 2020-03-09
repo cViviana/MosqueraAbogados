@@ -2,7 +2,7 @@
 @section('registrar-proceso-judicial')
     <div class="container_pagina">
         S<<div class="container_formulario emp-profile">
-            
+
                 <div class="row">
                     <div class="col-md-12">
                         <div class="profile-img">
@@ -10,7 +10,7 @@
                         </div>
                     </div>
                     <div class="col-md-1">
-                    
+
                     </div>
                     <div class="col-md-12">
                         <div class="texto_titulo_perfil">
@@ -24,33 +24,30 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12 texto_perfil">
-                        
+
                         <div class="col-md-12">
                             <div>
-                                Cargo: 
+                                Cargo:
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div>
-                                Nombre: 
+                                Nombre: {{ Auth::user()->name }}
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div>
-                                Correo: 
+                                Correo:{{ Auth::user()->email}}
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div>
-                                Telefono: 
+                                Telefono:{{ Auth::user()->telefono}}
                             </div>
                         </div>
                     </div>
                 </div>
-                       
+
         </div>
     </div>
 @endsection
-
-
-                   

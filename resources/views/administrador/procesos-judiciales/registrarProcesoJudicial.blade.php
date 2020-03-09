@@ -18,16 +18,16 @@
                     <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
                       <select name='demandante' id='demandante' class="form-control">
                           <option selected="">* Abogado Principal</option>
-                          <option>
-
-                          </option>
+                          <@foreach ($Usuarios as $us)
+                            <option value= {{$us->cedula}}>{{$us->cedula}} - {{$us->nombre}}</option>
+                          @endforeach
                       </select>
                     <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
                     <select name='demandado' id='demandado' class="form-control">
                         <option selected="">* Auxiliar 1</option>
-                          <option>
-                              
-                          </option>
+                        <@foreach ($Usuarios as $us)
+                          <option value= {{$us->cedula}}>{{$us->cedula}} - {{$us->nombre}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <br>
@@ -35,16 +35,16 @@
                     <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
                       <select name='demandante' id='demandante' class="form-control">
                           <option selected="">* Cliente</option>
-                          <option>
-
-                          </option>
+                          @foreach ($Clientes as $cli)
+                            <option value= {{$cli->numero}}>{{$cli->numero}} - {{$cli->nombre}}</option>
+                          @endforeach
                       </select>
                     <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
                     <select name='demandado' id='demandado' class="form-control">
                         <option selected="">* Contraparte</option>
-                          <option>
-
-                          </option>
+                          @foreach ($Clientes as $cli)
+                            <option value= {{$cli->numero}}>{{$cli->numero}} - {{$cli->nombre}}</option>
+                          @endforeach
                     </select>
                 </div>
                 <br>
@@ -52,9 +52,8 @@
                     <span class="input-group-addon"><i class="fa fa-tasks"></i></span>
                     <select name='estado' id='estado' class="form-control">
                         <option selected="">* Seleccionar el estado</option>
-                        <option>Estado 1</option>
-                        <option>Estado 2</option>
-                        <option>Estado 3</option>
+                        <option value='Activo'>Activo</option>
+                        <option value='Inactivo'>Inactivo</option>
                     </select>
                 </div>
                 <br>

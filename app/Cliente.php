@@ -28,4 +28,8 @@ class Cliente extends Model
     public function buscar($numero){
       return $this::find($numero);
     }
+
+    public function listar(){
+      return $this::all();
+    }
 }

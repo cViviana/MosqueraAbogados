@@ -21,4 +21,8 @@ class Caso extends Model
         'dir_cedula');
       //...belongsToMany([modelo],[nombre_tabla_pivote], [nombre_fk1], [nombre_fk2]);
     }
+
+    public function guardar(Caso $nuevoCaso){
+      $nuevoCaso->save();
+    }
 }
