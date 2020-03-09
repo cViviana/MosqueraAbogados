@@ -45,7 +45,7 @@ Route::prefix('admin')->group(
     Route::get('/eliminarCliente/{numero}', 'admin\clienteController@eliminarControlador')->name('eliminarCliente');
 
     Route::get('/listarClientes', 'admin\clienteController@listarControlador')->name('listarClientes');
-    Route::delete('/cliente/eliminarCliente/{numero}', 'clienteController@eliminarControlador');
+    Route::delete('/cliente/eliminarCliente/{numero}', 'admin\clienteController@eliminarControlador');
 
     //UBICACIÓN-DUCMENTOS
     Route::view('/agregarUbicacion','administrador/ubicacionFisica/agregarUbicacion')->name('agregarUbicacion');
@@ -75,9 +75,9 @@ Route::prefix('admin')->group(
 
 /* --- Rutas para CRUD de procesos judiciales */
 /** Completar estas peticiones de un proceso judicial*/
-Route::get('/procesoJudicial/actualizar/{radicado}', 'ProcesoJudicialController@actualizarProcesoJudicialVista');
-Route::post('/procesoJudicial/actualizar/{radicado}', 'ProcesoJudicialController@actualizarProcesoJudicial');
-Route::delete('/procesoJudicial/eliminar/{radicado}', 'ProcesoJudicialController@eliminarProcesoJudicial');
+//Route::get('/procesoJudicial/actualizar/{radicado}', 'ProcesoJudicialController@actualizarProcesoJudicialVista');
+//Route::post('/procesoJudicial/actualizar/{radicado}', 'ProcesoJudicialController@actualizarProcesoJudicial');
+//Route::delete('/procesoJudicial/eliminar/{radicado}', 'ProcesoJudicialController@eliminarProcesoJudicial');
 
 Route::view('/registrarProcesoJudicial', 'administrador/procesos-judiciales/registrarProcesoJudicial');
 Route::view('/listarProcesosJudiciales', 'administrador/procesos-judiciales/listarProcesoJudicial');
