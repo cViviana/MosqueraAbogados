@@ -38,7 +38,7 @@
                         <a href="#"><i class="fa fa-briefcase"></i> Casos <span class="arrow"></span></a>
                         </li>
                         <ul class="sub-menu collapse" id="casos">
-                            <li class="active"><a href="{{route('crearCaso')}}">Registrar Caso</a></li>
+                            <li class="active"><a href="{{route('cargueCaso')}}">Registrar Caso</a></li>
                             <li><a href="">Listar Casos</a></li>
 
                             <li  data-toggle="collapse" data-target="#documentos" class="collapsed">

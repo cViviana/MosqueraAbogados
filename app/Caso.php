@@ -17,12 +17,14 @@ class Caso extends Model
       return $this->belongsTo('App\Cliente','demandado', 'radicado');
     }
     public function Dirige (){
-      return $this->belongsToMany('App\Caso','dirige','dir_radicado',
+      return $this->belongsToMany('App\User','dirige','dir_radicado',
         'dir_cedula');
       //...belongsToMany([modelo],[nombre_tabla_pivote], [nombre_fk1], [nombre_fk2]);
     }
 
-    public function guardar(Caso $nuevoCaso){
+    public function guardar(Caso $objCaso, Cliente $objDemandando, Cliente $objDemandante, User $objAbogadoPpal,User $objAbogadoAux){
+      //asociar el demandado y el demandante
+      //guardar en la tabla pivote 
       $nuevoCaso->save();
     }
 }

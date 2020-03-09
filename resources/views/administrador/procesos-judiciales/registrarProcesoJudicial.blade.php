@@ -6,7 +6,7 @@
         <div class="texto_titulo">REGISTRAR CASO</div>
         <div class="container_pagina container_formulario">
             <div class="mascara">
-            <form action="" class="texto_campos" method="post">
+            <form action="{{route('crearCaso')}}" class="texto_campos" method="post">
             {{csrf_field()}}
                 <br>
                 <div class="input-group">
@@ -16,14 +16,14 @@
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
-                      <select name='demandante' id='demandante' class="form-control">
+                      <select name='abogadoPpal' id='abogadoPpal' class="form-control">
                           <option selected="">* Abogado Principal</option>
                           <@foreach ($Usuarios as $us)
                             <option value= {{$us->cedula}}>{{$us->cedula}} - {{$us->nombre}}</option>
                           @endforeach
                       </select>
                     <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
-                    <select name='demandado' id='demandado' class="form-control">
+                    <select name='abogadoAux' id='abogadoAux' class="form-control">
                         <option selected="">* Auxiliar 1</option>
                         <@foreach ($Usuarios as $us)
                           <option value= {{$us->cedula}}>{{$us->cedula}} - {{$us->nombre}}</option>

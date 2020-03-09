@@ -31,7 +31,9 @@ Route::post('mail','MailController@postMail');
 
 Route::prefix('admin')->group(
   function(){
-    Route::get('/crearCaso','admin\casoController@index')->name('crearCaso');
+    //CASO
+    Route::get('/crearCaso','admin\casoController@index')->name('cargueCaso');
+    Route::post('/agregarCaso','admin\casoController@guardar')->name('crearCaso');
 
     //CLIENTE
     Route::view('/crearCliente','administrador/clientes/registrarCliente')->name('crearCliente');
