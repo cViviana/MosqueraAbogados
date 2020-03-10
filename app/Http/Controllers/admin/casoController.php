@@ -24,7 +24,6 @@ class casoController extends Controller
       // si verifica existe ya un caso con ese mismo radicado
       $caso = new Caso;
       $auxCaso = $caso->buscar($request->radicado);
-
       //si no exite
       if( $auxCaso == null ){
           //debo guardar el demandate y demandado y los retonor

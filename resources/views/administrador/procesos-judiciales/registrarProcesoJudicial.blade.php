@@ -52,8 +52,8 @@
                     <span class="input-group-addon"><i class="fa fa-tasks"></i></span>
                     <select name='estado' id='estado' class="form-control">
                         <option selected="">* Seleccionar el estado</option>
-                        <option value='Activo'>Activo</option>
-                        <option value='Inactivo'>Inactivo</option>
+                        <option value='activo'>Activo</option>
+                        <option value='cerrado'>Cerrado</option>
                     </select>
                 </div>
                 <br>

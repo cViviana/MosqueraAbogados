@@ -41,9 +41,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function Dirige (){
-      return $this->belongsToMany('App\Caso','dirige','dir_radicado',
-        'dir_cedula');
+    public function dirige (){
+      return $this->belongsToMany('App\Caso','dirige','dir_cedula','dir_radicado');
       //...belongsToMany([modelo],[nombre_tabla_pivote], [nombre_fk1], [nombre_fk2]);
     }
     public function usuarioPoseeRoll(){
