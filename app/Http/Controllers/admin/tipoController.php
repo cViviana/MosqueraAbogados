@@ -5,37 +5,36 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Tipo;
+USE App\Http\Requests\valFormTipoDoc;
+use Exception;
 
 class tipoController extends Controller
 {
-  public function guardarControlador(Request $request){
-    //validacion
+  public function guardarControlador(valFormTipoDoc $request){
     $objTipo= new Tipo($request->all());
     $objTipo->guardar($objTipo);
     $men = "El tipo de documento de guardo de forma exitosa";
     return view('administrador.tipo-documentos.crearTipoDocumento', [ "men" => $men] );
   }
 
-  public function eliminarControlador(Request $request){
-    $objTipo = $this->buscar($request->id);
+  public function eliminarControlador($id){
+    $objTipo = $this->buscar($id);
     if($objTipo != null ){
       $objTipo->eliminar($objTipo);
       $men = "El tipo de documento fue eliminado con satisfación";
-    }else{
+    }else
       $men="El identificador ingresado es invalido ";
-    }      
     return view("administrador.tipo-documentos.listarTiposDocumentos", ["men" => $men, "TiposDocumentos" => $this->listar() ] );
   }
 
-  public function editarControlador(Request $request){
+  public function editarControlador(valFormTipoDoc $request){
     $objTipo = $this->buscar($request->id);
     if( $objTipo != null ){
       $objTipo->fill($request->all());
       $objTipo->guardar($objTipo);
       $men = "se actualizaron los datos de forma exitosa";
-    }else{
+    }else
       $men="El identificador ingresado es invalido ";
-    }
     return view('administrador.tipo-documentos.listarTiposDocumentos', ['men' => $men, "TiposDocumentos" => $this->listar()] );
   }
 

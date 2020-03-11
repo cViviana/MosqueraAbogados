@@ -2,6 +2,17 @@
 @section('titulo','Editar Ubicacion')
 
 @section('CRUD-ubicacion-documentos')
+
+  @if(count($errors) > 0)
+    <div class="alert alert-danger" role="alert">
+        <ul>
+        @foreach($errors->all() as $error)
+            <li> {{$error}} </li>
+        @endforeach
+        </ul>
+    </div>
+  @endif
+
   <div class="container_pagina">
     <div class="texto_titulo">
       EDITAR UBICACIÓN

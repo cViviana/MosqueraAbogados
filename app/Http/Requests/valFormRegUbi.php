@@ -24,8 +24,17 @@ class valFormRegUbi extends FormRequest
     public function rules()
     {
         return [
-            'numArchivero'=> 'required|unique:tipo_documento,numArchivero|numeric',
+            'numArchivero'=> 'required|unique:ubicacion_fisica|numeric',
             'numGabeta'=> 'required|numeric'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'numArchivero.unique' => 'Este numero de archivero ya se encuentra registrado',
+            'numArchivero.numeric' => 'El numero de archivero debe ser numerico',
+            'numGabeta.numeric' => 'El numero de gavera debe ser numerico'
         ];
     }
 }

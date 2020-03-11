@@ -5,40 +5,37 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Ubicacion;
+use App\Http\Requests\valFormRegUbi;
 
 class ubicacionController extends Controller
 {
-    public function guardarControlador(Request $request){
-        $objUbicacion = new Ubicacion($request->all());
+    public function guardarControlador(valFormRegUbi $request){
+      $objUbicacion = new Ubicacion($request->all());
+      $objUbicacion->guardar($objUbicacion);
+      $men = "La ubicacion se guardo de forma exitosa";
+      return view('administrador.ubicacionFisica.agregarUbicacion', [ "men" => $men] );
+    }
+
+    public function eliminarControlador($id){
+      $objUbicacion = $this->buscar($id);
+      if($objUbicacion != null ){
+        $objUbicacion->eliminar($objUbicacion);
+        $men = "La ubicacion fue eliminada con satisfación";
+      }else
+        $men="El identificador ingresado es invalido ";
+      return view('administrador.ubicacionFisica.listarUbicaciones', ['men' => $men, 'ubicaciones' => $this->listar()] );
+    }
+
+    public function editarControlador(valFormRegUbi $request){
+      $objUbicacion = $this->buscar($request->id);
+      if( $objUbicacion != null ){
+        $objUbicacion->fill($request->all());
         $objUbicacion->guardar($objUbicacion);
-        $men = "La ubicacion se guardo de forma exitosa";
-        return view('administrador.ubicacionFisica.agregarUbicacion', [ "men" => $men] );
+        $men = "se actualizaron los datos de forma exitosa";
+      }else
+        $men="El identificador ingresado es invalido ";
+      return view('administrador.ubicacionFisica.listarUbicaciones', ['men' => $men, 'ubicaciones' => $this->listar()] );
     }
-
-    public function eliminarControlador(Request $request){
-        $objUbicacion = $this->buscar($request->id);
-        if($objUbicacion != null ){
-          $objUbicacion->eliminar($objUbicacion);
-          $men = "La ubicacion fue eliminada con satisfación";
-          return view('administrador.ubicacionFisica.listarUbicaciones', ['men' => $men, 'ubicaciones' => $this->listar()] );
-        }else{
-          $men="El identificador ingresado es invalido ";
-          return view('administrador.ubicacionFisica.listarUbicaciones', ['men' => $men, 'ubicaciones' => $this->listar()] );
-        }      
-    }
-
-    public function editarControlador(Request $request){
-        $objUbicacion = $this->buscar($request->id);
-        if( $objUbicacion != null ){
-          $objUbicacion->fill($request->all());
-          $objUbicacion->guardar($objUbicacion);
-          $men = "se actualizaron los datos de forma exitosa";
-          return view('administrador.ubicacionFisica.listarUbicaciones', ['men' => $men, 'ubicaciones' => $this->listar()] );
-        }else{
-          $men="El identificador ingresado es invalido ";
-          return view('administrador.ubicacionFisica.listarUbicaciones', ['men' => $men, 'ubicaciones' => $this->listar()] );
-        }
-      }
     
     public function ubicacionControlador(Request $request){
       $objUbicacion = $this->buscar($request->id);

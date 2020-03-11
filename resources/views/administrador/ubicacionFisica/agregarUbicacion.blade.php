@@ -1,6 +1,17 @@
 @extends('diseño-base.perfil')
 
 @section('CRUD-ubicacion-documentos')
+
+  @if(count($errors) > 0)
+      <div class="alert alert-danger" role="alert">
+          <ul>
+          @foreach($errors->all() as $error)
+              <li> {{$error}} </li>
+          @endforeach
+          </ul>
+      </div>
+  @endif
+
   <div class="container_pagina">
     <div class="texto_titulo">
       CREAR UNA UBICACIÓN
@@ -17,7 +28,7 @@
             <br>
             <div class="input-group">
               <span class="input-group-addon" id="inputGroup-sizing-default"><i class="fa fa-plus-square"></i></span>
-              <input type="text" id='numGabeta'name='numGabeta' class="form-control" placeholder="* Nueva Gabeta" required>
+              <input type="text" id='numGabeta'name='numGabeta' class="form-control" placeholder="* Nueva Gaveta" required>
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Agregar</button>

@@ -5,33 +5,34 @@ namespace App\Http\Controllers\admin;
 use App\Cliente;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\valFormRegCliente;
 
 class clienteController extends Controller
 {
-    public function crearControlador(Request $request){
+
+    //para permitir conbinar el controlador con la contraparte debe dirigirse a el perfil la vista
+
+    public function crearControlador(valFormRegCliente $request){
         $aux = $this->buscar($request->numero);
         if( $aux == null ){
             $objCliente = new Cliente($request->all());
             $objCliente->guardar($objCliente);
             $men = "El cliente se creo de forma satisfactoria";
-            return view('administrador.clientes.registrarCliente', ['men' => $men] );
-        }else{
+        }else
             $men = "El identificador del cliente ya existe";
-            return view('administrador.clientes.registrarCliente', ['men' => $men] );
-        }
+        //revisar ruta
+        return view('administrador.clientes.registrarCliente', ['men' => $men] );
     }
 
-    public function editarControlador(Request $request){
+    public function editarControlador(valFormRegCliente $request){
         $objCliente = $this->buscar($request->numero);
         if($objCliente != null){
             $objCliente->fill($request->all());
             $objCliente->guardar($objCliente);
             $men = "El cliente se actualizo de forma satisfactoria";
-            return view ("administrador.clientes.listarClientes", ['men' => $men, 'Clientes' => $this->listar()]  );
-        }else{
+        }else
             $men = "El identificador del cliente no existe";
-            return view ("administrador.clientes.listarClientes", ['men' => $men, 'Clientes' => $this->listar()] );
-        }
+        return view ("administrador.clientes.listarClientes", ['men' => $men, 'Clientes' => $this->listar()]  );
     }
 
     public function eliminarControlador($numero){
@@ -39,11 +40,9 @@ class clienteController extends Controller
         if ($objCliente != null){
             $objCliente->eliminar($objCliente);
             $men = "El cliente se elimino de forma satisfactoria";
-            return view("administrador.clientes.listarClientes", ['men' => $men, 'Clientes' => $this->listar()] );
-        }else{
+        }else
             $men = "El cliente se elimino de forma satisfactoria";
-            return view("administrador.clientes.listarClientes", ['men' => $men, 'Clientes' => $this->listar()] );
-        }
+        return view("administrador.clientes.listarClientes", ['men' => $men, 'Clientes' => $this->listar()] );
     }
 
     public function clienteControlador($numero){

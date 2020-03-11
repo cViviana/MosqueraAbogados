@@ -2,6 +2,17 @@
 @section('titulo','Actualizar datos de un cliente')
 
 @section('CRUD-datos-cliente')
+
+    @if(count($errors) > 0)
+        <div class="alert alert-danger" role="alert">
+            <ul>
+            @foreach($errors->all() as $error)
+                <li> {{$error}} </li>
+            @endforeach
+            </ul>
+        </div>
+    @endif
+
     <div class="container_pagina">
         <div class="texto_titulo">ACTUALIZAR DATOS DEL CLIENTE</div> 
         <div class="container_formulario">
