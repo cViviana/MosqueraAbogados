@@ -5,6 +5,7 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<link rel="icon" href="img/favicon-1.png" type="image/png">
 	<title>@yield('titulo') | Mosquera Abogados</title>
 	<!-- Bootstrap CSS -->
@@ -28,6 +29,7 @@
 			<div class="search_input" id="search_input_box">
 				<div class="container">
 					<form class="d-flex justify-content-between">
+							@csrf
 						<input type="text" class="form-control" id="search_input" placeholder="Buscar">
 						<button type="submit" class="btn"></button>
 						<span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
@@ -73,7 +75,7 @@
 		</div>
 	</header>
     <!--================ End Header Menu Area =================-->
-    
+
     @yield('home')
     @yield('nosotros')
 	@yield('servicios')
@@ -133,7 +135,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6 col-md-12">
-						<p> Copyright &copy;<script>document.write(new Date().getFullYear());</script> 
+						<p> Copyright &copy;<script>document.write(new Date().getFullYear());</script>
 							Proyecto I
 						</p>
 					</div>
