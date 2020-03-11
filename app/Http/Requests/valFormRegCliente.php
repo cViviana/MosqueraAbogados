@@ -26,9 +26,10 @@ class valFormRegCliente extends FormRequest
         return [
             'numero' => 'require|unique:cliente,numero|numeric|max:191',
             'nombre' => 'require|string|max:50',
+            'tipo'=> 'require|in:juridca,natural',
             'tipo' => 'require|string|max:50',
             'telefono' => 'require|numeric|max:20',
-            'email' => 'require|unique:cliente,numero|string|max:50'
+            'email' => 'require|unique:cliente,numero|string|max:50'        
         ];
     }
 }
