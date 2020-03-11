@@ -89,7 +89,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn float-center login_btn">
-                                    {{ __('Register') }}
+                                    {{ __('Crear Cuenta') }}
                                 </button>
                             </div>
                         </div>
