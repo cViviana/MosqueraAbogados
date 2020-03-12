@@ -48,7 +48,7 @@
 						{{ csrf_field() }}
 						<div class="col-md-6">
 							<div class="form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Ingrese su nombre"
+								<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre"
                                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ingrese su nombre'">
 							</div>
 							<div class="form-group">
@@ -56,16 +56,18 @@
                                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ingrese su correo'">
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" id="subject" name="subject" placeholder="Ingresar Asunto"
+								<input type="text" class="form-control" id="asunto" name="asunto" placeholder="Ingresar Asunto"
                                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ingresar Asunto'">
 							</div>
 						</div>
+
 						<div class="col-md-6">
 							<div class="form-group">
-								<textarea class="form-control" name="message" id="message" rows="1" placeholder="Añadir Mensaje"
+								<textarea class="form-control" name="mensaje" id="mensaje" rows="1" placeholder="Añadir Mensaje"
                                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Añadir Mensaje'"></textarea>
 							</div>
 						</div>
+
 						<div class="col-md-12 text-right">
 							<button type="submit" value="submit" class="primary-btn text-uppercase">Agendar Cita</button>
 						</div>

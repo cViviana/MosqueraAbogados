@@ -7,8 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <p><strong>Nombre</strong></p>
-    <p><strong>correo</strong></p>
-    <p><strong>cas</strong></p>
+    <p>Nombre: <strong>{!!$nombre!!}</strong></p>
+    <p>Correo: <strong>{!!$email!!}</strong></p>
+    <p>Asunto: <strong>{!!$asunto!!}</strong></p>
+    <p>Mensaje: <strong>{!!$mensaje!!}</strong></p>
 </body>
 </html>
