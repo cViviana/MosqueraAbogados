@@ -16,7 +16,7 @@
                     </div>
                 @endif
                 <div class="texto_recuperarcontraseña">
-                    Ingrese el correo electronico con el que se registro <br>
+                    Ingrese el correo electrónico con el que se registro <br>
                 </div>
                 <form class="texto_recuperarcontraseña" method="POST" action="{{ route('password.email') }}">
                     @csrf

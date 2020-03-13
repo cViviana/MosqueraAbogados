@@ -13,6 +13,7 @@ class clienteController extends Controller
     //para permitir conbinar el controlador con la contraparte debe dirigirse a el perfil la vista
 
     public function crearControlador(valFormRegCliente $request){
+        $mensajeNoIdentificador = "";
         $aux = $this->buscar($request->numero);
         if( $aux == null ){
             $objCliente = new Cliente($request->all());
@@ -20,8 +21,8 @@ class clienteController extends Controller
             $mensaje = "Éxito. El cliente ha sido registrado.";
             session()->flash('mensajeDeRegistroClienteExitoso',  $mensaje);
         }else
-            $mensaje = "El identificador del cliente ya existe.";
-            session()->flash('mensajeDeNoRegistroCliente',  $mensaje);
+            $mensajeNoIdentificador = "El identificador del cliente ya existe.";
+            session()->flash('mensajeDeNoRegistroCliente',  $mensajeNoIdentificador);
         return view('administrador.clientes.registrarCliente');
     }
 

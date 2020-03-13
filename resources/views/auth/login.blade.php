@@ -61,20 +61,18 @@
                     </div>
                     <div class="card-footer">
                     <div class="d-flex justify-content-center links">
-                        No tienes una cuenta?<a href="">Registrate</a>
+                        ¿No tienes una cuenta?<a href="">Registrarte</a>
                     </div>
                     <div class="d-flex justify-content-center">
                         @if (Route::has('password.request'))
                             <a class="btn btn-link" href="{{ route('password.request') }}">
-                                {{ __('Has olvidado tu contraseña?') }}
+                                {{ __('¿Has olvidado tu contraseña?') }}
                             </a>
                         @endif
                     </div>
-                    
                     </div>   
                 </form>
             </div>
-            
         </div>
         </div>
     </div>
