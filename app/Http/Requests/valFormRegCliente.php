@@ -22,29 +22,29 @@ class valFormRegCliente extends FormRequest
      * @return array
      */
 
+    //las reglas implementadas en 'rules()' seran solo de manejo de sintaxis
+
     public function rules()
     {
         return [
-            'numero' => 'required|unique:cliente|max:191',
+            'numero' => 'required|max:191',
             'nombre' => 'required|string|max:60',
             'tipo'=> 'required|in:juridica,natural',
-            //'tipo' => 'required|string|max:60',
             'telefono' => 'required|numeric|digits_between:7,20',
-            'email' => 'required|unique:cliente|string|max:60'
+            'email' => 'required|string|max:60|email'
         ];
     }
 
     public function messages()
     {
         return [
-            'numero.unique' => 'El numero de identificacion ya existe',
             'numero.max' => 'El numero debe ser menor a 191 digitos',
             'nombre.max' => 'El nombre debe ser menor a 60 digitos',
             'tipo.in' => 'El tipo de persona debe ser entre JURIDICA y NATURAL ',
             'telefono.digits_between' => 'El numero de telefono debe ser mayor a 7 y menor a 20 digitos',
             'telefono.numeric' => 'El telefono debe ser un valor numerico',
-            'email.unique' => 'Este correo electronico ya existe',
-            'email.max' => 'El correo electronico debe ser menor a 60 caracteres'
+            'email.max' => 'El correo electronico debe ser menor a 60 caracteres',
+            'email.email' => 'Por favor ingrese un correo electronico valido'
         ];
     }
 
