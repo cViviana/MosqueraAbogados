@@ -38,13 +38,15 @@ class valFormRegCliente extends FormRequest
     public function messages()
     {
         return [
-            'numero.max' => 'El numero debe ser menor a 191 digitos',
-            'nombre.max' => 'El nombre debe ser menor a 60 digitos',
-            'tipo.in' => 'El tipo de persona debe ser entre JURIDICA y NATURAL ',
-            'telefono.digits_between' => 'El numero de telefono debe ser mayor a 7 y menor a 20 digitos',
-            'telefono.numeric' => 'El telefono debe ser un valor numerico',
-            'email.max' => 'El correo electronico debe ser menor a 60 caracteres',
-            'email.email' => 'Por favor ingrese un correo electronico valido'
+            'numero.max' => 'El numero debe ser menor a 191 digitos.',
+            'nombre.max' => 'El nombre debe ser menor a 60 digitos.',
+            'tipo.in' => 'Por favor, seleccione el tipo de persona.
+                            Debe ser persona JURÍDICA o persona NATURAL.',
+            'telefono.digits_between' => 'Por favor, ingrese un numero de teléfono correcto.
+                                El número de teléfono debe ser mayor a 7 dígitos y menor a 20 dígitos.',
+            'telefono.numeric' => 'El teléfono debe ser un valor numérico.',
+            'email.max' => 'El correo electrónico debe ser menor a 60 caracteres.',
+            'email.email' => 'Por favor, ingrese un correo electrónico válido.'
         ];
     }
 

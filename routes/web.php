@@ -36,7 +36,10 @@ Route::prefix('admin')->group(
     Route::post('/agregarCaso','admin\casoController@guardar')->name('crearCaso');
 
     //CLIENTE
-    Route::view('/crearCliente','administrador/clientes/registrarCliente')->name('crearCliente');
+    Route::get('/registrarCliente', function () {
+      return view('administrador/clientes/registrarCliente');
+     })->name('registrarCliente');
+    //Route::view('/registrarCliente', 'administrador/clientes/registrarCliente')->name('registrarCliente');
     Route::post('/agregarCliente','admin\clienteController@crearControlador')->name('agregarCliente');
 
     Route::get('/editarCliente/{numero}', 'admin\clienteController@clienteControlador')->name('editarCliente');

@@ -17,11 +17,12 @@ class clienteController extends Controller
         if( $aux == null ){
             $objCliente = new Cliente($request->all());
             $objCliente->guardar($objCliente);
-            $men = "El cliente se creo de forma satisfactoria";
+            $mensaje = "Éxito. El cliente ha sido registrado.";
+            session()->flash('mensajeDeRegistroClienteExitoso',  $mensaje);
         }else
-            $men = "El identificador del cliente ya existe";
-        //revisar ruta
-        return view('administrador.clientes.registrarCliente', ['men' => $men] );
+            $mensaje = "El identificador del cliente ya existe.";
+            session()->flash('mensajeDeNoRegistroCliente',  $mensaje);
+        return view('administrador.clientes.registrarCliente');
     }
 
     public function editarControlador(valFormRegCliente $request){
