@@ -34,7 +34,7 @@
                         <option value="juridica">Persona Juridica</option>
                     </select>
                     <span class="input-group-addon"><i class="fa fa-id-card"></i></span>
-                    <input name='numero' id='numero' class="form-control" placeholder="* Numero de Identificacion" type="text" required
+                    <input name='numero' id='numero' readonly="readonly" class="form-control" placeholder="* Numero de Identificacion" type="text" required
                         value="{{$Cliente->numero}}">
                 </div>
                 <br>

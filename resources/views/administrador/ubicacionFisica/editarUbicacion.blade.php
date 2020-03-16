@@ -24,7 +24,7 @@
             <br>
             <div class="input-group">
               <span class="input-group-addon" id="inputGroup-sizing-default"><i class="fa fa-plus-square"></i></span>
-              <input type="text" id="id" name="id" required="required"  value="{{$ubicacion->id}}" class="form-control col-md-7 col-xs-12">
+              <input type="text" id="id" name="id" readonly="readonly"  required="required"  value="{{$ubicacion->id}}" class="form-control col-md-7 col-xs-12">
             </div>
             <br> 
             <div class="input-group">

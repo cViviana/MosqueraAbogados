@@ -24,7 +24,7 @@
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon" id="inputGroup-sizing-default"><i class="fa fa-plus-square"></i></span>
-                    <input type="text" id="id" name="id" required="required" class="form-control" value="{{$tipo->id}}">
+                    <input type="text" id="id" name="id" readonly="readonly" required="required" class="form-control" value="{{$tipo->id}}">
                 </div>
                 <br> 
                 <div class="input-group">
