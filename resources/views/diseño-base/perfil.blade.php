@@ -47,8 +47,23 @@
                             </li>
                             <ul class="sub-menu collapse" id="documentos">
                                 <li class="active"><a href="#">Subir documento</a></li>
+                                <li><a href="#">Listar Documentos</a></li>
+                            </ul>
+
+                            <li  data-toggle="collapse" data-target="#tipos" class="collapsed">
+                                <a href="#">Tipos documentos<span class="arrow"></span></a>
+                            </li>
+                            <ul class="sub-menu collapse" id="tipos">
                                 <li><a href="{{route('crearTipoDocumento')}}">Crear tipo</a></li>
+                                <li><a href="#">Listar Tipos</a></li>
+                            </ul>
+
+                            <li  data-toggle="collapse" data-target="#ubicacion" class="collapsed">
+                                <a href="#">Ubiacacion<span class="arrow"></span></a>
+                            </li>
+                            <ul class="sub-menu collapse" id="ubicacion">
                                 <li><a href="{{route('agregarUbicacion')}}">Crear ubicacion</a></li>
+                                <li><a href="#">Listar Ubicaciones</a></li>
                             </ul>
                         </ul>
 
