@@ -20,16 +20,26 @@
             <tbody class="container_formulario">
                 <!-- Aquí va un ciclo que recibe un listado de casos judiciales para mostrarlo en la tabla  -->
                 <tr>
-                    <td><!-- caso->radicado --></td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> <button class="btn btn-primary">Actualizar</a></td>
-                    <td> <button class="btn btn-danger" type="submit">Eliminar</button></td>
-                </tr>    
-              
+                    <td>1111<!-- caso->radicado --></td>
+                    <td>Juan</td>
+                    <td>:)))</td>
+                    <td>En curso</td>
+                    <td>11-11-1111</td>
+                    <td>22-22-2222</td>
+                    <td> 
+                        <a href="" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                    </td>
+                    <td> 
+                        <form action=""  method="get">
+                            @csrf
+                            <button class="btn btn-danger" type="submit">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </form>
+                    </td>
+                </tr> 
             </tbody>
         </table>
         <br>

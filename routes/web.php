@@ -89,6 +89,7 @@ Route::prefix('admin')->group(
 
 Route::view('/registrarProcesoJudicial', 'administrador/procesos-judiciales/registrarProcesoJudicial');
 Route::view('/listarProcesosJudiciales', 'administrador/procesos-judiciales/listarProcesoJudicial');
+Route::view('/actualizarProcesoJudicial', 'administrador/procesos-judiciales/editarProcesoJudicial')->name('actualizarProcesoJudicial');
 
 Route::view('/registrarContraparte','administrador/clientes/registrarContraparte')->name('registrarContraparte');
 Route::view('/listarContraparte','administrador/clientes/listarContraparte')->name('listarContraparte');
