@@ -42,11 +42,13 @@ class Caso extends Model
       return $this::all();
     }
     public function tablaPivote(Caso  $objCaso, $abogadoPpal, $abogadoAux){
-        $objCaso->dirige()->attach($abogadoPpal);
+      $objCaso->dirige()->attach($abogadoPpal);
+      if($abogadoPpal != $abogadoAux){
         $objAbogadoAux = new User;
         $objAbogadoAux = $objAbogadoAux->buscar($abogadoAux);
         if($objAbogadoAux!= null){
             $objCaso->dirige()->attach($objAbogadoAux->cedula);
+        }
       }
     }
 }
