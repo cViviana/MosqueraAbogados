@@ -8,9 +8,6 @@
             <div class="card-header">
                 <h3>Iniciar Sesión</h3>
                 <h3>Mosquera Abogados</h3>
-                <div class="d-flex justify-content-end social_icon">
-                    <span><i class="fab fa-google-plus-square"></i></span>
-                </div>
             </div>    
             <div class="card_login">
                 <form method="POST" action="{{ route('login') }}">
@@ -61,7 +58,7 @@
                     </div>
                     <div class="card-footer">
                     <div class="d-flex justify-content-center links">
-                        ¿No tienes una cuenta?<a href="">Registrarte</a>
+                        ¿No tienes una cuenta?<a href="{{ route('register') }}">Registrarte</a>
                     </div>
                     <div class="d-flex justify-content-center">
                         @if (Route::has('password.request'))

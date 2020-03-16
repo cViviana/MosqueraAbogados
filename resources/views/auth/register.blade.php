@@ -12,11 +12,8 @@
                         <br> 
                         ABOGADOS
                     </h4>
-                    <p>
-                        <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-google"></i>  Registrarse con su cuenta de Google</a>
-                    </p>
                     <p class="divider-text">
-                        <span class="bg-light">O</span>
+                        <span class="bg-light"></span>
                     </p>
                 </div>
                 <div class="card_login">
