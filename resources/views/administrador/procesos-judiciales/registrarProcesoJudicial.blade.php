@@ -3,8 +3,28 @@
 @section('titulo','Registrar Proceso Judicial')
 
 @section('seccion')
-    <div class="container_pagina">
-        <div class="texto_titulo">REGISTRAR CASO</div>
+        <div class="container_pagina">
+            <div class="texto_titulo">REGISTRAR PROCESO JUDICIAL</div>
+            <div class="container_formulario" id="contenedorMensajes">
+                @if(count($errors) > 0)
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li> {{$error}} </li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+                @if (session()->has('men'))
+                    <div class="alert alert-success animated fadeIn">
+                        {{session('men')}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
+            </div>
+
         <div class="container_pagina container_formulario">
             <div class="mascara">
             <form action="{{route('crearCaso')}}" class="texto_campos" method="post">

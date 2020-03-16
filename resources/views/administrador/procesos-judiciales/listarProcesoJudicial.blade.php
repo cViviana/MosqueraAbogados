@@ -4,6 +4,20 @@
 
 @section('titulo-listar', 'LISTADO DE PROCESOS JUDICIALES')
 
+@section('contenedor-mensajes')
+    @if (session('mensajeDeRegistroCasoExitoso'))
+        <div class="flash-message">
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{Session::get('mensajeDeRegistroCasoExitoso')}}
+                {{session::forget('mensajeDeRegistroCasoExitoso')}}
+            </div>
+        </div>
+    @endif
+@endsection
+
 @section('nombre-campos-columnas')
     <th scope="col">Radicado</th>
     <th scope="col">Descripcion</th>
@@ -29,7 +43,7 @@
             <td>{{$caso->fecha_fin}}</td>
             <td>
                 <a href="#" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-folder-open"></span>
+                    <span class="glyphicon glyphicon-folder-open text-center"></span>
                 </a>
             </td>
             <td> 
