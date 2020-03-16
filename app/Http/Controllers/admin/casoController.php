@@ -45,4 +45,13 @@ class casoController extends Controller
           return view('administrador.procesos-judiciales.registrarProcesoJudicial', ['men' => $men] );
       }
     }
+
+    public function listarControlador(){
+        return view('administrador.procesos-judiciales.listarProcesoJudicial', ['Casos' => $this->listar()] );
+    }
+
+    //este metodo fue separado de listarControlar para poder reenviar los clientes cuando se eliminen
+    public function listar(){
+        return $listaCasos=Caso::all();
+    }
 }

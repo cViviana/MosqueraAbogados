@@ -39,6 +39,8 @@ Route::prefix('admin')->group(
     //CASO
     Route::get('/crearCaso','admin\casoController@index')->name('cargueCaso');
     Route::post('/agregarCaso','admin\casoController@guardar')->name('crearCaso');
+    //Route::view('/listarCasos','administrador/procesos-judiciales/listarProcesoJudicial')->name('listarCasos');
+    Route::get('/listarCasos', 'admin\casoController@listarControlador')->name('listarCasos');
 
     //CLIENTE
     Route::get('/registrarCliente', function () {

@@ -32,7 +32,7 @@ class Caso extends Model
       $objCaso->save();
       //guardar en la tabla pivote
       $objCaso->radicado=$radicadoAxu;
-       $objCaso->tablaPivote($objCaso,$objAbogadoPpal,$objAbogadoAux);
+      $this->tablaPivote($objCaso,$objAbogadoPpal,$objAbogadoAux);
     }
     public function buscar($radicado){
       return $this::find($radicado);
@@ -42,7 +42,7 @@ class Caso extends Model
       return $this::all();
     }
     public function tablaPivote(Caso  $objCaso, User  $objAbogadoPpal, User $objAbogadoAux){
-        dd($objAbogadoPpal);
-        $objCaso->dirige()->attach($objAbogadoPpal->cedu);
+        $objCaso->dirige()->attach($objAbogadoPpal->cedula);
+        $objCaso->dirige()->attach($objAbogadoAux->cedula);
     }
 }
