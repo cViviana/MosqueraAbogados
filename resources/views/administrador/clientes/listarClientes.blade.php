@@ -12,6 +12,7 @@
     <th scope="col">Editar</th>
     <th scope="col">Eliminar</th>
 @endsection
+
 @section("listado-columnas")
     @foreach($Clientes as $cliente)
         <tr>

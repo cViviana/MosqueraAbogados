@@ -21,16 +21,15 @@ Route::view('/noticias','usuario-general/noticias')->name('noticias');
 Route::view('/noticia-1','usuario-general/noticia-1')->name('noticia-1');
 Route::view('/contacto','usuario-general/contacto')->name('contacto');
 //Route::view('/login','administrador/login')->name('login');
-
 //Route::view('/registro','administrador/registro')->name('registro');
-Route::view('/tipoDocumento','administrador/tipoDocumento')->name('tipoDocumento');
-
 
 Route::post('mail','MailController@postMail');
 
-//roles
+//ROLES
 Route::view('/asignarRoll', 'auth/rol')->name('asignarRoll');
 
+
+//Rutas de los procesos que realiza el administrador.
 Route::prefix('admin')->group(
   function(){
 
@@ -93,7 +92,7 @@ Route::view('/registrarContraparte','administrador/clientes/registrarContraparte
 Route::view('/listarContraparte','administrador/clientes/listarContraparte')->name('listarContraparte');
 
 Route::view('/subirDocumento','administrador/procesos-judiciales/subirDocumento')->name('subirDocumento');
-
+Route::view('/tipoDocumento','administrador/tipoDocumento')->name('tipoDocumento');
 
 Auth::routes();
 

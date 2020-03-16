@@ -14,20 +14,20 @@
 @endsection
 
 @section("listado-columnas")
-    @foreach($Clientes as $cliente)
+    <!-- aqui va el ciclo -->
         <tr>
-            <td>{{$cliente->numero}}</td>
-            <td>{{$cliente->nombre}}</td>
-            <td>{{$cliente->tipo}}</td>
-            <td>{{$cliente->telefono}}</td>
-            <td>{{$cliente->email}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
             <td>
-                <a href="{{route('editarCliente', $cliente->numero)}}" class="btn btn-primary">
+                <a href="" class="btn btn-primary">
                     <span class="glyphicon glyphicon-pencil"></span>
                 </a>
             </td>
             <td>
-                <form action="{{ route('eliminarCliente', $cliente->numero)}}"  method="get">
+                <form action=""  method="get">
                     @csrf
                     <button class="btn btn-danger" type="submit">
                         <span class="glyphicon glyphicon-trash"></span>
@@ -35,5 +35,5 @@
                 </form>
             </td>
         </tr>
-    @endforeach
+    <!-- aquí finaliza el ciclo -->
 @endsection
