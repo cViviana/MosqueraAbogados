@@ -1,8 +1,7 @@
 @extends('diseño-base.perfil')
-@section('registrar-proceso-judicial')
+@section('perfil')
     <div class="container_pagina">
-        S<<div class="container_formulario emp-profile">
-
+        <div class="container_formulario emp-profile">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="profile-img">
@@ -26,13 +25,10 @@
                     <div class="col-md-12 texto_perfil">
 
                         <div class="col-md-12">
-                            <div>
-                                Cargo:
-                            </div>
                         </div>
                         <div class="col-md-12">
                             <div>
-                                Nombre: {{ Auth::user()->name }}
+                                 Nombre: {{ Auth::user()->nombre }}
                             </div>
                         </div>
                         <div class="col-md-12">

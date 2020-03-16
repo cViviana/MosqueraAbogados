@@ -47,7 +47,7 @@ class clienteController extends Controller
         return view("administrador.clientes.listarClientes", ['men' => $men, 'Clientes' => $this->listar()] );
     }
 
-    public function clienteControlador($numero){
+    public function editControlador($numero){
         $cliente = $this->buscar($numero);
         return view('administrador.clientes.editarDatosCliente', ['Cliente' => $cliente]);
     }
