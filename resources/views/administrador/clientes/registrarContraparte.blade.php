@@ -1,4 +1,5 @@
 @extends('diseño-base.plantilla-admin')
+@section("resaltar-registrarContraparte", "active")
 
 @section('seccion')
     <div class="container_pagina">

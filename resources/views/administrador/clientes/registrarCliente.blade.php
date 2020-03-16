@@ -1,4 +1,5 @@
 @extends('diseño-base.plantilla-admin')
+@section("resaltar-registrarCliente", "active")
 @section('titulo','Registrar un cliente')
 
 @section('seccion')

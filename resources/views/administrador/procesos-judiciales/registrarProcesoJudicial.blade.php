@@ -1,4 +1,5 @@
 @extends('diseño-base.plantilla-admin')
+@section("resaltar-registrarCaso", "active")
 @section('titulo','Registrar Proceso Judicial')
 
 @section('seccion')

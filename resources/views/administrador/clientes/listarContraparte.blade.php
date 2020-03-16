@@ -1,4 +1,5 @@
 @extends('diseño-base.plantilla-admin')
+@section("resaltar-listarContrapartes", "active")
 @section('titulo','Información de contraparte')
 
 @section('titulo-listar', 'LISTADO DE CLIENTES CONTRAPARTE')

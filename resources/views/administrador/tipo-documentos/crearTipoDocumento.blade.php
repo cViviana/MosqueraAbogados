@@ -1,4 +1,5 @@
 @extends('diseño-base.plantilla-admin')
+@section("resaltar-crearTipoDocumento", "active")
 
 @section('seccion')
 

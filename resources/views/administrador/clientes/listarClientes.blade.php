@@ -1,4 +1,5 @@
 @extends('diseño-base.plantilla-listar')
+@section("resaltar-listarClientes", "active")
 @section('titulo','Información de clientes')
 
 @section('titulo-listar', 'LISTADO DE CLIENTES')

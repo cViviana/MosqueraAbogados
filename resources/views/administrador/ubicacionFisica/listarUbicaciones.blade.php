@@ -1,4 +1,6 @@
 @extends('diseño-base.plantilla-listar')
+@section("resaltar-listarUbicaciones", "active")
+
 @section('titulo','Información de ubicación de documentos')
 
 @section('titulo-listar', 'LISTADO DE UBICACIÓN DE DOCUMENTOS')
