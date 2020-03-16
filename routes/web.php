@@ -24,13 +24,18 @@ Route::view('/contacto','usuario-general/contacto')->name('contacto');
 
 //Route::view('/registro','administrador/registro')->name('registro');
 Route::view('/tipoDocumento','administrador/tipoDocumento')->name('tipoDocumento');
-Route::view('/perfil_usuario','administrador/perfil_usuario')->name('perfil_usuario');
 
 
 Route::post('mail','MailController@postMail');
 
+//roles
+Route::view('/asignarRoll', 'auth/rol')->name('asignarRoll');
+
 Route::prefix('admin')->group(
   function(){
+
+    Route::view('/perfil_usuario','administrador/perfil_usuario')->name('perfil_usuario');
+
     //CASO
     Route::get('/crearCaso','admin\casoController@index')->name('cargueCaso');
     Route::post('/agregarCaso','admin\casoController@guardar')->name('crearCaso');
@@ -42,7 +47,7 @@ Route::prefix('admin')->group(
     //Route::view('/registrarCliente', 'administrador/clientes/registrarCliente')->name('registrarCliente');
     Route::post('/agregarCliente','admin\clienteController@crearControlador')->name('agregarCliente');
 
-    Route::get('/editarCliente/{numero}', 'admin\clienteController@clienteControlador')->name('editarCliente');
+    Route::get('/editarCliente/{numero}', 'admin\clienteController@editControlador')->name('editarCliente');
     Route::post('/actualizarCliente', 'admin\clienteController@editarControlador')->name('actualizarCliente');
 
     Route::get('/eliminarCliente/{numero}', 'admin\clienteController@eliminarControlador')->name('eliminarCliente');
