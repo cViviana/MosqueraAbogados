@@ -4,7 +4,7 @@
 @section('CRUD-datos-cliente')
     <div class="container_pagina">
         <div class="texto_titulo">LISTADO DE CLIENTES</div>
-        <table class="table table-responsive  tabla">
+        <table class="table table-responsive tabla table-hover">
             <thead class="thead-light container_formulario">
                 <tr>
                     <th scope="col">Número</th>
