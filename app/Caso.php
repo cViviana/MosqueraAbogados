@@ -23,16 +23,16 @@ class Caso extends Model
       //...belongsToMany([modelo],[nombre_tabla_pivote], [nombre_fk1], [nombre_fk2]);
     }
 
-    public function guardar(Caso $objCaso, Cliente $objDemandado, Cliente $objDemandante, User $objAbogadoPpal,User $objAbogadoAux){
+    public function guardar(Caso $objCaso, $demandado, $demandante, $abogadoPpal, $abogadoAux){
       //asociar el demandado y el demandante
-      $objCaso->clienteDemandado()->associate($objDemandado->numero);
-      $objCaso->clienteDemandante()->associate($objDemandante->numero);
+      $objCaso->clienteDemandado()->associate($demandado);
+      $objCaso->clienteDemandante()->associate($demandante);
       $objCaso->timestamps = false;
       $radicadoAxu= $objCaso->radicado;
       $objCaso->save();
       //guardar en la tabla pivote
       $objCaso->radicado=$radicadoAxu;
-      $this->tablaPivote($objCaso,$objAbogadoPpal,$objAbogadoAux);
+      $this->tablaPivote($objCaso,$abogadoPpal,$abogadoAux);
     }
     public function buscar($radicado){
       return $this::find($radicado);
@@ -41,8 +41,13 @@ class Caso extends Model
     public function listar(){
       return $this::all();
     }
-    public function tablaPivote(Caso  $objCaso, User  $objAbogadoPpal, User $objAbogadoAux){
-        $objCaso->dirige()->attach($objAbogadoPpal->cedula);
-        $objCaso->dirige()->attach($objAbogadoAux->cedula);
+    public function tablaPivote(Caso  $objCaso, $abogadoPpal, $abogadoAux){
+        $objCaso->dirige()->attach($abogadoPpal);
+        $objAbogadoAux = new User;
+        $objAbogadoAux = $objAbogadoAux->buscar($abogadoAux);
+        dd($objAbogadoAux);
+        if($objAbogadoAux!= null){
+            $objCaso->dirige()->attach($objAbogadoAux->cedula);
+      }
     }
 }

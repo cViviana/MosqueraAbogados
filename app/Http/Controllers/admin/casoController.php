@@ -20,29 +20,55 @@ class casoController extends Controller
     }
 
     public function guardar(Request $request){
-      //dd($request);
       // si verifica existe ya un caso con ese mismo radicado
       $caso = new Caso;
       $auxCaso = $caso->buscar($request->radicado);
       //si no exite
       if( $auxCaso == null ){
-          //debo guardar el demandate y demandado y los retonor
-          $objDemandante = new Cliente;
-          $objDemandante = $objDemandante->buscar($request->demandante);
-          $objDemandado = new Cliente;
-          $objDemandado = $objDemandado->buscar($request->demandado);
-          $objAbogadoPpal = new User;
-          $objAbogadoPpal = $objAbogadoPpal->buscar($request->abogadoPpal);
-          $objAbogadoAux = new User;
-          $objAbogadoAux = $objAbogadoAux->buscar($request->abogadoAux);
-          //if($objDemandante != null  && ) ojo!!
-          $objCaso = new Caso($request->all());
-          $objCaso->guardar($objCaso,$objDemandado,$objDemandante,$objAbogadoPpal,$objAbogadoAux);
-          $men = "Caso registrado correctamente";
-          return view('administrador.procesos-judiciales.registrarProcesoJudicial', ['men' => $men] );
+          //se valida si exiten los clientes y si son diferentes
+          if( $this->validarCliente($request->demandante,$request->demandado) == true){
+            //cumple que son diferente y existen
+              //se valida si almenos un usuario principal existe
+              if($this->validarUsuarios($request->abogadoPpal)==true){
+                $objCaso = new Caso($request->all());
+                $objCaso->guardar($objCaso,$request->demandante,$request->demandado,$request->abogadoPpal,$request->abogadoAux);
+                echo  "Caso registrado correctamente";
+                return redirect()->route('registrarCaso')->with('men',$men);
+              }else{
+                echo "No exite el abogado principal";
+                $men = "No exite el abogado principal";
+                return redirect()->route('registrarCaso')->with('men',$men);
+              }
+          }else{
+            echo "los clientes son iguales";
+            return redirect()->route('registrarCaso')->with('men',$men);
+          }
       }else{
-          $men = "El caso con ese radicado ya existe";
-          return view('administrador.procesos-judiciales.registrarProcesoJudicial', ['men' => $men] );
+          echo "El caso con ese radicado ya existe";
+          return redirect()->route('registrarCaso')->with('men',$men);
+      }
+    }
+    public function validarCliente($idDemandante,$idDemandado){
+
+      $objDemandante = new Cliente;
+      $objDemandante = $objDemandante->buscar($idDemandante);
+      $objDemandado = new Cliente;
+      $objDemandado = $objDemandado->buscar($idDemandado);
+      if($objDemandado != null && $objDemandante != null &&  $objDemandado != $objDemandante ){
+        return true;
+      }else {
+        return false;
+      }
+    }
+    public function validarUsuarios($idAbogadoPpal){
+      $objAbogadoPpal = new User;
+      $objAbogadoPpal = $objAbogadoPpal->buscar($idAbogadoPpal);
+      //validar que exista el abogado jefe y que enrealidad sea jefe
+    if(  $objAbogadoPpal != null /*validar que sea un jefe*/ ){
+        // si exite el abogado jefe , se verifica si tiene aux o no
+        return true;
+      }else {
+        return false; //
       }
     }
 
@@ -52,6 +78,9 @@ class casoController extends Controller
 
     //este metodo fue separado de listarControlar para poder reenviar los clientes cuando se eliminen
     public function listar(){
-        return $listaCasos = Caso::all();
+        //$listaCasos = Caso::with(['clienteDemandante','clienteDemandado','dirige'])->get();
+        //d($listaCasos);
+        return $listaCasos=Caso::all();
+        //return $listaCasos;
     }
 }
