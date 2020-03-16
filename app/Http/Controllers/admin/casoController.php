@@ -32,20 +32,19 @@ class casoController extends Controller
               if($this->validarUsuarios($request->abogadoPpal)==true){
                 $objCaso = new Caso($request->all());
                 $objCaso->guardar($objCaso,$request->demandante,$request->demandado,$request->abogadoPpal,$request->abogadoAux);
-                echo  "Caso registrado correctamente";
-                return redirect()->route('registrarCaso')->with('men',$men);
+                $men = "Caso registrado correctamente";
+                return redirect()->route('registrarCaso')->with('men',$men,'tipo',1);
               }else{
-                echo "No exite el abogado principal";
                 $men = "No exite el abogado principal";
-                return redirect()->route('registrarCaso')->with('men',$men);
+                return redirect()->route('registrarCaso')->with('men',$men,'tipo',0);
               }
           }else{
-            echo "los clientes son iguales";
-            return redirect()->route('registrarCaso')->with('men',$men);
+            $men ="los clientes son iguales";
+            return redirect()->route('registrarCaso')->with('men',$men,'tipo',0);
           }
       }else{
-          echo "El caso con ese radicado ya existe";
-          return redirect()->route('registrarCaso')->with('men',$men);
+        $men = "El caso con ese radicado ya existe";
+          return redirect()->route('registrarCaso')->with('men',$men,'tipo',0);
       }
     }
     public function validarCliente($idDemandante,$idDemandado){

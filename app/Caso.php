@@ -45,7 +45,6 @@ class Caso extends Model
         $objCaso->dirige()->attach($abogadoPpal);
         $objAbogadoAux = new User;
         $objAbogadoAux = $objAbogadoAux->buscar($abogadoAux);
-        dd($objAbogadoAux);
         if($objAbogadoAux!= null){
             $objCaso->dirige()->attach($objAbogadoAux->cedula);
       }
