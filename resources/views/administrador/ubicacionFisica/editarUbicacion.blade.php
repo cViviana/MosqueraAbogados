@@ -1,4 +1,4 @@
-@extends('diseño-base.perfil')
+@extends('diseño-base.plantilla-admin')
 @section('titulo','Editar Ubicacion')
 
 @section('seccion')

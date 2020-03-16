@@ -1,4 +1,4 @@
-@extends('diseño-base.perfil')
+@extends('diseño-base.plantilla-admin')
 @section('titulo','Actualizar datos de un cliente')
 
 @section('seccion')

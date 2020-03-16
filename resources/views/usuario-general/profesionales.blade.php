@@ -1,4 +1,4 @@
-@extends('diseño-base.plantilla-base')
+@extends('diseño-base.plantilla-usuario-general')
 
 @section('titulo','Profesionales')
 @section('resaltar-profesionales','active')

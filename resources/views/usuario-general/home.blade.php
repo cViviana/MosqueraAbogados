@@ -1,4 +1,4 @@
-@extends('diseño-base.plantilla-base')
+@extends('diseño-base.plantilla-usuario-general')
 
 @section('titulo','Inicio')
 @section('resaltar-home','active')

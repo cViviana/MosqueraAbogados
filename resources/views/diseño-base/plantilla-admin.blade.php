@@ -39,15 +39,15 @@
                         <a href="#"><i class="fa fa-briefcase"></i> Casos <span class="arrow"></span></a>
                         </li>
                         <ul class="sub-menu collapse" id="casos">
-                            <li class="active"><a href="{{route('cargueCaso')}}">Registrar Caso</a></li>
-                            <li><a href="">Listar Casos</a></li>
+                            <li class="active"><a href="{{route('registrarCaso')}}">Registrar Caso</a></li>
+                            <li><a href="{{route('listarCasos')}}">Listar Casos</a></li>
 
                             <li  data-toggle="collapse" data-target="#documentos" class="collapsed">
                                 <a href="#">Documentos<span class="arrow"></span></a>
                             </li>
                             <ul class="sub-menu collapse" id="documentos">
-                                <li class="active"><a href="#">Subir documento</a></li>
-                                <li><a href="#">Listar Documentos</a></li>
+                                <li class="active"><a href="{{route('subirDocumento')}}">Subir documento</a></li>
+                                <li><a href="">Listar Documentos</a></li>
                             </ul>
 
                             <li  data-toggle="collapse" data-target="#tipos" class="collapsed">
@@ -55,15 +55,15 @@
                             </li>
                             <ul class="sub-menu collapse" id="tipos">
                                 <li><a href="{{route('crearTipoDocumento')}}">Crear tipo</a></li>
-                                <li><a href="#">Listar Tipos</a></li>
+                                <li><a href="{{route('listarTiposDocumentos')}}">Listar Tipos</a></li>
                             </ul>
 
                             <li  data-toggle="collapse" data-target="#ubicacion" class="collapsed">
-                                <a href="#">Ubiacacion<span class="arrow"></span></a>
+                                <a href="#">Ubicación<span class="arrow"></span></a>
                             </li>
                             <ul class="sub-menu collapse" id="ubicacion">
                                 <li><a href="{{route('agregarUbicacion')}}">Crear ubicacion</a></li>
-                                <li><a href="#">Listar Ubicaciones</a></li>
+                                <li><a href="{{route('listarUbicaciones')}}">Listar Ubicaciones</a></li>
                             </ul>
                         </ul>
 
@@ -78,8 +78,8 @@
                         <a href="#"><i class="fa fa-users"></i> Contrapartes <span class="arrow"></span></a>
                         </li>
                             <ul class="sub-menu collapse" id="contraparte">
-                            <li>Registrar Contraparte</li>
-                            <li>Listar Contrapartes</li>
+                            <li><a href="{{route('registrarContraparte')}}">Registrar Contraparte</a></li>
+                            <li><a href="{{route('listarContraparte')}}">Listar Contrapartes</a></li>
                         </ul>
                         <footer class="footer">
                             <div class="sidebar-footer hidden-small text-center" align="center">

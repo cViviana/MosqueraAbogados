@@ -36,7 +36,7 @@ Route::prefix('admin')->group(
     Route::view('/perfil_usuario','administrador/perfil_usuario')->name('perfil_usuario');
 
     //CASO
-    Route::get('/crearCaso','admin\casoController@index')->name('cargueCaso');
+    Route::get('/registrarCaso','admin\casoController@index')->name('registrarCaso');
     Route::post('/agregarCaso','admin\casoController@guardar')->name('crearCaso');
     //Route::view('/listarCasos','administrador/procesos-judiciales/listarProcesoJudicial')->name('listarCasos');
     Route::get('/listarCasos', 'admin\casoController@listarControlador')->name('listarCasos');
@@ -65,7 +65,7 @@ Route::prefix('admin')->group(
 
     Route::get('/eliminarUbicacion/{id}', 'admin\ubicacionController@eliminarControlador')->name('eliminarUbicacion');
 
-    Route::get('/listarUbicacion','admin\ubicacionController@listarControlador')->name('listarUbicacion');
+    Route::get('/listarUbicaciones','admin\ubicacionController@listarControlador')->name('listarUbicaciones');
 
     //TIPO-DOCUMENTOS
     Route::view('/crearTipo','administrador/tipo-documentos/crearTipoDocumento')->name('crearTipoDocumento');
@@ -77,7 +77,7 @@ Route::prefix('admin')->group(
 
     Route::get('/eliminarTipoDocumento/{id}', 'admin\tipoController@eliminarControlador')->name('eliminarTipoDocumento');
 
-    Route::get('/listarTipoDocumentos', 'admin\tipoController@listarControlador')->name('listarTiposDocumentos');
+    Route::get('/listarTiposDocumentos', 'admin\tipoController@listarControlador')->name('listarTiposDocumentos');
 
   }
 );

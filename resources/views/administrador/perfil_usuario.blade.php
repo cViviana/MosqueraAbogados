@@ -1,4 +1,4 @@
-@extends('diseño-base.perfil')
+@extends('diseño-base.plantilla-admin')
 @section('seccion')
     <div class="container_pagina">
         <div class="container_formulario emp-profile">
