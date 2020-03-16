@@ -52,6 +52,6 @@ class casoController extends Controller
 
     //este metodo fue separado de listarControlar para poder reenviar los clientes cuando se eliminen
     public function listar(){
-        return $listaCasos=Caso::all();
+        return $listaCasos = Caso::all();
     }
 }

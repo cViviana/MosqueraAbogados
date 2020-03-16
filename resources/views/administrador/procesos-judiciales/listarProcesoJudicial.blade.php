@@ -12,6 +12,7 @@
     <th scope="col">Estado</th>
     <th scope="col">Fecha inicio</th>
     <th scope="col">Fecha fin</th>
+    <th scope="col">Ver archivos</th>
     <th scope="col">Editar</th>
     <th scope="col">Eliminar</th>
 @endsection
@@ -26,6 +27,11 @@
             <td>{{$caso->estado}}</td>
             <td>{{$caso->fecha_inicio}}</td>
             <td>{{$caso->fecha_fin}}</td>
+            <td>
+                <a href="#" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-folder-open"></span>
+                </a>
+            </td>
             <td> 
                 <a href="" class="btn btn-primary">
                     <span class="glyphicon glyphicon-pencil"></span>

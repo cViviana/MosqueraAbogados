@@ -4,6 +4,20 @@
 
 @section('titulo-listar', 'LISTADO DE CLIENTES')
 
+@section('contenedor-mensajes')
+    @if (session('mensajeDeRegistroClienteExitoso'))
+        <div class="flash-message">
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{Session::get('mensajeDeRegistroClienteExitoso')}}
+                {{session::forget('mensajeDeRegistroClienteExitoso')}}
+            </div>
+        </div>
+    @endif
+@endsection
+ 
 @section('nombre-campos-columnas')
     <th scope="col">Número</th>
     <th scope="col">Nombre</th>

@@ -15,23 +15,13 @@
                 </ul>
             </div>
             @endif
-            @if (session('mensajeDeRegistroClienteExitoso'))
-                <div class="flash-message">
-                    <div class="alert alert-success">
-                        {{Session::get('mensajeDeRegistroClienteExitoso')}}
-                        {{session::forget('mensajeDeRegistroClienteExitoso')}}
-                    </div>
-                </div>
-            @endif
-            @if (session('mensajeDeNoRegistroCliente'))
+            @if (session('mensajeExisteIdentificacionCliente'))
                 <div class="alert alert-danger animated fadeIn">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <strong>
-                        {{Session::get('mensajeDeNoRegistroCliente') }}
-                        {{session::forget('mensajeDeNoRegistroCliente')}}
-                    </strong>
+                    {{Session::get('mensajeExisteIdentificacionCliente')}}
+                    {{session::forget('mensajeExisteIdentificacionCliente')}}
                 </div>
             @endif
         </div>

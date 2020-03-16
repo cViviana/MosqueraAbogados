@@ -3,6 +3,7 @@
 @section('seccion')
     <div class="container_pagina">
         <div class="texto_titulo">@yield('titulo-listar')</div>
+        @yield("contenedor-mensajes")
         <table class="table table-responsive tabla table-hover">
             <thead class="thead-light container_formulario">
                 <tr>
