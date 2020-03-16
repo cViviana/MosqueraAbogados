@@ -47,8 +47,8 @@
                             </li>
                             <ul class="sub-menu collapse" id="documentos">
                                 <li class="active"><a href="#">Subir documento</a></li>
-                                <li><a href="#">Crear tipo</a></li>
-                                <li><a href="#">Crear ubicacion</a></li>
+                                <li><a href="{{route('crearTipoDocumento')}}">Crear tipo</a></li>
+                                <li><a href="{{route('agregarUbicacion')}}">Crear ubicacion</a></li>
                             </ul>
                         </ul>
 
