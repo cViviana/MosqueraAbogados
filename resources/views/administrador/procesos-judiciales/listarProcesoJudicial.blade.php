@@ -8,6 +8,7 @@
             <thead class="thead-light container_formulario">
                 <tr>
                     <th scope="col">Radicado</th>
+                    <th scope="col">Descripcion</th>
                     <th scope="col">Demandado</th>
                     <th scope="col">Demandante</th>
                     <th scope="col">Estado</th>
@@ -18,18 +19,19 @@
                 </tr>
             </thead>
             <tbody class="container_formulario">
-                <!-- Aquí va un ciclo que recibe un listado de casos judiciales para mostrarlo en la tabla  -->
+                @foreach($Casos as $caso)
                 <tr>
-                    <td><!-- caso->radicado --></td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
+                    <td>{{$caso->radicado}}</td>
+                    <td>{{$caso->descripcion}}</td>
+                    <td>{{$caso->demandado}}</td>
+                    <td>{{$caso->demandante}}</td>
+                    <td>{{$caso->estado}}</td>
+                    <td>{{$caso->fecha_inicio}}</td>
+                    <td>{{$caso->fecha_fin}}</td>
                     <td> <button class="btn btn-primary">Actualizar</a></td>
                     <td> <button class="btn btn-danger" type="submit">Eliminar</button></td>
-                </tr>    
-              
+                </tr>
+                @endforeach
             </tbody>
         </table>
         <br>
