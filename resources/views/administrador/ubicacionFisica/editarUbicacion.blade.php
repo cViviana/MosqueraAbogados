@@ -1,7 +1,7 @@
 @extends('diseño-base.perfil')
 @section('titulo','Editar Ubicacion')
 
-@section('CRUD-ubicacion-documentos')
+@section('seccion')
 
   @if(count($errors) > 0)
     <div class="alert alert-danger" role="alert">

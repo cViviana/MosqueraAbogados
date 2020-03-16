@@ -97,10 +97,6 @@
             </div>
         </div>
         <div class="col-sm-9 col-md-9 col-lg-10 col-xl-11">
-            @yield('perfil')
-            @yield('CRUD-proceso-judicial')
-            @yield('CRUD-datos-cliente')
-            @yield('CRUD-ubicacion-documentos')
-            @yield('CRUD-tipos-documentos')
+            @yield('seccion')
         </div>
 </body>

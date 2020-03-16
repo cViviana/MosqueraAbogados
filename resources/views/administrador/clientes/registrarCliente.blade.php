@@ -1,7 +1,7 @@
 @extends('diseño-base.perfil')
 @section('titulo','Registrar un cliente')
 
-@section('CRUD-datos-cliente')
+@section('seccion')
     <div class="container_pagina">
         <div class="texto_titulo">REGISTRAR CLIENTE</div>
         <div class="container_formulario" id="contenedorMensajes">

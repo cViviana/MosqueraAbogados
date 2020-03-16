@@ -1,7 +1,7 @@
 @extends('diseño-base.perfil')
 @section('titulo','Actualizar datos de un cliente')
 
-@section('CRUD-tipos-documentos')
+@section('seccion')
 
     @if(count($errors) > 0)
         <div class="alert alert-danger" role="alert">

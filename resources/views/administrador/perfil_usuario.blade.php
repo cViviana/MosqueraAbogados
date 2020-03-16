@@ -1,5 +1,5 @@
 @extends('diseño-base.perfil')
-@section('perfil')
+@section('seccion')
     <div class="container_pagina">
         <div class="container_formulario emp-profile">
                 <div class="row">

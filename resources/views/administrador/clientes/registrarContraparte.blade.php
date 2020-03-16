@@ -1,6 +1,6 @@
 @extends('diseño-base.perfil')
 
-@section('CRUD-datos-cliente')
+@section('seccion')
     <div class="container_pagina">
         <div class="texto_titulo">REGISTRAR CONTRAPARTE</div> 
         <div class="container_formulario">
