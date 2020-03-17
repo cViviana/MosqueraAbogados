@@ -8,7 +8,7 @@
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<link rel="icon" href="img/favicon-1.png" type="image/png">
 	<title>@yield('titulo') | Mosquera Abogados</title>
-    
+
     <!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('https://use.fontawesome.com/releases/v5.3.1/css/all.css')}}" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -65,7 +65,7 @@
                             <li data-toggle="collapse" data-target="#ubicacion" class="collapsed">
                                 Ubicación<span class="arrow"></span>
                                     <ul class="sub-menu collapse" id="ubicacion">
-                                        <li class="@yield("resaltar-crearUbicacion")"><a href="{{route('agregarUbicacion')}}">Crear ubicacion</a></li>
+                                        <li class="@yield("resaltar-crearUbicacion")"><a href="{{route('agregarUbicacion')}}">Crear ubicación</a></li>
                                         <li class="@yield("resaltar-listarUbicaciones")"><a href="{{route('listarUbicaciones')}}">Listar Ubicaciones</a></li>
                                     </ul>
                             </li>
@@ -79,7 +79,7 @@
                             <li class="@yield("resaltar-listarClientes")"><a href="{{route('listarClientes')}}">Listar Clientes</li>
                         </ul>
                     </li>
-                    
+
                     <!-- Contraparte -->
                     <li data-toggle="collapse" data-target="#contraparte" class="collapsed">
                         <i class="fa fa-users"></i> Contrapartes<span class="arrow"></span>

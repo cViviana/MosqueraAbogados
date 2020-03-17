@@ -21,8 +21,8 @@
 @section('nombre-campos-columnas')
     <th scope="col">Radicado</th>
     <th scope="col">Descripcion</th>
-    <th scope="col">Demandado</th>
-    <th scope="col">Demandante</th>
+    <th scope="col">Cliente</th>
+    <th scope="col">Contraparte</th>
     <th scope="col">Estado</th>
     <th scope="col">Fecha inicio</th>
     <th scope="col">Fecha fin</th>
@@ -46,12 +46,12 @@
                     <span class="glyphicon glyphicon-folder-open text-center"></span>
                 </a>
             </td>
-            <td> 
+            <td>
                 <a href="" class="btn btn-primary">
                     <span class="glyphicon glyphicon-pencil"></span>
                 </a>
             </td>
-            <td> 
+            <td>
                 <form action=""  method="get">
                     @csrf
                     <button class="btn btn-danger" type="submit">
