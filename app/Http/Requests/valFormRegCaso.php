@@ -27,7 +27,7 @@ class valFormRegCaso extends FormRequest
             'radicado'=>'require|unique:caso,radicado|string|max:191',
             'tipo'=> 'require|in:activo,cerrado',
             'fecha_inicio'=> 'required|date|after:tomorrow',
-            'fechaFinal' => 'required|after_or_equal:fecha_inicio',
+            'fechaFinal' => 'after_or_equal:fecha_inicio',
             'descripcion'=>'require|unique:caso,radicado|string|max:191',
             'demandado'=>'require|unique:caso,demandado|string|max:191',
             'demandante'=>'require|unique:caso,demandante|string|max:191',

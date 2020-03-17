@@ -23,7 +23,6 @@
                         </button>
                     </div>
                 @endif
-            @endif
         </div>
 
         <div class="container_pagina container_formulario">
@@ -33,12 +32,12 @@
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-link"></i></span>
-                    <input name='radicado' id='radicado' class="form-control" placeholder="* Numero de Radicado" type="text" required>
+                    <input name='radicado' id='radicado' class="form-control" placeholder="* Numero de Radicado" value="{{ old('radicado') }}" type="text" required>
                 </div>
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
-                      <select name='abogadoPpal' id='abogadoPpal' class="form-control">
+                      <select name='abogadoPpal' id='abogadoPpal' class="form-control" value= "{{ old('abogadoPpal') }}">
                           <option selected="">* Abogado Principal</option>
                           <@foreach ($Usuarios as $us)
                             <option value= {{$us->cedula}}>{{$us->cedula}} - {{$us->nombre}}</option>
@@ -94,7 +93,7 @@
                 <br>
                 <div class="input-group date" data-provide="datepicker">
                     <span class="input-group-addon"><i class="fa fa-calendar-check-o"></i></span>
-                    <input type="text" name='fecha_fin' id='fecha_fin' class="form-control" placeholder="* Fecha de Finalización" required>
+                    <input type="text" name='fecha_fin' id='fecha_fin' class="form-control" placeholder="* Fecha de Finalización">
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
