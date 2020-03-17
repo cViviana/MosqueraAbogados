@@ -26,6 +26,7 @@
     <th scope="col">Estado</th>
     <th scope="col">Fecha inicio</th>
     <th scope="col">Fecha fin</th>
+    <th scope="col">Abogado</th>
     <th scope="col">Ver archivos</th>
     <th scope="col">Editar</th>
     <th scope="col">Eliminar</th>
@@ -36,11 +37,20 @@
         <tr>
             <td>{{$caso->radicado}}</td>
             <td>{{$caso->descripcion}}</td>
-            <td>{{$caso->demandado}}</td>
-            <td>{{$caso->demandante}}</td>
+            <td>{{$caso->clienteDemandado->nombre}}</td>
+            <td>{{$caso->clienteDemandante->nombre}}</td>
             <td>{{$caso->estado}}</td>
             <td>{{$caso->fecha_inicio}}</td>
             <td>{{$caso->fecha_fin}}</td>
+            <td>
+              <tr>
+              @foreach($caso->dirige as $dir)
+                <td>{{$dir->nombre}}</td>
+              </tr>
+              @endforeach
+
+            </td>
+
             <td>
                 <a href="#" class="btn btn-primary">
                     <span class="glyphicon glyphicon-folder-open text-center"></span>

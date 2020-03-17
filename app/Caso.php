@@ -13,10 +13,10 @@ class Caso extends Model
     protected $keyTyper='string';
     protected $fillable=['radicado','estado','fecha_inicio','descripcion','fecha_fin'];
     public function clienteDemandante(){
-      return $this->belongsTo('App\Cliente','demandante', 'radicado');
+      return $this->belongsTo('App\Cliente','demandante');
     }
     public function clienteDemandado(){
-      return $this->belongsTo('App\Cliente','demandado', 'radicado');
+      return $this->belongsTo('App\Cliente','demandado');
     }
     public function dirige (){
       return $this->belongsToMany('App\User','dirige','dir_radicado','dir_cedula');

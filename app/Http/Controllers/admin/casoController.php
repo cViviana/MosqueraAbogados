@@ -77,9 +77,8 @@ class casoController extends Controller
 
     //este metodo fue separado de listarControlar para poder reenviar los clientes cuando se eliminen
     public function listar(){
-        //$listaCasos = Caso::with(['clienteDemandante','clienteDemandado','dirige'])->get();
-        //d($listaCasos);
-        return $listaCasos=Caso::all();
-        //return $listaCasos;
+      //$listaCasos = Caso::with(['clienteDemandado:numero,nombre','clienteDemandante:numero,nombre','dirige:dir_cedula,nombre'])->get();
+      //dd($listaCasos);
+      return $listaCasos=Caso::with(['clienteDemandado:numero,nombre','clienteDemandante:numero,nombre','dirige:dir_cedula,nombre'])->get();
     }
 }
