@@ -7,7 +7,7 @@
 
 @section('nombre-campos-columnas')
     <th scope="col">Número Archivero</th>
-    <th scope="col">Numero Gabetas</th>
+    <th scope="col">Número Gavetas</th>
     <th scope="col">Editar</th>
     <th scope="col">Eliminar</th>
 @endsection

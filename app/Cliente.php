@@ -11,10 +11,10 @@ class Cliente extends Model
     protected $keyTyper='string';
     protected $fillable=['numero','nombre','tipo','telefono','email'];
     public function casoDemandado(){
-       return $this->hasMany('app\Caso','demandado','numero');
+       return $this->hasMany('App\Caso','demandado','numero');
     }
     public function casoDemandante(){
-       return $this->hasMany('app\Caso','demandante','numero');
+       return $this->hasMany('App\Caso','demandante','numero');
     }
 
     public function guardar(Cliente $objCliente){

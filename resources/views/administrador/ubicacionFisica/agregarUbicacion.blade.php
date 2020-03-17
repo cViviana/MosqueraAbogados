@@ -16,15 +16,15 @@
   <div class="container_pagina">
     <div class="texto_titulo">
       CREAR UNA UBICACIÓN
-    </div> 
+    </div>
     <div class="container_pagina container_formulario">
       <div class="mascara">
       <form action="{{route('agregarUbicacionFisica')}}"class="texto_campos" method="post">
         {{csrf_field()}}
-            <br> 
+            <br>
             <div class="input-group">
               <span class="input-group-addon" id="inputGroup-sizing-default"><i class="fa fa-plus-square"></i></span>
-              <input type="text" id='numArchivero'name='numArchivero' class="form-control" placeholder="* Nueva Archivador" required>
+              <input type="text" id='numArchivero'name='numArchivero' class="form-control" placeholder="* Nuevo Archivador" required>
             </div>
             <br>
             <div class="input-group">
