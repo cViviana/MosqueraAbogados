@@ -23,7 +23,8 @@
                         </button>
                     </div>
                 @endif
-            </div>
+            @endif
+        </div>
 
         <div class="container_pagina container_formulario">
             <div class="mascara">

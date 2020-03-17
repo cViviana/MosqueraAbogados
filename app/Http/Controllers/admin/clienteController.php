@@ -13,42 +13,46 @@ class clienteController extends Controller
     //para permitir conbinar el controlador con la contraparte debe dirigirse a el perfil la vista
 
     public function crearControlador(valFormRegCliente $request){
-        $mensaje = "";
+        $mensajeNoRegistro = "";
         $aux = $this->buscar($request->numero);
         if( $aux == null ){
             $objCliente = new Cliente($request->all());
             $objCliente->guardar($objCliente);
-            $mensaje = "Éxito. ". $request->nombre ." con identificación ".
+            $mensajeRegistro = "Éxito. ". $request->nombre ." con identificación ".
                         $request->numero ." ha sido registrado.";
-            session()->flash('mensajeDeRegistroClienteExitoso',  $mensaje);
-            return view('administrador.clientes.listarClientes', ['Clientes' => $this->listar()]);
+            return redirect()->route('listarClientes', ['Clientes' => $this->listar()])->with('mensajeRegistro', $mensajeRegistro);
         }else{
-            $mensaje = "Ya existe la identificación ". $request->numero ." del cliente ".
+            $mensajeNoRegistro = "Ya existe la identificación ". $request->numero ." del cliente ".
                         $request->nombre;
-            session()->flash('mensajeExisteIdentificacionCliente',  $mensaje);
-        } 
-        return view('administrador.clientes.registrarCliente');
+            return redirect()->route('registrarCliente')->with('mensajeNoRegistro', $mensajeNoRegistro);
+        }    
     }
 
     public function editarControlador(valFormRegCliente $request){
         $objCliente = $this->buscar($request->numero);
+        $mensajeNoActualizacion = "";
         if($objCliente != null){
             $objCliente->fill($request->all());
             $objCliente->guardar($objCliente);
-            $men = "El cliente se actualizo de forma satisfactoria";
-        }else
-            $men = "El identificador del cliente no existe";
-        return view ("administrador.clientes.listarClientes", ['men' => $men, 'Clientes' => $this->listar()]  );
+            $mensajeActualizacion = "El cliente se actualizó de forma satisfactoria";
+            return redirect()->route('listarClientes', ['Clientes' => $this->listar()])->with('mensajeActualizacion', $mensajeActualizacion);
+        }else{
+            $mensajeNoActualizacion = "El identificador del cliente no existe";
+            return redirect()->route('listarClientes', ['Clientes' => $this->listar()])->with('mensajeNoActualizacion', $mensajeNoRegistro);
+        }
     }
 
     public function eliminarControlador($numero){
         $objCliente = $this->buscar($numero);
+        $mensajeNoEliminado = "";
         if ($objCliente != null){
             $objCliente->eliminar($objCliente);
-            $men = "El cliente se elimino de forma satisfactoria";
-        }else
-            $men = "El cliente se elimino de forma satisfactoria";
-        return view("administrador.clientes.listarClientes", ['men' => $men, 'Clientes' => $this->listar()] );
+            $mensajeEliminado = "El cliente se elimino de forma satisfactoria";
+            return redirect()->route('listarClientes', ['Clientes' => $this->listar()])->with('mensajeEliminado', $mensaje);
+        }else{
+            $mensajeNoEliminado = "El cliente no se elimino de forma satisfactoria";
+            return redirect()->route('listarClientes', ['Clientes' => $this->listar()])->with('mensajeNoEliminado', $mensajeNoEliminado);
+        }
     }
 
     public function editControlador($numero){
