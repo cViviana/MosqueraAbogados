@@ -7,6 +7,8 @@
 @section('nombre-campos-columnas')
     <th scope="col">Código</th>
     <th scope="col">Nombre</th>
+    <th scope="col">Editar</th>
+    <th scope="col">Eliminar</th>
 @endsection
 @section('listado-columnas')
     @foreach($TiposDocumentos as $tipoDocumento)
@@ -15,11 +17,11 @@
         <td>{{$tipoDocumento->nombre}}</td>
         <td>
             <a href="{{route('editarTipoDocumento', $tipoDocumento->id)}}" class="btn btn-primary">
-                <span class="glyphicon glyphicon-pencil">Actualizar</span>
+                <span class="glyphicon glyphicon-pencil"></span>
             </a>
         </td>
         <td>
-            <form action="{{ route('eliminarTipoDocumento', $tipoDocumento->id)}}"  method="get">
+            <form action="{{route('eliminarTipoDocumento', $tipoDocumento->id)}}"  method="get">
                 @csrf
                 <button class="btn btn-danger" type="submit">
                     <span class="glyphicon glyphicon-trash"></span>

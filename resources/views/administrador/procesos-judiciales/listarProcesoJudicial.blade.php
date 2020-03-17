@@ -20,7 +20,7 @@
 
 @section('nombre-campos-columnas')
     <th scope="col">Radicado</th>
-    <th scope="col">Descripcion</th>
+    <th scope="col">Descripción</th>
     <th scope="col">Cliente</th>
     <th scope="col">Contraparte</th>
     <th scope="col">Estado</th>
