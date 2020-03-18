@@ -9,9 +9,6 @@ use App\Http\Requests\valFormRegCliente;
 
 class clienteController extends Controller
 {
-
-    //para permitir conbinar el controlador con la contraparte debe dirigirse a el perfil la vista
-
     public function crearControlador(valFormRegCliente $request){
         $mensajeNoRegistro = "";
         $aux = $this->buscar($request->numero);
@@ -38,7 +35,7 @@ class clienteController extends Controller
             return redirect()->route('listarClientes', ['roll'=> $request->roll,'Clientes' => $this->listar($request->roll)])->with('mensajeActualizacion', $mensajeActualizacion);
         }else{
             $mensajeNoActualizacion = "El identificador del cliente no existe";
-            return redirect()->route('listarClientes', ['roll'=> $request->roll,'Clientes' => $this->listar($request->roll)])->with('mensajeNoActualizacion', $mensajeNoRegistro);
+            return redirect()->route('listarClientes', ['roll'=> $request->roll,'Clientes' => $this->listar($request->roll)])->with('mensajeNoActualizacion', $mensajeNoActualizacion);
         }
     }
 

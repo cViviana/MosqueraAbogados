@@ -56,7 +56,7 @@
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                    <input name='email' id='email' class="form-control" placeholder="* Correo Electronico" type="text" required
+                    <input name='email' id='email' class="form-control" placeholder="Correo Electronico" type="text"
                         value="{{$Cliente->email}}">
                 </div>
                 <input type="hidden" name="roll" id='roll' value="contraparte">
