@@ -43,12 +43,11 @@
             <td>{{$caso->fecha_inicio}}</td>
             <td>{{$caso->fecha_fin}}</td>
             <td>
-              <tr>
-              @foreach($caso->dirige as $dir)
-                <td>{{$dir->nombre}}</td>
-              </tr>
-              @endforeach
-
+                <tr>
+                    @foreach($caso->dirige as $dir)
+                        <td>{{$dir->nombre}}</td>
+                    @endforeach
+                </tr>
             </td>
 
             <td>
