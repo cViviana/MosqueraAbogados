@@ -16,8 +16,7 @@ class ubicacionController extends Controller
         $men = "La ubicacion se guardo de forma exitosa";
       }else
         $men = "Esta ubicación ya existe";
-      dd($men);
-      return view('administrador.ubicacionFisica.agregarUbicacion', [ "men" => $men] );
+      return view('administrador.ubicacionFisica.listarUbicaciones', [ "men" => $men, 'ubicaciones' => $this->listar() ] );
     }
 
     public function eliminarControlador($id){
@@ -32,12 +31,17 @@ class ubicacionController extends Controller
 
     public function editarControlador(valFormRegUbi $request){
       $objUbicacion = $this->buscar($request->id);
-      if( $objUbicacion != null ){
-        $objUbicacion->fill($request->all());
-        $objUbicacion->guardar($objUbicacion);
-        $men = "se actualizaron los datos de forma exitosa";
-      }else
-        $men="El identificador ingresado es invalido ";
+      if(!$objUbicacion->existeUbicacion($request)){
+        if( $objUbicacion != null){
+          $objUbicacion->fill($request->all());
+          $objUbicacion->guardar($objUbicacion);
+          $men = "se actualizaron los datos de forma exitosa";
+        }else
+          $men="El identificador ingresado es invalido ";
+      }
+      else
+        $men="Esta ubicación ya existe";
+
       return view('administrador.ubicacionFisica.listarUbicaciones', ['men' => $men, 'ubicaciones' => $this->listar()] );
     }
     
