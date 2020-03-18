@@ -3,11 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Requests\valFormRegUbi;
+use Illuminate\Support\Collection;
 
 class Ubicacion extends Model
 {
   protected $table='ubicacion_fisica';
-  protected $fillable=['numArchivero','numGabeta'];
+  protected $fillable=['numArchivero','numGaveta'];
 
   public function ubicacionEstaDoc(){
      return $this->hasMany('app\Documento','ubicacion_id','id');
@@ -23,5 +25,13 @@ class Ubicacion extends Model
 
   public function buscar($id){
     return $this::find($id);
+  }
+
+  public function existeUbicacion(valFormRegUbi $request){
+    $gaveta = $this::where("numGaveta","=",$request->numGaveta)->get();
+    $archivador = $this::where("numArchivero","=",$request->numArchivero)->get();
+    if($gaveta->first() != null && $archivador->first() != null)
+      return true;
+    return false;
   }
 }

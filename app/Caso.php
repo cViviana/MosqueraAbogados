@@ -12,7 +12,7 @@ class Caso extends Model
     protected $primaryKey='radicado';
     protected $keyTyper='string';
     protected $fillable=['radicado','estado','fecha_inicio','descripcion','fecha_fin'];
-    public function cliente(){
+    public function clienteCaso(){
       return $this->belongsTo('App\Cliente','cliente');
     }
     public function clienteContraparte(){
@@ -26,7 +26,7 @@ class Caso extends Model
     public function guardar(Caso $objCaso, $contraparte, $cliente, $abogadoPpal, $abogadoAux){
       //asociar el contraparte y el cliente
       $objCaso->clienteContraparte()->associate($contraparte);
-      $objCaso->cliente()->associate($cliente);
+      $objCaso->clienteCaso()->associate($cliente);
       $objCaso->timestamps = false;
       $radicadoAxu= $objCaso->radicado;
       $objCaso->save();

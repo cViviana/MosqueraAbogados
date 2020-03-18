@@ -56,6 +56,14 @@ Route::prefix('admin')->group(
     Route::get('/listarClientes/{roll}', 'admin\clienteController@listarControlador')->name('listarClientes');
     Route::delete('/cliente/eliminarCliente/{numero}', 'admin\clienteController@eliminarControlador');
 
+    //CONTRAPARTE
+    Route::get('/registrarContraparte', function () {
+      return view('administrador/clientes/registrarContraparte');
+    })->name('registrarContraparte');
+
+    Route::post('/agregarContraparte','admin\clienteController@crearControlador')->name('agregarContraparte');
+    Route::view('/listarContraparte','administrador/clientes/listarContraparte')->name('listarContraparte');
+
     //UBICACIÓN-DUCMENTOS
     Route::view('/agregarUbicacion','administrador/ubicacionFisica/agregarUbicacion')->name('agregarUbicacion');
     Route::post('/agregarUbicacionFisica','admin\ubicacionController@guardarControlador')->name('agregarUbicacionFisica');
@@ -88,8 +96,8 @@ Route::prefix('admin')->group(
 //Route::post('/procesoJudicial/actualizar/{radicado}', 'ProcesoJudicialController@actualizarProcesoJudicial');
 //Route::delete('/procesoJudicial/eliminar/{radicado}', 'ProcesoJudicialController@eliminarProcesoJudicial');
 
-Route::view('/registrarContraparte','administrador/clientes/registrarContraparte')->name('registrarContraparte');
-Route::view('/listarContraparte','administrador/clientes/listarContraparte')->name('listarContraparte');
+//Route::view('/registrarContraparte','administrador/clientes/registrarContraparte')->name('registrarContraparte');
+//Route::view('/listarContraparte','administrador/clientes/listarContraparte')->name('listarContraparte');
 
 Route::view('/subirDocumento','administrador/procesos-judiciales/subirDocumento')->name('subirDocumento');
 Route::view('/tipoDocumento','administrador/tipoDocumento')->name('tipoDocumento');

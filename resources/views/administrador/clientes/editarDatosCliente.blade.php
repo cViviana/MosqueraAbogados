@@ -1,6 +1,5 @@
 @extends('diseño-base.plantilla-admin')
 @section('titulo','Actualizar datos de un cliente')
-
 @section('seccion')
 
     <div class="container_pagina">
@@ -60,7 +59,7 @@
                     <input name='email' id='email' class="form-control" placeholder="* Correo Electronico" type="text" required
                         value="{{$Cliente->email}}">
                 </div>
-                <input type="hidden" name="roll" id='roll' value="cliente">
+                <!--<input type="hidden" name="roll" id='roll' value="cliente">-->
                 <br>
                 <button type="submit" class="btn btn-primary">Actualizar Datos</button>
                 <div class="texto_campos">Los campos con (*) son obligatorios</div>

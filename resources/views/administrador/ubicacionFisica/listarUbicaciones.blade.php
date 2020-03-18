@@ -17,7 +17,7 @@
         <tr style="color:#0066FF">
             <td>{{$ubicacion->id}}</td>
             <td>{{$ubicacion->numArchivero}}</td>
-            <td>{{$ubicacion->numGabeta}}</td>
+            <td>{{$ubicacion->numGaveta}}</td>
             <td>
                 <a href="{{route('editarUbicacion', $ubicacion->id)}}" class="btn btn-primary">
                     <span class="glyphicon glyphicon-pencil"></span>

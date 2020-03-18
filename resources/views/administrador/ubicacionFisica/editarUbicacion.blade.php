@@ -34,7 +34,7 @@
             <br>
             <div class="input-group">
               <span class="input-group-addon" id="inputGroup-sizing-default"><i class="fa fa-plus-square"></i></span>
-              <input type="text" id='numGabeta'name='numGabeta' class="form-control" placeholder="* Número Gaveta" value="{{$ubicacion->numGabeta}}"required>
+              <input type="text" id='numGaveta'name='numGaveta' class="form-control" placeholder="* Número Gaveta" value="{{$ubicacion->numGaveta}}"required>
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Actualizar</button>
