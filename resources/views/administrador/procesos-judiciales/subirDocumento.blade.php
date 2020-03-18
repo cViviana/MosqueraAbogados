@@ -1,3 +1,4 @@
+
 @extends('diseño-base.plantilla-admin')
 @section("resaltar-subirDocumento", "active")
 
@@ -38,9 +39,26 @@
                     <input name="" class="form-control" placeholder="* Descripción" type="text" required>
                 </div>
                 <br>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label"   for="customFile">Seleccionar Documento</label>
+                </div>
+                <div>
+                <br>
+                </div>
+                
                 <button type="submit" class="btn btn-primary">Subir Documento</button>
                 <div class="texto_campos">Los campos con (*) son obligatorios</div>
             </div>
         </div>
     </div>
+
+    <script >
+    // Add the following code if you want the name of the file appear on select
+    $(".custom-file-input").on("change", function() {
+      var fileName = $(this).val().split("\\").pop();
+      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+</script>
 @endsection
+
