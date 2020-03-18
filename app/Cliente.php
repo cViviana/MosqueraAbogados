@@ -29,7 +29,7 @@ class Cliente extends Model
       return $this::find($numero);
     }
 
-    public function listar(){
-      return $this::all();
+    public function listar($roll){
+      return $this::where("roll","=",$roll)->get();;
     }
 }

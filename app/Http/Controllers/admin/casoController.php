@@ -13,10 +13,12 @@ class casoController extends Controller
 {
     public function index(){
       $listaClientes = new Cliente;
-      $Clientes = $listaClientes->listar();
+      $Clientes = $listaClientes->listar('cliente');
+      $listaContraparte = new Cliente;
+      $Contraparte = $listaContraparte->listar('contraparte');
       $listaUsuarios = new User;
       $Usuarios = $listaUsuarios->listar();
-      return view('administrador.procesos-judiciales.registrarProcesoJudicial', compact('Clientes','Usuarios') );
+      return view('administrador.procesos-judiciales.registrarProcesoJudicial', compact('Clientes','Contraparte','Usuarios') );
     }
 
     public function guardar(Request $request){

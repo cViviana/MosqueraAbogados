@@ -15,18 +15,18 @@ class Caso extends Model
     public function cliente(){
       return $this->belongsTo('App\Cliente','cliente');
     }
-    public function clienteDemandado(){
-      return $this->belongsTo('App\Cliente','demandado');
+    public function clienteContraparte(){
+      return $this->belongsTo('App\Cliente','contraparte');
     }
     public function dirige (){
       return $this->belongsToMany('App\User','dirige','dir_radicado','dir_cedula');
       //...belongsToMany([modelo],[nombre_tabla_pivote], [nombre_fk1], [nombre_fk2]);
     }
 
-    public function guardar(Caso $objCaso, $demandado, $cliente, $abogadoPpal, $abogadoAux){
-      //asociar el demandado y el demandante
-      $objCaso->clienteDemandado()->associate($demandado);
-      $objCaso->cliente()->associate($demandante);
+    public function guardar(Caso $objCaso, $contraparte, $cliente, $abogadoPpal, $abogadoAux){
+      //asociar el contraparte y el cliente
+      $objCaso->clienteContraparte()->associate($contraparte);
+      $objCaso->cliente()->associate($cliente);
       $objCaso->timestamps = false;
       $radicadoAxu= $objCaso->radicado;
       $objCaso->save();
