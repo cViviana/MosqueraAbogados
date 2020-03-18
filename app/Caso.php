@@ -5,6 +5,7 @@ namespace App;
 use App\User;
 use App\Cliente;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Caso extends Model
 {
@@ -50,5 +51,32 @@ class Caso extends Model
             $objCaso->dirige()->attach($objAbogadoAux->cedula);
         }
       }
+    }
+
+    public function actualizar(Caso $objCaso, $cliente, $contraparte, $abogadoPpal, $abogadoAux){
+      $objCaso->clienteCaso()->dissociate($objCaso->cliente);
+      $objCaso->clienteCaso()->associate($cliente);
+      $objCaso->clienteContraparte()->dissociate($objCaso->contraparte);
+      $objCaso->clienteContraparte()->associate($contraparte);
+      $objCaso->timestamps = false;
+      $objCaso->save();
+      $this->actualizarPivote($objCaso, $abogadoPpal, $abogadoAux);
+    }
+
+    Public function actualizarPivote(Caso $objCaso,$abogadoPpal, $abogadoAux){
+      $usuarios = DB::table('dirige')->where('dir_radicado', $objCaso->radicado)->select('dir_cedula')->get();
+      $numUsuario=$usuarios->count();
+      $objCaso->dirige()->detach($usuarios->first());
+
+      if($abogadoAux != $abogadoPpal && $abogadoAux != '* Auxiliar 1' ){
+         if($numUsuario==2){
+           $objCaso->dirige()->detach($usuarios->last());
+         }
+         $objCaso->dirige()->attach($abogadoAux);
+      }
+      if($abogadoAux == '* Auxiliar 1' && $numUsuario == 2){
+        $objCaso->dirige()->detach($usuarios->last());
+      }
+        $objCaso->dirige()->attach($abogadoPpal);
     }
 }

@@ -40,6 +40,8 @@ Route::prefix('admin')->group(
     Route::post('/agregarCaso','admin\casoController@guardar')->name('crearCaso');
     //Route::view('/listarCasos','administrador/procesos-judiciales/listarProcesoJudicial')->name('listarCasos');
     Route::get('/listarCasos', 'admin\casoController@listarControlador')->name('listarCasos');
+    Route::get('/editarCaso/{radicado}', 'admin\casoController@editControlador')->name('editarCaso');
+    Route::post('/actualizarCaso', 'admin\casoController@editarControlador')->name('actualizarCaso');
 
     //CLIENTE
     Route::get('/registrarCliente', function () {
