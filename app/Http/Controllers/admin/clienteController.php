@@ -4,7 +4,6 @@ namespace App\Http\Controllers\admin;
 
 use App\Cliente;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Http\Requests\valFormRegCliente;
 
 class clienteController extends Controller
