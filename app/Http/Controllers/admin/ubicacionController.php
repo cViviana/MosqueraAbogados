@@ -11,8 +11,12 @@ class ubicacionController extends Controller
 {
     public function guardarControlador(valFormRegUbi $request){
       $objUbicacion = new Ubicacion($request->all());
-      $objUbicacion->guardar($objUbicacion);
-      $men = "La ubicacion se guardo de forma exitosa";
+      if(!$objUbicacion->existeUbicacion($request)){
+        $objUbicacion->guardar($objUbicacion);
+        $men = "La ubicacion se guardo de forma exitosa";
+      }else
+        $men = "Esta ubicación ya existe";
+      dd($men);
       return view('administrador.ubicacionFisica.agregarUbicacion', [ "men" => $men] );
     }
 
