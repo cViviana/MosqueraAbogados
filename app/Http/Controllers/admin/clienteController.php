@@ -57,7 +57,11 @@ class clienteController extends Controller
 
     public function editControlador($numero){
         $cliente = $this->buscar($numero);
-        return view('administrador.clientes.editarDatosCliente', ['Cliente' => $cliente]);
+        if($cliente->roll != 'cliente'){
+            return view('administrador.clientes.editarDatosContraparte', ['Cliente' => $cliente]);
+        }else{
+            return view('administrador.clientes.editarDatosCliente', ['Cliente' => $cliente]);
+        }
     }
 
     public function listarControlador($roll){

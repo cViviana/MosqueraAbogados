@@ -62,7 +62,7 @@ Route::prefix('admin')->group(
     })->name('registrarContraparte');
 
     Route::post('/agregarContraparte','admin\clienteController@crearControlador')->name('agregarContraparte');
-    Route::view('/listarContraparte','administrador/clientes/listarContraparte')->name('listarContraparte');
+    Route::get('/listarContraparte{roll}','admin\clienteController@listarControlador')->name('listarContraparte');
 
     //UBICACIÓN-DUCMENTOS
     Route::view('/agregarUbicacion','administrador/ubicacionFisica/agregarUbicacion')->name('agregarUbicacion');
