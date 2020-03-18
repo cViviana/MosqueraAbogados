@@ -13,9 +13,9 @@ class casoController extends Controller
 {
     public function index(){
       $listaClientes = new Cliente;
-      $Clientes = $listaClientes->listar('cliente');
+      $Clientes = $listaClientes->listarPorRoll('cliente');
       $listaContraparte = new Cliente;
-      $Contraparte = $listaContraparte->listar('contraparte');
+      $Contraparte = $listaContraparte->listarPorRoll('contraparte');
       $listaUsuarios = new User;
       $Usuarios = $listaUsuarios->listar();
       return view('administrador.procesos-judiciales.registrarProcesoJudicial', compact('Clientes','Contraparte','Usuarios') );
@@ -49,13 +49,13 @@ class casoController extends Controller
           return redirect()->route('registrarCaso')->with('men',$men,'tipo',0);
       }
     }
-    public function validarCliente($idcliente,$idcontraparte){
+    public function validarCliente($idCliente,$idContraparte){
 
-      $objcliente = new Cliente;
-      $objcliente = $objcliente->buscar($idcliente);
-      $objcontraparte = new Cliente;
-      $objcontraparte = $objcontraparte->buscar($idcontraparte);
-      if($objcontraparte != null && $objcliente != null &&  $objcontraparte != $objcliente ){
+      $objCliente = new Cliente;
+      $objCliente = $objCliente->buscar($idCliente);
+      $objContraparte = new Cliente;
+      $objContraparte = $objContraparte->buscar($idContraparte);
+      if($objContraparte != null && $objCliente != null &&  $objContraparte != $objCliente ){
         return true;
       }else {
         return false;
@@ -81,6 +81,6 @@ class casoController extends Controller
     public function listar(){
       //$listaCasos = Caso::with(['clientecontraparte:numero,nombre','clienteCliente:numero,nombre','dirige:dir_cedula,nombre'])->get();
       //dd($listaCasos);
-      return $listaCasos=Caso::with(['clienteContraparte:numero,nombre','cliente:numero,nombre','dirige:dir_cedula,nombre'])->get();
+      return $listaCasos=Caso::with(['clienteContraparte:numero,nombre','clienteCaso:numero,nombre','dirige:dir_cedula,nombre'])->get();
     }
 }

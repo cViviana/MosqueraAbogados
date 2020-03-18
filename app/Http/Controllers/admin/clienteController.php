@@ -20,7 +20,7 @@ class clienteController extends Controller
             $objCliente->guardar($objCliente);
             $mensajeRegistro = "Éxito. ". $request->nombre ." con identificación ".
                         $request->numero ." ha sido registrado.";
-            return redirect()->route('listarClientes', ['Clientes' => $this->listar($request->roll)])->with('mensajeRegistro', $mensajeRegistro);
+            return redirect()->route('listarClientes', ['roll'=> $request->roll,'Clientes' => $this->listar($request->roll)])->with('mensajeRegistro', $mensajeRegistro);
         }else{
             $mensajeNoRegistro = "Ya existe la identificación ". $request->numero ." del cliente ".
                         $request->nombre;
@@ -61,12 +61,18 @@ class clienteController extends Controller
     }
 
     public function listarControlador($roll){
-        return view('administrador.clientes.listarClientes', ['Clientes' => $this->listar($roll)] );
+        if($roll == 'cliente'){
+          return view('administrador.clientes.listarClientes', ['Clientes' => $this->listar($roll)] );
+        }else{
+          return view('administrador.clientes.listarContraparte', ['Clientes' => $this->listar($roll)] );
+        }
     }
 
     //este metodo fue separado de listarControlar para poder reenviar los clientes cuando se eliminen
     public function listar($roll){
-        return $listaCliente = Cliente::listar($roll);
+      $Clientes = new Cliente;
+      $listaCliente = $Clientes->listarPorRoll($roll);
+      return $listaCliente;
     }
 
     //este metodo fue creado para tener solo una cracion de cliente y un camino para el FIND

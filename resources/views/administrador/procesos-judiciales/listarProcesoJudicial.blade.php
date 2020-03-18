@@ -37,8 +37,8 @@
         <tr>
             <td>{{$caso->radicado}}</td>
             <td>{{$caso->descripcion}}</td>
-            <td>{{$caso->clienteDemandado->nombre}}</td>
-            <td>{{$caso->clienteDemandante->nombre}}</td>
+            <td>{{$caso->clienteCaso->nombre}}</td>
+            <td>{{$caso->clienteContraparte->nombre}}</td>
             <td>{{$caso->estado}}</td>
             <td>{{$caso->fecha_inicio}}</td>
             <td>{{$caso->fecha_fin}}</td>
