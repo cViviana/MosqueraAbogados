@@ -51,9 +51,9 @@ Route::prefix('admin')->group(
     Route::get('/editarCliente/{numero}', 'admin\clienteController@editControlador')->name('editarCliente');
     Route::post('/actualizarCliente', 'admin\clienteController@editarControlador')->name('actualizarCliente');
 
-    Route::get('/eliminarCliente/{numero}', 'admin\clienteController@eliminarControlador')->name('eliminarCliente');
+    Route::get('/eliminarCliente/{numero}/{roll}', 'admin\clienteController@eliminarControlador')->name('eliminarCliente');
 
-    Route::get('/listarClientes', 'admin\clienteController@listarControlador')->name('listarClientes');
+    Route::get('/listarClientes/{roll}', 'admin\clienteController@listarControlador')->name('listarClientes');
     Route::delete('/cliente/eliminarCliente/{numero}', 'admin\clienteController@eliminarControlador');
 
     //UBICACIÓN-DUCMENTOS

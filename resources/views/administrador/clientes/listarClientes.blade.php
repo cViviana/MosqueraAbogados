@@ -46,7 +46,7 @@
         </div>
     @endif
 @endsection
- 
+
 @section('nombre-campos-columnas')
     <th scope="col">Número</th>
     <th scope="col">Nombre</th>
@@ -71,7 +71,7 @@
                 </a>
             </td>
             <td>
-                <form action="{{route('eliminarCliente', $cliente->numero)}}"  method="get">
+                <form action="{{route('eliminarCliente', [$cliente->numero,'cliente'])}}"  method="get">
                     @csrf
                     <button class="btn btn-danger" type="submit">
                         <span class="glyphicon glyphicon-trash"></span>

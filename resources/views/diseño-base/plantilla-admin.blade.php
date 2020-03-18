@@ -76,7 +76,7 @@
                         <a><i class="fa fa-users"></i> Clientes<span class="arrow"></span></a>
                         <ul class="sub-menu collapse" id="clientes">
                             <li class="@yield("resaltar-registrarCliente")"><a href="{{route('registrarCliente')}}">Registrar Cliente</a></li>
-                            <li class="@yield("resaltar-listarClientes")"><a href="{{route('listarClientes')}}">Listar Clientes</li>
+                            <li class="@yield("resaltar-listarClientes")"><a href="{{route('listarClientes','cliente')}}">Listar Clientes</li>
                         </ul>
                     </li>
 

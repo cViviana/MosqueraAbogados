@@ -35,23 +35,23 @@ class clienteController extends Controller
             $objCliente->fill($request->all());
             $objCliente->guardar($objCliente);
             $mensajeActualizacion = "El cliente se actualizó de forma satisfactoria";
-            return redirect()->route('listarClientes', ['Clientes' => $this->listar()])->with('mensajeActualizacion', $mensajeActualizacion);
+            return redirect()->route('listarClientes', ['roll'=> $request->roll,'Clientes' => $this->listar($request->roll)])->with('mensajeActualizacion', $mensajeActualizacion);
         }else{
             $mensajeNoActualizacion = "El identificador del cliente no existe";
-            return redirect()->route('listarClientes', ['Clientes' => $this->listar()])->with('mensajeNoActualizacion', $mensajeNoRegistro);
+            return redirect()->route('listarClientes', ['roll'=> $request->roll,'Clientes' => $this->listar($request->roll)])->with('mensajeNoActualizacion', $mensajeNoRegistro);
         }
     }
 
-    public function eliminarControlador($numero){
+    public function eliminarControlador($numero,$roll){
         $objCliente = $this->buscar($numero);
         $mensajeNoEliminado = "";
         if ($objCliente != null){
             $objCliente->eliminar($objCliente);
             $mensajeEliminado = "El cliente se elimino de forma satisfactoria";
-            return redirect()->route('listarClientes', ['Clientes' => $this->listar()])->with('mensajeEliminado', $mensaje);
+            return redirect()->route('listarClientes', ['roll'=> $roll,'Clientes' => $this->listar($roll)])->with('mensajeEliminado', $mensajeEliminado);
         }else{
             $mensajeNoEliminado = "El cliente no se elimino de forma satisfactoria";
-            return redirect()->route('listarClientes', ['Clientes' => $this->listar()])->with('mensajeNoEliminado', $mensajeNoEliminado);
+            return redirect()->route('listarClientes', ['roll'=> $roll,'Clientes' => $this->listar($roll)])->with('mensajeNoEliminado', $mensajeNoEliminado);
         }
     }
 
@@ -60,13 +60,13 @@ class clienteController extends Controller
         return view('administrador.clientes.editarDatosCliente', ['Cliente' => $cliente]);
     }
 
-    public function listarControlador(){
-        return view('administrador.clientes.listarClientes', ['Clientes' => $this->listar()] );
+    public function listarControlador($roll){
+        return view('administrador.clientes.listarClientes', ['Clientes' => $this->listar($roll)] );
     }
 
     //este metodo fue separado de listarControlar para poder reenviar los clientes cuando se eliminen
-    public function listar(){
-        return $listaCliente = Cliente::all();
+    public function listar($roll){
+        return $listaCliente = Cliente::where("roll","=",$roll)->get();
     }
 
     //este metodo fue creado para tener solo una cracion de cliente y un camino para el FIND
