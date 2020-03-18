@@ -25,7 +25,7 @@ class clienteController extends Controller
             $mensajeNoRegistro = "Ya existe la identificación ". $request->numero ." del cliente ".
                         $request->nombre;
             return redirect()->route('registrarCliente')->with('mensajeNoRegistro', $mensajeNoRegistro);
-        }    
+        }
     }
 
     public function editarControlador(valFormRegCliente $request){

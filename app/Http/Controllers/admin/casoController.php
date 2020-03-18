@@ -26,12 +26,12 @@ class casoController extends Controller
       //si no exite
       if( $auxCaso == null ){
           //se valida si exiten los clientes y si son diferentes
-          if( $this->validarCliente($request->demandante,$request->demandado) == true){
+          if( $this->validarCliente($request->cliente,$request->contraparte) == true){
             //cumple que son diferente y existen
               //se valida si almenos un usuario principal existe
               if($this->validarUsuarios($request->abogadoPpal)==true){
                 $objCaso = new Caso($request->all());
-                $objCaso->guardar($objCaso,$request->demandante,$request->demandado,$request->abogadoPpal,$request->abogadoAux);
+                $objCaso->guardar($objCaso,$request->cliente,$request->contraparte,$request->abogadoPpal,$request->abogadoAux);
                 $men = "Caso registrado correctamente";
                 return redirect()->route('registrarCaso')->with('men',$men,'tipo',1);
               }else{
@@ -47,13 +47,13 @@ class casoController extends Controller
           return redirect()->route('registrarCaso')->with('men',$men,'tipo',0);
       }
     }
-    public function validarCliente($idDemandante,$idDemandado){
+    public function validarCliente($idcliente,$idcontraparte){
 
-      $objDemandante = new Cliente;
-      $objDemandante = $objDemandante->buscar($idDemandante);
-      $objDemandado = new Cliente;
-      $objDemandado = $objDemandado->buscar($idDemandado);
-      if($objDemandado != null && $objDemandante != null &&  $objDemandado != $objDemandante ){
+      $objcliente = new Cliente;
+      $objcliente = $objcliente->buscar($idcliente);
+      $objcontraparte = new Cliente;
+      $objcontraparte = $objcontraparte->buscar($idcontraparte);
+      if($objcontraparte != null && $objcliente != null &&  $objcontraparte != $objcliente ){
         return true;
       }else {
         return false;
@@ -77,8 +77,8 @@ class casoController extends Controller
 
     //este metodo fue separado de listarControlar para poder reenviar los clientes cuando se eliminen
     public function listar(){
-      //$listaCasos = Caso::with(['clienteDemandado:numero,nombre','clienteDemandante:numero,nombre','dirige:dir_cedula,nombre'])->get();
+      //$listaCasos = Caso::with(['clientecontraparte:numero,nombre','clienteCliente:numero,nombre','dirige:dir_cedula,nombre'])->get();
       //dd($listaCasos);
-      return $listaCasos=Caso::with(['clienteDemandado:numero,nombre','clienteDemandante:numero,nombre','dirige:dir_cedula,nombre'])->get();
+      return $listaCasos=Caso::with(['clienteContraparte:numero,nombre','cliente:numero,nombre','dirige:dir_cedula,nombre'])->get();
     }
 }

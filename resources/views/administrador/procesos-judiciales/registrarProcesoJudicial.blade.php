@@ -54,14 +54,14 @@
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
-                      <select name='demandante' id='demandante' class="form-control">
+                      <select name='cliente' id='cliente' class="form-control">
                           <option selected="">* Cliente</option>
                           @foreach ($Clientes as $cli)
                             <option value= {{$cli->numero}}>{{$cli->numero}} - {{$cli->nombre}}</option>
                           @endforeach
                       </select>
                     <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
-                    <select name='demandado' id='demandado' class="form-control">
+                    <select name='contraparte' id='contraparte' class="form-control">
                         <option selected="">* Contraparte</option>
                           @foreach ($Clientes as $cli)
                             <option value= {{$cli->numero}}>{{$cli->numero}} - {{$cli->nombre}}</option>

@@ -23,6 +23,7 @@ class CreateClienteTable extends Migration
             $table->string("tipo",50)->nullable(false);
             $table->string("telefono",20)->nullable(false);
             $table->string("email",50)->nullable(false);
+              $table->enum('roll',['cliente', 'contraparte']);
             $table->timestamps();
         });
     }

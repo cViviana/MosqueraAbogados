@@ -3,7 +3,7 @@
 
 @section('seccion')
     <div class="container_pagina">
-        <div class="texto_titulo">REGISTRAR CONTRAPARTE</div> 
+        <div class="texto_titulo">REGISTRAR CONTRAPARTE</div>
         <div class="container_formulario">
             <div class="mascara">
             <form action="" class="texto_campos" method="post">
@@ -36,7 +36,8 @@
                 </div>
                 <br>
                 <button type="submit" class="btn btn-primary">Registrar Contraparte</button>
-                <div class="texto_campos">Los campos con (*) son obligatorios</div> 
+                <div class="texto_campos">Los campos con (*) son obligatorios</div>
+                <div name='roll' id='roll' value='contraparte'> </div>
                 </form>
             </div>
         </div>

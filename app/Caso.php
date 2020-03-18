@@ -12,8 +12,8 @@ class Caso extends Model
     protected $primaryKey='radicado';
     protected $keyTyper='string';
     protected $fillable=['radicado','estado','fecha_inicio','descripcion','fecha_fin'];
-    public function clienteDemandante(){
-      return $this->belongsTo('App\Cliente','demandante');
+    public function cliente(){
+      return $this->belongsTo('App\Cliente','cliente');
     }
     public function clienteDemandado(){
       return $this->belongsTo('App\Cliente','demandado');
@@ -23,10 +23,10 @@ class Caso extends Model
       //...belongsToMany([modelo],[nombre_tabla_pivote], [nombre_fk1], [nombre_fk2]);
     }
 
-    public function guardar(Caso $objCaso, $demandado, $demandante, $abogadoPpal, $abogadoAux){
+    public function guardar(Caso $objCaso, $demandado, $cliente, $abogadoPpal, $abogadoAux){
       //asociar el demandado y el demandante
       $objCaso->clienteDemandado()->associate($demandado);
-      $objCaso->clienteDemandante()->associate($demandante);
+      $objCaso->cliente()->associate($demandante);
       $objCaso->timestamps = false;
       $radicadoAxu= $objCaso->radicado;
       $objCaso->save();

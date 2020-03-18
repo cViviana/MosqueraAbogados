@@ -9,12 +9,12 @@ class Cliente extends Model
     protected $table='cliente';
     protected $primaryKey='numero';
     protected $keyTyper='string';
-    protected $fillable=['numero','nombre','tipo','telefono','email'];
-    public function casoDemandado(){
-       return $this->hasMany('App\Caso','demandado','numero');
+    protected $fillable=['numero','nombre','tipo','telefono','email','roll'];
+    public function casoContraparte(){
+       return $this->hasMany('App\Caso','contraparte','numero');
     }
-    public function casoDemandante(){
-       return $this->hasMany('App\Caso','demandante','numero');
+    public function casoCliente(){
+       return $this->hasMany('App\Caso','cliente','numero');
     }
 
     public function guardar(Cliente $objCliente){

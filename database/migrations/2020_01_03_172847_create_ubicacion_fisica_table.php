@@ -16,7 +16,7 @@ class CreateUbicacionFisicaTable extends Migration
         Schema::create('ubicacion_fisica', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer("numArchivero")->nullable(false);
-            $table->integer("numGabeta")->nullable(false);
+            $table->integer("numGaveta")->nullable(false);
             $table->timestamps();
         });
     }

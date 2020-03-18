@@ -23,10 +23,10 @@ class CreateCasoTable extends Migration
             // llaves foraneas
             // estas dos foreneas a la misma tabla cliente es para poder tener informacion no solo del cliente sino tambien de la persona que
             // demando el cliente
-            $table->string('demandado');
-            $table->string('demandante');
-            $table->foreign('demandado')->references('numero')->on('cliente');
-            $table->foreign('demandante')->references('numero')->on('cliente');
+            $table->string('cliente');
+            $table->string('contraparte');
+            $table->foreign('cliente')->references('numero')->on('cliente');
+            $table->foreign('contraparte')->references('numero')->on('cliente');
 
 
         });

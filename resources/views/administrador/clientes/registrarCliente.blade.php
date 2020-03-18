@@ -54,9 +54,10 @@
                         <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
                         <input name='email' id='email' class="form-control" placeholder="* Correo electrónico" type="text" required>
                     </div>
+                    <input type="hidden" name="roll" id='roll' value="cliente">
                     <br>
                     <button type="submit" class="btn btn-primary">Registrar Cliente</button>
-                    <div class="texto_campos">Los campos con (*) son obligatorios</div> 
+                    <div class="texto_campos">Los campos con (*) son obligatorios</div>
                     <br>
                 </form>
             </div>
