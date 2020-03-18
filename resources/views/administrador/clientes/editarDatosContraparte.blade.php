@@ -3,7 +3,7 @@
 @section('seccion')
 
     <div class="container_pagina">
-        <div class="texto_titulo">ACTUALIZAR DATOS DEL CLIENTE</div>
+        <div class="texto_titulo">ACTUALIZAR DATOS DEL CONTRAPARTE</div>
 
         <div class="container_formulario" id="contenedorMensajes">
             @if(count($errors) > 0)
@@ -59,7 +59,7 @@
                     <input name='email' id='email' class="form-control" placeholder="* Correo Electronico" type="text" required
                         value="{{$Cliente->email}}">
                 </div>
-                <input type="hidden" name="roll" id='roll' value="cliente">
+                <input type="hidden" name="roll" id='roll' value="contraparte">
                 <br>
                 <button type="submit" class="btn btn-primary">Actualizar Datos</button>
                 <div class="texto_campos">Los campos con (*) son obligatorios</div>

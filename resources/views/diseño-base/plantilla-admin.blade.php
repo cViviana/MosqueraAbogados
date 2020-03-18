@@ -85,7 +85,7 @@
                         <i class="fa fa-users"></i> Contrapartes<span class="arrow"></span>
                         <ul class="sub-menu collapse" id="contraparte">
                             <li class="@yield("resaltar-registrarContraparte")"><a href="{{route('registrarContraparte')}}">Registrar Contraparte</a></li>
-                            <li class="@yield("resaltar-listarContrapartes")"><a href="{{route('listarContraparte')}}">Listar Contrapartes</a></li>
+                            <li class="@yield("resaltar-listarContrapartes")"><a href="{{route('listarContraparte','contraparte')}}">Listar Contrapartes</a></li>
                         </ul>
                     </li>
 
