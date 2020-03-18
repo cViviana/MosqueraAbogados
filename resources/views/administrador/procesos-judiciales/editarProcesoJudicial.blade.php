@@ -44,8 +44,8 @@
                     <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
                     <select name='demandado' id='demandado' class="form-control">
                         <option selected="">* Contraparte</option>
-                          @foreach ($Clientes as $cli)
-                            <option value= {{$cli->numero}}>{{$cli->numero}} - {{$cli->nombre}}</option>
+                          @foreach ($Contraparte as $contr)
+                            <option value= {{$contr->numero}}>{{$contr->numero}} - {{$contr->nombre}}</option>
                           @endforeach
                     </select>
                 </div>

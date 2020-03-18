@@ -61,12 +61,18 @@ class clienteController extends Controller
     }
 
     public function listarControlador($roll){
-        return view('administrador.clientes.listarClientes', ['Clientes' => $this->listar($roll)] );
+        if($roll == 'cliente'){
+          return view('administrador.clientes.listarClientes', ['Clientes' => $this->listar($roll)] );
+        }else{
+          return view('administrador.clientes.listarContraparte', ['Clientes' => $this->listar($roll)] );
+        }
     }
 
     //este metodo fue separado de listarControlar para poder reenviar los clientes cuando se eliminen
     public function listar($roll){
-        return $listaCliente = Cliente::where("roll","=",$roll)->get();
+      $Clientes = new Cliente;
+      $listaCliente = $Clientes->listarPorRoll($roll);
+      return $listaCliente;
     }
 
     //este metodo fue creado para tener solo una cracion de cliente y un camino para el FIND
