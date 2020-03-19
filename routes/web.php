@@ -43,6 +43,17 @@ Route::prefix('admin')->group(
     Route::get('/editarCaso/{radicado}', 'admin\casoController@editControlador')->name('editarCaso');
     Route::post('/actualizarCaso', 'admin\casoController@editarControlador')->name('actualizarCaso');
 
+    //USUARIOS
+    Route::view('/crearUsuario', 'administrador/usuarios/registrarUsuario')->name('crearUsuario');
+    Route::post('/guardarUsuario', 'admin\userController@guardarControlador')->name('guardarUsuario');
+
+    Route::get('/editarUsuario/{cedula}', 'admin\userController@editarControlador')->name('editarUsuario');
+    Route::post('/actualizarUsuario', 'admin\userController@actualizarControlador')->name('actualizarUsuario');
+
+    Route::get('/eliminarUsuario/{cedula}', 'admin\userController@eliminarControlador')->name('eliminarUsuario');
+    
+    Route::get('/listarUsuarios', 'admin\userController@listarControlador')->name('listarUsuarios');
+
     //CLIENTE
     Route::get('/registrarCliente', function () {
       return view('administrador/clientes/registrarCliente');

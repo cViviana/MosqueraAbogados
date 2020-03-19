@@ -49,26 +49,25 @@ class User extends Authenticatable
       return $this->belongsTo('App\Roll','us_roll', 'cedula');
     }
 
-    /*public function guardar(User $usuario,$rollId){
-      //
-      $roll = Roll::find($rollId);
-      echo('*'.$roll->id);
-      if($roll!=null){
-        #este es el caso si exite se asocia
-        $usuario->usuarioPoseeRoll()->associate($roll);
-        $usuario->save();
-      }else{
-        //si no esta devolver a la vista que  no se puede guardar el documento por que no exite el tipo
-        echo "no esta";
-      }
-    }*/
+    public function guardar(User $objUser){
+      $objUser->save();
+    }
 
-    public function buscar($numero){
-      return $this::find($numero);
+    public function eliminar(User $objUser){
+      $objUser->delete();
+    }
+
+    public function buscar($cedula){
+      return $this::find($cedula);
     }
 
     public function listar(){
       return $this::all();
+    }
+
+    public function asignarRol($cedula, $rol){
+      $user = $this::find($cedula);
+      $user->assignRole($rol);
     }
 
 }
