@@ -8,6 +8,7 @@ use App\Caso;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\valFormRegCaso;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 //use App\Http\Requests\valFormDoc;
 
 class casoController extends Controller
@@ -24,6 +25,8 @@ class casoController extends Controller
 
     public function guardar(valFormRegCaso $request){
       // si verifica existe ya un caso con ese mismo radicado
+      //$password = Hash::make(12345);
+      //dd($password);
       $auxCaso = $this->buscarControlador($request->radicado);
       //si no exite
       if( $auxCaso == null ){

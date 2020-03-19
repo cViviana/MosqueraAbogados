@@ -12,6 +12,7 @@ class Caso extends Model
     protected $table='caso';
     protected $primaryKey='radicado';
     protected $keyTyper='string';
+    public  $incrementing = false;
     protected $fillable=['radicado','estado','fecha_inicio','descripcion','fecha_fin'];
     public function clienteCaso(){
       return $this->belongsTo('App\Cliente','cliente');
@@ -29,10 +30,10 @@ class Caso extends Model
       $objCaso->clienteContraparte()->associate($contraparte);
       $objCaso->clienteCaso()->associate($cliente);
       $objCaso->timestamps = false;
-      $radicadoAxu= $objCaso->radicado;
+      $radicadoAux = $objCaso->radicado;
       $objCaso->save();
       //guardar en la tabla pivote
-      $objCaso->radicado=$radicadoAxu;
+      $objCaso->radicado=$radicadoAux;
       $this->tablaPivote($objCaso,$abogadoPpal,$abogadoAux);
     }
     public function buscar($radicado){
