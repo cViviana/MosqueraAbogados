@@ -52,6 +52,7 @@
     <th scope="col">Email</th>
     <th scope="col">Teléfono</th>
     <th scope="col">Cargo</th>
+    <th scope="col">Asignar cargo</th>
     <th scope="col">Editar</th>
     <th scope="col">Eliminar</th>
 @endsection
@@ -64,6 +65,11 @@
             <td></td>
             <td></td>
             <td></td>
+            <td>
+                <a href="" class="btn btn-info">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            </td>
             <td>
                 <a href="" class="btn btn-primary">
                     <i class="fas fa-user-edit"></i>

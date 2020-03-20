@@ -70,17 +70,6 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                         </div>
-                        <select name='rol' id='rol' class="form-control">
-                            <option selected="">* Seleccione rol del usuario</option>
-                            <option value="natural">Abogado Jefe</option>
-                            <option value="natural">Abogado Auxiliar</option>
-                            <option value="juridica">Secretaria</option>
-                        </select>    
-                    </div>
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                        </div>
                         <input id="password" type="password" placeholder="* Contraseña" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
                         @error('password')
                             <span class="invalid-feedback" role="alert">
