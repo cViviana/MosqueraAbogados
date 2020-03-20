@@ -1,5 +1,7 @@
 @extends('diseño-base.plantilla-listar')
+@section("resaltar-tipos-documentos", "active")
 @section("resaltar-listarTiposDocumentos", "active")
+
 @section('titulo','Información de tipos de documentos')
 
 @section('titulo-listar', 'LISTADO DE TIPOS DE DOCUMENTOS')

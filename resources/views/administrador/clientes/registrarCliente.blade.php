@@ -1,5 +1,7 @@
 @extends('diseño-base.plantilla-registrar')
+@section("resaltar-clientes", "active")
 @section("resaltar-registrarCliente", "active")
+
 @section('titulo','Registrar Cliente')
 
 @section('titulo-formulario', "REGISTRAR CLIENTE")

@@ -1,5 +1,7 @@
 @extends('diseño-base.plantilla-registrar')
+@section("resaltar-contraparte", "active")
 @section("resaltar-registrarContraparte", "active")
+
 @section('titulo','Registrar Contraparte')
 
 @section('titulo-formulario', "REGISTRAR CONTRAPARTE")

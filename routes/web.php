@@ -112,6 +112,7 @@ Route::prefix('admin')->group(
 //Route::view('/registrarContraparte','administrador/clientes/registrarContraparte')->name('registrarContraparte');
 //Route::view('/listarContraparte','administrador/clientes/listarContraparte')->name('listarContraparte');
 
+Route::view('/listarDocumentos','administrador/procesos-judiciales/listarDocumentos')->name('listarDocumentos');
 Route::view('/subirDocumento','administrador/procesos-judiciales/subirDocumento')->name('subirDocumento');
 Route::view('/tipoDocumento','administrador/tipoDocumento')->name('tipoDocumento');
 

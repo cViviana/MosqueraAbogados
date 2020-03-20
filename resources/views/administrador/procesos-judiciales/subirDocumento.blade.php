@@ -1,5 +1,6 @@
 
 @extends('diseño-base.plantilla-admin')
+@section("resaltar-documentos-casos", "active")
 @section("resaltar-subirDocumento", "active")
 
 @section('seccion')
