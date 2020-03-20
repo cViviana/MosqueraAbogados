@@ -27,11 +27,11 @@ class valFormRegCliente extends FormRequest
     public function rules()
     {
         return [
-            'numero' => 'required|max:191',
+            'numero' => 'required|max:60',
             'nombre' => 'required|string|max:60',
             'tipo'=> 'required|in:juridica,natural',
             'telefono' => 'required|numeric|digits_between:7,20',
-            'email' => 'required|string|max:60|email'
+            'email' => "string|max:60|email|nullable",
         ];
     }
 

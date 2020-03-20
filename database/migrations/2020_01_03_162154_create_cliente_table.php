@@ -22,7 +22,7 @@ class CreateClienteTable extends Migration
             // este atributo es para saber si es una persona natural o un empresa
             $table->string("tipo",50)->nullable(false);
             $table->string("telefono",20)->nullable(false);
-            $table->string("email",50)->nullable(false);
+            $table->string("email",60)->nullable(true);
               $table->enum('roll',['cliente', 'contraparte']);
             $table->timestamps();
         });

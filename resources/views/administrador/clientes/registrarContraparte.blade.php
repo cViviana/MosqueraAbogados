@@ -42,13 +42,12 @@
         <br>
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-            <input name='email' id='email' class="form-control" placeholder="* Correo electrónico" type="text" required>
+            <input name='email' id='email' class="form-control" placeholder="Correo electrónico" type="text">
         </div>
         <input type="hidden" name="roll" id='roll' value="contraparte">
         <br>
         <button type="submit" class="btn btn-primary">Registrar Contraparte</button>
         <div class="texto_campos">Los campos con (*) son obligatorios</div>
-        <div name='roll' id='roll' value='contraparte'> </div>
         <br>
     </form>
 @endsection

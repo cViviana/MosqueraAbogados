@@ -18,7 +18,7 @@ class CreateCasoTable extends Migration
             $table->enum('estado',['activo', 'cerrado'])->default('activo');
             $table->date("fecha_inicio")->nullable(false);
             $table->string("descripcion",200)->nullable(false);
-            $table->date("fecha_fin");
+            $table->date("fecha_fin")->nullable(true);
 
             // llaves foraneas
             // estas dos foreneas a la misma tabla cliente es para poder tener informacion no solo del cliente sino tambien de la persona que

@@ -51,12 +51,12 @@
             </td>
 
             <td>
-                <a href="#" class="btn btn-primary">
+                <a href="" class="btn btn-primary">
                     <span class="glyphicon glyphicon-folder-open text-center"></span>
                 </a>
             </td>
             <td>
-                <a href="" class="btn btn-primary">
+                <a href="{{route('editarCaso',$caso->radicado)}}" class="btn btn-primary">
                     <span class="glyphicon glyphicon-pencil"></span>
                 </a>
             </td>

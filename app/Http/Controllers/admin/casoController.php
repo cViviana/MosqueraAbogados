@@ -6,7 +6,9 @@ use App\Cliente;
 use App\User;
 use App\Caso;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\valFormRegCaso;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 //use App\Http\Requests\valFormDoc;
 
 class casoController extends Controller
@@ -21,10 +23,11 @@ class casoController extends Controller
       return view('administrador.procesos-judiciales.registrarProcesoJudicial', compact('Clientes','Contraparte','Usuarios') );
     }
 
-    public function guardar(Request $request){
+    public function guardar(valFormRegCaso $request){
       // si verifica existe ya un caso con ese mismo radicado
-      $caso = new Caso;
-      $auxCaso = $caso->buscar($request->radicado);
+      //$password = Hash::make(12345);
+      //dd($password);
+      $auxCaso = $this->buscarControlador($request->radicado);
       //si no exite
       if( $auxCaso == null ){
           //se valida si exiten los clientes y si son diferentes
@@ -33,7 +36,7 @@ class casoController extends Controller
               //se valida si almenos un usuario principal existe
               if($this->validarUsuarios($request->abogadoPpal)==true){
                 $objCaso = new Caso($request->all());
-                $objCaso->guardar($objCaso,$request->cliente,$request->contraparte,$request->abogadoPpal,$request->abogadoAux);
+                $objCaso->guardar($objCaso,$request->contraparte,$request->cliente,$request->abogadoPpal,$request->abogadoAux);
                 $men = "Caso registrado correctamente";
                 return redirect()->route('registrarCaso')->with('men',$men,'tipo',1);
               }else{
@@ -50,7 +53,6 @@ class casoController extends Controller
       }
     }
     public function validarCliente($idCliente,$idContraparte){
-
       $objCliente = new Cliente;
       $objCliente = $objCliente->buscar($idCliente);
       $objContraparte = new Cliente;
@@ -79,8 +81,44 @@ class casoController extends Controller
 
     //este metodo fue separado de listarControlar para poder reenviar los clientes cuando se eliminen
     public function listar(){
-      //$listaCasos = Caso::with(['clientecontraparte:numero,nombre','clienteCliente:numero,nombre','dirige:dir_cedula,nombre'])->get();
-      //dd($listaCasos);
       return $listaCasos=Caso::with(['clienteContraparte:numero,nombre','clienteCaso:numero,nombre','dirige:dir_cedula,nombre'])->get();
+    }
+    public function editarControlador(Request $request){
+
+      $objCaso = $this->buscarControlador($request->radicado);
+      if($objCaso != null){
+          $objCaso->fill($request->all());
+        /*$objCliente = $request->cliente;
+        $objContraparte = $request->contraparte;
+        if($objCliente )*/
+        $objCaso->actualizar($objCaso, $request->cliente, $request->contraparte, $request->abogadoPpal, $request->abogadoAux);
+        $men ="Actualizado caso con el radicado: ".$objCaso->radicado;
+        return redirect()->route('listarCasos')->with('men',$men);
+      }else{
+        $men ="No existe un caso con el radicado: ".$caso. "para editar";
+        return redirect()->route('listarCasos')->with('men',$men);
+      }
+
+    }
+
+    public function editControlador($radicado){
+        $caso = $this->buscarControlador($radicado);
+        if($caso != null){
+          $listaClientes = new Cliente;
+          $Clientes = $listaClientes->listarPorRoll('cliente');
+          $listaContraparte = new Cliente;
+          $Contraparte = $listaContraparte->listarPorRoll('contraparte');
+          $listaUsuarios = new User;
+          $Usuarios = $listaUsuarios->listar();
+            return view('administrador.procesos-judiciales.editarProcesoJudicial', compact('caso','Clientes','Contraparte','Usuarios'));
+        }else{
+          $men ="No existe un caso con el radicado: ".$caso. "para editar";
+          return redirect()->route('listarCasos')->with('men',$men);
+        }
+    }
+
+    public function buscarControlador($radicado){
+      $objCaso = new Caso();
+      return $objCaso->buscar($radicado);
     }
 }

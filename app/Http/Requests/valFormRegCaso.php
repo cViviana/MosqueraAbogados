@@ -24,13 +24,26 @@ class valFormRegCaso extends FormRequest
     public function rules()
     {
         return [
-            'radicado'=>'require|unique:caso,radicado|string|max:191',
-            'tipo'=> 'require|in:activo,cerrado',
+            'radicado'=>'required|string|max:191',
+            'estado'=> 'required|in:activo,cerrado',
             'fecha_inicio'=> 'required|date|after:tomorrow',
-            'fechaFinal' => 'after_or_equal:fecha_inicio',
-            'descripcion'=>'require|unique:caso,radicado|string|max:191',
-            'demandado'=>'require|unique:caso,demandado|string|max:191',
-            'demandante'=>'require|unique:caso,demandante|string|max:191',
+            'fecha_fin' => 'after_or_equal:fecha_inicio|nullable',
+            'descripcion'=>'required|string|max:191',
+            'cliente'=>'required|string|max:191',
+            'contraparte'=>'required|string|max:191',
         ];
+    }
+
+    public function messages(){
+      return [
+        'radicado.'=>'Esta el radicado',
+        'tipo'=> 'tipo esta cerrado',
+        'fecha_inicio'=> 'fecha inicio mal',
+        'fecha_fin' => 'fecha fin mal ',
+        'descripcion'=>'des mal',
+        'cliente'=>' malo cliente',
+        'contraparte'=>'malo contraparte',
+
+      ];
     }
 }

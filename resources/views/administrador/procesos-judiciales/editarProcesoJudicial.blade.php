@@ -7,13 +7,13 @@
         <div class="texto_titulo">EDITAR CASO</div>
         <div class="container_pagina container_formulario">
             <div class="mascara">
-            <form action="" class="texto_campos" method="post">
+            <form action="{{route('actualizarCaso')}}" class="texto_campos" method="post">
             {{csrf_field()}}
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-link"></i></span>
                     <input name='radicado' id='radicado' class="form-control" placeholder="* Numero de Radicado" type="text" required
-                     value = "">
+                     value = {{$caso->radicado}}>
                 </div>
                 <br>
                 <div class="input-group">
@@ -21,7 +21,7 @@
                       <select name='abogadoPpal' id='abogadoPpal' class="form-control">
                           <option selected="">* Abogado Principal</option>
                           <@foreach ($Usuarios as $us)
-                            <option value= {{{{$us->cedula}}>{{$us->cedula}} - {{$us->nombre}}}}</option>
+                            <option value= {{$us->cedula}}>{{$us->cedula}} - {{$us->nombre}}</option>
                           @endforeach
                       </select>
                     <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
@@ -35,14 +35,14 @@
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
-                      <select name='demandante' id='demandante' class="form-control">
+                      <select name='cliente' id='cliente' class="form-control">
                           <option selected="">* Cliente</option>
                           @foreach ($Clientes as $cli)
                             <option value= {{$cli->numero}}>{{$cli->numero}} - {{$cli->nombre}}</option>
                           @endforeach
                       </select>
                     <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
-                    <select name='demandado' id='demandado' class="form-control">
+                    <select name='contraparte' id='contraparte' class="form-control">
                         <option selected="">* Contraparte</option>
                           @foreach ($Contraparte as $contr)
                             <option value= {{$contr->numero}}>{{$contr->numero}} - {{$contr->nombre}}</option>
@@ -62,12 +62,12 @@
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-comments"></i></span>
                     <input name='descripcion' id='descripcion' class="form-control" placeholder="* Descripcion" type="text" required
-                     value = "">
+                     value = {{$caso->descripcion}}>
                 </div>
                 <br>
                 <div class="input-group date" data-provide="datepicker">
                     <span class="input-group-addon"><i class="fa fa-calendar-check-o"></i></span>
-                    <input type="text" name='fecha_inicio' id='fecha_inicio'class="form-control" placeholder="* Fecha de Inicio" required>
+                    <input type="text" name='fecha_inicio' id='fecha_inicio'class="form-control" placeholder="* Fecha de Inicio" value='{{$caso->fecha_inicio}}' required>
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
@@ -75,13 +75,13 @@
                 <br>
                 <div class="input-group date" data-provide="datepicker">
                     <span class="input-group-addon"><i class="fa fa-calendar-check-o"></i></span>
-                    <input type="text" name='fecha_fin' id='fecha_fin' class="form-control" placeholder="* Fecha de Finalización" required>
+                    <input type="text" name='fecha_fin' id='fecha_fin' class="form-control" placeholder="* Fecha de Finalización" value='{{$caso->fecha_fin}}'required>
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary">Registrar Caso</button>
+                <button type="submit" class="btn btn-primary">Editar Caso</button>
                 <div class="texto_campos">Los campos con (*) son obligatorios</div>
             </form>
             </div>

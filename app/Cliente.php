@@ -9,6 +9,7 @@ class Cliente extends Model
     protected $table='cliente';
     protected $primaryKey='numero';
     protected $keyTyper='string';
+    public $incrementing = false;
     protected $fillable=['numero','nombre','tipo','telefono','email','roll'];
     public function casoContraparte(){
        return $this->hasMany('App\Caso','contraparte','numero');

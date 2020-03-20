@@ -9,7 +9,7 @@
 	<link rel="icon" href="img/favicon-1.png" type="image/png">
 	<title>@yield('titulo') | Mosquera Abogados</title>
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+	<link rel="stylesheet" href="{{ secure_asset('css/bootstrap.css') }}">
 	<link rel="stylesheet" href="{{ asset('vendors/linericon/style.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">

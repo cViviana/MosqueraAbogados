@@ -42,7 +42,7 @@
         <br>
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-            <input name='email' id='email' class="form-control" placeholder="* Correo electrónico" type="text" required>
+            <input name='email' id='email' class="form-control" placeholder="Correo electrónico" type="text">
         </div>
         <input type="hidden" name="roll" id='roll' value="cliente">
         <br>
