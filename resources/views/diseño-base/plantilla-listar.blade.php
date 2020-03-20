@@ -1,18 +1,25 @@
 @extends('diseño-base.plantilla-admin')
 
 @section('seccion')
-    <div class="container_pagina">
-        <div class="texto_titulo">@yield('titulo-listar')</div>
-        @yield("contenedor-mensajes")
-        <table class="table table-responsive tabla table-hover">
-            <thead class="thead-light container_formulario">
-                <tr>
-                    @yield("nombre-campos-columnas")
-                </tr>
-            </thead>
-            <tbody class="container_formulario">
-                    @yield("listado-columnas")
-            </tbody>
+<div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">LISTADO</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                            @yield("nombre-campos-columnas")
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @yield("listado-columnas")
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
         </table>
         <br>
     </div>

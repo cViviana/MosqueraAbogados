@@ -6,13 +6,12 @@
 @section('titulo-listar', 'LISTADO DE DOCUMENTOS')
 
 @section("nombre-campos-columnas")
-    <th scope="col">ID</th>
-    <th scope="col">Ruta</th>
-    <th scope="col">Descripción</th>
-    <th scope="col">Estado</th>
-    <th scope="col">Tipo</th>
-    <th scope="col">Ubicación</th>
     <th scope="col">Núm. Radicado</th>
+    <th scope="col">Archivero</th>
+    <th scope="col">Gaveta</th>
+    <th scope="col">Tipo</th>
+    <th scope="col">Descripcion</th>
+    <th scope="col">Editar</th>
     <th scope="col">Eliminar</th>   
 @endsection
 
@@ -24,13 +23,16 @@
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
-        <td></td>
+        <td>
+            <a href="" class="btn btn-primary">
+                <i class="fas fa-edit"></i>
+            </a>
+        </td>
         <td>
             <form action=""  method="get">
                 @csrf
                 <button class="btn btn-danger" type="submit">
-                    <span class="glyphicon glyphicon-trash"></span>
+                    <i class="fa fa-trash" aria-hidden="true"></i>
                 </button>
             </form>
         </td>

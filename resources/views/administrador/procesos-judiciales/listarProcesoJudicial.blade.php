@@ -25,10 +25,10 @@
     <th scope="col">Cliente</th>
     <th scope="col">Contraparte</th>
     <th scope="col">Estado</th>
-    <th scope="col">Fecha inicio</th>
-    <th scope="col">Fecha fin</th>
+    <th scope="col">F.inicio</th>
+    <th scope="col">F.fin</th>
     <th scope="col">Abogado</th>
-    <th scope="col">Ver archivos</th>
+    <th scope="col">Archivos</th>
     <th scope="col">Editar</th>
     <th scope="col">Eliminar</th>
 @endsection
@@ -44,28 +44,25 @@
             <td>{{$caso->fecha_inicio}}</td>
             <td>{{$caso->fecha_fin}}</td>
             <td>
-                <tr>
-                    @foreach($caso->dirige as $dir)
-                        <td>{{$dir->nombre}}</td>
-                    @endforeach
-                </tr>
+                @foreach($caso->dirige as $dir)
+                    {{$dir->nombre}}
+                @endforeach
             </td>
-
             <td>
-                <a href="" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-folder-open text-center"></span>
+                <a href="" class="btn btn-info">
+                <i class="fas fa-folder-open"></i>    
                 </a>
             </td>
             <td>
                 <a href="{{route('editarCaso',$caso->radicado)}}" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-pencil"></span>
+                    <i class="fas fa-edit"></i>
                 </a>
             </td>
             <td>
                 <form action=""  method="get">
                     @csrf
                     <button class="btn btn-danger" type="submit">
-                        <span class="glyphicon glyphicon-trash"></span>
+                        <i class="fa fa-trash" aria-hidden="true"></i>
                     </button>
                 </form>
             </td>

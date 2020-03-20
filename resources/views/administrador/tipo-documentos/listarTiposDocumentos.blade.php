@@ -20,14 +20,14 @@
         <td>{{$tipoDocumento->nombre}}</td>
         <td>
             <a href="{{route('editarTipoDocumento', $tipoDocumento->id)}}" class="btn btn-primary">
-                <span class="glyphicon glyphicon-pencil"></span>
+                <i class="fas fa-edit"></i>
             </a>
         </td>
         <td>
             <form action="{{route('eliminarTipoDocumento', $tipoDocumento->id)}}"  method="get">
                 @csrf
                 <button class="btn btn-danger" type="submit">
-                    <span class="glyphicon glyphicon-trash"></span>
+                    <i class="fa fa-trash" aria-hidden="true"></i>
                 </button>
             </form>
         </td>

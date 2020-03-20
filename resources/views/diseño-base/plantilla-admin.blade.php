@@ -51,6 +51,26 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Usuarios
+      </div>
+      <!-- USUARIO-->
+      <li class="nav-item @yield("resaltar-usuarios")">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#usuarios" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fa fa-user-plus" aria-hidden="true"></i>
+          <span>Usuarios</span>
+        </a>
+        <div id="usuarios" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item @yield("resaltar-registrarUsuario")" href="">Registrar Usuario</a>
+            <a class="collapse-item @yield("resaltar-listarUsuarios")" href="">Listar Usuarios</a>
+          </div>
+        </div>  
+      </li>
+
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
 
       <!-- Heading -->
       <div class="sidebar-heading">Procesos Judiciales</div>
@@ -212,7 +232,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Smart Software Solution</span>
+            <span>Copyright &copy; Smart Software Solutions</span>
           </div>
         </div>
       </footer>
