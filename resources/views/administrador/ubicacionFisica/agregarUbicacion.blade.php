@@ -6,17 +6,6 @@
 
 @section('titulo-formulario', "AGREGAR UNA UBICACIÓN")
 
-@section("contenedor-mensajes")
-  @if (session()->has('men'))
-      <div class="alert alert-success animated fadeIn">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-          </button>
-          {{session('men')}}
-      </div>
-  @endif
-@endsection
-
 @section("formulario")
   <form action="{{route('agregarUbicacionFisica')}}"class="texto_campos" method="post">
     {{csrf_field()}}

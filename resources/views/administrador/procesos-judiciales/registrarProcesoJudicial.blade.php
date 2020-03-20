@@ -5,17 +5,6 @@
 
 @section('titulo-formulario', "REGISTRAR PROCESO JUDICIAL")
 
-@section("contenedor-mensajes")
-    @if (session()->has('men'))
-        <div class="alert alert-success animated fadeIn">
-            {{session('men')}}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
-@endsection
-
 @section("formulario")
     <form action="{{route('crearCaso')}}" class="texto_campos" method="post">
     {{csrf_field()}}
