@@ -1,26 +1,25 @@
 @extends('diseño-base.plantilla-admin')
 @section('seccion')
-    <div class="container_pagina">
-        <div class="container_formulario emp-profile">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="profile-img">
-                            <img src="../img/profile.png" alt=""/>
-                        </div>
-                    </div>
-                    <div class="col-md-1">
-
-                    </div>
-                    <div class="col-md-12">
-                        <div class="texto_titulo_perfil">
-                            Bienvenido a tu perfil de usuario
-                            <br>
-                            MOSQUERA ABOGADOS
-                            <br>
-                            _____________
-                        </div>
-                    </div>
-                </div>
+    <div class="">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">PERFIL DE USUARIO</h6>
+        </div>
+        <div class="card-header">
+            <div class="m-0 font-weight-bold text-primary">
+                Bienvenido a
+                <br>
+                MOSQUERA ABOGADOS
+            </div>
+        </div>
+        <div class="card-header">
+            <div>
+                <img src="../img/profile.png" alt=""/> <h6> O QUE HACEMOS
+                    
+                </h6>
+        
+            </div>
+            
+        
                 <div class="row">
                     <div class="col-md-12 texto_perfil">
 

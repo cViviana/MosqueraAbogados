@@ -62,7 +62,7 @@
         </a>
         <div id="usuarios" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item @yield("resaltar-registrarUsuario")" href="">Registrar Usuario</a>
+            <a class="collapse-item @yield("resaltar-registrarUsuario")" href="{{ route('register') }}">Registrar Usuario</a>
             <a class="collapse-item @yield("resaltar-listarUsuarios")" href="">Listar Usuarios</a>
           </div>
         </div>  
@@ -261,8 +261,16 @@
         </div>
         <div class="modal-body"> Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="">Cerrar Sesion</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">
+            Cancel
+          </button>
+          <button class="btn btn-danger"  data-toggle="tooltip" data-placement="top" title="Cerrar Sesion" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();" type="button" data-dismiss="modal">
+            Cerrar Sesion
+          </button>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+          </form>          
         </div>
       </div>
     </div>
