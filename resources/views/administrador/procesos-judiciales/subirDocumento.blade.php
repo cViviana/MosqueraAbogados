@@ -9,13 +9,17 @@
 @section('formulario')
     <br>
     <div class="input-group">
-        <span class="input-group-addon"><i class="fas fa-boxes"></i></i></span>
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-boxes"></i></span>
+        </div>
         <select class="form-control">
             <option selected="">* Archivero</option>
             <option>Archivero 1</option>
             <option>Archivero 2</option>
         </select>
-        <span class="input-group-addon"><i class="fas fa-archive"></i></span>
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-archive"></i></span>
+        </div>
         <select class="form-control">
             <option selected="">* Gaveta</option>
             <option>Gaveta 1</option>
@@ -24,7 +28,9 @@
     </div>
     <br>
     <div class="input-group">
-        <span class="input-group-addon"><i class="fas fa-project-diagram"></i></span>
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-project-diagram"></i></span>
+        </div>
         <select class="form-control">
             <option selected="">* Tipo documento</option>
             <option>Tipo 1</option>
@@ -35,7 +41,9 @@
         <a class="vinculo" href="****" title="Añadir tipo">Añadir nuevo tipo de documento</a>
     </div>
     <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-comments"></i></span>
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-comments"></i></span>
+        </div>
         <input name="" class="form-control" placeholder="* Descripción" type="text" required>
     </div>
     <br>

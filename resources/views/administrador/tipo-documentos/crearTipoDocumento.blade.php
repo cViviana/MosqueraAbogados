@@ -11,7 +11,9 @@
   {{csrf_field()}}
       <br> 
       <div class="input-group">
-        <span class="input-group-addon" id="inputGroup-sizing-default"><i class="fa fa-plus-square"></i></span>
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-plus-square"></i></span>
+        </div>
         <input type="text" id='nombre'name='nombre' class="form-control" placeholder="* Nuevo tipo de documento" required>
       </div>
       <br>
