@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use Exception;
 
 class userController extends Controller
 {
@@ -18,7 +19,7 @@ class userController extends Controller
                         $request->cedula ." ha sido registrado.";
             return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeRegistro', $mensajeRegistro);
         }else{
-            $mensajeNoRegistro = "Ya existe la identificación ". $request->numero ." del usuario ".
+            $mensajeNoRegistro = "Ya existe la identificación ". $request->numero ." del usuario.".
                         $request->nombre;
             return redirect()->route('registrarUsuario')->with('mensajeNoRegistro', $mensajeNoRegistro);
         }
@@ -30,24 +31,28 @@ class userController extends Controller
         if($objUser != null){
             $objUser->fill($request->all());
             $objUser->guardar($objUser);
-            $mensajeActualizacion = "El usuario se actualizó de forma satisfactoria";
+            $mensajeActualizacion = "El usuario se actualizó de forma satisfactoria.";
             return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeActualizacion', $mensajeActualizacion);
         }else{
-            $mensajeNoActualizacion = "El identificador del usuario no existe";
+            $mensajeNoActualizacion = "El identificador del usuario no existe.";
             return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeNoActualizacion', $mensajeNoActualizacion);
         }
     }
 
-    //try catch
     public function eliminarControlador($cedula){
-        $objUser = $this->buscar($cedula);
-        $mensajeNoEliminado = "";
-        if ($objUser != null){
-            $objUser->eliminar($objUser);
-            $mensajeEliminado = "El usuario se elimino de forma satisfactoria";
-            return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeEliminado', $mensajeEliminado);
-        }else{
-            $mensajeNoEliminado = "El usuario no se elimino de forma satisfactoria";
+        try{
+            $objUser = $this->buscar($cedula);
+            $mensajeNoEliminado = "";
+            if ($objUser != null){
+                $objUser->eliminar($objUser);
+                $mensajeEliminado = "El usuario se elimino de forma satisfactoria.";
+                return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeEliminado', $mensajeEliminado);
+            }else{
+                $mensajeNoEliminado = "El usuario no se elimino de forma satisfactoria.";
+                return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeNoEliminado', $mensajeNoEliminado);
+            }
+        }catch(Exception $e){
+            $mensajeNoEliminado = "El usuario no pude ser eliminado ya que pertenece a un caso judicial de la firma.";
             return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeNoEliminado', $mensajeNoEliminado);
         }
     }

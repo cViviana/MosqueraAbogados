@@ -32,9 +32,9 @@ class valFormRegUbi extends FormRequest
     public function messages()
     {
         return [
-            'numArchivero.unique' => 'Este numero de archivero ya se encuentra registrado',
-            'numArchivero.numeric' => 'El numero de archivero debe ser numerico',
-            'numGaveta.numeric' => 'El numero de gavera debe ser numerico'
+            'numArchivero.unique' => 'Este número de archivero ya se encuentra registrado.',
+            'numArchivero.numeric' => 'El número de archivero debe ser numérico.',
+            'numGaveta.numeric' => 'El número de gaveta debe ser numérico.'
         ];
     }
 }

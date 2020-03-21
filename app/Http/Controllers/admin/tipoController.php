@@ -14,17 +14,24 @@ class tipoController extends Controller
     $objTipo= new Tipo($request->all());
     $objTipo->guardar($objTipo);
     $men = "El tipo de documento de guardo de forma exitosa";
-    return view('administrador.tipo-documentos.crearTipoDocumento', [ "men" => $men] );
+    return view('administrador.tipo-documentos.listarTiposDocumentos', [ "men" => $men, "TiposDocumentos" => $this->listar()] );
   }
 
   public function eliminarControlador($id){
-    $objTipo = $this->buscar($id);
-    if($objTipo != null ){
-      $objTipo->eliminar($objTipo);
-      $men = "El tipo de documento fue eliminado con satisfación";
-    }else
-      $men="El identificador ingresado es invalido ";
-    return view("administrador.tipo-documentos.listarTiposDocumentos", ["men" => $men, "TiposDocumentos" => $this->listar() ] );
+    try{
+      $objTipo = $this->buscar($id);
+      if($objTipo != null ){
+        $objTipo->eliminar($objTipo);
+        $mensajeEliminado = "El tipo de documento fue eliminado con satisfación.";
+        return view("administrador.tipo-documentos.listarTiposDocumentos", ["mensajeEliminado" => $mensajeEliminado, "TiposDocumentos" => $this->listar() ] );
+      }else{
+        $mensajeNoEliminado="El identificador ingresado es invalido.";
+        return view("administrador.tipo-documentos.listarTiposDocumentos", ["mensajeNoEliminado" => $mensajeNoEliminado, "TiposDocumentos" => $this->listar() ] );
+      }
+    }catch(Exception $e){
+      $mensajeNoEliminado="Este tipo de documento no se puede eliminar ya que esta siendo referenciado en un caso judicial.";
+      return view("administrador.tipo-documentos.listarTiposDocumentos", ["mensajeNoEliminado" => $mensajeNoEliminado, "TiposDocumentos" => $this->listar() ] );
+    }
   }
 
   public function editarControlador(valFormTipoDoc $request){

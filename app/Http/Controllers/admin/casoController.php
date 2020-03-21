@@ -7,6 +7,7 @@ use App\User;
 use App\Caso;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\valFormRegCaso;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 //use App\Http\Requests\valFormDoc;
@@ -27,30 +28,36 @@ class casoController extends Controller
       // si verifica existe ya un caso con ese mismo radicado
       //$password = Hash::make(12345);
       //dd($password);
-      $auxCaso = $this->buscarControlador($request->radicado);
-      //si no exite
-      if( $auxCaso == null ){
-          //se valida si exiten los clientes y si son diferentes
-          if( $this->validarCliente($request->cliente,$request->contraparte) == true){
-            //cumple que son diferente y existen
-              //se valida si almenos un usuario principal existe
-              if($this->validarUsuarios($request->abogadoPpal)==true){
-                $objCaso = new Caso($request->all());
-                $objCaso->guardar($objCaso,$request->contraparte,$request->cliente,$request->abogadoPpal,$request->abogadoAux);
-                $men = "Caso registrado correctamente";
-                return redirect()->route('registrarCaso')->with('men',$men,'tipo',1);
-              }else{
-                $men = "No exite el abogado principal";
-                return redirect()->route('registrarCaso')->with('men',$men,'tipo',0);
-              }
-          }else{
-            $men ="los clientes son iguales";
+      try{
+        $auxCaso = $this->buscarControlador($request->radicado);
+        //si no exite
+        if( $auxCaso == null ){
+            //se valida si exiten los clientes y si son diferentes
+            if( $this->validarCliente($request->cliente,$request->contraparte) == true){
+              //cumple que son diferente y existen
+                //se valida si almenos un usuario principal existe
+                if($this->validarUsuarios($request->abogadoPpal)==true){
+                  $objCaso = new Caso($request->all());
+                  $objCaso->guardar($objCaso,$request->contraparte,$request->cliente,$request->abogadoPpal,$request->abogadoAux);
+                  $men = "Caso registrado correctamente";
+                  return redirect()->route('registrarCaso')->with('men',$men,'tipo',1);
+                }else{
+                  $men = "No exite el abogado principal";
+                  return redirect()->route('registrarCaso')->with('men',$men,'tipo',0);
+                }
+            }else{
+              $men ="los clientes son iguales";
+              return redirect()->route('registrarCaso')->with('men',$men,'tipo',0);
+            }
+        }else{
+          $men = "El caso con ese radicado ya existe";
             return redirect()->route('registrarCaso')->with('men',$men,'tipo',0);
-          }
-      }else{
-        $men = "El caso con ese radicado ya existe";
-          return redirect()->route('registrarCaso')->with('men',$men,'tipo',0);
+        }
+      }catch(Exception $e){
+        $men = "La fecha ingresada tiene el formato erroneo, debe ser año-mes-dia";
+        return redirect()->route('registrarCaso')->with('men',$men,'tipo',0);
       }
+
     }
     public function validarCliente($idCliente,$idContraparte){
       $objCliente = new Cliente;

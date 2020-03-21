@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Cliente;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\valFormRegCliente;
+use Exception;
 
 class clienteController extends Controller
 {
@@ -39,14 +40,19 @@ class clienteController extends Controller
     }
 
     public function eliminarControlador($numero,$roll){
-        $objCliente = $this->buscar($numero);
-        $mensajeNoEliminado = "";
-        if ($objCliente != null){
-            $objCliente->eliminar($objCliente);
-            $mensajeEliminado = "El cliente se elimino de forma satisfactoria";
-            return redirect()->route('listarClientes', ['roll'=> $roll,'Clientes' => $this->listar($roll)])->with('mensajeEliminado', $mensajeEliminado);
-        }else{
-            $mensajeNoEliminado = "El cliente no se elimino de forma satisfactoria";
+        try{
+            $objCliente = $this->buscar($numero);
+            $mensajeNoEliminado = "";
+            if ($objCliente != null){
+                $objCliente->eliminar($objCliente);
+                $mensajeEliminado = "El cliente se elimino de forma satisfactoria.";
+                return redirect()->route('listarClientes', ['roll'=> $roll,'Clientes' => $this->listar($roll)])->with('mensajeEliminado', $mensajeEliminado);
+            }else{
+                $mensajeNoEliminado = "El cliente con el identificador ". $numero ." no existe.";
+                return redirect()->route('listarClientes', ['roll'=> $roll,'Clientes' => $this->listar($roll)])->with('mensajeNoEliminado', $mensajeNoEliminado);
+            }
+        }catch(Exception $e){
+            $mensajeNoEliminado = "El cliente ". $numero ." no puede ser eliminado ya que pertenece a un caso de la firma.";
             return redirect()->route('listarClientes', ['roll'=> $roll,'Clientes' => $this->listar($roll)])->with('mensajeNoEliminado', $mensajeNoEliminado);
         }
     }
