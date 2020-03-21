@@ -58,7 +58,16 @@
 @endsection
 
 @section("listado-columnas")
-   
+    <!--  **  NOMBRE DE VARIABLES QUE SE DEBEN MOSTRAR EN ESTA PLANTILLA **
+    listar => 'Usuarios'
+    'mensajeRegistro'
+    'mensajeNoRegistro'
+    'mensajeEliminado'
+    'mensajeNoEliminado'
+    'mensajeActualizacion'
+    'mensajeNoActualizacion'
+
+-->
         <tr>
             <td></td>
             <td></td>

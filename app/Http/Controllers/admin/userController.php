@@ -31,13 +31,14 @@ class userController extends Controller
             $objUser->fill($request->all());
             $objUser->guardar($objUser);
             $mensajeActualizacion = "El usuario se actualizó de forma satisfactoria";
-            return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeRegistro', $mensajeActualizacion);
+            return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeActualizacion', $mensajeActualizacion);
         }else{
             $mensajeNoActualizacion = "El identificador del usuario no existe";
-            return redirect()->route('listarClientes', ['Clientes' => $this->listar()])->with('mensajeNoActualizacion', $mensajeNoActualizacion);
+            return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeNoActualizacion', $mensajeNoActualizacion);
         }
     }
 
+    //try catch
     public function eliminarControlador($cedula){
         $objUser = $this->buscar($cedula);
         $mensajeNoEliminado = "";
@@ -53,28 +54,40 @@ class userController extends Controller
 
     public function editarControlador($cedula){
         $cedula = $this->buscar($cedula);
-        return view('administrador.usuarios.editarDatosUsuario');
+        return view('administrador.usuarios.editarUsuario');
     }
 
     public function listarControlador(){
-        return view('administrador.clientes.listarClientes', ['Clientes' => $this->listar()] );
+        return view('administrador.usuarios.listarUsuarios', ['Usuarios' => $this->listar()] );
     }
 
-    public function asignarRol(){
-        //...
+    public function asignarRol($cedula,$rol){
+        $objUser = $this->buscar($cedula);
+        if($objUser != null){
+            if($rol == 'Abogado jefe' || $rol == 'Abogado auxiliar' || $rol == 'Secretaria'){
+                $objUser->asignarRol($cedula, $rol);
+                $mensajeRolAsignado = "Al usuario con cedula". $cedula ."se le fue asignado el rol ". $rol;
+                return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeRolAsignado', $mensajeRolAsignado);
+            }else{
+                $mensajeRolErroneo = "El rol que desea asignar no existe";
+                return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeRolErroneo', $mensajeRolErroneo);
+            }
+        }else{
+            $mensajeRolNoAsignado = "La cedula del usuario no existe";
+            return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeRolAsignado', $mensajeRolNoAsignado);
+        }
     }
 
-    //este metodo fue separado de listarControlar para poder reenviar los clientes cuando se eliminen
+    //este metodo fue separado de listarControlar para poder reenviar los usuarios cuando se eliminen
     public function listar(){
       $usuarios = new User();
-      dd($usuarios->listar());
       return $usuarios->listar();
     }
 
-    //este metodo fue creado para tener solo una cracion de cliente y un camino para el FIND
+    //este metodo fue creado para tener solo una cracion de usuario y un camino para el FIND
     public function buscar($cedula){
-        $objCliente = new Cliente();
-        return $objCliente->buscar($cedula);
+        $objUser = new User();
+        return $objUser->buscar($cedula);
     }
 
 }

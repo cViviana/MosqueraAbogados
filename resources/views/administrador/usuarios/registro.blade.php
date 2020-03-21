@@ -18,7 +18,7 @@
                         <span class="bg-light"></span>
                     </p>
                
-                <form method="POST" action="{{ route('register') }}">
+                <form method="POST" action="{{ route('guardarUsuario') }}">
                     @csrf
                     <div class="input-group form-group">
                         <div class="input-group-prepend">

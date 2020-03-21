@@ -44,7 +44,7 @@ Route::prefix('admin')->group(
     Route::post('/actualizarCaso', 'admin\casoController@editarControlador')->name('actualizarCaso');
 
     //USUARIOS
-    Route::view('/crearUsuario', 'administrador/usuarios/registrarUsuario')->name('crearUsuario');
+    Route::view('/registrarUsuario', 'administrador/usuarios/registro')->name('registrarUsuario');
     Route::post('/guardarUsuario', 'admin\userController@guardarControlador')->name('guardarUsuario');
 
     Route::get('/editarUsuario/{cedula}', 'admin\userController@editarControlador')->name('editarUsuario');

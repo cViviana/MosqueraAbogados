@@ -62,8 +62,8 @@
         </a>
         <div id="usuarios" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item @yield("resaltar-registrarUsuario")" href="{{ route('register') }}">Registrar Usuario</a>
-            <a class="collapse-item @yield("resaltar-listarUsuarios")" href="">Listar Usuarios</a>
+            <a class="collapse-item @yield("resaltar-registrarUsuario")" href="{{ route('registrarUsuario') }}">Registrar Usuario</a>
+            <a class="collapse-item @yield("resaltar-listarUsuarios")" href=" {{ route('listarUsuarios') }} ">Listar Usuarios</a>
           </div>
         </div>  
       </li>
