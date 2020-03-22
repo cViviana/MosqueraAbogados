@@ -47,7 +47,7 @@ class tipoController extends Controller
 
   public function tipoControlador(Request $request){
     $objTipo = $this->buscar($request->id);
-    return redirect()->route('editarTipoDocumento', ['id' => $objTipo]);
+    return view('administrador.tipo-documentos.editarTipoDocumento', ['tipo' => $objTipo]);
   }
 
   public function listarControlador(){

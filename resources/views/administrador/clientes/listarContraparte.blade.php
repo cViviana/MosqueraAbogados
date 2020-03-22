@@ -1,5 +1,7 @@
 @extends('diseño-base.plantilla-listar')
+@section("resaltar-contrapartes", "active")
 @section("resaltar-listarContrapartes", "active")
+
 @section('titulo','Información de contrapartes')
 
 @section('titulo-listar', 'LISTADO DE CONTRAPARTES')
