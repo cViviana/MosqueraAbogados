@@ -7,7 +7,7 @@
 
     <div class="d-flex justify-content-center h-100">
         <div class="card-body">
-        <p class="text-center m-0 font-weight-bold text-primary">Asinar Cargo al personal de </p>
+        <p class="text-center m-0 font-weight-bold text-primary">Asignar Cargo al personal de </p>
             <p>
             <h4 class="text-center m-0 font-weight-bold text-primary">
                 MOSQUERA 
