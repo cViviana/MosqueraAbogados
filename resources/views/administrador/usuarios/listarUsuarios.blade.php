@@ -14,7 +14,27 @@
             </div>
         </div>
     @endif
+    @if (session()->has('mensajeNoRegistro'))
+        <div class="flash-message">
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{session('mensajeRegistro')}}
+            </div>
+        </div>
+    @endif
     @if (session()->has('mensajeActualizacion'))
+        <div class="flash-message">
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{session('mensajeActualizacion')}}
+            </div>
+        </div>
+    @endif
+    @if (session()->has('mensajeNoActualizacion'))
         <div class="flash-message">
             <div class="alert alert-success">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">

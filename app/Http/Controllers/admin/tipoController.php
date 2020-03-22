@@ -18,13 +18,20 @@ class tipoController extends Controller
   }
 
   public function eliminarControlador($id){
-    $objTipo = $this->buscar($id);
-    if($objTipo != null ){
-      $objTipo->eliminar($objTipo);
-      $men = "El tipo de documento fue eliminado con satisfación";
-    }else
-      $men="El identificador ingresado es invalido ";
-    return redirect()->route('listarTiposDocumentos')->with(["men" => $men, "TiposDocumentos" => $this->listar()]);
+    try{
+      $objTipo = $this->buscar($id);
+      if($objTipo != null ){
+        $objTipo->eliminar($objTipo);
+        $mensajeEliminado = "El tipo de documento fue eliminado con satisfación.";
+        return redirect()->route('listarTiposDocumentos')->with(["men" => $mensajeEliminado, "TiposDocumentos" => $this->listar()]);
+      }else{
+        $mensajeNoEliminado="El identificador ingresado es invalido.";
+        return redirect()->route('listarTiposDocumentos')->with(["men" => $mensajeNoEliminado, "TiposDocumentos" => $this->listar()]);
+      }
+    }catch(Exception $e){
+      $mensajeNoEliminado="Este tipo de documento no se puede eliminar ya que esta siendo referenciado en un caso judicial.";
+      return redirect()->route('listarTiposDocumentos')->with(["men" => $mensajeNoEliminado, "TiposDocumentos" => $this->listar()]);
+    }
   }
 
   public function editarControlador(valFormTipoDoc $request){
@@ -40,7 +47,7 @@ class tipoController extends Controller
 
   public function tipoControlador(Request $request){
     $objTipo = $this->buscar($request->id);
-    return redirect()->route('editarTipoDocumento', ['id' => $objTipo])->with('men', $men);
+    return redirect()->route('editarTipoDocumento', ['id' => $objTipo]);
   }
 
   public function listarControlador(){

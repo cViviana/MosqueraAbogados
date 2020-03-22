@@ -31,33 +31,46 @@
             {{csrf_field()}}
                 <br>
                 <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <div class="input-group-prepend">
+                    <span class="input-group-text">
+                    <i class="fa fa-user"></i>
+                    </span>
+                </div>
                     <input name='nombre' id='nombre' class="form-control" placeholder="* Nombre Completo" type="text" required
-                        value="{{$Cliente->nombre}}">
+                    value="{{$Cliente->nombre}}" required autocomplete="nombre" autofocus >
                 </div>
                 <br>
                 <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-list"></i></span>
-                    <select name='tipo' id='tipo' class="form-control" value="{{$Cliente->tipo}}">
-                        <option selected="">* Seleccionar tipo de Persona</option>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-list"></i></span>
+                    </div>
+                    <select name='tipo' id='tipo' class="form-control">
+                        <option selected="selected" value="{{$Cliente->tipo}}">Persona {{$Cliente->tipo}}</option>
+                        <option >* Seleccionar el tipo de persona</option>
                         <option value="natural">Persona Natural</option>
                         <option value="juridica">Persona Juridica</option>
                     </select>
-                    <span class="input-group-addon"><i class="fa fa-id-card"></i></span>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                    </div>
                     <input name='numero' id='numero' readonly="readonly" class="form-control" placeholder="* Numero de Identificacion" type="text" required
                         value="{{$Cliente->numero}}">
                 </div>
                 <br>
                 <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-phone-square"></i></span>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-phone-square"></i></span>
+                    </div>
                     <input name='telefono' id='telefono' class="form-control" placeholder="* Numero de telefono" type="text" required
-                        value="{{$Cliente->telefono}}">
+                    value="{{$Cliente->telefono}}">
                 </div>
                 <br>
                 <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                    </div>
                     <input name='email' id='email' class="form-control" placeholder="Correo Electronico" type="text"
-                        value="{{$Cliente->email}}">
+                    value="{{$Cliente->email}}">
                 </div>
                 <input type="hidden" name="roll" id='roll' value="cliente">
                 <br>
