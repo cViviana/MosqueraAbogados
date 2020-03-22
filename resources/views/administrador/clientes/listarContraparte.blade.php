@@ -67,14 +67,14 @@
             <td>{{$cliente->email}}</td>
             <td>
                 <a href="{{route('editarCliente', $cliente->numero)}}" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-pencil"></span>
+                    <i class="fas fa-user-edit"></i>
                 </a>
             </td>
             <td>
                 <form action="{{route('eliminarCliente', [$cliente->numero,'contraparte'])}}"  method="get">
                     @csrf
                     <button class="btn btn-danger" type="submit">
-                        <span class="glyphicon glyphicon-trash"></span>
+                        <i class="fa fa-user-times" aria-hidden="true"></i>
                     </button>
                 </form>
             </td>

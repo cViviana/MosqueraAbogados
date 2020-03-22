@@ -16,7 +16,7 @@
 
 @section("listado-columnas")
     @foreach($ubicaciones as $ubicacion)
-        <tr style="color:#0066FF">
+        <tr>
             <td>{{$ubicacion->id}}</td>
             <td>{{$ubicacion->numArchivero}}</td>
             <td>{{$ubicacion->numGaveta}}</td>

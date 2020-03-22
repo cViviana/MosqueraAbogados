@@ -21,14 +21,11 @@
             <div class="mascara">
             <form action="{{route('editarTipo')}}"class="texto_campos" method="post">
             {{csrf_field()}}
-                <br>
+            <br>
                 <div class="input-group">
-                    <span class="input-group-addon" id="inputGroup-sizing-default"><i class="fa fa-plus-square"></i></span>
-                    <input type="text" id="id" name="id" readonly="readonly" required="required" class="form-control" value="{{$tipo->id}}">
-                </div>
-                <br>
-                <div class="input-group">
-                    <span class="input-group-addon" id="inputGroup-sizing-default"><i class="fa fa-plus-square"></i></span>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-plus-square"></i></span>
+                    </div>
                     <input type="text" id='nombre'name='nombre' class="form-control" placeholder="* Nuevo tipo de documento" value="{{$tipo->nombre}}"required>
                 </div>
                 <br>
