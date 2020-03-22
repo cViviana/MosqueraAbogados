@@ -14,7 +14,7 @@ class tipoController extends Controller
     $objTipo= new Tipo($request->all());
     $objTipo->guardar($objTipo);
     $men = "El tipo de documento de guardo de forma exitosa";
-    return view('administrador.tipo-documentos.crearTipoDocumento', [ "men" => $men] );
+    return redirect()->route('crearTipoDocumento')->with('men', $men);
   }
 
   public function eliminarControlador($id){
@@ -24,7 +24,7 @@ class tipoController extends Controller
       $men = "El tipo de documento fue eliminado con satisfación";
     }else
       $men="El identificador ingresado es invalido ";
-    return view("administrador.tipo-documentos.listarTiposDocumentos", ["men" => $men, "TiposDocumentos" => $this->listar() ] );
+    return redirect()->route('listarTiposDocumentos')->with(["men" => $men, "TiposDocumentos" => $this->listar()]);
   }
 
   public function editarControlador(valFormTipoDoc $request){
@@ -35,12 +35,12 @@ class tipoController extends Controller
       $men = "se actualizaron los datos de forma exitosa";
     }else
       $men="El identificador ingresado es invalido ";
-    return view('administrador.tipo-documentos.listarTiposDocumentos', ['men' => $men, "TiposDocumentos" => $this->listar()] );
+    return redirect()->route('listarTiposDocumentos')->with(["men" => $men, "TiposDocumentos" => $this->listar()]);
   }
 
   public function tipoControlador(Request $request){
     $objTipo = $this->buscar($request->id);
-    return view('administrador.tipo-documentos.editarTipoDocumento', ['tipo' => $objTipo] );
+    return redirect()->route('editarTipoDocumento', ['id' => $objTipo])->with('men', $men);
   }
 
   public function listarControlador(){
