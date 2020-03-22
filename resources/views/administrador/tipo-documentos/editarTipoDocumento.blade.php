@@ -28,6 +28,7 @@
                     </div>
                     <input type="text" id='nombre'name='nombre' class="form-control" placeholder="* Nuevo tipo de documento" value="{{$tipo->nombre}}"required>
                 </div>
+                <input type="hidden" name="id" id='id' value="{{$tipo->id}}">
                 <br>
                 <button type="submit" class="btn btn-primary">Actualizar</button>
                 <div class="texto_campos">
