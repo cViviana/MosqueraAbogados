@@ -62,7 +62,8 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-tasks"></i></span>
             </div>
-            <select name='estado' id='estado' class="form-control">
+            <select name='estado' id='estado' class="form-control" placeholder="* Seleccionar el estado">
+                <!---<option selected="" value="{{ old('estado') }}" required autocomplete="estado" autofocus>{{ old('estado') }}</option>!--->
                 <option selected="">* Seleccionar el estado</option>
                 <option value='activo'>Activo</option>
                 <option value='cerrado'>Cerrado</option>
@@ -73,7 +74,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-comments"></i></span>
             </div>
-            <input name='descripcion' id='descripcion' class="form-control" placeholder="* Descripcion" type="text" required>
+            <input name='descripcion' id='descripcion' class="form-control" placeholder="* Descripcion" type="text" value="{{ old('descripcion') }}" required autocomplete="descripcion" autofocus required>
         </div>
         <br>
         <div class="input-group date" data-provide="datepicker">
