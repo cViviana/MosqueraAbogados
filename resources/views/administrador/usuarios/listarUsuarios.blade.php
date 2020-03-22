@@ -87,15 +87,16 @@
     'mensajeActualizacion'
     'mensajeNoActualizacion'
 
--->
+-->     
+    @foreach($Usuarios as $usuario)
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{$usuario->cedula}}</td>
+            <td>{{$usuario->nombre}}</td>
+            <td>{{$usuario->email}}</td>
+            <td>{{$usuario->telefono}}</td>
+            <td>{{$usuario->cargo}}</td>
             <td>
-                <a href="" class="btn btn-info">
+                <a href="{{route('asignarRoll', $usuario->cedula)}}" class="btn btn-info">
                     <i class="fa fa-plus" aria-hidden="true"></i>
                 </a>
             </td>
@@ -113,5 +114,5 @@
                 </form>
             </td>
         </tr>
-    
+    @endforeach
 @endsection
