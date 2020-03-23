@@ -69,8 +69,21 @@ class User extends Authenticatable
     }
 
     public function listar(){
-      //crear un join donde aparesca el rol
-      return $this::all();
+      
+      //Realizamos una consulta interna para obtener el nombre del rol en el caso que el usario tenga
+      //uno, despues hacemos un rightjoin para poder imprimir los usuarios que tenga un rol y
+      //los que aun no se les alla asignado uno.
+
+      $usuarios = DB::table(
+
+        //realizamos un doble join con el objetivo de mostrar el nombre del rol del usuario
+        DB::table('model_has_roles')->join('users', 'model_id' , '=' ,'cedula')
+        ->join('roles','role_id','=','id')
+        ->select('model_has_roles.model_id','users.cedula','users.nombre','users.email','users.telefono','roles.name')
+
+      )->rightJoin('users','model_id','=','users.cedula')->get();
+
+      return $usuarios;
     }
 
     public function eliminarRol($cedula){

@@ -94,7 +94,7 @@
             <td>{{$usuario->nombre}}</td>
             <td>{{$usuario->email}}</td>
             <td>{{$usuario->telefono}}</td>
-            <td>{{$usuario->cargo}}</td>
+            <td>{{$usuario->name}}</td>
             <td>
                 <a href="{{route('buscarUsuario', [$usuario->cedula,'asignarRol'])}}" class="btn btn-info">
                     <!--Asginar Rol-->
