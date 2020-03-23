@@ -96,7 +96,8 @@
             <td>{{$usuario->telefono}}</td>
             <td>{{$usuario->cargo}}</td>
             <td>
-                <a href="{{route('asignarRoll', $usuario->cedula)}}" class="btn btn-info">
+                <a href="{{route('buscarUsuario', [$usuario->cedula,'asignarRol'])}}" class="btn btn-info">
+                    <!--Asginar Rol-->
                     <i class="fa fa-plus" aria-hidden="true"></i>
                 </a>
             </td>

@@ -5,11 +5,15 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
+use Spatie\Permission\Models\Role;
 use App\Roll;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -54,6 +58,9 @@ class User extends Authenticatable
     }
 
     public function eliminar(User $objUser){
+      //si se desea eliminar el usuario, también se debe eliminar la relacion
+      //con model_has_roles
+      $this->eliminarRol($objUser->cedula);
       $objUser->delete();
     }
 
@@ -62,10 +69,26 @@ class User extends Authenticatable
     }
 
     public function listar(){
+      //crear un join donde aparesca el rol
       return $this::all();
     }
 
+    public function eliminarRol($cedula){
+      //realizamos una consulta para saber si este usuario ya contiene roles.
+      $tam = count(DB::select('select * from model_has_roles where model_id = '.$cedula ));
+      //calculamos el tamño del array de la consulta que se realiza arriba
+      //si el tamño es '0' significa q no contenia roles, si es '1' significa que si contiene y debemos
+      //borrarlo.
+      if($tam != 0){
+        DB::delete('delete from model_has_roles where model_id = '.$cedula);
+      }
+    }
+
     public function asignarRol($cedula, $rol){
+      //Por reglas de la firma un usario solo debe tener un rol, en el caso que ya tenga un rol
+      //asginado debes borrar ese
+      $this->eliminarRol($cedula);
+
       $user = $this::find($cedula);
       $user->assignRole($rol);
     }

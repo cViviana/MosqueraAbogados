@@ -50,6 +50,10 @@ Route::prefix('admin')->group(
     Route::get('/editarUsuario/{cedula}', 'admin\userController@editarControlador')->name('editarUsuario');
     Route::post('/actualizarUsuario', 'admin\userController@actualizarControlador')->name('actualizarUsuario');
 
+    Route::get('/buscarUsuario/{cedula}/{destino}','admin\userController@userControlador')->name('buscarUsuario');
+    
+    Route::post('/asignarRol', 'admin\userController@asignarRol')->name('asignarRol');
+
     Route::get('/eliminarUsuario/{cedula}', 'admin\userController@eliminarControlador')->name('eliminarUsuario');
     
     Route::get('/listarUsuarios', 'admin\userController@listarControlador')->name('listarUsuarios');
