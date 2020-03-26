@@ -25,10 +25,10 @@ class userController extends Controller
                 $objUser->guardar($objUser);
                 $mensajeRegistro = "Éxito. ". $request->nombre ." con identificación ".
                             $request->cedula ." ha sido registrado.";
-                return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeRegistro', $mensajeRegistro);
+                return redirect()->route('registrarUsuario')->with('mensajeRegistro', $mensajeRegistro);
             }else{
                 $mensajeNoRegistro = "Ya existe la identificación ". $request->numero ." del usuario.".$request->nombre;
-                return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeNoRegistro', $mensajeNoRegistro);
+                return redirect()->route('registrarUsuario')->with('mensajeNoRegistro', $mensajeNoRegistro);
             }
         }else{
             $contraseñas_diferentes = "Las contraseñas ingresadas son diferentes";

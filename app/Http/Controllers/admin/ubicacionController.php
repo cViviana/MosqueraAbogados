@@ -15,10 +15,10 @@ class ubicacionController extends Controller
       if(!$objUbicacion->existeUbicacion($request)){
         $objUbicacion->guardar($objUbicacion);
         $mensajeRegistro = "La ubicación se guardó de forma exitosa.";
-        return redirect()->route('listarUbicaciones')->with(["men" => $mensajeRegistro, "ubicaciones" => $this->listar()]);
+        return redirect()->route('agregarUbicacion')->with(["men" => $mensajeRegistro]);
       }else{
         $mensajeNoRegistro = "Esta ubicación ya existe.";
-        return redirect()->route('listarUbicaciones')->with(["men" => $mensajeNoRegistro, "ubicaciones" => $this->listar()]);
+        return redirect()->route('agregarUbicacion')->with(["men" => $mensajeNoRegistro]);
       }
     }
 
