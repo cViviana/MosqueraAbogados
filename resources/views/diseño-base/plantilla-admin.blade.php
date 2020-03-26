@@ -98,7 +98,7 @@
         <div id="documentos" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item @yield("resaltar-subirDocumento")" href="{{route('subirDocumento')}}">Subir Documento</a>
-            <a class="collapse-item @yield("resaltar-listarDocumentos")" href="{{route('listarDocumentos')}}">Listar Documentos</a>
+            <a class="collapse-item @yield("resaltar-listarDocumentos")" href="{{route('documentos')}}">Listar Documentos</a>
           </div>
         </div>
       </li>
