@@ -27,6 +27,10 @@ class Ubicacion extends Model
     return $this::find($id);
   }
 
+  public function listar(){
+    return $this::all();
+  }
+
   public function existeUbicacion(valFormRegUbi $request){
     $gaveta = $this::where("numGaveta","=",$request->numGaveta)->get();
     $archivador = $this::where("numArchivero","=",$request->numArchivero)->get();

@@ -55,7 +55,8 @@ class tipoController extends Controller
   }
 
   public function listar(){
-    return Tipo::all();
+    $tipo = new Tipo();
+    return $tipo->listar();
   }
 
   //Esta función nos permitirá crear TIPO y llamar a la función de buscar TIPO 

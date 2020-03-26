@@ -69,7 +69,8 @@ class ubicacionController extends Controller
     }
 
     public function listar(){
-      return $listaUbicaciones=Ubicacion::all();
+      $ubicaciones = new Ubicacion();
+      return $ubicaciones->listar();;
     }
 
     //Esta función nos permitirá crear UBICACION y llamar a la función de buscar UBICACION

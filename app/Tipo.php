@@ -26,4 +26,8 @@ class Tipo extends Model
     public function buscar($id){
       return $this::find($id);
     }
+
+    public function listar(){
+      return $this::all();
+    }
 }
