@@ -17,9 +17,6 @@ class CreateDocumentoTable extends Migration
             //ubicacion del documento en el servidor
             $table->string("path",256)->nullable(false);
             $table->string("descripcion",200)->nullable(false);
-            //debido a que no se borran los documentos relacionados a un caso se cierran para no poder visualizar
-            $table->enum('estado',['activo', 'cerrado'])->default('activo');
-
             //llaves foreneas !
             //foranea de documento a tipo_documento
             $table->unsignedBigInteger('tipo_id');

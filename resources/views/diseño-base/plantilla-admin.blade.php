@@ -14,7 +14,7 @@
   <!-- Custom fonts for this template-->
   <link href="{{ asset ('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ asset ('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i') }}" rel="stylesheet">
-    
+
   <!-- Custom styles for this template-->
   <link href="{{ asset ('admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
@@ -65,7 +65,7 @@
             <a class="collapse-item @yield("resaltar-registrarUsuario")" href="{{ route('registrarUsuario') }}">Registrar Usuario</a>
             <a class="collapse-item @yield("resaltar-listarUsuarios")" href=" {{ route('listarUsuarios') }} ">Listar Usuarios</a>
           </div>
-        </div>  
+        </div>
       </li>
 
 
@@ -86,9 +86,9 @@
             <a class="collapse-item @yield("resaltar-registrarCaso")" href="{{route('registrarCaso')}}">Registrar Caso</a>
             <a class="collapse-item @yield("resaltar-listarCasos")" href="{{route('listarCasos')}}">Listar Caso</a>
           </div>
-        </div>  
+        </div>
       </li>
-      
+
       <!-- DOCUMENTOS -->
       <li class="nav-item @yield("resaltar-documentos-casos")">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#documentos" aria-expanded="true" aria-controls="collapseTwo">
@@ -98,7 +98,7 @@
         <div id="documentos" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item @yield("resaltar-subirDocumento")" href="{{route('subirDocumento')}}">Subir Documento</a>
-            <a class="collapse-item @yield("resaltar-listarDocumentos")" href="{{route('documentos')}}">Listar Documentos</a>
+            <a class="collapse-item @yield("resaltar-listarDocumentos")" href="{{route('listarDocumentos')}}">Listar Documentos</a>
           </div>
         </div>
       </li>
@@ -129,7 +129,7 @@
           </div>
         </div>
       </li>
-     
+
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -164,7 +164,7 @@
           </div>
         </div>
       </li>
-      
+
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
@@ -270,7 +270,7 @@
           </button>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
-          </form>          
+          </form>
         </div>
       </div>
     </div>
