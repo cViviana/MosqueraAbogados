@@ -36,7 +36,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <a class="navbar-brand logo_h" href="/"><img src="{{ asset('img/logo-2.png')}}"></a>
-                
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"></span>
@@ -54,7 +54,7 @@
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+                                  <!--  <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>-->
                                 </li>
                             @endif
                         @else
@@ -80,14 +80,14 @@
                 </div>
             </div>
         </nav>
-        
+
         <div class="body_login">
             <main class="py-4">
                 @yield('content')
             </main>
         </div>
 
-        
+
     </div>
     <script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/popper.js"></script>
