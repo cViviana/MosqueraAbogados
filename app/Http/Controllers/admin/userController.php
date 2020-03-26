@@ -55,9 +55,15 @@ class userController extends Controller
             $objUser = $this->buscar($cedula);
             $mensajeNoEliminado = "";
             if ($objUser != null){
-                $objUser->eliminar($objUser);
-                $mensajeEliminado = "El usuario se elimino de forma satisfactoria.";
-                return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeEliminado', $mensajeEliminado);
+                $eliminado = $objUser->eliminar($objUser);
+                if($eliminado){
+                    $mensajeEliminado = "El usuario se elimino de forma satisfactoria.";
+                    return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeEliminado', $mensajeEliminado);
+                }else{
+                    $mensajeNoEliminado = "El usuario ".$cedula." es el unico abogado jefe, por ende no puede ser eliminado";
+                    return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeNoEliminado', $mensajeNoEliminado);
+                }
+
             }else{
                 $mensajeNoEliminado = "El usuario no se elimino de forma satisfactoria.";
                 return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeNoEliminado', $mensajeNoEliminado);
@@ -84,7 +90,7 @@ class userController extends Controller
             if($destino == 'asignarRol')
                 return view('administrador.usuarios.rol', ['User' => $objUser] );
             if($destino == 'actualizar')
-                dd('actualizar');
+                return view('administrador.usuarios.editarUsuario');
         }else{
             dd('el usuario no existe, no sea estupido');
         }

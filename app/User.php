@@ -58,11 +58,36 @@ class User extends Authenticatable
     }
 
     public function eliminar(User $objUser){
+      
+      //si vamos a eliminar un usuario hay q verificar que la firman no se  vaya
+      //a quedar sin un abogado jefe
+
+      //traemos la lista de todos los usuarios con su rol llamando a "listar()"
+      $array =  ($this->listar())->all();
+      
+      //la variable contador nos servira para conocer si existen mas de 1 jefe y asi nos permitira
+      //eliminarlo, la variable bandera nos servira para conocer si el usuario es jefe
+      $contador = 0;
+      $bandera = false;
+
+      foreach($array as $dato){
+        if($dato->name == 'Abogado jefe'){
+          $contador++;
+          if($dato->cedula == $objUser->cedula)
+            $bandera = True;
+        }
+      }
+
+      if($bandera){
+        if($contador < 2)
+          return false;
+      }
       //si se desea eliminar el usuario, también se debe eliminar la relacion
       //con model_has_roles
       $this->eliminarRol($objUser->cedula);
-      //validar que quede algún jefe
+
       $objUser->delete();
+      return true;
     }
 
     public function buscar($cedula){
