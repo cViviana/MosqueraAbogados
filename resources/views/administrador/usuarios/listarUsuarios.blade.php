@@ -102,12 +102,12 @@
                 </a>
             </td>
             <td>
-                <a href="" class="btn btn-primary">
+                <a href="{{route('editarUsuario', [$usuario->cedula,'actualizar'])}}" class="btn btn-primary">
                     <i class="fas fa-user-edit"></i>
                 </a>
             </td>
             <td>
-                <form action=""  method="get">
+                <form action="{{route('eliminarUsuario', [$usuario->cedula])}}"  method="get">
                     @csrf
                     <button class="btn btn-danger" type="submit">
                         <i class="fa fa-user-times" aria-hidden="true"></i>

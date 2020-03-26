@@ -3,28 +3,40 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\valFormRegUser;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\User;
 use Exception;
 
+
 class userController extends Controller
 {
-    public function guardarControlador(Request $request){
+    public function guardarControlador(valFormRegUser $request){
         $mensajeNoRegistro = "";
-        $aux = $this->buscar($request->cedula);
-        if( $aux == null ){
-            $objUser = new User($request->all());
-            $objUser->guardar($objUser);
-            $mensajeRegistro = "Éxito. ". $request->nombre ." con identificación ".
-                        $request->cedula ." ha sido registrado.";
-            return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeRegistro', $mensajeRegistro);
+        if($request->password_confirmation == $request->password){
+            $aux = $this->buscar($request->cedula);
+            if( $aux == null ){
+                //asegurar contraseña
+                $password = Hash::make($request->password);
+                $request["password"]=$password;
+                
+                $objUser = new User($request->all());
+                $objUser->guardar($objUser);
+                $mensajeRegistro = "Éxito. ". $request->nombre ." con identificación ".
+                            $request->cedula ." ha sido registrado.";
+                return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeRegistro', $mensajeRegistro);
+            }else{
+                $mensajeNoRegistro = "Ya existe la identificación ". $request->numero ." del usuario.".$request->nombre;
+                return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeNoRegistro', $mensajeNoRegistro);
+            }
         }else{
-            $mensajeNoRegistro = "Ya existe la identificación ". $request->numero ." del usuario.".$request->nombre;
-            return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeNoRegistro', $mensajeNoRegistro);
+            $contraseñas_diferentes = "Las contraseñas ingresadas son diferentes";
+            return redirect()->route('registrarUsuario')->with('different_password', $contraseñas_diferentes);
         }
     }
 
-    public function actualizarControlador(Request $request){
+    public function actualizarControlador(valFormRegUser $request){
         $objUser = $this->buscar($request->numero);
         $mensajeNoActualizacion = "";
         if($objUser != null){
@@ -45,20 +57,18 @@ class userController extends Controller
             if ($objUser != null){
                 $objUser->eliminar($objUser);
                 $mensajeEliminado = "El usuario se elimino de forma satisfactoria.";
-                dd($mensajeEliminado);
                 return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeEliminado', $mensajeEliminado);
             }else{
                 $mensajeNoEliminado = "El usuario no se elimino de forma satisfactoria.";
-                dd($mensajeNoEliminado);
                 return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeNoEliminado', $mensajeNoEliminado);
             }
         }catch(Exception $e){
             $mensajeNoEliminado = "El usuario no pude ser eliminado ya que pertenece a un caso judicial de la firma.";
-            dd($mensajeNoEliminado);
             return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeNoEliminado', $mensajeNoEliminado);
         }
     }
 
+    //eliminar metodo
     public function editarControlador($cedula){
         $objUser = $this->buscar($cedula); //enviar el la ruta $objUser
         return view('administrador.usuarios.editarUsuario');
@@ -90,16 +100,13 @@ class userController extends Controller
             if($request->rol == 'Abogado jefe' || $request->rol == 'Abogado auxiliar' || $request->rol == 'Secretaria'){
                 $objUser->asignarRol($request->cedula, $request->rol);
                 $mensajeRolAsignado = "Al usuario ". $request->nombre ." se le fue asignado el rol ". $request->rol;
-                dd($mensajeRolAsignado);
                 return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeRolAsignado', $mensajeRolAsignado);
             }else{
                 $mensajeRolErroneo = "El rol que desea asignar no existe";
-                dd($mensajeRolErroneo);
                 return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeRolErroneo', $mensajeRolErroneo);
             }
         }else{
             $mensajeRolNoAsignado = "La cedula del usuario no existe";
-            dd($mensajeRolNoAsignado);
             return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeRolAsignado', $mensajeRolNoAsignado);
         }
     }

@@ -47,7 +47,7 @@ Route::prefix('admin')->group(
     Route::view('/registrarUsuario', 'administrador/usuarios/registro')->name('registrarUsuario');
     Route::post('/guardarUsuario', 'admin\userController@guardarControlador')->name('guardarUsuario');
 
-    Route::get('/editarUsuario/{cedula}', 'admin\userController@editarControlador')->name('editarUsuario');
+    Route::get('/editarUsuario/{cedula}/{destino}', 'admin\userController@editarControlador')->name('editarUsuario');
     Route::post('/actualizarUsuario', 'admin\userController@actualizarControlador')->name('actualizarUsuario');
 
     Route::get('/buscarUsuario/{cedula}/{destino}','admin\userController@userControlador')->name('buscarUsuario');

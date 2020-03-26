@@ -61,6 +61,7 @@ class User extends Authenticatable
       //si se desea eliminar el usuario, también se debe eliminar la relacion
       //con model_has_roles
       $this->eliminarRol($objUser->cedula);
+      //validar que quede algún jefe
       $objUser->delete();
     }
 

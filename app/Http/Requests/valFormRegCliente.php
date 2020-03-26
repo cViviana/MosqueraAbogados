@@ -38,7 +38,7 @@ class valFormRegCliente extends FormRequest
     public function messages()
     {
         return [
-            'numero.max' => 'El número debe ser menor a 191 dígitos.',
+            'numero.max' => 'El número debe ser menor a 60 dígitos.',
             'nombre.max' => 'El nombre debe ser menor a 60 dígitos.',
             'tipo.in' => 'Por favor, seleccione el tipo de persona.
                             Debe ser persona JURÍDICA o persona NATURAL.',
