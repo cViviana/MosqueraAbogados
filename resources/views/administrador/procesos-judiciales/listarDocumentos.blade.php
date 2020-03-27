@@ -23,17 +23,17 @@
         <td>{{$doc->docCorrespondeTipo->nombre}}</td>
         <td>{{$doc->descripcion}}</td>
         <td>
-            <a href="" class="btn btn-primary">
+            <a href="{{route(editarDocumento)}}" class="btn btn-primary">
                 <i class="fas fa-edit"></i>
             </a>
         </td>
         <td>
-            <a href="{{$doc->path}}" class="btn btn-primary" target="_blank">
+            <a href="{{route('verDocumento',$doc->path)}}" class="btn btn-primary" target="_blank">
                 <i class="fas fa-eye"></i>
             </a>
         </td>
         <td>
-            <form action=""  method="get">
+            <form action="{{route('eliminarDocumento',$doc->id)}}"  method="get">
                 @csrf
                 <button class="btn btn-danger" onclick="return confirm('Esta seguro que desea eliminar')" type="submit">
                     <i class="fa fa-trash" aria-hidden="true"></i>
