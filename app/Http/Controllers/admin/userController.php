@@ -39,7 +39,7 @@ class userController extends Controller
     public function actualizarControlador(valFormRegUser $request){
         $objUser = $this->buscar($request->cedula);
         $mensajeNoActualizacion = "";
-        if($objUser != null){
+        if($objUser != null){            
             $objUser->fill($request->all());
             $objUser->guardar($objUser);
             $mensajeActualizacion = "El usuario se actualizó de forma satisfactoria.";
@@ -104,9 +104,15 @@ class userController extends Controller
         $objUser = $this->buscar($request->cedula);
         if($objUser != null){
             if($request->rol == 'Abogado jefe' || $request->rol == 'Abogado auxiliar' || $request->rol == 'Secretaria'){
-                $objUser->asignarRol($request->cedula, $request->rol);
-                $mensajeRolAsignado = "Al usuario ". $request->nombre ." se le fue asignado el rol ". $request->rol;
-                return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('men', $mensajeRolAsignado);
+                if($objUser->existeRestriccionJefe($objUser)){
+                    $objUser->asignarRol($request->cedula, $request->rol);
+                    $mensajeRolAsignado = "Al usuario ". $request->nombre ." se le fue asignado el rol ". $request->rol;
+                    return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('men', $mensajeRolAsignado);
+                }
+                else{
+                    $mensajeRolNoAsignado = "El usuario ".$request->cedula." es el único abogado jefe, por lo tanto, no puede ser modificado";
+                    return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeRolNoAsignado', $mensajeRolNoAsignado);
+                }
             }else{
                 $mensajeRolErroneo = "El rol que desea asignar no existe";
                 return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeRolErroneo', $mensajeRolErroneo);

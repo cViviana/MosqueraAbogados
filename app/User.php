@@ -62,6 +62,18 @@ class User extends Authenticatable
       //si vamos a eliminar un usuario hay q verificar que la firman no se  vaya
       //a quedar sin un abogado jefe
 
+      if(!$this->existeRestriccionJefe($objUser))
+        return false;
+
+      //si se desea eliminar el usuario, también se debe eliminar la relacion
+      //con model_has_roles
+      $this->eliminarRol($objUser->cedula);
+
+      $objUser->delete();
+      return true;
+    }
+
+    public function existeRestriccionJefe(User $objUser){
       //traemos la lista de todos los usuarios con su rol llamando a "listar()"
       $array =  ($this->listar())->all();
       
@@ -78,15 +90,9 @@ class User extends Authenticatable
         }
       }
 
-      if($bandera){
+      if($bandera)
         if($contador < 2)
           return false;
-      }
-      //si se desea eliminar el usuario, también se debe eliminar la relacion
-      //con model_has_roles
-      $this->eliminarRol($objUser->cedula);
-
-      $objUser->delete();
       return true;
     }
 
