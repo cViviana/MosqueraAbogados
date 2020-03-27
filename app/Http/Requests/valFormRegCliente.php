@@ -27,7 +27,7 @@ class valFormRegCliente extends FormRequest
     public function rules()
     {
         return [
-            'numero' => 'required|max:60',
+            'numero' => 'required|min:10|numeric',
             'nombre' => 'required|string|max:60',
             'tipo'=> 'required|in:juridica,natural',
             'telefono' => 'required|numeric|digits_between:7,20',
@@ -38,8 +38,8 @@ class valFormRegCliente extends FormRequest
     public function messages()
     {
         return [
-            'numero.max' => 'El número debe ser menor a 60 dígitos.',
-            'nombre.max' => 'El nombre debe ser menor a 60 dígitos.',
+            'numero.max' => 'El número de identificacion debe ser mayor igual de 10 digitos y menor a 60 dígitos.',
+            'nombre.max' => 'El nombre debe ser menor a 60 caracteres.',
             'tipo.in' => 'Por favor, seleccione el tipo de persona.
                             Debe ser persona JURÍDICA o persona NATURAL.',
             'telefono.digits_between' => 'Por favor, ingrese un número de teléfono correcto.

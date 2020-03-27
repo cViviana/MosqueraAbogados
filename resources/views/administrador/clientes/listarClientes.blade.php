@@ -73,9 +73,9 @@
                 </a>
             </td>
             <td>
-                <form action="{{route('eliminarCliente', [$cliente->numero,'cliente'])}}"  method="get">
+                <form action="{{route('eliminarCliente', [$cliente->numero,'cliente'])}}" method="get">
                     @csrf
-                    <button class="btn btn-danger items" type="submit">
+                    <button class="btn btn-danger items" onclick="return confirm('Esta seguro que desea eliminar')" type="submit">
                         <i class="fa fa-user-times" aria-hidden="true"></i>
                     </button>
                 </form>

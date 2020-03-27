@@ -61,7 +61,7 @@
             <td>
                 <form action=""  method="get">
                     @csrf
-                    <button class="btn btn-danger" type="submit">
+                    <button class="btn btn-danger" onclick="return confirm('Esta seguro que desea eliminar')" type="submit">
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </button>
                 </form>

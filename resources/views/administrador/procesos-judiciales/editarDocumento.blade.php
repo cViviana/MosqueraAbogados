@@ -5,7 +5,7 @@
 @section('titulo','Actualizar datos documento')
 
 @section('titulo-formulario', "Editar Documento")
-
+@section('formulario')
 <form action="" class="texto_campos" method="post">
     {{csrf_field()}}
     <br>
@@ -68,3 +68,4 @@
         });
     </script>
 </form>
+@endsection

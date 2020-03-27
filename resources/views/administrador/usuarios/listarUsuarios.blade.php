@@ -109,7 +109,7 @@
             <td>
                 <form action="{{route('eliminarUsuario', [$usuario->cedula])}}"  method="get">
                     @csrf
-                    <button class="btn btn-danger" type="submit">
+                    <button class="btn btn-danger" onclick="return confirm('Esta seguro que desea eliminar')" type="submit">
                         <i class="fa fa-user-times" aria-hidden="true"></i>
                     </button>
                 </form>

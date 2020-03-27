@@ -28,7 +28,7 @@
             <td>
                 <form action="{{route('eliminarUbicacion', $ubicacion->id)}}"  method="get">
                 @csrf
-                    <button class="btn btn-danger" type="submit" onclick="this.parentElement.style.display='none'; return confirm('Esta seguro que desea eliminar la ubicacion')">
+                    <button class="btn btn-danger" type="submit" onclick="this.parentElement.style.display='none'; return confirm('Esta seguro que desea eliminar')">
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </button>
                 </form>
