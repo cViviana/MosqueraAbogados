@@ -46,7 +46,7 @@
         </select>
     </div>
     <div class="vinculo">
-        <a class="vinculo" href="****" title="Añadir tipo">Añadir nuevo tipo de documento</a>
+        <a class="vinculo" href="{{route('crearTipoDocumento')}}" title="Añadir tipo">Añadir nuevo tipo de documento</a>
     </div>
     <div class="input-group">
         <div class="input-group-prepend">
