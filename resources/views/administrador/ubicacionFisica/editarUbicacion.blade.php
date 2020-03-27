@@ -2,9 +2,8 @@
 @section("resaltar-ubicacion-documentos", "active")
 @section("resaltar-listarUbicaciones", "active")
 
-@section('titulo','Editar Ubicacion')
-
-@section('titulo-formulario', "EDITAR UBICACIÓN")
+@section('titulo','Información de Ubicación de Documentos')
+@section('titulo-formulario', "ACTUALIZAR UBICACIÓN")
 
 @section('formulario')
   <form action="{{route('editarUbicacionFisica')}}"class="texto_campos" method="post">

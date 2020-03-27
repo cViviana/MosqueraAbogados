@@ -2,7 +2,7 @@
 @section("resaltar-documentos-casos", "active")
 @section("resaltar-subirDocumento", "active")
 
-@section('titulo','Subir documentos')
+@section('titulo','Información de documentos')
 @section('titulo-formulario', "SUBIR DOCUMENTOS")
 
 @section('formulario')

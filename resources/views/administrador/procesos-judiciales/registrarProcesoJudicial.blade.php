@@ -2,7 +2,7 @@
 @section("resaltar-casos", "active")
 @section("resaltar-registrarCaso", "active")
 
-@section('titulo','Registrar Proceso Judicial')
+@section('titulo','Procesos Judiciales')
 @section('titulo-formulario', "REGISTRAR PROCESO JUDICIAL")
 
 @section('contenedor-mensajes')

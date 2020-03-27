@@ -2,9 +2,9 @@
 @section("resaltar-casos", "active")
 @section("resaltar-listarCasos", "active")
 
-@section('titulo','Actualizar datos de un proceso judicial')
+@section('titulo','Procesos Judiciales')
 
-@section('titulo-formulario', "Editar Proceso Judicial")
+@section('titulo-formulario', "ACTUALIZAR DATOS DEL PROCESO JUDICIAL")
 
 @section('formulario')
     <form action="{{route('actualizarCaso')}}" class="texto_campos" method="post">

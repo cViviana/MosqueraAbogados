@@ -2,8 +2,8 @@
 @section("resaltar-ubicacion-documentos", "active")
 @section("resaltar-listarUbicaciones", "active")
 
-@section('titulo','Información de ubicación de documentos')
-@section('titulo-listar', 'LISTADO DE UBICACIÓN DE DOCUMENTOS')
+@section('titulo','Información de Ubicación de Documentos')
+@section('titulo-listar', 'LISTADO DE UBICACIONES DE DOCUMENTOS')
 
 @section('contenedor-mensajes')
     @if (session()->has('mensajeNoActualizacion'))

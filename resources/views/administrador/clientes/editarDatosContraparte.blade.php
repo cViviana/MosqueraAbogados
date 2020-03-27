@@ -2,9 +2,8 @@
 @section("resaltar-contrapartes", "active")
 @section("resaltar-listarContrapartes", "active")
 
-@section('titulo','Actualizar datos de un cliente')
-
-@section('titulo-formulario', "ACTUALIZAR DATOS DEL CONTRAPARTE")
+@section('titulo','Información de Contraparte')
+@section('titulo-formulario', "ACTUALIZAR DATOS DE CONTRAPARTE")
 
 @section("contenedor-mensajes")
     @if (session()->has('mensajeNoActualizacion'))

@@ -2,7 +2,7 @@
 @section("resaltar-tipos-documentos", "active")
 @section("resaltar-listarTiposDocumentos", "active")
 
-@section('titulo','Información de tipos de documentos')
+@section('titulo','Información de Tipo de Documento')
 @section('titulo-listar', 'LISTADO DE TIPOS DE DOCUMENTOS')
 
 @section('contenedor-mensajes')

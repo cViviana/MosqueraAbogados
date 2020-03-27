@@ -2,7 +2,7 @@
 @section("resaltar-tipos-documentos", "active")
 @section("resaltar-listarTiposDocumentos", "active")
 
-@section('titulo','Actualizar un tipo de documento')
+@section('titulo','Información de Tipo de Documento')
 @section('titulo-formulario', "ACTUALIZAR DATOS DE UN TIPO DE DOCUMENTO")
 
 @section('formulario')

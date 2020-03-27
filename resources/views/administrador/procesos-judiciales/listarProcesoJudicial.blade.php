@@ -1,8 +1,8 @@
 @extends('diseño-base.plantilla-listar')
 @section("resaltar-casos", "active")
 @section("resaltar-listarCasos", "active")
-@section('titulo','Procesos Judiciales')
 
+@section('titulo','Procesos Judiciales')
 @section('titulo-listar', 'LISTADO DE PROCESOS JUDICIALES')
 
 @section('contenedor-mensajes')

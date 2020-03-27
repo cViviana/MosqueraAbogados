@@ -2,9 +2,8 @@
 @section("resaltar-usuarios", "active")
 @section("resaltar-listarUsuarios", "active")
 
-@section('titulo','Editar un usuario')
-
-@section('titulo-formulario', "ACTUALIZAR DATOS DE UN USUARIO")
+@section('titulo','Información de Usuarios')
+@section('titulo-formulario', "ACTUALIZAR DATOS DEL USUARIO")
 
 @section('formulario')
 <br>

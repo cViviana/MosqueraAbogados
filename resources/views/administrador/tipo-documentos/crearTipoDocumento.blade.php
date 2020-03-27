@@ -2,7 +2,7 @@
 @section("resaltar-tipos-documentos", "active")
 @section("resaltar-crearTipoDocumento", "active")
 
-@section('titulo','Crear un tipo de documento')
+@section('titulo','Información de Tipo de Documento')
 @section('titulo-formulario', "CREAR UN TIPO DE DOCUMENTO")
 
 @section("formulario")

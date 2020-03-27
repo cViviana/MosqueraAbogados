@@ -2,9 +2,9 @@
 @section("resaltar-documentos-casos", "active")
 @section("resaltar-listarDocumentos", "active")
 
-@section('titulo','Actualizar datos documento')
+@section('titulo','Información de documentos')
+@section('titulo-formulario', "ACTUALIZAR DATOS DEL DOCUMENTO")
 
-@section('titulo-formulario', "Editar Documento")
 @section('formulario')
 <form action="" class="texto_campos" method="post">
     {{csrf_field()}}

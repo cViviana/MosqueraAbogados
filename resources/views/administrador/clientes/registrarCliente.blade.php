@@ -2,8 +2,7 @@
 @section("resaltar-clientes", "active")
 @section("resaltar-registrarCliente", "active")
 
-@section('titulo','Registrar Cliente')
-
+@section('titulo','Información de Clientes')
 @section('titulo-formulario', "REGISTRAR CLIENTE")
 
 @section("contenedor-mensajes")

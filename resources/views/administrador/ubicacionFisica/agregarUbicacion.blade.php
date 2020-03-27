@@ -2,7 +2,7 @@
 @section("resaltar-ubicacion-documentos", "active")
 @section("resaltar-crearUbicacion", "active")
 
-@section('titulo','Agregar una ubicación')
+@section('titulo','Información de Ubicación de Documentos')
 @section('titulo-formulario', "AGREGAR UNA UBICACIÓN")
 
 @section('contenedor-mensajes')

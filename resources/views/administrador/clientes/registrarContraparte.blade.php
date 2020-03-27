@@ -2,8 +2,7 @@
 @section("resaltar-contraparte", "active")
 @section("resaltar-registrarContraparte", "active")
 
-@section('titulo','Registrar Contraparte')
-
+@section('titulo','Información de Contraparte')
 @section('titulo-formulario', "REGISTRAR CONTRAPARTE")
 
 @section("contenedor-mensajes")

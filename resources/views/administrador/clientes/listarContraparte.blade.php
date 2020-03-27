@@ -2,8 +2,7 @@
 @section("resaltar-contrapartes", "active")
 @section("resaltar-listarContrapartes", "active")
 
-@section('titulo','Información de contrapartes')
-
+@section('titulo','Información de Contraparte')
 @section('titulo-listar', 'LISTADO DE CONTRAPARTES')
 
 @section('contenedor-mensajes')
