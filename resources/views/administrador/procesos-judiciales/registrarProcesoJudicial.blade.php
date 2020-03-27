@@ -1,9 +1,11 @@
 @extends('diseño-base.plantilla-registrar')
 @section("resaltar-casos", "active")
 @section("resaltar-registrarCaso", "active")
-@section('titulo','Registrar Proceso Judicial')
 
+@section('titulo','Registrar Proceso Judicial')
 @section('titulo-formulario', "REGISTRAR PROCESO JUDICIAL")
+
+
 
 @section("formulario")
     <form action="{{route('crearCaso')}}" class="texto_campos" method="post">

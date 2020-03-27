@@ -3,7 +3,6 @@
 @section("resaltar-subirDocumento", "active")
 
 @section('titulo','Subir documentos')
-
 @section('titulo-formulario', "SUBIR DOCUMENTOS")
 
 @section('formulario')

@@ -7,44 +7,20 @@
 @section('titulo-listar', 'LISTADO DE CLIENTES')
 
 @section('contenedor-mensajes')
-    @if (session()->has('mensajeRegistro'))
-        <div class="flash-message">
-            <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                {{session('mensajeRegistro')}}
-            </div>
-        </div>
-    @endif
-    @if (session()->has('mensajeActualizacion'))
-        <div class="flash-message">
-            <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                {{session('mensajeActualizacion')}}
-            </div>
-        </div>
-    @endif
-    @if (session()->has('mensajeEliminado'))
-        <div class="flash-message">
-            <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                {{session('mensajeEliminado')}}
-            </div>
+    @if (session()->has('mensajeNoActualizacion'))
+        <div class="alert alert-danger animated fadeIn">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{session('mensajeNoActualizacion')}}
         </div>
     @endif
     @if (session()->has('mensajeNoEliminado'))
-        <div class="flash-message">
-            <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                {{session('mensajeNoEliminado')}}
-            </div>
+        <div class="alert alert-danger animated fadeIn">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{session('mensajeNoEliminado')}}
         </div>
     @endif
 @endsection

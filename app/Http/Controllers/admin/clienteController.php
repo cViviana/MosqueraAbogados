@@ -17,7 +17,7 @@ class clienteController extends Controller
             $objCliente->guardar($objCliente);
             $mensajeRegistro = "Éxito. ". $request->nombre ." con identificación ".
                         $request->numero ." ha sido registrado.";
-            return redirect()->route('listarClientes', ['roll'=> $request->roll,'Clientes' => $this->listar($request->roll)])->with('mensajeRegistro', $mensajeRegistro);
+            return redirect()->route('listarClientes', ['roll'=> $request->roll,'Clientes' => $this->listar($request->roll)])->with('men', $mensajeRegistro);
         }else{
             $mensajeNoRegistro = "Ya existe la identificación ". $request->numero ." del cliente ".
                         $request->nombre;
@@ -32,7 +32,7 @@ class clienteController extends Controller
             $objCliente->fill($request->all());
             $objCliente->guardar($objCliente);
             $mensajeActualizacion = "El cliente se actualizó de forma satisfactoria";
-            return redirect()->route('listarClientes', ['roll'=> $request->roll,'Clientes' => $this->listar($request->roll)])->with('mensajeActualizacion', $mensajeActualizacion);
+            return redirect()->route('listarClientes', ['roll'=> $request->roll,'Clientes' => $this->listar($request->roll)])->with('men', $mensajeActualizacion);
         }else{
             $mensajeNoActualizacion = "El identificador del cliente no existe";
             return redirect()->route('listarClientes', ['roll'=> $request->roll,'Clientes' => $this->listar($request->roll)])->with('mensajeNoActualizacion', $mensajeNoActualizacion);
@@ -45,8 +45,8 @@ class clienteController extends Controller
             $mensajeNoEliminado = "";
             if ($objCliente != null){
                 $objCliente->eliminar($objCliente);
-                $mensajeEliminado = "El cliente se elimino de forma satisfactoria.";
-                return redirect()->route('listarClientes', ['roll'=> $roll,'Clientes' => $this->listar($roll)])->with('mensajeEliminado', $mensajeEliminado);
+                $mensajeEliminado = "El cliente se eliminó de forma satisfactoria.";
+                return redirect()->route('listarClientes', ['roll'=> $roll,'Clientes' => $this->listar($roll)])->with('men', $mensajeEliminado);
             }else{
                 $mensajeNoEliminado = "El cliente con el identificador ". $numero ." no existe.";
                 return redirect()->route('listarClientes', ['roll'=> $roll,'Clientes' => $this->listar($roll)])->with('mensajeNoEliminado', $mensajeNoEliminado);
