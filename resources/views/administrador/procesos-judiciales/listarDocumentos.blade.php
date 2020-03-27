@@ -23,7 +23,7 @@
         <td>{{$doc->docCorrespondeTipo->nombre}}</td>
         <td>{{$doc->descripcion}}</td>
         <td>
-            <a href="{{route(editarDocumento)}}" class="btn btn-primary">
+            <a href="{{route('editarDocumento',$doc->id)}}" class="btn btn-primary">
                 <i class="fas fa-edit"></i>
             </a>
         </td>
