@@ -37,7 +37,7 @@ class userController extends Controller
     }
 
     public function actualizarControlador(valFormRegUser $request){
-        $objUser = $this->buscar($request->numero);
+        $objUser = $this->buscar($request->cedula);
         $mensajeNoActualizacion = "";
         if($objUser != null){
             $objUser->fill($request->all());
@@ -90,7 +90,7 @@ class userController extends Controller
             if($destino == 'asignarRol')
                 return view('administrador.usuarios.rol', ['User' => $objUser] );
             if($destino == 'actualizar')
-                return view('administrador.usuarios.editarUsuario');
+                return view('administrador.usuarios.editarUsuario', ['User' => $objUser] );
         }else{
             dd('el usuario no existe, no sea estupido');
         }

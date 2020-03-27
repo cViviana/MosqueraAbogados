@@ -28,8 +28,8 @@ class valFormRegUser extends FormRequest
             'nombre' => 'required|string|max:60',
             'telefono' => 'required|numeric|digits_between:7,20',
             'email' => "string|max:60|email|nullable",
-            'password' => 'required',
-            'password_confirmation' => 'required',
+            //'password' => 'required',
+            //'password_confirmation' => 'required',
         ];
     }
 
