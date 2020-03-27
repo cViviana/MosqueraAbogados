@@ -46,8 +46,8 @@
                 @endforeach
             </td>
             <td>
-                <a href="" class="btn btn-info">
-                <i class="fas fa-folder-open"></i>    
+                <a href="{{route('listarDocumentosRadicado',$caso->radicado)}}" class="btn btn-info">
+                <i class="fas fa-folder-open"></i>
                 </a>
             </td>
             <td>

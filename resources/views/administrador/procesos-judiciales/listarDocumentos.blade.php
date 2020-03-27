@@ -28,7 +28,7 @@
             </a>
         </td>
         <td>
-            <a href="{{route('verDocumento',$doc->path)}}" class="btn btn-primary" target="_blank">
+            <a href="{{route('verDocumento',$doc->id)}}" class="btn btn-primary" target="_blank">
                 <i class="fas fa-eye"></i>
             </a>
         </td>
