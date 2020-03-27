@@ -6,12 +6,12 @@
 @section('titulo-formulario', 'REGISTRAR USUARIOS')
 
 @section("contenedor-mensajes")
-    @if (session()->has('different_password'))
+    @if (session()->has('contraseñas_diferentes'))
         <div class="alert alert-danger animated fadeIn">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
-            {{session('different_password')}}
+            {{session('contraseñas_diferentes')}}
         </div>
     @endif
     @if (session()->has('mensajeNoRegistro'))

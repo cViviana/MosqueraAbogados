@@ -135,9 +135,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6 col-md-12">
-						<p> Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-							Proyecto I
-						</p>
+						<span>Copyright &copy; Smart Software Solutions</span>
 					</div>
 					<div class="col-lg-6 col-md-12 text-right">
 						<div class="social-icons">

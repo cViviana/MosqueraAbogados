@@ -7,6 +7,32 @@
         <h1 class="h3 mb-0 text-gray-800">Bienvenido</h1>
         <a href="vistaCambioContraseña" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-key fa-sm text-white-50"></i> Cambiar Contraseña</a>
     </div>
+    <div id="contenedor-mensajes">
+        @if (session()->has('men'))
+            <div class="alert alert-success animated fadeIn">
+                {{session('men')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
+        @if (session()->has('mensajeDiferentes'))
+            <div class="alert alert-danger animated fadeIn">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{session('mensajeDiferentes')}}
+            </div>
+        @endif
+        @if (session()->has('mensajeContraseñaIncorrecta'))
+            <div class="alert alert-danger animated fadeIn">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{session('mensajeContraseñaIncorrecta')}}
+            </div>
+        @endif
+    </div>
     <div class="row">
         <!-- Nombre perfil -->
         <div class="col-xl-3 col-md-6 mb-4">
@@ -35,7 +61,7 @@
                     <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Cedula:
+                        Cédula:
                         </div>
                         <div class="h mb-0 font-weight-bold text-gray-800">
                         {{ Auth::user()->cedula }}
@@ -52,7 +78,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Correo Electronico:
+                                Correo Electrónico:
                             </div>
                             <div class="h mb-0 font-weight-bold text-gray-800">
                                 {{ Auth::user()->email}}
@@ -69,7 +95,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Telefono:
+                                Teléfono:
                             </div>
                             <div class="h mb-0 font-weight-bold text-gray-800">
                                 {{ Auth::user()->telefono}}
@@ -106,7 +132,7 @@
                     <div class="col-lg-6">
                         <div class="card shadow mb-4">
                             <div class="card-header py-3 border-left-info">
-                                <h6 class="m-0 font-weight-bold text-primary">Gestionar Documentacion de los Procesos Judiciales</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Gestionar Documentación de los Procesos Judiciales</h6>
                             </div>
                             <div class="card-body">
                                 En la sección de Documentos podrás  encontrar funcionalidades como subir, listar, editar y eliminar documentos
@@ -118,7 +144,7 @@
                     <div class="col-lg-6">
                         <div class="card shadow mb-4">
                             <div class="card-header py-3 border-left-warning">
-                                <h6 class="m-0 font-weight-bold text-primary">Gestionar Ubicacion de la Documentacion</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Gestionar Ubicación de la Documentacion</h6>
                             </div>
                             <div class="card-body">
                                 En la sección de Documentos podrás  encontrar funcionalidades como registrar, listar, editar y eliminar las ubicaciones 

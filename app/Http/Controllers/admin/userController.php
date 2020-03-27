@@ -32,7 +32,7 @@ class userController extends Controller
             }
         }else{
             $contraseñas_diferentes = "Las contraseñas ingresadas son diferentes";
-            return redirect()->route('registrarUsuario')->with('different_password', $contraseñas_diferentes);
+            return redirect()->route('registrarUsuario')->with('contraseñas_diferentes', $contraseñas_diferentes);
         }
     }
 
@@ -147,14 +147,14 @@ class userController extends Controller
                 $password = Hash::make($request->passwordNew);
                 $objUser->password = $password;
                 $objUser->guardar($objUser);
-                $mensajeActualizacion = "La contraseña se actualizo de forma satisfactoria";
-                return redirect()->route('perfil_usuario')->with('mensajeNoActualizacion', $mensajeActualizacion);
+                $mensajeActualizacion = "Éxito. La contraseña se actualizó de forma satisfactoria.";
+                return redirect()->route('perfil_usuario')->with('men', $mensajeActualizacion);
             }else{
-                $mensajeDiferentes = "Las contraseñas no coinciden";
+                $mensajeDiferentes = "Las contraseñas no coinciden.";
                 return redirect()->route('perfil_usuario')->with('mensajeDiferentes', $mensajeDiferentes);
             }
         }
-        $mensajeContraseñaIncorrecta = "La contraseña ingresada no es la correcta";
+        $mensajeContraseñaIncorrecta = "La contraseña ingresada no es correcta.";
         return redirect()->route('perfil_usuario')->with('mensajeContraseñaIncorrecta', $mensajeContraseñaIncorrecta);
     }
 

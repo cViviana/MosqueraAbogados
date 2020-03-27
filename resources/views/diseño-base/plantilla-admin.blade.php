@@ -252,11 +252,11 @@
         <div class="modal-body"> Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">
-            Cancel
+            Cancelar
           </button>
           <button class="btn btn-danger"  data-toggle="tooltip" data-placement="top" title="Cerrar Sesion" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();" type="button" data-dismiss="modal">
-            Cerrar Sesion
+            Cerrar Sesión
           </button>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
@@ -281,6 +281,19 @@
 
   <!-- Page level custom scripts -->
   <script src="{{ asset('admin/js/demo/datatables-demo.js') }}"></script>
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="{{ asset('https://code.jquery.com/ui/1.12.1/jquery-ui.js') }}"></script>
+
+  <script>
+    $( function() {
+      $( "#fecha_inicio" ).datepicker();
+    } );
+    $('.datepicker').datepicker({
+    format: 'yyyy-mm-dd',
+    startDate: '-3d'
+    });
+  </script>
 
   <script type="application/javascript">
     $('input[type="file"]').change(function(e){
