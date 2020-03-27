@@ -1,4 +1,4 @@
-@extends('diseño-base.plantilla-listar')
+@extends('diseño-base.plantilla-registrar')
 @section("resaltar-documentos-casos", "active")
 @section("resaltar-listarDocumentos", "active")
 
