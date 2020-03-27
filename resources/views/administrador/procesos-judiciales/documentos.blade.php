@@ -7,20 +7,22 @@
 
 @section("nombre-campos-columnas")
     <th scope="col">Núm. Radicado</th>
-    <th scope="col">Identificacion Cliente</th>
-    <th scope="col">Ver Documentos</th>   
+    <th scope="col">Cliente</th>
+    <th scope="col">Cliente</th>
+    <th scope="col">Ver Documentos</th>
 @endsection
 
 @section("listado-columnas")
-    <!-- Aquí va el ciclo -->
+  @foreach ($ListaDocs as $caso)
     <tr>
-        <td></td>
-        <td></td>
+        <td>{{$caso->radicado}}</td>
+        <td>{{$caso->clienteCaso->nombre}}</td>
+        <td>{{$caso->clienteContraparte->nombre}}</td>
         <td>
-            <a href="{{route('listarDocumentos')}}" class="btn btn-primary">
+            <a href="{{route('listarDocumentosRadicado',$caso->radicado)}}" class="btn btn-primary">
                 <i class="fas fa-eye"></i>
             </a>
         </td>
     </tr>
-   <!-- Aquí termina el ciclo -->
+   @endforeach
 @endsection

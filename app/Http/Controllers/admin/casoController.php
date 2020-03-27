@@ -46,7 +46,7 @@ class casoController extends Controller
                   return redirect()->route('registrarCaso')->with('men',$men,'tipo',0);
                 }
             }else{
-              $men ="los clientes son iguales";
+              $men ="Los clientes son iguales o no seleccionó el cliente o la contraparte";
               return redirect()->route('registrarCaso')->with('men',$men,'tipo',0);
             }
         }else{
@@ -88,7 +88,9 @@ class casoController extends Controller
 
     //este metodo fue separado de listarControlar para poder reenviar los clientes cuando se eliminen
     public function listar(){
-      return $listaCasos=Caso::with(['clienteContraparte:numero,nombre','clienteCaso:numero,nombre','dirige:dir_cedula,nombre'])->get();
+      $Casos = new Caso;
+      $ListaCasos = $Casos->listar();
+      return $ListaCasos;
     }
     public function editarControlador(Request $request){
 

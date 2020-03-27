@@ -7,34 +7,43 @@
 @section('titulo-formulario', "SUBIR DOCUMENTOS")
 
 @section('formulario')
+<form action="{{route('guardarDocumento')}}" method="post" enctype="multipart/form-data">
+  {{csrf_field()}}
     <br>
     <div class="input-group">
         <div class="input-group-prepend">
             <span class="input-group-text"><i class="fas fa-boxes"></i></span>
         </div>
-        <select class="form-control">
-            <option selected="">* Archivero</option>
-            <option>Archivero 1</option>
-            <option>Archivero 2</option>
+        <select name='radicado_doc' id='radicado_doc' class="form-control">
+          <option selected="">* Radicado</option>
+          @foreach ($ListaCasos as $caso)
+            <option value= {{$caso->radicado}}>{{$caso->radicado}}</option>
+          @endforeach
         </select>
+    </div>
+    <br>
+    <div class="input-group">
         <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fas fa-archive"></i></span>
+            <span class="input-group-text"><i class="fas fa-boxes"></i></span>
         </div>
-        <select class="form-control">
-            <option selected="">* Gaveta</option>
-            <option>Gaveta 1</option>
-            <option>Gaveta 2</option>
+        <select name='ubicacion_id' id='ubicacion_id'class="form-control">
+            <option selected="">* Ubicación Física (Archivador - Gaveta) </option>
+            @foreach ($ListaUbicaciones as $ubicacion)
+              <option value= {{$ubicacion->id}}>{{$ubicacion->numArchivero}} - {{$ubicacion->numGaveta}}</option>
+            @endforeach
         </select>
+
     </div>
     <br>
     <div class="input-group">
         <div class="input-group-prepend">
             <span class="input-group-text"><i class="fas fa-project-diagram"></i></span>
         </div>
-        <select class="form-control">
+        <select name='tipo_id' id='tipo_id' class="form-control">
             <option selected="">* Tipo documento</option>
-            <option>Tipo 1</option>
-            <option>Tipo 2</option>
+            @foreach ($ListaTipos as $tipo)
+              <option value= {{$tipo->id}}>{{$tipo->nombre}}</option>
+            @endforeach
         </select>
     </div>
     <div class="vinculo">
@@ -44,27 +53,30 @@
         <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-comments"></i></span>
         </div>
-        <input name="" class="form-control" placeholder="* Descripción" type="text" required>
+        <input name="descripcion" id="descripcion" class="form-control" placeholder="* Descripción" type="text" required>
     </div>
     <br>
     <div class="custom-file">
-        <input type="file" class="custom-file-input" id="customFile">
-        <label class="custom-file-label"   for="customFile">Seleccionar Documento</label>
+        <!--<input type="file" class="custom-file-input" id="customFile" required>
+        <label class="custom-file-label"   for="customFile">Seleccionar Documento</label>-->
+        <input type="file" class="form-control" placeholder="Seleccionar Documento" name="file" required>
+
     </div>
     <div>
     <br>
     </div>
-    
+
     <button type="submit" class="btn btn-primary">Subir Documento</button>
     <div class="texto_campos">Los campos con (*) son obligatorios</div>
     <br>
-
-    <script>
+    <input type="hidden" name="path" id='path' value="">
+    
+  </form>
+    <!--<script>
         // Add the following code if you want the name of the file appear on select
         $(".custom-file-input").on("change", function() {
         var fileName = $(this).val().split("\\").pop();
         $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
         });
-    </script>
-@endsection
-
+    </script>-->
+  @endsection

@@ -51,11 +51,11 @@ Route::prefix('admin')->group(
     Route::post('/actualizarUsuario', 'admin\userController@actualizarControlador')->name('actualizarUsuario');
 
     Route::get('/buscarUsuario/{cedula}/{destino}','admin\userController@userControlador')->name('buscarUsuario');
-    
+
     Route::post('/asignarRol', 'admin\userController@asignarRol')->name('asignarRol');
 
     Route::get('/eliminarUsuario/{cedula}', 'admin\userController@eliminarControlador')->name('eliminarUsuario');
-    
+
     Route::get('/listarUsuarios', 'admin\userController@listarControlador')->name('listarUsuarios');
 
     //CLIENTE
@@ -104,6 +104,7 @@ Route::prefix('admin')->group(
 
     Route::get('/listarTiposDocumentos', 'admin\tipoController@listarControlador')->name('listarTiposDocumentos');
 
+      //Documentos
   }
 );
 
@@ -116,9 +117,17 @@ Route::prefix('admin')->group(
 //Route::view('/registrarContraparte','administrador/clientes/registrarContraparte')->name('registrarContraparte');
 //Route::view('/listarContraparte','administrador/clientes/listarContraparte')->name('listarContraparte');
 
-Route::view('/listarDocumentos','administrador/procesos-judiciales/listarDocumentos')->name('listarDocumentos');
-Route::view('/subirDocumento','administrador/procesos-judiciales/subirDocumento')->name('subirDocumento');
+Route::get('/listarDocumentos','admin\documento_controller@listarPorRadicado')->name('listarDocumentos');
+Route::get('/listarDocumentos/{radicado_doc}','admin\documento_controller@listarControlador')->name('listarDocumentosRadicado');
+Route::get('/subirDocumento','admin\documento_controller@index')->name('subirDocumento');
 Route::view('/tipoDocumento','administrador/tipoDocumento')->name('tipoDocumento');
+
+Route::get('/', 'admin\FileController@index')->name('files.index');
+Route::post('/files', 'admin\FileController@store')->name('files.store');
+Route::delete('/files/{file}', 'admin\FileController@destroy')->name('files.destroy');
+Route::get('/files/{file}/download', 'admin\FileController@download')->name('files.download');
+
+Route::post('/guardarDocumento','admin\documento_controller@guardarControlador')->name('guardarDocumento');
 
 Auth::routes();
 

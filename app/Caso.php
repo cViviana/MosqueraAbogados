@@ -25,6 +25,10 @@ class Caso extends Model
       //...belongsToMany([modelo],[nombre_tabla_pivote], [nombre_fk1], [nombre_fk2]);
     }
 
+    public function casoDoc(){
+      return $this->hasMany('App\Documento','id','radicado');
+    }
+
     public function guardar(Caso $objCaso, $contraparte, $cliente, $abogadoPpal, $abogadoAux){
       //asociar el contraparte y el cliente
       $objCaso->clienteContraparte()->associate($contraparte);
@@ -41,7 +45,7 @@ class Caso extends Model
     }
 
     public function listar(){
-      return $this::all();
+      return $this::with(['clienteContraparte:numero,nombre','clienteCaso:numero,nombre','dirige:dir_cedula,nombre'])->get();
     }
     public function tablaPivote(Caso  $objCaso, $abogadoPpal, $abogadoAux){
       $objCaso->dirige()->attach($abogadoPpal);

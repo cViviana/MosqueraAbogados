@@ -12,7 +12,7 @@ class Tipo extends Model
     protected $fillable=['nombre'];
 
     public function tipoCorrespondeDocumento(){
-       return $this->hasMany('app\Documento','tipo_id','id');
+       return $this->hasMany('app\Documento','tipo_id');
     }
 
     public function guardar(Tipo $objTipo){

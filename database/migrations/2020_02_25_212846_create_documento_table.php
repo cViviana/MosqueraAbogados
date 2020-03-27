@@ -15,6 +15,7 @@ class CreateDocumentoTable extends Migration
         Schema::create('documento', function (Blueprint $table) {
             $table->bigIncrements('id');
             //ubicacion del documento en el servidor
+            $table->string("nombreArchivo",50)->nullable(false);
             $table->string("path",256)->nullable(false);
             $table->string("descripcion",200)->nullable(false);
             //llaves foreneas !
