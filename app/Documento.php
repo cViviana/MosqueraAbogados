@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\admin\FileController;
+use Illuminate\Support\Facades\Crypt;
 
 class Documento extends Model
 {
@@ -63,11 +64,16 @@ class Documento extends Model
     public function eliminar($id)
     {
       $doc = $this->buscar($id);
-      $nombre = $doc->nombreArchivo;
-      $radicado = $doc->radicado_doc;
-      $ruta = $radicado.'/'.$nombre;
-      $file = new FileController;
-      $file->destroy($ruta);
-      $doc->delete();
+      if($doc!= null){
+        $nombre = $doc->nombreArchivo;
+        $radicado = $doc->radicado_doc;
+        $ruta = $radicado.'/'.$nombre;
+        $file = new FileController;
+        $file->destroy($ruta);
+        $doc->delete();
+        return true;
+      }else {
+        return false;
+      }
     }
 }

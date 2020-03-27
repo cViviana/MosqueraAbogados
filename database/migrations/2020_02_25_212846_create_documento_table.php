@@ -16,7 +16,7 @@ class CreateDocumentoTable extends Migration
             $table->bigIncrements('id');
             //ubicacion del documento en el servidor
             $table->string("nombreArchivo",50)->nullable(false);
-            $table->string("path",256)->nullable(false);
+            $table->string("path",2000)->nullable(false);
             $table->string("descripcion",200)->nullable(false);
             //llaves foreneas !
             //foranea de documento a tipo_documento

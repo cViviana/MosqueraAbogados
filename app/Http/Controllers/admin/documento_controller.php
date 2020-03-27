@@ -82,7 +82,6 @@ class documento_controller extends Controller
      $ListaTipos = $tipo->listar();
      $caso = new Caso;
      $ListaCasos = $caso->listar();
-
      return view('administrador.procesos-judiciales.editarDocumento', compact('ListaUbicaciones','ListaTipos','ListaCasos','id') );
    }
 
@@ -101,8 +100,13 @@ class documento_controller extends Controller
       $doc = $doc->buscar($id);
       $nombre = $doc->nombreArchivo;
       $radicado = $doc->radicado_doc;
-      $doc->eliminar($id);
-      $men = "Se eliminó correctamente el documento ".$nombre;
-      return redirect()->route('listarDocumentosRadicado',$radicado)->with('men',$men);
+      $respuesta = $doc->eliminar($id);
+      if($respuesta== true){
+        $men = "Se eliminó correctamente el documento ".$nombre;
+        return redirect()->route('listarDocumentosRadicado',$radicado)->with('men',$men);
+      }else{
+        $men = "Error a al eliminar el documento ".$nombre.".Intente nuevamente";
+        return redirect()->route('listarDocumentosRadicado',$radicado)->with('men',$men);
+      }
    }
 }
