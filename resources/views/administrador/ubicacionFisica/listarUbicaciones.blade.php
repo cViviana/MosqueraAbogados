@@ -22,14 +22,14 @@
             <td>{{$ubicacion->numGaveta}}</td>
             <td>
                 <a href="{{route('editarUbicacion', $ubicacion->id)}}" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-pencil"></span>
+                    <i class="fas fa-edit"></i>
                 </a>
             </td>
             <td>
                 <form action="{{route('eliminarUbicacion', $ubicacion->id)}}"  method="get">
-                    @csrf
-                    <button class="btn btn-danger" type="submit">
-                        <span class="glyphicon glyphicon-trash"></span>
+                @csrf
+                    <button class="btn btn-danger" type="submit" onclick="this.parentElement.style.display='none'; return confirm('Esta seguro que desea eliminar la ubicacion')">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
                     </button>
                 </form>
             </td>

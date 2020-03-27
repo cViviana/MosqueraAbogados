@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-group row mb-0">
                     <div class="col-md-6 offset-md-12 align-items-center">
-                        <button type="submit" class="btn btn-secondary text-center ">
+                        <button type="submit" class="btn btn-primary text-center ">
                             {{ __('Asignar cargo') }}
                         </button>
                     </div>

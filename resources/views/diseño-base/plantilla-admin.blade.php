@@ -40,19 +40,9 @@
       </a>
 
       <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item @yield("resaltar-perfil")">
-        <a class="nav-link" href="{{route('perfil_usuario')}}">
-          <i class="fas fa-user"></i>
-          <span>Perfil</span></a>
-      </li>
-
-      <!-- Divider -->
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-        Usuarios
+        Gestion de Usuarios
       </div>
       <!-- USUARIO-->
       <li class="nav-item @yield("resaltar-usuarios")">

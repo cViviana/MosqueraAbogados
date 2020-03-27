@@ -24,7 +24,7 @@
         <div class="input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text">
-                <i class="fa fa-user"></i>
+                    <i class="fa fa-user"></i>
                 </span>
             </div>
             <input name='nombre' id='nombre' class="form-control" placeholder="* Nombre completo" type="text" required>
