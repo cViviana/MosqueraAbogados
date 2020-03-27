@@ -138,4 +138,8 @@ class User extends Authenticatable
       $user->assignRole($rol);
     }
 
+    public function cambiarContraseña(User $objUser, $password){
+      
+    }
+
 }

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\User;
 use Exception;
-
+use Illuminate\Support\Facades\Auth;
 
 class userController extends Controller
 {
@@ -133,6 +133,29 @@ class userController extends Controller
     public function buscar($cedula){
         $objUser = new User();
         return $objUser->buscar($cedula);
+    }
+
+    public function cambioContraseña(Request $request){
+
+        //buscamos el usuario que tiene la sesión actual
+        $objUser = $this->buscar(auth()->user()->cedula);
+
+        //validar que las contraseña antigua sea la correcta
+        if( Hash::check( $request->passwordOld, $objUser->password) ){
+            //comparar las contraseñas nuevas
+            if( $request->passwordNew == $request->password_confirmation ){
+                $password = Hash::make($request->passwordNew);
+                $objUser->password = $password;
+                $objUser->guardar($objUser);
+                $mensajeActualizacion = "La contraseña se actualizo de forma satisfactoria";
+                return redirect()->route('perfil_usuario')->with('mensajeNoActualizacion', $mensajeActualizacion);
+            }else{
+                $mensajeDiferentes = "Las contraseñas no coinciden";
+                return redirect()->route('perfil_usuario')->with('mensajeDiferentes', $mensajeDiferentes);
+            }
+        }
+        $mensajeContraseñaIncorrecta = "La contraseña ingresada no es la correcta";
+        return redirect()->route('perfil_usuario')->with('mensajeContraseñaIncorrecta', $mensajeContraseñaIncorrecta);
     }
 
 }

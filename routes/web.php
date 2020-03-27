@@ -38,10 +38,14 @@ Route::prefix('admin')->group(
 
     Route::view('/perfil_usuario','administrador/perfil_usuario')->name('perfil_usuario')->middleware('permiso:vista');
 
+    //CAMBIO DE CONTRASEÑA
+    Route::view('/vistaCambioContraseña','administrador/usuarios/cambiarContraseña')->name('vistaCambioContraseña');
+    Route::post('/cambiarContraseña','admin\userController@cambioContraseña')->name('cambiarContraseña');
+
     //CASO
     Route::get('/registrarCaso','admin\casoController@index')->name('registrarCaso')->middleware('permiso:crear');
     Route::post('/agregarCaso','admin\casoController@guardar')->name('crearCaso')->middleware('permiso:crear');
-
+    
     Route::get('/listarCasos', 'admin\casoController@listarControlador')->name('listarCasos')->middleware('permiso:vista');
     Route::get('/editarCaso/{radicado}', 'admin\casoController@editControlador')->name('editarCaso')->middleware('permiso:editar');
     Route::post('/actualizarCaso', 'admin\casoController@editarControlador')->name('actualizarCaso')->middleware('permiso:editar');
@@ -50,7 +54,6 @@ Route::prefix('admin')->group(
     Route::view('/registrarUsuario', 'administrador/usuarios/registro')->name('registrarUsuario')->middleware('permiso:crear');
     Route::post('/guardarUsuario', 'admin\userController@guardarControlador')->name('guardarUsuario')->middleware('permiso:crear');
 
-    //CORREGIR
     Route::get('/editarUsuario/{cedula}/{destino}', 'admin\userController@userControlador')->name('editarUsuario')->middleware('permiso:editar');
     Route::post('/actualizarUsuario', 'admin\userController@actualizarControlador')->name('actualizarUsuario')->middleware('permiso:editar');
 
@@ -112,7 +115,7 @@ Route::prefix('admin')->group(
     Route::get('/listarDocumentos','admin\documento_controller@listarPorRadicado')->name('listarDocumentos')->middleware('permiso:vista');
     Route::get('/listarDocumentos/{radicado_doc}','admin\documento_controller@listarControlador')->name('listarDocumentosRadicado')->middleware('permiso:vista');
     Route::get('/subirDocumento','admin\documento_controller@index')->name('subirDocumento')->middleware('permiso:editar');
-    //Route::view('/tipoDocumento','administrador/tipoDocumento')->name('tipoDocumento')->middleware('permiso:editar');
+    Route::view('/tipoDocumento','administrador/tipoDocumento')->name('tipoDocumento')->middleware('permiso:editar');
     Route::get('/verDocumento/{id}','admin\documento_controller@verDocumento')->name('verDocumento')->middleware('permiso:vista');
     Route::get('/editarDocumento/{id}','admin\documento_controller@editarDocumento')->name('editarDocumento')->middleware('permiso:editar');
     Route::post('/guardarDocumento','admin\documento_controller@guardarControlador')->name('guardarDocumento')->middleware('permiso:crear');
