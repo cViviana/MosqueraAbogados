@@ -31,7 +31,7 @@
                 <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                    Nombre:
+                    Cedula:
                     </div>
                     <div class="h mb-0 font-weight-bold text-gray-800">
                     {{ Auth::user()->cedula }}
