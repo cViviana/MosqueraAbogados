@@ -19,22 +19,13 @@ class FileController extends Controller
       $this->dropbox = Storage::disk('dropbox')->getDriver()->getAdapter()->getClient();
   }
 
-  public function index()
-  {
-      // Obtenemos todos los registros de la tabla files
-      // y retornamos la vista files con los datos.
-      $files = Documento::orderBy('created_at', 'desc')->get();
-
-      return view('administrador.procesos-judiciales.files', compact('files'));
-  }
-
   public function store(Request $request)
   {
       try{
         // Guardamos el archivo indicando el driver y el método putFileAs el cual recibe
         // el directorio donde será almacenado, el archivo y el nombre.
         // ¡No olvides validar todos estos datos antes de guardar el archivo!
-        
+
         Storage::disk('dropbox')->putFileAs(
             '/'.$request->radicado_doc.'/',
             $request->file('file'),
@@ -54,21 +45,18 @@ class FileController extends Controller
         return null;
       }
   }
-  public function download(File $file)
+  public function download($file)
   {
       // Retornamos una descarga especificando el driver dropbox
       // e indicándole al método download el nombre del archivo.
-      return Storage::disk('dropbox')->download($file->name);
+      return Storage::disk('dropbox')->download($file);
   }
 
-  public function destroy(File $file)
+  public function destroy($file)
   {
       // Eliminamos el archivo en dropbox llamando a la clase
       // instanciada en la propiedad dropbox.
-      $this->dropbox->delete($file->name);
-      // Eliminamos el registro de nuestra tabla.
-      $file->delete();
+      $this->dropbox->delete($file);
 
-      return back();
   }
 }

@@ -56,10 +56,7 @@
     </div>
     <br>
     <div class="custom-file">
-        <!--<input type="file" class="custom-file-input" id="customFile" required>
-        <label class="custom-file-label"   for="customFile">Seleccionar Documento</label>-->
-        <input type="file" class="form-control" placeholder="Seleccionar Documento" name="file" required>
-
+      <input type="file" class="form-control" placeholder="Seleccionar Documento" name="file" required>
     </div>
     <div>
     <br>
@@ -68,14 +65,9 @@
     <button type="submit" class="btn btn-primary">Subir Documento</button>
     <div class="texto_campos">Los campos con (*) son obligatorios</div>
     <br>
+
     <input type="hidden" name="path" id='path' value="">
-    
-  </form>
-    <!--<script>
-        // Add the following code if you want the name of the file appear on select
-        $(".custom-file-input").on("change", function() {
-        var fileName = $(this).val().split("\\").pop();
-        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-        });
-    </script>-->
-  @endsection
+
+    </form>
+
+@endsection

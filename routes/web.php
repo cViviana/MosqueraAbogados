@@ -29,6 +29,10 @@ Route::post('mail','MailController@postMail');
 Route::view('/asignarRoll', 'auth/rol')->name('asignarRoll');
 
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 //Rutas de los procesos que realiza el administrador.
 Route::prefix('admin')->group(
   function(){
@@ -105,31 +109,15 @@ Route::prefix('admin')->group(
 
     Route::get('/listarTiposDocumentos', 'admin\tipoController@listarControlador')->name('listarTiposDocumentos')->middleware('permiso:vista');
 
-      //Documentos
-  }
-);
+    //Documentos
+    Route::get('/listarDocumentos','admin\documento_controller@listarPorRadicado')->name('listarDocumentos');
+    Route::get('/listarDocumentos/{radicado_doc}','admin\documento_controller@listarControlador')->name('listarDocumentosRadicado');
+    Route::get('/subirDocumento','admin\documento_controller@index')->name('subirDocumento');
+    Route::view('/tipoDocumento','administrador/tipoDocumento')->name('tipoDocumento');
+    Route::get('/verDocumento/{id}','admin\documento_controller@verDocumento')->name('verDocumento');
+    Route::get('/editarDocumento/{id}','admin\documento_controller@editarDocumento')->name('editarDocumento');
+    Route::post('/guardarDocumento','admin\documento_controller@guardarControlador')->name('guardarDocumento');
+    Route::post('/actualizarDocumento','admin\documento_controller@actualizarDocumento')->name('actualizarDocumento');
+    Route::get('/eliminarDocumento/{id}','admin\documento_controller@eliminarDocumento')->name('eliminarDocumento');
 
-/* --- Rutas para CRUD de procesos judiciales */
-/** Completar estas peticiones de un proceso judicial*/
-//Route::get('/procesoJudicial/actualizar/{radicado}', 'ProcesoJudicialController@actualizarProcesoJudicialVista');
-//Route::post('/procesoJudicial/actualizar/{radicado}', 'ProcesoJudicialController@actualizarProcesoJudicial');
-//Route::delete('/procesoJudicial/eliminar/{radicado}', 'ProcesoJudicialController@eliminarProcesoJudicial');
-
-//Route::view('/registrarContraparte','administrador/clientes/registrarContraparte')->name('registrarContraparte');
-//Route::view('/listarContraparte','administrador/clientes/listarContraparte')->name('listarContraparte');
-
-Route::get('/listarDocumentos','admin\documento_controller@listarPorRadicado')->name('listarDocumentos');
-Route::get('/listarDocumentos/{radicado_doc}','admin\documento_controller@listarControlador')->name('listarDocumentosRadicado');
-Route::get('/subirDocumento','admin\documento_controller@index')->name('subirDocumento');
-Route::view('/tipoDocumento','administrador/tipoDocumento')->name('tipoDocumento');
-
-Route::get('/', 'admin\FileController@index')->name('files.index');
-Route::post('/files', 'admin\FileController@store')->name('files.store');
-Route::delete('/files/{file}', 'admin\FileController@destroy')->name('files.destroy');
-Route::get('/files/{file}/download', 'admin\FileController@download')->name('files.download');
-
-Route::post('/guardarDocumento','admin\documento_controller@guardarControlador')->name('guardarDocumento');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+  });

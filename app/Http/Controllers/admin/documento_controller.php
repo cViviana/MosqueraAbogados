@@ -67,4 +67,42 @@ class documento_controller extends Controller
      $ListaDocs = $casos->listar();
      return view('administrador.procesos-judiciales.documentos', compact('ListaDocs') );
    }
+   public function verDocumento($id)
+   {
+     $doc = new Documento;
+     $path = $doc->verDoc($id);
+     return redirect($path);
+   }
+
+   public function editarDocumento($id)
+   {
+     $ubicacion = new Ubicacion;
+     $ListaUbicaciones = $ubicacion->listar();
+     $tipo = new Tipo;
+     $ListaTipos = $tipo->listar();
+     $caso = new Caso;
+     $ListaCasos = $caso->listar();
+
+     return view('administrador.procesos-judiciales.editarDocumento', compact('ListaUbicaciones','ListaTipos','ListaCasos','id') );
+   }
+
+   public function actualizarDocumento(Request $request)
+   {
+     $doc = new Documento;
+     $doc->eliminar($request->id);
+     $this->guardarControlador($request);
+     $men = "Se actualizó correctamente el documento";
+     return redirect()->route('listarDocumentosRadicado',$request->radicado_doc)->with('men',$men);
+   }
+
+   public function eliminarDocumento($id)
+   {
+      $doc = new Documento;
+      $doc = $doc->buscar($id);
+      $nombre = $doc->nombreArchivo;
+      $radicado = $doc->radicado_doc;
+      $doc->eliminar($id);
+      $men = "Se eliminó correctamente el documento ".$nombre;
+      return redirect()->route('listarDocumentosRadicado',$radicado)->with('men',$men);
+   }
 }

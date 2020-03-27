@@ -29,7 +29,8 @@ class Documento extends Model
         //Subimos el archivo con FileController y nos retorna la request con el path
         $file = new FileController;
         $path = $file->store($request);
-        $doc->path = $path;
+        $doc->path = Crypt::encryptString($path);
+
         if($path != null){
           $doc->docCorrespondeTipo()->associate($tipo);
           $doc->docEstaUbicacion()->associate($ubicacion);
@@ -45,5 +46,28 @@ class Documento extends Model
     public function listarDocumentos($radicado)
     {
       return $this::with(['docCorrespondeTipo:id,nombre','docEstaUbicacion:id,numArchivero,numGaveta'])->get();
+    }
+
+    public function verDoc($id)
+    {
+      $doc = $this->buscar($id);
+      $path = Crypt::decryptString($doc->path);
+      return $path;
+    }
+
+    public function buscar($id)
+    {
+      return $this::find($id);
+    }
+
+    public function eliminar($id)
+    {
+      $doc = $this->buscar($id);
+      $nombre = $doc->nombreArchivo;
+      $radicado = $doc->radicado_doc;
+      $ruta = $radicado.'/'.$nombre;
+      $file = new FileController;
+      $file->destroy($ruta);
+      $doc->delete();
     }
 }
