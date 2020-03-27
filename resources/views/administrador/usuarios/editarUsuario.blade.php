@@ -8,7 +8,7 @@
 
 @section('formulario')
 <br>
-<div class="card shadow mb-4">
+    <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">ACTUALIZAR USUARIO</h6>
         </div>
@@ -25,7 +25,7 @@
                     <p class="divider-text">
                         <span class="bg-light"></span>
                     </p>
-               
+                
                 <form method="POST" action="------">
                     @csrf
                     <div class="input-group form-group">
@@ -100,8 +100,8 @@
                         </div>
                     </div>
                 </form>
-               
+                
             </div>
         </div>
-</div>
+    </div>
 @endsection

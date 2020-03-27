@@ -25,9 +25,9 @@ class userController extends Controller
                 $objUser->guardar($objUser);
                 $mensajeRegistro = "Éxito. ". $request->nombre ." con identificación ".
                             $request->cedula ." ha sido registrado.";
-                return redirect()->route('registrarUsuario')->with('mensajeRegistro', $mensajeRegistro);
+                return redirect()->route('registrarUsuario')->with('men', $mensajeRegistro);
             }else{
-                $mensajeNoRegistro = "Ya existe la identificación ". $request->numero ." del usuario.".$request->nombre;
+                $mensajeNoRegistro = "Ya existe la identificación ". $request->numero ." del usuario ".$request->nombre;
                 return redirect()->route('registrarUsuario')->with('mensajeNoRegistro', $mensajeNoRegistro);
             }
         }else{
@@ -43,7 +43,7 @@ class userController extends Controller
             $objUser->fill($request->all());
             $objUser->guardar($objUser);
             $mensajeActualizacion = "El usuario se actualizó de forma satisfactoria.";
-            return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeActualizacion', $mensajeActualizacion);
+            return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('men', $mensajeActualizacion);
         }else{
             $mensajeNoActualizacion = "El identificador del usuario no existe.";
             return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeNoActualizacion', $mensajeNoActualizacion);
@@ -57,15 +57,15 @@ class userController extends Controller
             if ($objUser != null){
                 $eliminado = $objUser->eliminar($objUser);
                 if($eliminado){
-                    $mensajeEliminado = "El usuario se elimino de forma satisfactoria.";
-                    return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeEliminado', $mensajeEliminado);
+                    $mensajeEliminado = "El usuario se eliminó de forma satisfactoria.";
+                    return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('men', $mensajeEliminado);
                 }else{
-                    $mensajeNoEliminado = "El usuario ".$cedula." es el unico abogado jefe, por ende no puede ser eliminado";
+                    $mensajeNoEliminado = "El usuario ".$cedula." es el único abogado jefe, por lo tanto, no puede ser eliminado";
                     return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeNoEliminado', $mensajeNoEliminado);
                 }
 
             }else{
-                $mensajeNoEliminado = "El usuario no se elimino de forma satisfactoria.";
+                $mensajeNoEliminado = "El usuario no se eliminó de forma satisfactoria.";
                 return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeNoEliminado', $mensajeNoEliminado);
             }
         }catch(Exception $e){
@@ -106,14 +106,14 @@ class userController extends Controller
             if($request->rol == 'Abogado jefe' || $request->rol == 'Abogado auxiliar' || $request->rol == 'Secretaria'){
                 $objUser->asignarRol($request->cedula, $request->rol);
                 $mensajeRolAsignado = "Al usuario ". $request->nombre ." se le fue asignado el rol ". $request->rol;
-                return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeRolAsignado', $mensajeRolAsignado);
+                return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('men', $mensajeRolAsignado);
             }else{
                 $mensajeRolErroneo = "El rol que desea asignar no existe";
                 return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeRolErroneo', $mensajeRolErroneo);
             }
         }else{
             $mensajeRolNoAsignado = "La cedula del usuario no existe";
-            return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeRolAsignado', $mensajeRolNoAsignado);
+            return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeRolNoAsignado', $mensajeRolNoAsignado);
         }
     }
 

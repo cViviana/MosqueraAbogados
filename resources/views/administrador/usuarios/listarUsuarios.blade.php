@@ -1,66 +1,44 @@
 @extends('diseño-base.plantilla-listar')
+@section("resaltar-usuarios", "active")
 @section("resaltar-listarUsuarios", "active")
+
 @section('titulo','Información de Usuarios')
 @section('titulo-listar', 'LISTADO DE USUARIOS')
 
 @section('contenedor-mensajes')
-    @if (session()->has('mensajeRegistro'))
-        <div class="flash-message">
-            <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                {{session('mensajeRegistro')}}
-            </div>
-        </div>
-    @endif
-    @if (session()->has('mensajeNoRegistro'))
-        <div class="flash-message">
-            <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                {{session('mensajeRegistro')}}
-            </div>
-        </div>
-    @endif
-    @if (session()->has('mensajeActualizacion'))
-        <div class="flash-message">
-            <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                {{session('mensajeActualizacion')}}
-            </div>
-        </div>
-    @endif
     @if (session()->has('mensajeNoActualizacion'))
-        <div class="flash-message">
-            <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                {{session('mensajeActualizacion')}}
-            </div>
-        </div>
-    @endif
-    @if (session()->has('mensajeEliminado'))
-        <div class="flash-message">
-            <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                {{session('mensajeEliminado')}}
-            </div>
+        <div class="alert alert-danger animated fadeIn">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{session('mensajeNoActualizacion')}}
         </div>
     @endif
     @if (session()->has('mensajeNoEliminado'))
+        <div class="alert alert-danger animated fadeIn">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{session('mensajeNoEliminado')}}
+        </div>
+    @endif
+    @if (session()->has('mensajeRolErroneo'))
         <div class="flash-message">
             <div class="alert alert-success">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 {{session('mensajeNoEliminado')}}
+            </div>
+        </div>
+    @endif
+    @if (session()->has('mensajeRolErroneo'))
+        <div class="flash-message">
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{session('mensajeRolNoAsignado')}}
             </div>
         </div>
     @endif

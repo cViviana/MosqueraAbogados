@@ -1,6 +1,30 @@
-@extends('diseño-base.plantilla-admin')
-@section('seccion')
-<div class="card shadow mb-4">
+@extends('diseño-base.plantilla-registrar')
+@section("resaltar-usuarios", "active")
+@section("resaltar-registrarUsuario", "active")
+
+@section('titulo','Información de Usuarios')
+
+@section("contenedor-mensajes")
+    @if (session()->has('different_password'))
+        <div class="alert alert-danger animated fadeIn">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{session('different_password')}}
+        </div>
+    @endif
+    @if (session()->has('mensajeNoRegistro'))
+        <div class="alert alert-danger animated fadeIn">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{session('mensajeNoRegistro')}}
+        </div>
+    @endif
+@endsection
+
+@section('formulario')
+    <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">REGISTRAR USUARIOS</h6>
         </div>
@@ -17,7 +41,7 @@
                     <p class="divider-text">
                         <span class="bg-light"></span>
                     </p>
-               
+            
                 <form method="POST" action="{{ route('guardarUsuario') }}">
                     @csrf
                     <div class="input-group form-group">
@@ -91,10 +115,8 @@
                             </button>
                         </div>
                     </div>
-                </form>
-               
+                </form>             
             </div>
         </div>
-    
-</div>
+    </div>
 @endsection
