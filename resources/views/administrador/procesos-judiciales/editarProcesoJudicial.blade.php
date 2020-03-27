@@ -14,7 +14,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-link"></i></span>
             </div>
-            <input name='radicado' id='radicado' class="form-control" placeholder="* Numero de Radicado" type="text" required
+            <input name='radicado' id='radicado' readonly="readonly" class="form-control" placeholder="* Numero de Radicado" type="text" required
                 value = {{$caso->radicado}}>
         </div>
         <br>

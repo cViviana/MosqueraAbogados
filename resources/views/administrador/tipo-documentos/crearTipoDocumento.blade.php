@@ -3,7 +3,6 @@
 @section("resaltar-crearTipoDocumento", "active")
 
 @section('titulo','Crear un tipo de documento')
-
 @section('titulo-formulario', "CREAR UN TIPO DE DOCUMENTO")
 
 @section("formulario")
