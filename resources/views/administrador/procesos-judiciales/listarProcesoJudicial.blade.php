@@ -27,7 +27,7 @@
     <th scope="col">Abogado</th>
     <th scope="col">Archivos</th>
     <th scope="col">Editar</th>
-    <th scope="col">Eliminar</th>
+
 @endsection
 
 @section("listado-columnas")
@@ -55,14 +55,7 @@
                     <i class="fas fa-edit"></i>
                 </a>
             </td>
-            <td>
-                <form action=""  method="get">
-                    @csrf
-                    <button class="btn btn-danger" onclick="return confirm('Esta seguro que desea eliminar')" type="submit">
-                        <i class="fa fa-trash" aria-hidden="true"></i>
-                    </button>
-                </form>
-            </td>
+            
         </tr>
     @endforeach
 @endsection
