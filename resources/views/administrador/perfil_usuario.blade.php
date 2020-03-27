@@ -7,32 +7,6 @@
         <h1 class="h3 mb-0 text-gray-800">Bienvenido</h1>
         <a href="vistaCambioContraseña" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-key fa-sm text-white-50"></i> Cambiar Contraseña</a>
     </div>
-    <div id="contenedor-mensajes">
-        @if (session()->has('men'))
-            <div class="alert alert-success animated fadeIn">
-                {{session('men')}}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        @endif
-        @if (session()->has('mensajeDiferentes'))
-            <div class="alert alert-danger animated fadeIn">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                {{session('mensajeDiferentes')}}
-            </div>
-        @endif
-        @if (session()->has('mensajeContraseñaIncorrecta'))
-            <div class="alert alert-danger animated fadeIn">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                {{session('mensajeContraseñaIncorrecta')}}
-            </div>
-        @endif
-    </div>
     <div class="row">
         <!-- Nombre perfil -->
         <div class="col-xl-3 col-md-6 mb-4">

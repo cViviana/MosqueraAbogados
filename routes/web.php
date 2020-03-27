@@ -39,8 +39,8 @@ Route::prefix('admin')->group(
     Route::view('/perfil_usuario','administrador/perfil_usuario')->name('perfil_usuario')->middleware('permiso:vista');
 
     //CAMBIO DE CONTRASEÑA
-    Route::view('/vistaCambioContraseña','administrador/usuarios/cambiarContraseña')->name('vistaCambioContraseña');
-    Route::post('/cambiarContraseña','admin\userController@cambioContraseña')->name('cambiarContraseña');
+    Route::view('/vistaCambioContraseña','administrador/usuarios/cambiarContraseña')->name('vistaCambioContrasenia');
+    Route::post('/cambiarContraseña','admin\userController@cambioContraseña')->name('cambiarContrasenia');
 
     //CASO
     Route::get('/registrarCaso','admin\casoController@index')->name('registrarCaso')->middleware('permiso:crear');

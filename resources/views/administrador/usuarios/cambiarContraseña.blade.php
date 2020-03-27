@@ -1,10 +1,27 @@
 @extends('diseño-base.plantilla-registrar')
 @section("resaltar-usuarios", "active")
-@section("resaltar-listarUsuarios", "active")
 
-@section('titulo','Editar un usuario')
-
+@section('titulo','Información de Usuarios')
 @section('titulo-formulario', "CAMBIAR CONTRASEÑA")
+
+@section("contenedor-mensajes")
+    @if (session()->has('mensajeDiferentes'))
+        <div class="alert alert-danger animated fadeIn">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{session('mensajeDiferentes')}}
+        </div>
+    @endif
+    @if (session()->has('mensajeContraseñaIncorrecta'))
+        <div class="alert alert-danger animated fadeIn">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{session('mensajeContraseñaIncorrecta')}}
+        </div>
+    @endif
+@endsection
 
 @section('formulario')
 <br>
@@ -12,7 +29,7 @@
         <div class="d-flex justify-content-center h-100">
             <div class="card-body">
                 
-                <form method="POST" action="{{ route('cambiarContraseña') }}">
+                <form method="POST" action="{{ route('cambiarContrasenia') }}">
                     @csrf
 
                     <div class="input-group form-group">

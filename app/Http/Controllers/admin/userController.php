@@ -148,14 +148,14 @@ class userController extends Controller
                 $objUser->password = $password;
                 $objUser->guardar($objUser);
                 $mensajeActualizacion = "Éxito. La contraseña se actualizó de forma satisfactoria.";
-                return redirect()->route('perfil_usuario')->with('men', $mensajeActualizacion);
+                return redirect()->route('vistaCambioContrasenia')->with('men', $mensajeActualizacion);
             }else{
                 $mensajeDiferentes = "Las contraseñas no coinciden.";
-                return redirect()->route('perfil_usuario')->with('mensajeDiferentes', $mensajeDiferentes);
+                return redirect()->route('vistaCambioContrasenia')->with('mensajeDiferentes', $mensajeDiferentes);
             }
         }
         $mensajeContraseñaIncorrecta = "La contraseña ingresada no es correcta.";
-        return redirect()->route('perfil_usuario')->with('mensajeContraseñaIncorrecta', $mensajeContraseñaIncorrecta);
+        return redirect()->route('vistaCambioContrasenia')->with('mensajeContraseñaIncorrecta', $mensajeContraseñaIncorrecta);
     }
 
 }
