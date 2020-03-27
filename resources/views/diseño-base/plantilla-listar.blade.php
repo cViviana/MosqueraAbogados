@@ -6,19 +6,19 @@
             <h6 class="m-0 font-weight-bold text-primary">@yield("titulo-listar")</h6>
         </div>
 
-        <div id="contenedorMensajes">
-            @if (session()->has('men'))
-                <div class="alert alert-success animated fadeIn">
-                    {{session('men')}}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            @endif
-            @yield("contenedor-mensajes")
-        </div>
-
         <div class="card-body">
+            <div id="contenedorMensajes">
+                @if (session()->has('men'))
+                    <div class="alert alert-success animated fadeIn">
+                        {{session('men')}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
+                @yield("contenedor-mensajes")
+            </div>
+
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>

@@ -3,8 +3,18 @@
 @section("resaltar-crearUbicacion", "active")
 
 @section('titulo','Agregar una ubicación')
-
 @section('titulo-formulario', "AGREGAR UNA UBICACIÓN")
+
+@section('contenedor-mensajes')
+    @if (session()->has('mensajeNoRegistro'))
+        <div class="alert alert-danger animated fadeIn">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{session('mensajeNoRegistro')}}
+        </div>
+    @endif
+@endsection
 
 @section("formulario")
   <form action="{{route('agregarUbicacionFisica')}}"class="texto_campos" method="post">

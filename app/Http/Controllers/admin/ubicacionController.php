@@ -14,11 +14,11 @@ class ubicacionController extends Controller
       $objUbicacion = new Ubicacion($request->all());
       if(!$objUbicacion->existeUbicacion($request)){
         $objUbicacion->guardar($objUbicacion);
-        $mensajeRegistro = "La ubicación se guardó de forma exitosa.";
+        $mensajeRegistro = "Éxito. La ubicación se guardó de forma exitosa.";
         return redirect()->route('agregarUbicacion')->with(["men" => $mensajeRegistro]);
       }else{
         $mensajeNoRegistro = "Esta ubicación ya existe.";
-        return redirect()->route('agregarUbicacion')->with(["men" => $mensajeNoRegistro]);
+        return redirect()->route('agregarUbicacion')->with(["mensajeNoRegistro" => $mensajeNoRegistro]);
       }
     }
 
@@ -27,17 +27,16 @@ class ubicacionController extends Controller
         $objUbicacion = $this->buscar($id);
         if($objUbicacion != null ){
           $objUbicacion->eliminar($objUbicacion);
-          $mensajeEliminado = "La ubicación fue eliminada con satisfacción.";
+          $mensajeEliminado = "Éxito. La ubicación fue eliminada con satisfacción.";
           return redirect()->route('listarUbicaciones')->with(["men" => $mensajeEliminado, "ubicaciones" => $this->listar()]);
         }else{
-          $mensajeNoEliminado="El identificador ingresado es invalido.";
-          return redirect()->route('listarUbicaciones')->with(["men" => $mensajeNoEliminado, "ubicaciones" => $this->listar()]);
+          $mensajeNoEliminado="El identificador ingresado es inválido.";
+          return redirect()->route('listarUbicaciones')->with(["mensajeNoEliminado" => $mensajeNoEliminado, "ubicaciones" => $this->listar()]);
         }
       }catch(Exception $e){
-        $mensajeNoEliminado = "Esta ubicación no puede ser eliminada ya que hay docuementos que la referencian como almacenamiento.";
-        return redirect()->route('listarUbicaciones')->with(["men" => $mensajeNoEliminado, "ubicaciones" => $this->listar()]);
+        $mensajeNoEliminado = "Esta ubicación no puede ser eliminada ya que hay documentos que la referencian como almacenamiento.";
+        return redirect()->route('listarUbicaciones')->with(["mensajeNoEliminado" => $mensajeNoEliminado, "ubicaciones" => $this->listar()]);
       }
-
     }
 
     public function editarControlador(valFormRegUbi $request){
@@ -46,16 +45,16 @@ class ubicacionController extends Controller
         if( $objUbicacion != null){
           $objUbicacion->fill($request->all());
           $objUbicacion->guardar($objUbicacion);
-          $mensajeActualizacion = "Se actualizaron los datos de forma exitosa.";
+          $mensajeActualizacion = "Éxito. Se actualizaron los datos de forma éxitosa.";
           return redirect()->route('listarUbicaciones')->with(["men" => $mensajeActualizacion, "ubicaciones" => $this->listar()]);
         }else{
-          $mensajeNoActualizacion="El identificador ingresado es invalido.";
-          return redirect()->route('listarUbicaciones')->with(["men" => $mensajeNoActualizacion, "ubicaciones" => $this->listar()]);
+          $mensajeNoActualizacion="El identificador ingresado es inválido.";
+          return redirect()->route('listarUbicaciones')->with(["mensajeNoActualizacion" => $mensajeNoActualizacion, "ubicaciones" => $this->listar()]);
         }
       }
       else{
-        $men="Esta ubicación ya existe";
-        return redirect()->route('listarUbicaciones')->with(["men" => $men, "ubicaciones" => $this->listar()]);
+        $mensajeNoActualizacion="Esta ubicación ya existe";
+        return redirect()->route('listarUbicaciones')->with(["mensajeNoActualizacion" => $mensajeNoActualizacion, "ubicaciones" => $this->listar()]);
       }
     }
     

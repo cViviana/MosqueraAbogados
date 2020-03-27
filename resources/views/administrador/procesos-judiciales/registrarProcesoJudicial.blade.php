@@ -42,7 +42,7 @@
             </div>
             <select name='abogadoAux' id='abogadoAux' class="form-control">
                 <option selected="">* Auxiliar 1</option>
-                <@foreach ($Usuarios as $us)
+                @foreach ($Usuarios as $us)
                     <option value= {{$us->cedula}}>{{$us->cedula}} - {{$us->nombre}}</option>
                 @endforeach
             </select>
