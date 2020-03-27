@@ -82,17 +82,100 @@ class DatabaseSeeder extends Seeder
         $role = Role::find(1);
         $role->givePermissionTo('eliminar');
 
-        //USUARIO JEFE
+        //USUARIOS
         DB::table('users')->insert([
             'cedula' => '404040',
             'nombre' => 'Orlando Mosquera',
             'email' => 'OM@gmail.com',
-            'telefono' => '404040',
+            'telefono' => '40404040',
             'password' => Hash::make('proyecto1'),
         ]);
 
         $user = User::find('404040');
-        $user->assignRole('abogado jefe');
+        $user->assignRole('Abogado jefe');
 
+
+        DB::table('users')->insert([
+            'cedula' => '101010',
+            'nombre' => 'Juan Solarte',
+            'email' => 'juan@gmail.com',
+            'telefono' => '10101010',
+            'password' => Hash::make('proyecto1'),
+        ]);
+
+        $user = User::find('101010');
+        $user->assignRole('Abogado auxiliar');
+
+        DB::table('users')->insert([
+            'cedula' => '202020',
+            'nombre' => 'Maria',
+            'email' => 'Maria@gmail.com',
+            'telefono' => '20202020',
+            'password' => Hash::make('proyecto1'),
+        ]);
+
+        $user = User::find('202020');
+        $user->assignRole('Secretaria');
+
+        //CLIENTES
+
+        DB::table('cliente')->insert([
+            'numero' => '606060',
+            'nombre' => 'Viviana',
+            'tipo' => 'cliente',
+            'telefono' => '606060',
+            'email' => 'viviana@gmail.com',
+        ]);
+
+        DB::table('cliente')->insert([
+            'numero' => '707070',
+            'nombre' => 'Victor',
+            'tipo' => 'contraparte',
+            'telefono' => '70707070',
+            'email' => 'victor@gmail.com',
+            'roll' => 'contraparte',
+        ]);
+
+        DB::table('cliente')->insert([
+            'numero' => '808080',
+            'nombre' => 'Angelica',
+            'tipo' => 'cliente',
+            'telefono' => '80808080',
+            'email' => 'angelica@gmail.com',
+        ]);
+
+        //UBICACIÓN
+        DB::table('ubicacion_fisica')->insert([
+            'numArchivero' => '10',
+            'numGaveta' => '15'
+        ]);
+
+        DB::table('ubicacion_fisica')->insert([
+            'numArchivero' => '20',
+            'numGaveta' => '20'
+        ]);
+
+        //TIPO DOCUMENTO
+        DB::table('tipo_documento')->insert([
+            'nombre' => 'familia'
+        ]);
+
+        DB::table('tipo_documento')->insert([
+            'nombre' => 'legal'
+        ]);
+
+        //CASO
+        /*
+        DB::table('caso')->insert([
+            'radicado' => '1111',
+            'estado' => 'activo',
+            'fecha_inicio' => '2020-04-06',
+            'descripcion' => 'prueba1',
+            'fecha_fin' => '2020-04-15',
+            'cliente' => '606060',
+            'contraparte' => '707070'
+        ]);
+        */
+        //DOCUMENTO
     }
 }
