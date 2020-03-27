@@ -39,23 +39,23 @@ class casoController extends Controller
                 if($this->validarUsuarios($request->abogadoPpal)==true){
                   $objCaso = new Caso($request->all());
                   $objCaso->guardar($objCaso,$request->contraparte,$request->cliente,$request->abogadoPpal,$request->abogadoAux);
-                  $men = "Caso registrado correctamente";
-                  return redirect()->route('registrarCaso')->with('men',$men,'tipo',1);
+                  $men = "Éxito. Caso registrado correctamente.";
+                  return redirect()->route('registrarCaso')->with('men', $men);
                 }else{
-                  $men = "No exite el abogado principal";
-                  return redirect()->route('registrarCaso')->with('men',$men,'tipo',0);
+                  $mensajeNoRegistro = "No existe el abogado principal.";
+                  return redirect()->route('registrarCaso')->with('mensajeNoRegistro', $mensajeNoRegistro);
                 }
             }else{
-              $men ="Los clientes son iguales o no seleccionó el cliente o la contraparte";
-              return redirect()->route('registrarCaso')->with('men',$men,'tipo',0);
+              $mensajeNoRegistro ="Los clientes son iguales o no seleccionó el cliente o la contraparte";
+              return redirect()->route('registrarCaso')->with('mensajeNoRegistro', $mensajeNoRegistro);
             }
         }else{
-          $men = "El caso con ese radicado ya existe";
-            return redirect()->route('registrarCaso')->with('men',$men,'tipo',0);
+          $mensajeNoRegistro = "El caso con ese radicado ya existe";
+          return redirect()->route('registrarCaso')->with('mensajeNoRegistro', $mensajeNoRegistro);
         }
       }catch(Exception $e){
-        $men = "La fecha ingresada tiene el formato erroneo, debe ser año-mes-dia";
-        return redirect()->route('registrarCaso')->with('men',$men,'tipo',0);
+        $mensajeNoRegistro = "La fecha ingresada tiene el formato erróneo, debe ser año-mes-dia";
+        return redirect()->route('registrarCaso')->with('mensajeNoRegistro', $mensajeNoRegistro);
       }
 
     }
@@ -101,11 +101,11 @@ class casoController extends Controller
         $objContraparte = $request->contraparte;
         if($objCliente )*/
         $objCaso->actualizar($objCaso, $request->cliente, $request->contraparte, $request->abogadoPpal, $request->abogadoAux);
-        $men ="Actualizado caso con el radicado: ".$objCaso->radicado;
-        return redirect()->route('listarCasos')->with('men',$men);
+        $men =" Éxito. Se actualizó el caso con radicado: ".$objCaso->radicado;
+        return redirect()->route('listarCasos')->with('men', $men);
       }else{
-        $men ="No existe un caso con el radicado: ".$caso. "para editar";
-        return redirect()->route('listarCasos')->with('men',$men);
+        $mensajeNoActualizacion = "No existe un caso con el radicado: ".$caso. " para editar";
+        return redirect()->route('listarCasos')->with('mensajeNoActualizacion', $mensajeNoActualizacion);
       }
 
     }
@@ -121,8 +121,8 @@ class casoController extends Controller
           $Usuarios = $listaUsuarios->listar();
             return view('administrador.procesos-judiciales.editarProcesoJudicial', compact('caso','Clientes','Contraparte','Usuarios'));
         }else{
-          $men ="No existe un caso con el radicado: ".$caso. "para editar";
-          return redirect()->route('listarCasos')->with('men',$men);
+          $mensajeNoActualizacion ="No existe un caso con el radicado: ".$caso. " para editar";
+          return redirect()->route('listarCasos')->with('mensajeNoActualizacion', $mensajeNoActualizacion);
         }
     }
 

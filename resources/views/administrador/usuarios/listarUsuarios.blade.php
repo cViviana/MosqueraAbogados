@@ -28,11 +28,11 @@
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                {{session('mensajeNoEliminado')}}
+                {{session('mensajeRolErroneo')}}
             </div>
         </div>
     @endif
-    @if (session()->has('mensajeRolErroneo'))
+    @if (session()->has('mensajeRolNoAsignado'))
         <div class="flash-message">
             <div class="alert alert-success">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">

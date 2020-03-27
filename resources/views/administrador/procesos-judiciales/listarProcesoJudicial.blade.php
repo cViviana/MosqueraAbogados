@@ -6,15 +6,12 @@
 @section('titulo-listar', 'LISTADO DE PROCESOS JUDICIALES')
 
 @section('contenedor-mensajes')
-    @if (session('mensajeDeRegistroCasoExitoso'))
-        <div class="flash-message">
-            <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                {{Session::get('mensajeDeRegistroCasoExitoso')}}
-                {{session::forget('mensajeDeRegistroCasoExitoso')}}
-            </div>
+    @if (session()->has('mensajeNoActualizacion'))
+        <div class="alert alert-danger animated fadeIn">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{session('mensajeNoActualizacion')}}
         </div>
     @endif
 @endsection

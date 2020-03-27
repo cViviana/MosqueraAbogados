@@ -94,7 +94,7 @@
             <input type="text" name='fecha_fin' id='fecha_fin' class="form-control" placeholder="* Fecha de Finalización" value='{{$caso->fecha_fin}}'required>
         </div>
         <br>
-        <button type="submit" class="btn btn-primary">Editar Caso</button>
+        <button type="submit" class="btn btn-primary">Actualizar Caso</button>
         <div class="texto_campos">Los campos con (*) son obligatorios</div>
     </form>
 @endsection

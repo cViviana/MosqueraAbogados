@@ -5,7 +5,16 @@
 @section('titulo','Registrar Proceso Judicial')
 @section('titulo-formulario', "REGISTRAR PROCESO JUDICIAL")
 
-
+@section('contenedor-mensajes')
+    @if (session()->has('mensajeNoRegistro'))
+        <div class="alert alert-danger animated fadeIn">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{session('mensajeNoRegistro')}}
+        </div>
+    @endif
+@endsection
 
 @section("formulario")
     <form action="{{route('crearCaso')}}" class="texto_campos" method="post">
