@@ -55,11 +55,14 @@
         <input name="descripcion" id="descripcion" class="form-control" placeholder="* Descripción" type="text" required>
     </div>
     <br>
-    <div class="custom-file">
-      <input type="file" class="form-control" placeholder="Seleccionar Documento" name="file" required>
-    </div>
-    <div>
-    <br>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+          <span class="input-group-text"><i class="far fa-file"></i></span>
+      </div>
+      <div class="custom-file">
+        <input type="file" class="form-control custom-file-input" id="file" name="file" required>
+        <label class="custom-file-label" for="file">Seleccionar Documento</label>
+      </div>
     </div>
 
     <button type="submit" class="btn btn-primary">Subir Documento</button>
