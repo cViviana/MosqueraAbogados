@@ -75,6 +75,9 @@ class DatabaseSeeder extends Seeder
         $role = Role::find(1);
         $role->givePermissionTo('editar');
 
+        $role = Role::find(2);
+        $role->givePermissionTo('editar');
+
         $role = Role::find(3);
         $role->givePermissionTo('editar');
 
@@ -122,7 +125,7 @@ class DatabaseSeeder extends Seeder
         DB::table('cliente')->insert([
             'numero' => '606060',
             'nombre' => 'Viviana',
-            'tipo' => 'cliente',
+            'tipo' => 'natural',
             'telefono' => '606060',
             'email' => 'viviana@gmail.com',
         ]);
@@ -130,7 +133,7 @@ class DatabaseSeeder extends Seeder
         DB::table('cliente')->insert([
             'numero' => '707070',
             'nombre' => 'Victor',
-            'tipo' => 'contraparte',
+            'tipo' => 'juridica',
             'telefono' => '70707070',
             'email' => 'victor@gmail.com',
             'roll' => 'contraparte',
@@ -139,9 +142,10 @@ class DatabaseSeeder extends Seeder
         DB::table('cliente')->insert([
             'numero' => '808080',
             'nombre' => 'Angelica',
-            'tipo' => 'cliente',
+            'tipo' => 'natural',
             'telefono' => '80808080',
             'email' => 'angelica@gmail.com',
+            'roll' => 'contraparte'
         ]);
 
         //UBICACIÓN
@@ -165,7 +169,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         //CASO
-        /*
+        
         DB::table('caso')->insert([
             'radicado' => '1111',
             'estado' => 'activo',
@@ -175,7 +179,7 @@ class DatabaseSeeder extends Seeder
             'cliente' => '606060',
             'contraparte' => '707070'
         ]);
-        */
+        
         //DOCUMENTO
     }
 }

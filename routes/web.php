@@ -33,76 +33,77 @@ Route::view('/asignarRoll', 'auth/rol')->name('asignarRoll');
 Route::prefix('admin')->group(
   function(){
 
-    Route::view('/perfil_usuario','administrador/perfil_usuario')->name('perfil_usuario');
+    Route::view('/perfil_usuario','administrador/perfil_usuario')->name('perfil_usuario')->middleware('permiso:vista');
 
     //CASO
-    Route::get('/registrarCaso','admin\casoController@index')->name('registrarCaso');
-    Route::post('/agregarCaso','admin\casoController@guardar')->name('crearCaso');
+    Route::get('/registrarCaso','admin\casoController@index')->name('registrarCaso')->middleware('permiso:crear');
+    Route::post('/agregarCaso','admin\casoController@guardar')->name('crearCaso')->middleware('permiso:crear');
     //Route::view('/listarCasos','administrador/procesos-judiciales/listarProcesoJudicial')->name('listarCasos');
-    Route::get('/listarCasos', 'admin\casoController@listarControlador')->name('listarCasos');
-    Route::get('/editarCaso/{radicado}', 'admin\casoController@editControlador')->name('editarCaso');
-    Route::post('/actualizarCaso', 'admin\casoController@editarControlador')->name('actualizarCaso');
+    Route::get('/listarCasos', 'admin\casoController@listarControlador')->name('listarCasos')->middleware('permiso:vista');
+    Route::get('/editarCaso/{radicado}', 'admin\casoController@editControlador')->name('editarCaso')->middleware('permiso:editar');
+    Route::post('/actualizarCaso', 'admin\casoController@editarControlador')->name('actualizarCaso')->middleware('permiso:editar');
 
     //USUARIOS
-    Route::view('/registrarUsuario', 'administrador/usuarios/registro')->name('registrarUsuario');
-    Route::post('/guardarUsuario', 'admin\userController@guardarControlador')->name('guardarUsuario');
+    Route::view('/registrarUsuario', 'administrador/usuarios/registro')->name('registrarUsuario')->middleware('permiso:crear');
+    Route::post('/guardarUsuario', 'admin\userController@guardarControlador')->name('guardarUsuario')->middleware('permiso:crear');
 
+    //CORREGIR
     Route::get('/editarUsuario/{cedula}/{destino}', 'admin\userController@userControlador')->name('editarUsuario');
     Route::post('/actualizarUsuario', 'admin\userController@actualizarControlador')->name('actualizarUsuario');
 
     Route::get('/buscarUsuario/{cedula}/{destino}','admin\userController@userControlador')->name('buscarUsuario');
 
-    Route::post('/asignarRol', 'admin\userController@asignarRol')->name('asignarRol');
+    Route::post('/asignarRol', 'admin\userController@asignarRol')->name('asignarRol')->middleware('permiso:crear');
 
-    Route::get('/eliminarUsuario/{cedula}', 'admin\userController@eliminarControlador')->name('eliminarUsuario');
+    Route::get('/eliminarUsuario/{cedula}', 'admin\userController@eliminarControlador')->name('eliminarUsuario')->middleware('permiso:eliminar');
 
-    Route::get('/listarUsuarios', 'admin\userController@listarControlador')->name('listarUsuarios');
+    Route::get('/listarUsuarios', 'admin\userController@listarControlador')->name('listarUsuarios')->middleware('permiso:vista');
 
     //CLIENTE
     Route::get('/registrarCliente', function () {
       return view('administrador/clientes/registrarCliente');
-     })->name('registrarCliente');
+     })->name('registrarCliente')->middleware('permiso:crear');
     //Route::view('/registrarCliente', 'administrador/clientes/registrarCliente')->name('registrarCliente');
-    Route::post('/agregarCliente','admin\clienteController@crearControlador')->name('agregarCliente');
+    Route::post('/agregarCliente','admin\clienteController@crearControlador')->name('agregarCliente')->middleware('permiso:crear');
 
-    Route::get('/editarCliente/{numero}', 'admin\clienteController@editControlador')->name('editarCliente');
-    Route::post('/actualizarCliente', 'admin\clienteController@editarControlador')->name('actualizarCliente');
+    Route::get('/editarCliente/{numero}', 'admin\clienteController@editControlador')->name('editarCliente')->middleware('permiso:editar');
+    Route::post('/actualizarCliente', 'admin\clienteController@editarControlador')->name('actualizarCliente')->middleware('permiso:editar');
 
-    Route::get('/eliminarCliente/{numero}/{roll}', 'admin\clienteController@eliminarControlador')->name('eliminarCliente');
+    Route::get('/eliminarCliente/{numero}/{roll}', 'admin\clienteController@eliminarControlador')->name('eliminarCliente')->middleware('permiso:eliminar');
 
-    Route::get('/listarClientes/{roll}', 'admin\clienteController@listarControlador')->name('listarClientes');
-    Route::delete('/cliente/eliminarCliente/{numero}', 'admin\clienteController@eliminarControlador');
+    Route::get('/listarClientes/{roll}', 'admin\clienteController@listarControlador')->name('listarClientes')->middleware('permiso:vista');
+    //Route::delete('/cliente/eliminarCliente/{numero}', 'admin\clienteController@eliminarControlador')->middleware('permiso:vista');
 
     //CONTRAPARTE
     Route::get('/registrarContraparte', function () {
       return view('administrador/clientes/registrarContraparte');
-    })->name('registrarContraparte');
+    })->name('registrarContraparte')->middleware('permiso:crear');
 
-    Route::post('/agregarContraparte','admin\clienteController@crearControlador')->name('agregarContraparte');
-    Route::get('/listarContraparte{roll}','admin\clienteController@listarControlador')->name('listarContraparte');
+    Route::post('/agregarContraparte','admin\clienteController@crearControlador')->name('agregarContraparte')->middleware('permiso:crear');
+    Route::get('/listarContraparte{roll}','admin\clienteController@listarControlador')->name('listarContraparte')->middleware('permiso:vista');
 
     //UBICACIÓN-DUCMENTOS
-    Route::view('/agregarUbicacion','administrador/ubicacionFisica/agregarUbicacion')->name('agregarUbicacion');
-    Route::post('/agregarUbicacionFisica','admin\ubicacionController@guardarControlador')->name('agregarUbicacionFisica');
+    Route::view('/agregarUbicacion','administrador/ubicacionFisica/agregarUbicacion')->name('agregarUbicacion')->middleware('permiso:crear');
+    Route::post('/agregarUbicacionFisica','admin\ubicacionController@guardarControlador')->name('agregarUbicacionFisica')->middleware('permiso:crear');
 
-    Route::get('/editarUbicacion/{id}','admin\ubicacionController@ubicacionControlador')->name('editarUbicacion');
-    Route::post('/editarUbicacionFisica','admin\ubicacionController@editarControlador')->name('editarUbicacionFisica');
+    Route::get('/editarUbicacion/{id}','admin\ubicacionController@ubicacionControlador')->name('editarUbicacion')->middleware('permiso:editar');
+    Route::post('/editarUbicacionFisica','admin\ubicacionController@editarControlador')->name('editarUbicacionFisica')->middleware('permiso:editar');
 
-    Route::get('/eliminarUbicacion/{id}', 'admin\ubicacionController@eliminarControlador')->name('eliminarUbicacion');
+    Route::get('/eliminarUbicacion/{id}', 'admin\ubicacionController@eliminarControlador')->name('eliminarUbicacion')->middleware('permiso:eliminar');
 
-    Route::get('/listarUbicaciones','admin\ubicacionController@listarControlador')->name('listarUbicaciones');
+    Route::get('/listarUbicaciones','admin\ubicacionController@listarControlador')->name('listarUbicaciones')->middleware('permiso:vista');
 
     //TIPO-DOCUMENTOS
-    Route::view('/crearTipo','administrador/tipo-documentos/crearTipoDocumento')->name('crearTipoDocumento');
+    Route::view('/crearTipo','administrador/tipo-documentos/crearTipoDocumento')->name('crearTipoDocumento')->middleware('permiso:crear');
 
-    Route::post('/agregarTipoDocumento','admin\tipoController@guardarControlador')->name('agregarTipoDocumento');
+    Route::post('/agregarTipoDocumento','admin\tipoController@guardarControlador')->name('agregarTipoDocumento')->middleware('permiso:crear');
 
-    Route::get('/editarTipoDocumento/{id}', 'admin\tipoController@tipoControlador')->name('editarTipoDocumento');
-    Route::post('/editarTipo', 'admin\tipoController@editarControlador')->name('editarTipo');
+    Route::get('/editarTipoDocumento/{id}', 'admin\tipoController@tipoControlador')->name('editarTipoDocumento')->middleware('permiso:editar');
+    Route::post('/editarTipo', 'admin\tipoController@editarControlador')->name('editarTipo')->middleware('permiso:editar')->middleware('permiso:editar');
 
-    Route::get('/eliminarTipoDocumento/{id}', 'admin\tipoController@eliminarControlador')->name('eliminarTipoDocumento');
+    Route::get('/eliminarTipoDocumento/{id}', 'admin\tipoController@eliminarControlador')->name('eliminarTipoDocumento')->middleware('permiso:eliminar');
 
-    Route::get('/listarTiposDocumentos', 'admin\tipoController@listarControlador')->name('listarTiposDocumentos');
+    Route::get('/listarTiposDocumentos', 'admin\tipoController@listarControlador')->name('listarTiposDocumentos')->middleware('permiso:vista');
 
       //Documentos
   }
