@@ -16,14 +16,13 @@ class PermissionMiddleware
      */
     public function handle($request, Closure $next, $permiso)
     {
-        //dd("llegue");
         if(Auth::guest()){
             //un invitado tiene restringido
             return redirect('/home');
         }
         if(!$request->user()->can($permiso)){
             //este usuario no puede acceder a este permiso
-            abort(403);
+            return redirect()->route('accesoDenegado');
         }
         return $next($request);
     }

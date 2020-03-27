@@ -37,6 +37,7 @@ Route::prefix('admin')->group(
   function(){
 
     Route::view('/perfil_usuario','administrador/perfil_usuario')->name('perfil_usuario')->middleware('permiso:vista');
+    Route::view('/accesoDenegado','administrador/paginaError')->name('accesoDenegado');
 
     //CAMBIO DE CONTRASEÑA
     Route::view('/vistaCambioContraseña','administrador/usuarios/cambiarContraseña')->name('vistaCambioContrasenia');
