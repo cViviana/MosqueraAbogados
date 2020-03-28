@@ -92,7 +92,7 @@ class casoController extends Controller
       $ListaCasos = $Casos->listar();
       return $ListaCasos;
     }
-    public function editarControlador(Request $request){
+    public function editarControlador(valFormRegCaso $request){
 
       $objCaso = $this->buscarControlador($request->radicado);
       if($objCaso != null){
