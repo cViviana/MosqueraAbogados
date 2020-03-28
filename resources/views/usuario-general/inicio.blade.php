@@ -151,8 +151,9 @@
 						</div>
 						<div class="service-details">
 							<h5><a href="#">Derecho de Seguros</a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-								aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
+							<p>Parte de las normas que regulan el contrato de seguro pertenecen al 
+								derecho público, aquellas sobre el control administrativo de la actividad 
+								reguladora, y parte al derecho privado, aquellas que regulan el contrato de seguro.</p>
 						</div>
 					</div>
 				</div>
@@ -164,8 +165,10 @@
 						</div>
 						<div class="service-details">
 							<h5><a href="#">Derecho Empresarial integral</a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-								aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
+							<p>Permita el desarrollo de competencias para la comprensión y la solución de problemas 
+								particulares de carácter disciplinario e interdisciplinario para la apropiación de 
+								metodologías que permitan el abordaje de problemas de investigación aplicada en el 
+								contexto de la comunidad empresarial.</p>
 						</div>
 					</div>
 				</div>
@@ -177,8 +180,12 @@
 						</div>
 						<div class="service-details">
 							<h5><a href="#">Derecho Comercial</a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-								aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
+							<p>El derecho comercial es aquel grupo o conjunto de leyes y regulaciones que se establecen 
+								en el ámbito económico para controlar justamente el tipo de relaciones o vínculos que se puedan 
+								dar entre dos o más partes con fines comerciales y de intercambio económico. El derecho comercial 
+								es un tipo de derecho particular que agrupa cuestiones administrativas y legales con procedimientos 
+								fiscales y económicos por lo cual es bastante amplio en comparación con otros tipos de derecho más 
+								resumidos o delimitados. .</p>
 						</div>
 					</div>
 				</div>

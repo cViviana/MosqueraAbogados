@@ -29,16 +29,12 @@
 						<div class="get-know">
 							<p class="df-color">Servicio Destacado</p>
 							<h1>Derecho Comercial</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-								aliqua enim minim veniam quis nostrud.</p>
-						</div>
-						<div class="author-lacture">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-								aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod
-								tempor incididunt labore dolore magna aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet,
-								consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna aliqua enim minim veniam quis
-								nostrud.</p>
-							
+							<p>El derecho comercial es aquel grupo o conjunto de leyes y regulaciones que se establecen 
+								en el ámbito económico para controlar justamente el tipo de relaciones o vínculos que se puedan 
+								dar entre dos o más partes con fines comerciales y de intercambio económico. El derecho comercial 
+								es un tipo de derecho particular que agrupa cuestiones administrativas y legales con procedimientos 
+								fiscales y económicos por lo cual es bastante amplio en comparación con otros tipos de derecho más 
+								resumidos o delimitados. .</p>
 						</div>
 					</div>
 				</div>
@@ -81,8 +77,9 @@
                         </div>
                         <div class="service-details">
                             <h5><a href="#">Derecho de Seguros</a></h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-                                aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
+							<p>Parte de las normas que regulan el contrato de seguro pertenecen al 
+								derecho público, aquellas sobre el control administrativo de la actividad 
+								reguladora, y parte al derecho privado, aquellas que regulan el contrato de seguro.</p>
                         </div>
                     </div>
                 </div>
@@ -94,8 +91,10 @@
                         </div>
                         <div class="service-details">
                             <h5><a href="#">Derecho Empresarial Integral</a></h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-                                aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
+                            <p>Permita el desarrollo de competencias para la comprensión y la solución de problemas 
+								particulares de carácter disciplinario e interdisciplinario para la apropiación de 
+								metodologías que permitan el abordaje de problemas de investigación aplicada en el 
+								contexto de la comunidad empresarial.</p>
                         </div>
                     </div>
                 </div>
@@ -107,8 +106,12 @@
                         </div>
                         <div class="service-details">
                             <h5><a href="#">Derecho Comercial</a></h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-                                aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
+                            <p>El derecho comercial es aquel grupo o conjunto de leyes y regulaciones que se establecen 
+								en el ámbito económico para controlar justamente el tipo de relaciones o vínculos que se puedan 
+								dar entre dos o más partes con fines comerciales y de intercambio económico. El derecho comercial 
+								es un tipo de derecho particular que agrupa cuestiones administrativas y legales con procedimientos 
+								fiscales y económicos por lo cual es bastante amplio en comparación con otros tipos de derecho más 
+								resumidos o delimitados. .</p>
                         </div>
                     </div>
                 </div>
@@ -120,8 +123,11 @@
                         </div>
                         <div class="service-details">
                             <h5><a href="#">Derecho Civil</a></h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-                                aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
+                            <p>Es una rama del Derecho en general, como conjunto de normas jurídicas, que trata de las relaciones 
+                                entre civiles o particulares, sin intervención del Estado como persona de Derecho Público, ya que 
+                                el Derecho Civil integra el llamado Derecho Privado. Las personas jurídicas privadas están también 
+                                comprendidas en su ámbito, mientras que las públicas, sólo si actúan en un plano de igualdad con los 
+                                particulares.</p>
                         </div>
                     </div>
                 </div>
@@ -133,8 +139,12 @@
                         </div>
                         <div class="service-details">
                             <h5><a href="#">Derecho Administrativo</a></h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-                                aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
+                            <p>constituye una rama del derecho público interno, la cual se encarga de  regular 
+                                la administración pública a través de un conjunto de estructuras, normas jurídicas 
+                                y principios doctrinales, se caracteriza por ser común y aplicable a todas las 
+                                actividades relacionadas con la administración pública. Además puede ser un derecho 
+                                nacional o relacionarse con los derechos provinciales o territoriales, esto depende 
+                                de la organización del estado que puede ser unitaria o federal.</p>
                         </div>
                     </div>
                 </div>
