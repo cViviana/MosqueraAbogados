@@ -54,7 +54,7 @@ class casoController extends Controller
           return redirect()->route('registrarCaso')->with('mensajeNoRegistro', $mensajeNoRegistro);
         }
       }catch(Exception $e){
-        $mensajeNoRegistro = "La fecha ingresada tiene el formato erróneo, debe ser año-mes-dia";
+        $mensajeNoRegistro = "La fecha ingresada tiene el formato erróneo, debe ser: año-mes-día";
         return redirect()->route('registrarCaso')->with('mensajeNoRegistro', $mensajeNoRegistro);
       }
 
