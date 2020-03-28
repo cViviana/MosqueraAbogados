@@ -49,7 +49,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-phone-square"></i></span>
             </div>
-            <input name='telefono' id='telefono' class="form-control" value= "{{ old('nombre') }}" placeholder="* Número de teléfono" type="text" required>
+            <input name='telefono' id='telefono' class="form-control" value= "{{ old('telefono') }}" placeholder="* Número de teléfono" type="text" required>
         </div>
         <br>
         <div class="input-group">
