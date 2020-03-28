@@ -57,9 +57,6 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                    <div class="d-flex justify-content-center links">
-                        ¿No tienes una cuenta?<a href="{{ route('register') }}">Registrarte</a>
-                    </div>
                     <div class="d-flex justify-content-center">
                         @if (Route::has('password.request'))
                             <a class="btn btn-link" href="{{ route('password.request') }}">
