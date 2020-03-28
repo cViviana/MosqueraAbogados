@@ -39,8 +39,8 @@ Route::prefix('admin')->group(
     Route::view('/accesoDenegado','administrador/paginaError')->name('accesoDenegado');
 
     //CAMBIO DE CONTRASEÑA
-    Route::view('/cambioContrasenia','administrador/usuarios/cambiarContraseña')->name('cambioContrasenia');
-    Route::post('/cambiarContrasenia','admin\userController@cambioContraseña')->name('cambiarContrasenia');
+    Route::view('/cambioContrasenia','administrador/usuarios/cambiarContraseña')->name('cambioContrasenia')->middleware('permiso:editar');
+    Route::post('/cambiarContrasenia','admin\userController@cambioContraseña')->name('cambiarContrasenia')->middleware('permiso:editar');
 
     //CASO
     Route::get('/registrarCaso','admin\casoController@index')->name('registrarCaso')->middleware('permiso:crear');
