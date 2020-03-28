@@ -16,6 +16,6 @@ class MailController extends Controller
             $msj->to('juansolarteo98@gmail.com');
         });
         $men = "El mensaje se envio de forma satisfactoria.";
-        return view('usuario-general.home');
+        return view('usuario-general.inicio');
     }
 }
