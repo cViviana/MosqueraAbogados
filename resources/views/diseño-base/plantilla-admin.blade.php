@@ -42,7 +42,7 @@
       <!-- Divider -->
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-        Gestion de Usuarios
+        Gestión de Usuarios
       </div>
       <!-- USUARIO-->
       <li class="nav-item @yield("resaltar-usuarios")">
@@ -74,7 +74,7 @@
         <div id="casos" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item @yield("resaltar-registrarCaso")" href="{{route('registrarCaso')}}">Registrar Caso</a>
-            <a class="collapse-item @yield("resaltar-listarCasos")" href="{{route('listarCasos')}}">Listar Caso</a>
+            <a class="collapse-item @yield("resaltar-listarCasos")" href="{{route('listarCasos')}}">Listar Casos</a>
           </div>
         </div>
       </li>
@@ -114,7 +114,7 @@
         </a>
         <div id="ubicaciondocumentos" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item @yield("resaltar-crearUbicacion")" href="{{route('agregarUbicacion')}}">Agregar ubicacion</a>
+            <a class="collapse-item @yield("resaltar-crearUbicacion")" href="{{route('agregarUbicacion')}}">Agregar ubicación</a>
             <a class="collapse-item @yield("resaltar-listarUbicaciones")" href="{{route('listarUbicaciones')}}">Listar ubicaciones</a>
           </div>
         </div>
@@ -150,7 +150,7 @@
         <div id="contraparte" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item @yield("resaltar-registrarContraparte")" href="{{route('registrarContraparte')}}">Registrar Contraparte</a>
-            <a class="collapse-item @yield("resaltar-listarContrapartes")" href="{{route('listarContraparte','contraparte')}}">Listar  Contraparte</a>
+            <a class="collapse-item @yield("resaltar-listarContrapartes")" href="{{route('listarContraparte','contraparte')}}">Listar  Contrapartes</a>
           </div>
         </div>
       </li>
@@ -286,13 +286,8 @@
   <script src="{{ asset('https://code.jquery.com/ui/1.12.1/jquery-ui.js') }}"></script>
 
   <script>
-    $( function() {
-      $( "#fecha_inicio" ).datepicker();
-    } );
-    $('.datepicker').datepicker({
-    format: 'yyyy-mm-dd',
-    startDate: '-3d'
-    });
+    $('#fecha_inicio').datepicker({ dateFormat: 'yy-mm-dd' }).val();
+    $('#fecha_fin').datepicker({ dateFormat: 'yy-mm-dd' }).val();
   </script>
 
   <script type="application/javascript">
