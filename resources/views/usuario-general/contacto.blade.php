@@ -9,7 +9,7 @@
 			<div class="container">
 				<div class="banner_content text-center">
 					<div class="page_link">
-						<a href="/">Inicio</a>
+						<a href="{{route('inicio')}}">Inicio</a>
 						<a href="{{route('contacto')}}">Contacto</a>
 					</div>
 					<h2>Contactenos</h2>
@@ -29,11 +29,11 @@
 						<div class="info_item">
 							<i class="lnr lnr-home"></i>
 							<h6>Popayan Cauca - Colombia</h6>
-							<p>Centro Edificio N° 501</p>
+							<p>Carrera 2 # 3 - 88</p>
 						</div>
 						<div class="info_item">
 							<i class="lnr lnr-phone-handset"></i>
-							<h6><a href="#">8234565</a></h6>
+							<h6><a href="#">3122894693</a></h6>
 							<p>Lunes a Viernes 8am a 6 pm</p>
 						</div>
 						<div class="info_item">
@@ -87,8 +87,8 @@
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<i class="fa fa-close"></i>
 					</button>
-					<h2>Thank you</h2>
-					<p>Your message is successfully sent...</p>
+					<h2>Gracias</h2>
+					<p>Su mensaje ha sido enviado</p>
 				</div>
 			</div>
 		</div>
@@ -103,8 +103,8 @@
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<i class="fa fa-close"></i>
 					</button>
-					<h2>Sorry !</h2>
-					<p> Something went wrong </p>
+					<h2>Lo sentimos </h2>
+					<p> Algo salió mal</p>
 				</div>
 			</div>
 		</div>

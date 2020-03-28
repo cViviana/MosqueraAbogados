@@ -10,7 +10,7 @@
             <div class="container">
                 <div class="banner_content text-center">
                     <div class="page_link">
-                        <a href="/">Inicio</a>
+                        <a href="{{route('inicio')}}">Inicio</a>
                         <a href="{{route('nosotros')}}">Nuestra Firma</a>
                     </div>
                     <h2>Nuestra Firma</h2>

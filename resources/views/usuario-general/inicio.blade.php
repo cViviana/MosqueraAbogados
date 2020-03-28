@@ -150,7 +150,7 @@
 							<img class="img-fluid" src="img/service/service1.jpg" alt="">
 						</div>
 						<div class="service-details">
-							<h5><a href="#">Derecho Familiar</a></h5>
+							<h5><a href="#">Derecho de Seguros</a></h5>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
 								aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
 						</div>
@@ -163,7 +163,7 @@
 							<img class="img-fluid" src="img/service/service2.jpg" alt="">
 						</div>
 						<div class="service-details">
-							<h5><a href="#">Derecho Laboral</a></h5>
+							<h5><a href="#">Derecho Empresarial integral</a></h5>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
 								aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
 						</div>
@@ -176,7 +176,7 @@
 							<img class="img-fluid" src="img/service/service3.jpg" alt="">
 						</div>
 						<div class="service-details">
-							<h5><a href="#">Derecho Penal</a></h5>
+							<h5><a href="#">Derecho Comercial</a></h5>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
 								aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
 						</div>
@@ -199,7 +199,7 @@
 					<div class="col-lg-4 col-md-4 col-sm-6">
 						<div class="single_member">
 							<div class="author">
-								<img class="img-fluid" src="img/team/team1.jpg" alt="">
+								<img class="img-fluid" src="img/team/team5.jpg" alt="">
 							</div>
 							<div class="author_decs">
 								<h5>Pedro</h5>
@@ -209,7 +209,7 @@
 							</div>
 						</div>
 					</div>
-					<!-- single-team-member -->
+					<!-- single-team-member 
 					<div class="col-lg-4 col-md-4 col-sm-6">
 						<div class="single_member">
 							<div class="author">
@@ -222,8 +222,8 @@
 								aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
 							</div>
 						</div>
-					</div>
-					<!-- single-team-member -->
+					</div>-->
+					<!-- single-team-member 
 					<div class="col-lg-4 col-md-4 col-sm-6">
 						<div class="single_member">
 							<div class="author">
@@ -236,7 +236,7 @@
 								aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
 							</div>
 						</div>
-					</div>
+					</div>-->
 				</div>
 			</div>
 		</section>

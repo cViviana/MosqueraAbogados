@@ -10,7 +10,7 @@
             <div class="container">
                 <div class="banner_content text-center">
                     <div class="page_link">
-                        <a href="/">Inicio</a>
+                        <a href="{{route('inicio')}}">Inicio</a>
                         <a href="{{route('servicios')}}">Nuestros Servicios</a>
                     </div>
                     <h2>Nuestros Servicios</h2>
@@ -28,7 +28,7 @@
 					<div class="service-2-left">
 						<div class="get-know">
 							<p class="df-color">Servicio Destacado</p>
-							<h1>Asesoria Empresarial</h1>
+							<h1>Derecho Comercial</h1>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
 								aliqua enim minim veniam quis nostrud.</p>
 						</div>
@@ -53,7 +53,7 @@
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-6">
 								<div class="right-image">
-									<div class="s-img"><img class="img-fluid" src="img/service/service6.jpg" alt=""></div>
+									<div class="s-img"><img class="img-fluid" src="img/service/service8.jpg" alt=""></div>
 									<div class="s-img"><img class="img-fluid" src="img/service/service7.jpg" alt=""></div>
 								</div>
 							</div>
@@ -80,7 +80,7 @@
                             <img class="img-fluid" src="img/service/service1.jpg" alt="">
                         </div>
                         <div class="service-details">
-                            <h5><a href="#">Derecho Familiar</a></h5>
+                            <h5><a href="#">Derecho de Seguros</a></h5>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
                                 aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
                         </div>
@@ -93,7 +93,7 @@
                             <img class="img-fluid" src="img/service/service2.jpg" alt="">
                         </div>
                         <div class="service-details">
-                            <h5><a href="#">Derecho Laboral</a></h5>
+                            <h5><a href="#">Derecho Empresarial Integral</a></h5>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
                                 aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
                         </div>
@@ -106,7 +106,33 @@
                             <img class="img-fluid" src="img/service/service3.jpg" alt="">
                         </div>
                         <div class="service-details">
-                            <h5><a href="#">Derecho Penal</a></h5>
+                            <h5><a href="#">Derecho Comercial</a></h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
+                                aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- single service -->
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="single-service">
+                        <div class="service-thumb">
+                            <img class="img-fluid" src="img/service/service9.jpg" alt="">
+                        </div>
+                        <div class="service-details">
+                            <h5><a href="#">Derecho Civil</a></h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
+                                aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- single service -->
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="single-service">
+                        <div class="service-thumb">
+                            <img class="img-fluid" src="img/service/service10.jpg" alt="">
+                        </div>
+                        <div class="service-details">
+                            <h5><a href="#">Derecho Administrativo</a></h5>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
                                 aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
                         </div>

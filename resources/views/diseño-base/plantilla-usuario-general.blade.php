@@ -84,9 +84,8 @@
 						<div class="single-footer-widget">
 							<h5 class="footer_title">Sobre Mosquera Abogados</h5>
 							<p class="about-text">
-                                Telefono: 8234565 <br>
-                                Celular: 3185476266<br>
-                                Direccion: Centro Edificio N° 501
+                                Telefono: 3122894693<br>
+                                Direccion: Carrera 2 # 3 - 88
                             </p>
 						</div>
 					</div>
@@ -96,14 +95,14 @@
 							<div class="row">
 								<div class="col-5">
 									<ul class="list">
-										<li><a href="#">Inicio</a></li>
-										<li><a href="#">Nuestra Firma</a></li>
+										<li><a href="{{route('inicio')}}">Inicio</a></li>
+										<li><a href="{{route('nosotros')}}">Nuestra Firma</a></li>
 									</ul>
 								</div>
 								<div class="col-5">
 									<ul class="list">
-                                        <li><a href="#">Nuestros Servicios</a></li>
-										<li><a href="#">Nuestros Profesionales</a></li>
+                                        <li><a href="{{route('servicios')}}">Nuestros Servicios</a></li>
+										<li><a href="{{route('profesionales')}}">Nuestros Profesionales</a></li>
 									</ul>
 								</div>
 							</div>
