@@ -15,7 +15,7 @@ class MailController extends Controller
             $msj->subject('Agendar cita');
             $msj->to('abogados.firma.mosquera@gmail.com');
         });
-        $men = "El mensaje se envio de forma satisfactoria.";
-        return view('usuario-general.inicio');
+        $mensaje = "El mensaje se envió de forma satisfactoria.";
+        return redirect()->route('contacto')->with('mensaje', $mensaje);
     }
 }

@@ -12,7 +12,7 @@
 						<a href="{{route('inicio')}}">Inicio</a>
 						<a href="{{route('contacto')}}">Contacto</a>
 					</div>
-					<h2>Contactenos</h2>
+					<h2>Contáctenos</h2>
 				</div>
 			</div>
 		</div>
@@ -22,19 +22,18 @@
 	<!--================Contact Area =================-->
 	<section class="contact_area section_gap">
 		<div class="container">
-            
 			<div class="row">
 				<div class="col-lg-3">
 					<div class="contact_info">
 						<div class="info_item">
 							<i class="lnr lnr-home"></i>
-							<h6>Popayan Cauca - Colombia</h6>
+							<h6>Popayán Cauca - Colombia</h6>
 							<p>Carrera 2 # 3 - 88</p>
 						</div>
 						<div class="info_item">
 							<i class="lnr lnr-phone-handset"></i>
 							<h6><a href="#">3122894693</a></h6>
-							<p>Lunes a Viernes 8am a 6 pm</p>
+							<p>Lunes a Viernes 8 a.m. a 6 p.m.</p>
 						</div>
 						<div class="info_item">
 							<i class="lnr lnr-envelope"></i>
@@ -44,6 +43,16 @@
 					</div>
 				</div>
 				<div class="col-lg-9">
+					<div>
+						@if (session()->has('mensaje'))
+							<div class="alert alert-success animated fadeIn">
+								{{session('mensaje')}}
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+						@endif
+					</div>
 					<form class="row contact_form" action="mail" method="post" id="contactForm">
 						{{ csrf_field() }}
 						<div class="col-md-12">
@@ -57,11 +66,11 @@
 							</div>
 							<div class="form-group">
 								<input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingresar su telefono"
-                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ingresar su telefono'" required>
+                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ingrese su teléfono'" required>
 							</div>
 							<div class="form-group">
 								<input type="text" class="form-control" id="asunto" name="asunto" placeholder="Ingresar Asunto"
-                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ingresar Asunto'"required>
+                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ingrese un asunto'"required>
 							</div>
 						</div>
 
