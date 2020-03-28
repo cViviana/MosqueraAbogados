@@ -27,7 +27,7 @@
 	<!--================ Start service Area =================-->
 	<section class="service-area section_gap">
 		<div class="container"></div>
-			
+
 			<div class="row justify-content-center">
 				<!-- single service -->
 				<div class="col-lg-4 col-md-4 col-sm-6">
@@ -37,12 +37,10 @@
 						</div>
 						<div class="service-details">
 							<h5><a href="#">MISION</a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-								aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-								aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-								aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
+							<p>Mosquera abogados es un firma especializada en Derecho Comercial , Derecho de Seguros,
+                 Derecho Empresarial Integral, Derecho Civil y Derecho Administrativo. Al brindar estos servicios
+                buscamos trabajar con excelencia y calidad, de esta manera construimos una relación de confianza con
+                nuestros clientes para que así estén seguros  de dejar sus casos en nuestras manos</p>
 						</div>
 					</div>
 				</div>
@@ -54,12 +52,9 @@
 						</div>
 						<div class="service-details">
 							<h5><a href="#">VISION</a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-								aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-								aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-								aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
+							<p>Convertirnos en la mejor firma de Abogados reconocida en la cuidad de Popayán, por la calidad de los servicios
+                 prestados, para así ser tomados como referencia en el sector que nos desempeñamos. Esto lo lograremos teniendo
+                 en cuenta siempre la satisfacción del cliente y la buena atención</p>
 						</div>
 					</div>
 				</div>
@@ -67,7 +62,7 @@
 		</div>
 	</section>
 	<!--================ End service Area =================-->
-	
+
     <!--================ Start Features Area =================-->
 	<section class="features_area" id="features_counter">
         <div class="h2">

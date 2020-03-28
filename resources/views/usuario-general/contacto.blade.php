@@ -38,7 +38,7 @@
 						</div>
 						<div class="info_item">
 							<i class="lnr lnr-envelope"></i>
-							<h6><a href="#">mosquera_abogados@gmail.com</a></h6>
+							<h6><a href="#">abogados.firma.mosquera@gmail.com</a></h6>
 							<p>¡Envíenos su consulta en cualquier momento!</p>
 						</div>
 					</div>

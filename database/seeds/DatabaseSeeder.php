@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'vista',
             'guard_name' => 'web'
         ]);
-        
+
         DB::table('permissions')->insert([
             'name' => 'crear',
             'guard_name' => 'web'
@@ -128,6 +128,7 @@ class DatabaseSeeder extends Seeder
             'tipo' => 'natural',
             'telefono' => '606060',
             'email' => 'viviana@gmail.com',
+            'roll' => 'cliente',
         ]);
 
         DB::table('cliente')->insert([
@@ -169,7 +170,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         //CASO
-        
+
         DB::table('caso')->insert([
             'radicado' => '1111',
             'estado' => 'activo',
@@ -179,7 +180,7 @@ class DatabaseSeeder extends Seeder
             'cliente' => '606060',
             'contraparte' => '707070'
         ]);
-        
+
         //DOCUMENTO
     }
 }

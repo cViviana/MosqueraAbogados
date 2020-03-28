@@ -54,7 +54,7 @@
 									<li><i class="fa fa-twitter"></i></li>
 								</a>
 							</div>
-							
+
 						</ul>
 					</div>
 				</div>
@@ -101,7 +101,7 @@
 								</div>
 								<div class="col-5">
 									<ul class="list">
-                                        <li><a href="{{route('servicios')}}">Nuestros Servicios</a></li>
+                      <li><a href="{{route('servicios')}}">Nuestros Servicios</a></li>
 										<li><a href="{{route('profesionales')}}">Nuestros Profesionales</a></li>
 									</ul>
 								</div>
