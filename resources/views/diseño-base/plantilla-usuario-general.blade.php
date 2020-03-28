@@ -44,6 +44,7 @@
 							<li class="nav-item @yield('resaltar-servicios')"><a class="nav-link" href="{{route('servicios')}}">Nuestros Servicios</a></li>
                             <li class="nav-item @yield('resaltar-profesionales')"><a class="nav-link" href="{{route('profesionales')}}">Nuestros Profesionales</a></li>
                             <li class="nav-item @yield('resaltar-contacto')"><a class="nav-link" href="{{route('contacto')}}">Contacto</a></li>
+							<li class="nav-item @yield('resaltar-inicio-sesion')"><a class="nav-link" href="{{ route('login') }}">Iniciar Sesion</a></li>
 						</ul>
 						<ul class="nav navbar-nav ml-auto">
 							<div class="social-icons d-flex align-items-center">
