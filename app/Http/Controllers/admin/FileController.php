@@ -16,7 +16,12 @@ class FileController extends Controller
   {
       // Necesitamos obtener una instancia de la clase Client la cual tiene algunos métodos
       // que serán necesarios.
+    try{
       $this->dropbox = Storage::disk('dropbox')->getDriver()->getAdapter()->getClient();
+    }catch (BadRequest $e){
+      $men = "Error en el Dropbox";
+      return redirect()->route('subirDocumento')->with('men',$men);
+    }
   }
 
   public function store(Request $request)
@@ -56,7 +61,11 @@ class FileController extends Controller
   {
       // Eliminamos el archivo en dropbox llamando a la clase
       // instanciada en la propiedad dropbox.
+    try{
       $this->dropbox->delete($file);
-
+    }catch (BadRequest $e){
+      $men = "Error en el Dropbox al eliminar documento";
+      return redirect()->route('subirDocumento')->with('men',$men);
+    }
   }
 }
