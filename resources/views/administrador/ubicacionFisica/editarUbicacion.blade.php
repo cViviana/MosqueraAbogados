@@ -11,12 +11,16 @@
         <input type="hidden" name="id" id='id' value="{{$ubicacion->id}}">
         <br>
         <div class="input-group">
-          <span class="input-group-addon" id="inputGroup-sizing-default"><i class="fa fa-plus-square"></i></span>
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-plus-square"></i></span>
+          </div>
           <input type="text" id='numArchivero'name='numArchivero' class="form-control" placeholder="* Número Archivador" value="{{$ubicacion->numArchivero}}" required>
         </div>
         <br>
         <div class="input-group">
-          <span class="input-group-addon" id="inputGroup-sizing-default"><i class="fa fa-plus-square"></i></span>
+          <div  class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-plus-square"></i></span>
+          </div>
           <input type="text" id='numGaveta'name='numGaveta' class="form-control" placeholder="* Número Gaveta" value="{{$ubicacion->numGaveta}}"required>
         </div>
         <br>

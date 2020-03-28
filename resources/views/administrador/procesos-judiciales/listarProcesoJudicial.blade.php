@@ -42,7 +42,7 @@
             <td>{{$caso->fecha_fin}}</td>
             <td>
                 @foreach($caso->dirige as $dir) 
-                    {{$dir->nombre}}
+                    {{$dir->nombre}} <br> 
                 @endforeach
             </td>
             <td>
