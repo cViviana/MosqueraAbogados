@@ -286,8 +286,18 @@
   <script src="{{ asset('https://code.jquery.com/ui/1.12.1/jquery-ui.js') }}"></script>
 
   <script>
-    $('#fecha_inicio').datepicker({ dateFormat: 'yy-mm-dd' }).val();
-    $('#fecha_fin').datepicker({ dateFormat: 'yy-mm-dd' }).val();
+    $('#fecha_inicio').datepicker({ 
+      dateFormat: 'yy-mm-dd', 
+      minDate: 1,
+      changeMonth: true,
+      changeYear: true
+    }).val();
+    $('#fecha_fin').datepicker({ 
+      dateFormat: 'yy-mm-dd', 
+      minDate: 2,
+      changeMonth: true,
+      changeYear: true
+    }).val();
   </script>
 
   <script type="application/javascript">

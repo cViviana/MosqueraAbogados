@@ -92,14 +92,14 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
             </div>
-            <input type="text" name='fecha_inicio' id='fecha_inicio'class="form-control" placeholder="* Fecha de Inicio AAAA-MM-DD" required>
+            <input type="text" name='fecha_inicio' id='fecha_inicio' readonly="readonly" class="form-control" placeholder="* Fecha de Inicio AAAA-MM-DD" required>
         </div>
         <br>
         <div class="input-group date" data-provide="datepicker">
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
             </div>
-            <input type="text" name='fecha_fin' id='fecha_fin' class="form-control" placeholder="* Fecha de Finalización AAAA-MM-DD">
+            <input type="text" name='fecha_fin' id='fecha_fin' readonly="readonly" class="form-control" placeholder="* Fecha de Finalización AAAA-MM-DD">
         </div>
         <br>
         <button type="submit" class="btn btn-primary">Registrar Caso</button>
