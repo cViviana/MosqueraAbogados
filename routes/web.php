@@ -10,7 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', function () {
+    return view('usuario-general/inicio');
+});
 Route::view('/inicio','usuario-general/inicio')->name('inicio');
 Route::view('/nosotros','usuario-general/nosotros')->name('nosotros');
 Route::view('/servicios','usuario-general/servicios')->name('servicios');
@@ -43,7 +45,7 @@ Route::prefix('admin')->group(
     //CASO
     Route::get('/registrarCaso','admin\casoController@index')->name('registrarCaso')->middleware('permiso:crear');
     Route::post('/agregarCaso','admin\casoController@guardar')->name('crearCaso')->middleware('permiso:crear');
-    
+
     Route::get('/listarCasos', 'admin\casoController@listarControlador')->name('listarCasos')->middleware('permiso:vista');
     Route::get('/editarCaso/{radicado}', 'admin\casoController@editControlador')->name('editarCaso')->middleware('permiso:editar');
     Route::post('/actualizarCaso', 'admin\casoController@editarControlador')->name('actualizarCaso')->middleware('permiso:editar');
