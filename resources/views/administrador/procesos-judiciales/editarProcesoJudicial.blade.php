@@ -91,7 +91,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
             </div>
-            <input type="text" name='fecha_fin' id='fecha_fin' class="form-control" placeholder="* Fecha de Finalización" value='{{$caso->fecha_fin}}'required>
+            <input type="text" name='fecha_fin' id='fecha_fin' class="form-control" placeholder="* Fecha de Finalización" value='{{$caso->fecha_fin}}'>
         </div>
         <br>
         <button type="submit" class="btn btn-primary">Actualizar Caso</button>
