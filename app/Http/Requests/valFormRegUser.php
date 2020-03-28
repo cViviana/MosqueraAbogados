@@ -24,7 +24,7 @@ class valFormRegUser extends FormRequest
     public function rules()
     {
         return [
-            'cedula' => 'required|max:60',
+            'cedula' => 'required|max:60|numeric',
             'nombre' => 'required|string|max:60',
             'telefono' => 'required|numeric|digits_between:7,20',
             'email' => "string|max:60|email|nullable",
