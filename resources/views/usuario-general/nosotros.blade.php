@@ -82,7 +82,7 @@
 							<img src="img/features/1.png" alt="">
 						</div>
 						<div class="info-content">
-							<h4><span class="counter">100</span>+</h4>
+							<h4><span class="counter">3</span>+</h4>
 							<p>Abogados calificados</p>
 						</div>
 					</div>
