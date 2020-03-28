@@ -31,6 +31,6 @@ class Cliente extends Model
     }
 
     public function listarPorRoll($roll){
-      return $this::where("roll",'$roll')->get();
+      return $this::where("roll","'".$roll."'")->get();
     }
 }
