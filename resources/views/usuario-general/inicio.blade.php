@@ -45,12 +45,10 @@
 							</div>
 							<div class="service-details">
 								<h5><a href="#">MISION</a></h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-									aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-									aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-									aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
+								<p> Mosquera abogados es un firma especializada en Derecho Comercial , Derecho de Seguros,
+									 Derecho Empresarial Integral, Derecho Civil y Derecho Administrativo. Al brindar estos servicios
+								 	buscamos trabajar con excelencia y calidad, de esta manera construimos una relación de confianza con
+								  nuestros clientes para que así estén seguros  de dejar sus casos en nuestras manos</p>
 							</div>
 						</div>
 					</div>
@@ -62,12 +60,9 @@
 							</div>
 							<div class="service-details">
 								<h5><a href="#">VISION</a></h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-									aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-									aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-									aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
+								<p>Convertirnos en la mejor firma de Abogados reconocida en la cuidad de Popayán, por la calidad de los servicios
+									 prestados, para así ser tomados como referencia en el sector que nos desempeñamos. Esto lo lograremos teniendo
+									 en cuenta siempre la satisfacción del cliente y la buena atención </p>
 							</div>
 						</div>
 					</div>
@@ -151,8 +146,8 @@
 						</div>
 						<div class="service-details">
 							<h5><a href="#">Derecho de Seguros</a></h5>
-							<p>Parte de las normas que regulan el contrato de seguro pertenecen al 
-								derecho público, aquellas sobre el control administrativo de la actividad 
+							<p>Parte de las normas que regulan el contrato de seguro pertenecen al
+								derecho público, aquellas sobre el control administrativo de la actividad
 								reguladora, y parte al derecho privado, aquellas que regulan el contrato de seguro.</p>
 						</div>
 					</div>
@@ -165,9 +160,9 @@
 						</div>
 						<div class="service-details">
 							<h5><a href="#">Derecho Empresarial integral</a></h5>
-							<p>Permita el desarrollo de competencias para la comprensión y la solución de problemas 
-								particulares de carácter disciplinario e interdisciplinario para la apropiación de 
-								metodologías que permitan el abordaje de problemas de investigación aplicada en el 
+							<p>Permita el desarrollo de competencias para la comprensión y la solución de problemas
+								particulares de carácter disciplinario e interdisciplinario para la apropiación de
+								metodologías que permitan el abordaje de problemas de investigación aplicada en el
 								contexto de la comunidad empresarial.</p>
 						</div>
 					</div>
@@ -180,11 +175,11 @@
 						</div>
 						<div class="service-details">
 							<h5><a href="#">Derecho Comercial</a></h5>
-							<p>El derecho comercial es aquel grupo o conjunto de leyes y regulaciones que se establecen 
-								en el ámbito económico para controlar justamente el tipo de relaciones o vínculos que se puedan 
-								dar entre dos o más partes con fines comerciales y de intercambio económico. El derecho comercial 
-								es un tipo de derecho particular que agrupa cuestiones administrativas y legales con procedimientos 
-								fiscales y económicos por lo cual es bastante amplio en comparación con otros tipos de derecho más 
+							<p>El derecho comercial es aquel grupo o conjunto de leyes y regulaciones que se establecen
+								en el ámbito económico para controlar justamente el tipo de relaciones o vínculos que se puedan
+								dar entre dos o más partes con fines comerciales y de intercambio económico. El derecho comercial
+								es un tipo de derecho particular que agrupa cuestiones administrativas y legales con procedimientos
+								fiscales y económicos por lo cual es bastante amplio en comparación con otros tipos de derecho más
 								resumidos o delimitados. .</p>
 						</div>
 					</div>
@@ -209,14 +204,19 @@
 								<img class="img-fluid" src="img/team/team5.jpg" alt="">
 							</div>
 							<div class="author_decs">
-								<h5>Pedro</h5>
-								<p class="profession">Senior Barrister at law</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
-								aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet.</p>
+								<h5>Orlando De Jesus Mosquera Solarte</h5>
+								<p class="profession">Abogado Jefe</p>
+								<p>
+									Abogado Universidad del Cauca.<br>
+									Especialista en derecho de seguros Universidad Externado de Colombia.<br>
+									Especialista en derecho Comercial Universidad Icesi.<br>
+									Maestria en Derecho Empresarial Universidad Javeriana de Cali.<br>
+									Docente de la Universidad del Cauca.
+								</p>
 							</div>
 						</div>
 					</div>
-					<!-- single-team-member 
+					<!-- single-team-member
 					<div class="col-lg-4 col-md-4 col-sm-6">
 						<div class="single_member">
 							<div class="author">
@@ -230,7 +230,7 @@
 							</div>
 						</div>
 					</div>-->
-					<!-- single-team-member 
+					<!-- single-team-member
 					<div class="col-lg-4 col-md-4 col-sm-6">
 						<div class="single_member">
 							<div class="author">
