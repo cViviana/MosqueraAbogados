@@ -47,7 +47,12 @@ class Documento extends Model
     public function listarDocumentos($radicado)
     {
       return $this::with(['docCorrespondeTipo:id,nombre','docEstaUbicacion:id,numArchivero,numGaveta'])->where('radicado_doc','=',$radicado)->get();
-      
+
+    }
+
+    public function buscarDocCompleto($id)
+    {
+      return $this::with(['docCorrespondeTipo:id,nombre','docEstaUbicacion:id,numArchivero,numGaveta'])->where('id','=',$id)->get();
     }
 
     public function verDoc($id)

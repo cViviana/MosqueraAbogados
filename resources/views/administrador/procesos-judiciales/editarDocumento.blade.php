@@ -15,7 +15,7 @@
             <span class="input-group-text"><i class="fas fa-boxes"></i></span>
         </div>
         <select name='radicado_doc' id='radicado_doc' class="form-control">
-          <option selected="">* Radicado</option>
+          <option selected="" value="{{$DocumentoAux[0]->radicado_doc}}">{{$DocumentoAux[0]->radicado_doc}}</option>
           @foreach ($ListaCasos as $caso)
             <option value= {{$caso->radicado}}>{{$caso->radicado}}</option>
           @endforeach
@@ -24,7 +24,7 @@
             <span class="input-group-text"><i class="fas fa-archive"></i></span>
         </div>
         <select name='ubicacion_id' id='ubicacion_id'class="form-control">
-            <option selected="">* Ubicación Física (Archivador - Gaveta) </option>
+            <option selected="" value="{{$DocumentoAux[0]->docEstaUbicacion->id}}"> {{$DocumentoAux[0]->docEstaUbicacion->numArchivero}} - {{$DocumentoAux[0]->docEstaUbicacion->numGaveta}} </option>
             @foreach ($ListaUbicaciones as $ubicacion)
               <option value= {{$ubicacion->id}}>{{$ubicacion->numArchivero}} - {{$ubicacion->numGaveta}}</option>
             @endforeach
@@ -36,7 +36,7 @@
             <span class="input-group-text"><i class="fas fa-project-diagram"></i></span>
         </div>
         <select name='tipo_id' id='tipo_id' class="form-control">
-            <option selected="">* Tipo documento</option>
+            <option selected="" value="{{$DocumentoAux[0]->docCorrespondeTipo->id}}">{{$DocumentoAux[0]->docCorrespondeTipo->nombre}}</option>
             @foreach ($ListaTipos as $tipo)
               <option value= {{$tipo->id}}>{{$tipo->nombre}}</option>
             @endforeach
@@ -49,7 +49,7 @@
         <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-comments"></i></span>
         </div>
-        <input name="descripcion" id="descripcion" class="form-control" placeholder="* Descripción" type="text" required>
+        <input name="descripcion" id="descripcion" class="form-control" value="{{$DocumentoAux[0]->descripcion}}" type="text" required>
     </div>
     <br>
     <div class="input-group mb-3">

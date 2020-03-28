@@ -82,11 +82,15 @@ class documento_controller extends Controller
      $ListaTipos = $tipo->listar();
      $caso = new Caso;
      $ListaCasos = $caso->listar();
-     return view('administrador.procesos-judiciales.editarDocumento', compact('ListaUbicaciones','ListaTipos','ListaCasos','id') );
+     $doc = new Documento;
+     $DocumentoAux = $doc->buscarDocCompleto($id)->all();
+
+     return view('administrador.procesos-judiciales.editarDocumento', compact('ListaUbicaciones','ListaTipos','ListaCasos','DocumentoAux','id') );
    }
 
    public function actualizarDocumento(Request $request)
    {
+     //dd($request);
      $doc = new Documento;
      $doc->eliminar($request->id);
      $this->guardarControlador($request);
