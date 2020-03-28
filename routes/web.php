@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('usuario-general/home');
-});
-
+Route::view('/inicio','usuario-general/inicio')->name('inicio');
 Route::view('/nosotros','usuario-general/nosotros')->name('nosotros');
 Route::view('/servicios','usuario-general/servicios')->name('servicios');
 Route::view('/profesionales','usuario-general/profesionales')->name('profesionales');

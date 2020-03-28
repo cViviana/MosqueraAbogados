@@ -87,8 +87,8 @@
 								<img src="img/features/1.png" alt="">
 							</div>
 							<div class="info-content">
-								<h4><span class="counter">596</span>+</h4>
-								<p>Qualified Lawyer</p>
+								<h4><span class="counter">3</span>+</h4>
+								<p>Abogados calificados</p>
 							</div>
 						</div>
 					</div>
@@ -99,8 +99,8 @@
 								<img src="img/features/2.png" alt="">
 							</div>
 							<div class="info-content">
-								<h4><span class="counter">20650</span>+</h4>
-								<p>Solved Cases</p>
+								<h4><span class="counter">100</span>+</h4>
+								<p>Casos Solucionados</p>
 							</div>
 						</div>
 					</div>
@@ -111,8 +111,8 @@
 								<img src="img/features/3.png" alt="">
 							</div>
 							<div class="info-content">
-								<h4><span class="counter">2.5</span>k</h4>
-								<p>Trusted Clients</p>
+								<h4><span class="counter">100</span>+</h4>
+								<p>Clientes Satisfechos</p>
 							</div>
 						</div>
 					</div>
@@ -124,7 +124,7 @@
 							</div>
 							<div class="info-content">
 								<h4><span class="counter">50</span>+</h4>
-								<p>Achievements</p>
+								<p>Logros</p>
 							</div>
 						</div>
 					</div>

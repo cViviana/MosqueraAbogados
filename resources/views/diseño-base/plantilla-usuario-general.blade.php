@@ -26,20 +26,10 @@
 	<!--================ Start Header Menu Area =================-->
 	<header class="header_area">
 		<div class="main_menu">
-			<div class="search_input" id="search_input_box">
-				<div class="container">
-					<form class="d-flex justify-content-between">
-							@csrf
-						<input type="text" class="form-control" id="search_input" placeholder="Buscar">
-						<button type="submit" class="btn"></button>
-						<span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
-					</form>
-				</div>
-			</div>
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="/"><img src="{{ asset('img/logo-2.png')}}"></a>
+					<a class="navbar-brand logo_h" href="{{route('inicio')}}"><img src="{{ asset('img/logo-2.png')}}"></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="icon-bar"></span>
@@ -49,12 +39,11 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item @yield('resaltar-home')"><a class="nav-link" href="/">Inicio</a></li>
+							<li class="nav-item @yield('resaltar-home')"><a class="nav-link" href="{{route('inicio')}}">Inicio</a></li>
 							<li class="nav-item @yield('resaltar-nosotros')"><a class="nav-link" href="{{route('nosotros')}}">Nuestra Firma</a></li>
 							<li class="nav-item @yield('resaltar-servicios')"><a class="nav-link" href="{{route('servicios')}}">Nuestros Servicios</a></li>
                             <li class="nav-item @yield('resaltar-profesionales')"><a class="nav-link" href="{{route('profesionales')}}">Nuestros Profesionales</a></li>
-                            <li class="nav-item @yield('resaltar-noticias')"><a class="nav-link" href="{{route('noticias')}}">Noticias</a></li>
-							<li class="nav-item @yield('resaltar-contacto')"><a class="nav-link" href="{{route('contacto')}}">Contacto</a></li>
+                            <li class="nav-item @yield('resaltar-contacto')"><a class="nav-link" href="{{route('contacto')}}">Contacto</a></li>
 						</ul>
 						<ul class="nav navbar-nav ml-auto">
 							<div class="social-icons d-flex align-items-center">
@@ -65,9 +54,7 @@
 									<li><i class="fa fa-twitter"></i></li>
 								</a>
 							</div>
-							<li class="nav-item"><a href="#" class="search">
-								<i class="lnr lnr-magnifier" id="search"></i></a>
-							</li>
+							
 						</ul>
 					</div>
 				</div>
@@ -80,8 +67,6 @@
     @yield('nosotros')
 	@yield('servicios')
     @yield('profesionales')
-	@yield('noticias')
-    @yield('noticia-1')
 	@yield('contacto')
 	@yield('correo')
     @yield('registrar-proceso-judicial')

@@ -85,7 +85,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-comments"></i></span>
             </div>
-            <input name='descripcion' id='descripcion' class="form-control" placeholder="*  Descripcion" type="text" value="{{ old('descripcion') }}" required autocomplete="descripcion" autofocus required>
+            <input name='descripcion' id='descripcion' class="form-control" placeholder="* Descripcion" type="text" value="{{ old('descripcion') }}" required autocomplete="descripcion" autofocus required>
         </div>
         <br>
         <div class="input-group date" data-provide="datepicker">
