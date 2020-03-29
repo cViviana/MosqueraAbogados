@@ -8,7 +8,7 @@
             <div class="card-header">
                 <h3>Iniciar Sesión</h3>
                 <h3>Mosquera Abogados</h3>
-            </div>    
+            </div>
             <div class="card_login">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
@@ -37,21 +37,9 @@
                         @enderror
                     </div>
 
-                    <div class="form-group">
-                        <div class="checkbox_recordar">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                <label class="form-check-label " for="remember">
-                                    {{ __('Recordar usuario') }}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-4">
-                            <button type="submit" class="btn float-right login_btn">
+                            <button type="submit" class="btn login_btn">
                                 {{ __('Iniciar Sesión') }}
                             </button>
                         </div>
@@ -64,7 +52,7 @@
                             </a>
                         @endif
                     </div>
-                    </div>   
+                    </div>
                 </form>
             </div>
         </div>
