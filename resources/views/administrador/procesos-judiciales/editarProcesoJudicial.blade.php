@@ -55,7 +55,7 @@
             <div class="col-md-6">
                 <div class="input-group texto"> 
                     <select class="form-control select2 select2-hidden-accessible @error('abogadoAux') is-invalid @enderror" name='abogadoAux' id='abogadoAux'style="width: 100%;" tabindex="-1" aria-hidden="true" value= "{{ old('abogadoPpal') }}">
-                        <option disabled selected>Abogado Auxiliar</option>
+                        <option selected>Abogado Auxiliar</option>
                         <@foreach ($Usuarios as $us)
                         <option value= {{$us->cedula}}>{{$us->cedula}} - {{$us->nombre}}</option>
                         @endforeach
