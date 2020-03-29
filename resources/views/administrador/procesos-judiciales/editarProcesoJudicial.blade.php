@@ -36,7 +36,6 @@
                 <div class="form-group texto"> 
                     <select class="form-control select2 select2-hidden-accessible" name='abogadoPpal' id='abogadoPpal' style="width: 100%;" tabindex="-1" aria-hidden="true" value= "{{ old('abogadoPpal') }}">
                     <option disabled selected>* Abogado Principal</option>
-                    <option selected="" >* Abogado Principal</option>
                     <@foreach ($Usuarios as $us)
                         <option value= {{$us->cedula}}>{{$us->cedula}} - {{$us->nombre}}</option>
                     @endforeach
@@ -46,7 +45,7 @@
             <div class="col-md-6">
                 <div class="input-group texto"> 
                     <select class="form-control select2 select2-hidden-accessible" name='abogadoAux' id='abogadoAux'style="width: 100%;" tabindex="-1" aria-hidden="true" value= "{{ old('abogadoPpal') }}">
-                        <option selected="">* Auxiliar 1</option>
+                        <option disabled selected>* Abogado Auxiliar</option>
                         <@foreach ($Usuarios as $us)
                         <option value= {{$us->cedula}}>{{$us->cedula}} - {{$us->nombre}}</option>
                         @endforeach
