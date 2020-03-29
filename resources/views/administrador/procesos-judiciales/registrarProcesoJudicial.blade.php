@@ -129,7 +129,7 @@
             </div>
             <select name='estado' id='estado' class="form-control @error('estado') is-invalid @enderror" placeholder="* Seleccionar el estado">
                 <!---<option selected="" value="{{ old('estado') }}" required autocomplete="estado" autofocus>{{ old('estado') }}</option>!--->
-                <option selected="">* Seleccionar el estado</option>
+                <option disabled selected>* Seleccionar el estado</option>
                 <option value='activo'>Activo</option>
                 <option value='cerrado'>Cerrado</option>
             </select>
@@ -168,7 +168,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
             </div>
-            <input type="text" name='fecha_fin' id='fecha_fin' readonly="readonly" class="form-control @error('fecha_fin') is-invalid @enderror" placeholder="Fecha de Finalización AAAA-MM-DD">
+            <input type="text" name='fecha_fin' id='fecha_fin' class="form-control @error('fecha_fin') is-invalid @enderror" placeholder="Fecha de Finalización AAAA-MM-DD">
             @error('fecha_fin')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
