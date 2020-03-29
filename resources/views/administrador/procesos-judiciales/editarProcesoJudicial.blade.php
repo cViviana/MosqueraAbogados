@@ -136,7 +136,7 @@
                 <span class="input-group-text"><i class="fa fa-comments"></i></span>
             </div>
             <input name='descripcion' id='descripcion' class="form-control @error('descripcion') is-invalid @enderror" placeholder="* Descripción" type="text" required
-                value = "{{$caso->descripcion}}">
+                value = "{{$caso->descripcion}}" >
             @error('descripcion')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
