@@ -17,7 +17,7 @@ class clienteController extends Controller
             $objCliente->guardar($objCliente);
             $mensajeRegistro = "Éxito. ". $request->nombre ." con identificación ".
                         $request->numero ." ha sido registrado.";
-            return redirect()->route('listarClientes', ['roll'=> $request->roll,'Clientes' => $this->listar($request->roll)])->with('men', $mensajeRegistro);
+            return redirect()->route('registrarCliente')->with('mensajeRegistro', $mensajeRegistro);
         }else{
             $mensajeNoRegistro = "Ya existe la identificación ". $request->numero ." del cliente ".
                         $request->nombre;
