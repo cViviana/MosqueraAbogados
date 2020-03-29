@@ -11,17 +11,24 @@ class clienteController extends Controller
 {
     public function crearControlador(valFormRegCliente $request){
         $mensajeNoRegistro = "";
+        //definicion de la ruta
+        $ruta = 'registrarContraparte';
+        //con este if vamos a saber a que vista redirigir despues de registrar un clinte o un listarContraparte
+        if($request->roll== 'cliente'){
+          $ruta='registrarCliente';
+        }
         $aux = $this->buscar($request->numero);
         if( $aux == null ){
             $objCliente = new Cliente($request->all());
             $objCliente->guardar($objCliente);
             $mensajeRegistro = "Éxito. ". $request->nombre ." con identificación ".
                         $request->numero ." ha sido registrado.";
-            return redirect()->route('registrarCliente')->with('mensajeRegistro', $mensajeRegistro);
+
+            return redirect()->route($ruta)->with('mensajeRegistro', $mensajeRegistro);
         }else{
             $mensajeNoRegistro = "Ya existe la identificación ". $request->numero ." del cliente ".
                         $request->nombre;
-            return redirect()->route('registrarCliente')->with('mensajeNoRegistro', $mensajeNoRegistro);
+            return redirect()->route($ruta)->with('mensajeNoRegistro', $mensajeNoRegistro);
         }
     }
 
