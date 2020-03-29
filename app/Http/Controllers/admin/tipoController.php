@@ -43,8 +43,8 @@ class tipoController extends Controller
     try{
       $objTipo = $this->buscar($request->id);
       if( ($objTipo->id == $request->id) && ($objTipo->nombre == $request->nombre) ){
-        $mensajeNoActualizacion = "No se presentó ninguna actualización";
-        return redirect()->route('listarTiposDocumentos')->with(["mensajeNoActualizacion" => $mensajeNoActualizacion, "TiposDocumentos" => $this->listar()]);
+        $mensajeActualizacion = "No se presentó ninguna actualización";
+        return redirect()->route('listarTiposDocumentos')->with(["men" => $mensajeActualizacion, "TiposDocumentos" => $this->listar()]);
       }
   
       if( $objTipo != null ){

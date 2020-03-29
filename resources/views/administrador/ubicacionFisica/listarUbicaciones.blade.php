@@ -25,7 +25,6 @@
 @endsection
 
 @section('nombre-campos-columnas')
-    <th scope="col">Código</th>
     <th scope="col">Número de archivero</th>
     <th scope="col">Número de gaveta</th>
     <th scope="col">Editar</th>
@@ -35,7 +34,6 @@
 @section("listado-columnas")
     @foreach($ubicaciones as $ubicacion)
         <tr>
-            <td>{{$ubicacion->id}}</td>
             <td>{{$ubicacion->numArchivero}}</td>
             <td>{{$ubicacion->numGaveta}}</td>
             <td>

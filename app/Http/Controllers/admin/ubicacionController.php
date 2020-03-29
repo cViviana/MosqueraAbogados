@@ -41,6 +41,12 @@ class ubicacionController extends Controller
 
     public function editarControlador(valFormRegUbi $request){
       $objUbicacion = $this->buscar($request->id);
+
+      if( ($objUbicacion->numArchivero == $request->numArchivero) && ($objUbicacion->numGaveta == $request->numGaveta) ){
+        $mensajeActualizacion = "No se presentó ninguna actualización";
+        return redirect()->route('listarUbicaciones')->with(["men" => $mensajeActualizacion, "ubicaciones" => $this->listar()]);
+      }
+
       if(!$objUbicacion->existeUbicacion($request)){
         if( $objUbicacion != null){
           $objUbicacion->fill($request->all());
