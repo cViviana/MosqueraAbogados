@@ -43,7 +43,26 @@ class Documento extends Model
           return false;
         }
     }
-
+    public function actualizarDocumento($nuevoDoc)
+    {
+      //dd($nuevoDoc);
+      $doc=$this->buscar($nuevoDoc->id);
+      if($doc != null){
+        $doc->docCorrespondeTipo()->dissociate($doc->tipo_id);
+        $doc->docCorrespondeTipo()->associate($nuevoDoc->tipo_id);
+        $doc->docEstaUbicacion()->dissociate($doc->ubicacion_id);
+        $doc->docEstaUbicacion()->associate($nuevoDoc->ubicacion_id);
+        $doc->docCaso()->dissociate($doc->radicado_doc);
+        $doc->docCaso()->associate($nuevoDoc->radicado_doc);
+        $doc->descripcion = $nuevoDoc->descripcion;
+        $doc->timestamps = false;
+        $doc->save();
+        return true;
+      }else{
+        $men = " Error al  actualizar el documento";
+        return redirect()->route('listarDocumentosRadicado',$nuevoDoc->radicado_doc)->with('men',$men);
+      }
+    }
     public function listarDocumentos($radicado)
     {
       return $this::with(['docCorrespondeTipo:id,nombre','docEstaUbicacion:id,numArchivero,numGaveta'])->where('radicado_doc','=',$radicado)->get();

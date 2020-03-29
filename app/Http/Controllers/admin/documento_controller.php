@@ -23,21 +23,10 @@ class documento_controller extends Controller
 
   public function guardarControlador(Request $request)
    {
-     //Verificar el radicado, el tipo y la ubicación
-     $casoAux = new Caso;
-     $caso = $casoAux->buscar($request->radicado_doc);
-     //busca el tipo de documento
-     $tipoAux = new Tipo;
-     $tipo = $tipoAux->buscar($request->tipo_id);
-     //busca si existe la ubicaciónes
-     $ubicacionAux = new Ubicacion;
-     $ubicacion = $ubicacionAux->buscar($request->ubicacion_id);
-
-     if($tipo!=null and $ubicacion!=null and $caso != null){
+     if($this->validarGuardar($request)== true){
        //Llamamos al guardar del modelo para las asociaciones y save
        $objDocumento = new Documento($request->all());
-       //dd($objDocumento);
-       $guardar = $objDocumento->guardar($objDocumento,$caso->radicado,$tipo->id,$ubicacion->id,$request);
+       $guardar = $objDocumento->guardar($objDocumento,$request->radicado_doc,$request->tipo_id,$request->ubicacion_id,$request);
        if($guardar == true){
          $men = "Documento guardado correctamente";
          return redirect()->route('subirDocumento')->with('men',$men);
@@ -84,7 +73,6 @@ class documento_controller extends Controller
      $ListaCasos = $caso->listar();
      $doc = new Documento;
      $DocumentoAux = $doc->buscarDocCompleto($id)->all();
-
      return view('administrador.procesos-judiciales.editarDocumento', compact('ListaUbicaciones','ListaTipos','ListaCasos','DocumentoAux','id') );
    }
 
@@ -92,10 +80,36 @@ class documento_controller extends Controller
    {
      //dd($request);
      $doc = new Documento;
-     $doc->eliminar($request->id);
-     $this->guardarControlador($request);
-     $men = "Se actualizó correctamente el documento";
+     if($request->file != null){
+       $doc->eliminar($request->id);
+       $this->guardarControlador($request);
+       $men = "Se actualizó correctamente el documento";
+     }else{
+      if($this->validarGuardar($request)== true){
+            $doc=$doc->actualizarDocumento($request);
+            $men = "Se actualizó correctamente el documento";
+        }else {
+          $men = "Error al actuli el documento";
+        }
+     }
      return redirect()->route('listarDocumentosRadicado',$request->radicado_doc)->with('men',$men);
+   }
+   public function validarGuardar($request)
+   {
+     //Verificar el radicado, el tipo y la ubicación
+     $casoAux = new Caso;
+     $caso = $casoAux->buscar($request->radicado_doc);
+     //busca el tipo de documento
+     $tipoAux = new Tipo;
+     $tipo = $tipoAux->buscar($request->tipo_id);
+     //busca si existe la ubicaciónes
+     $ubicacionAux = new Ubicacion;
+     $ubicacion = $ubicacionAux->buscar($request->ubicacion_id);
+     if($tipo!=null and $ubicacion!=null and $caso != null){
+        return true;
+     }else {
+       return false;
+     }
    }
 
    public function eliminarDocumento($id)
