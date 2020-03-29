@@ -6,6 +6,7 @@
     <div class="d-flex justify-content-center h-100">
         <div class="card">
             <div class="card-header">
+                <br>
                 <h3>Iniciar Sesión</h3>
                 <h3>Mosquera Abogados</h3>
             </div>
@@ -51,6 +52,11 @@
                                 {{ __('¿Has olvidado tu contraseña?') }}
                             </a>
                         @endif
+                        
+                    </div>
+                    <div class="texto_campos d-flex justify-content-center">
+                        Los campos con (*) son obligatorios
+                        <br>
                     </div>
                     </div>
                 </form>
