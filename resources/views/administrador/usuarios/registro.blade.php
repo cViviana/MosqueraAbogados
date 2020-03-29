@@ -65,7 +65,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
             </div>
-            <input id="telefono" type="text" placeholder="* Telefono" class="form-control @error('telefono') is-invalid @enderror" name="telefono" value="{{ old('telefono') }}" required autocomplete="telefono" autofocus>
+            <input id="telefono" type="text" placeholder="* Teléfono" class="form-control @error('telefono') is-invalid @enderror" name="telefono" value="{{ old('telefono') }}" required autocomplete="telefono" autofocus>
             @error('telefono')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

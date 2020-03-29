@@ -12,7 +12,7 @@
          <div class="row">
             <div class="col-md-6">
                 <div class="form-group texto"> 
-                    IDENTIFICACION DEL PROCESO
+                    IDENTIFICACIÓN DEL PROCESO
                 </div>
             </div>
         </div>
@@ -20,7 +20,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-link"></i></span>
             </div>
-            <input name='radicado' id='radicado' readonly="readonly" class="form-control" placeholder="* Numero de Radicado" type="text" required
+            <input name='radicado' id='radicado' readonly="readonly" class="form-control" placeholder="* Número de Radicado" type="text" required
                 value = {{$caso->radicado}}>
         </div>
         <div class="row">
@@ -107,7 +107,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-comments"></i></span>
             </div>
-            <input name='descripcion' id='descripcion' class="form-control" placeholder="* Descripcion" type="text" required
+            <input name='descripcion' id='descripcion' class="form-control" placeholder="* Descripción" type="text" required
                 value = {{$caso->descripcion}}>
         </div>
         <br>

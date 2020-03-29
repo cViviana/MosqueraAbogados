@@ -118,7 +118,7 @@
                     <div class="col-lg-6">
                         <div class="card shadow mb-4">
                             <div class="card-header py-3 border-left-warning">
-                                <h6 class="m-0 font-weight-bold text-primary">Gestionar Ubicación de la Documentacion</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Gestionar Ubicación de la Documentación</h6>
                             </div>
                             <div class="card-body">
                                 En la sección de Documentos podrás  encontrar funcionalidades como registrar, listar, editar y eliminar las ubicaciones 

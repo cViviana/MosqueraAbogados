@@ -52,7 +52,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-phone-square"></i></span>
             </div>
-            <input name='telefono' id='telefono' class="form-control" placeholder="* Numero de telefono" type="text" required
+            <input name='telefono' id='telefono' class="form-control" placeholder="* Número de teléfono" type="text" required
                 value="{{$Cliente->telefono}}">
         </div>
         <br>
@@ -60,7 +60,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-envelope"></i></span>
             </div>
-            <input name='email' id='email' class="form-control" placeholder="Correo Electronico" type="text"
+            <input name='email' id='email' class="form-control" placeholder="Correo Electrónico" type="text"
                 value="{{$Cliente->email}}">
         </div>
         <input type="hidden" name="roll" id='roll' value="contraparte">

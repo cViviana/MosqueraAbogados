@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group texto"> 
-                    IDENTIFICACION DEL PROCESO
+                    IDENTIFICACIÓN DEL PROCESO
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-link"></i></span>
             </div>
-            <input name='radicado' id='radicado' class="form-control" placeholder="* Numero de Radicado" value="{{ old('radicado') }}" type="text" autofocus required>
+            <input name='radicado' id='radicado' class="form-control" placeholder="* Número de Radicado" value="{{ old('radicado') }}" type="text" autofocus required>
         </div>
         <div class="row">
             <div class="col-md-6">
@@ -114,7 +114,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-comments"></i></span>
             </div>
-            <input name='descripcion' id='descripcion' class="form-control" placeholder="* Descripcion" type="text" value="{{ old('descripcion') }}" required autocomplete="descripcion" autofocus required>
+            <input name='descripcion' id='descripcion' class="form-control" placeholder="* Descripción" type="text" value="{{ old('descripcion') }}" required autocomplete="descripcion" autofocus required>
         </div>
         <br>
         <div class="input-group date" data-provide="datepicker">

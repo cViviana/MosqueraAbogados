@@ -40,7 +40,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
                         </div>
-                        <input id="telefono" type="text" placeholder="* Telefono" class="form-control @error('telefono') is-invalid @enderror" name="telefono" value="{{ $User->telefono }}" required autocomplete="telefono" autofocus>
+                        <input id="telefono" type="text" placeholder="* Teléfono" class="form-control @error('telefono') is-invalid @enderror" name="telefono" value="{{ $User->telefono }}" required autocomplete="telefono" autofocus>
                         @error('telefono')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -63,7 +63,7 @@
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-12 align-items-center">
                             <button type="submit" class="btn btn-primary text-center ">
-                                {{ __('Acualizar Usuario') }}
+                                {{ __('Actualizar Usuario') }}
                             </button>
                         </div>
                     </div>

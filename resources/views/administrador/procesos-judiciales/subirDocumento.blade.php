@@ -11,7 +11,7 @@
   <div class="row">
         <div class="col-md-6">
             <div class="form-group texto"> 
-                IDENTIFICACION DEL PROCESO
+                IDENTIFICACIÓN DEL PROCESO
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="form-group texto"> 
-                UBICACION DOCUMENTOS
+                UBICACIÓN DOCUMENTOS
             </div>
         </div>
     </div>
@@ -69,7 +69,7 @@
     <div class="row">
       <div class="col-md-6">
           <div class="form-group texto"> 
-              DESCRIPCION DOCUMENTO
+              DESCRIPCIÓN DOCUMENTO
           </div>
       </div>
     </div>

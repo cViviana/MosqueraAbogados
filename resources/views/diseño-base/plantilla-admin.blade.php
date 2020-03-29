@@ -84,7 +84,7 @@
       <li class="nav-item @yield("resaltar-documentos-casos")">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#documentos" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fa fa-book" aria-hidden="true"></i>
-          <span>Documentacion Casos</span>
+          <span>Documentación Casos</span>
         </a>
         <div id="documentos" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -107,11 +107,11 @@
           </div>
         </div>
       </li>
-      <!-- UBICACION DOCUMENTOS -->
+      <!-- Ubicación Documentos -->
       <li class="nav-item @yield("resaltar-ubicacion-documentos")">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ubicaciondocumentos" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fa fa-archive" aria-hidden="true"></i>
-          <span>Ubicacion Documentos</span>
+          <span>Ubicación Documentos</span>
         </a>
         <div id="ubicaciondocumentos" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
