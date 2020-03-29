@@ -19,7 +19,7 @@
       <div class="col-md-12">
           <div class="form-group texto"> 
               <select class="form-control select2 select2-hidden-accessible" name='radicado_doc' id='radicado_doc' style="width: 100%;" tabindex="-1" aria-hidden="true" value= "{{ old('abogadoPpal') }}">
-              <option selected="">* Radicado</option>
+              <option disabled selected>* Radicado</option>
               @foreach ($ListaCasos as $caso)
               <option value= {{$caso->radicado}}>{{$caso->radicado}}</option>
               @endforeach
@@ -38,7 +38,7 @@
       <div class="col-md-12">
           <div class="form-group texto"> 
               <select class="form-control select2 select2-hidden-accessible" name='ubicacion_id' id='ubicacion_id' style="width: 100%;" tabindex="-1" aria-hidden="true" value= "{{ old('abogadoPpal') }}">
-                <option selected="">* Ubicación Física (Archivador - Gaveta) </option>
+                <option disabled selected>* Ubicación Física (Archivador - Gaveta) </option>
                 @foreach ($ListaUbicaciones as $ubicacion)
                   <option value= {{$ubicacion->id}}>{{$ubicacion->numArchivero}} - {{$ubicacion->numGaveta}}</option>
                 @endforeach
@@ -57,7 +57,7 @@
       <div class="col-md-12">
           <div class="form-group texto"> 
               <select class="form-control select2 select2-hidden-accessible" name='tipo_id' id='tipo_id' style="width: 100%;" tabindex="-1" aria-hidden="true" value= "{{ old('abogadoPpal') }}">
-                <option selected="">* Tipo documento</option>
+                <option disabled selected>* Tipo documento</option>
                 @foreach ($ListaTipos as $tipo)
                   <option value= {{$tipo->id}}>{{$tipo->nombre}}</option>
                 @endforeach

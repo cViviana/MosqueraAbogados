@@ -39,7 +39,7 @@
                 <span class="input-group-text"><i class="fa fa-list"></i></span>
             </div>
             <select name='tipo' id='tipo' class="form-control @error('tipo') is-invalid @enderror">
-                <option selected="">* Seleccione el tipo de persona</option>
+                <option disabled selected>* Seleccione el tipo de persona</option>
                 <option value="natural">Persona natural</option>
                 <option value="juridica">Persona jurídica</option>
             </select>

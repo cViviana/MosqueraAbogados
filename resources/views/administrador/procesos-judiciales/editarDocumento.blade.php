@@ -11,15 +11,20 @@
     <br>
     <div class="input-group">
       <input type="hidden" id="id" name="id" value={{$id}}>
-        <div class="input-group-prepend">
+      <div class="input-group-prepend">
             <span class="input-group-text"><i class="fas fa-boxes"></i></span>
         </div>
-        <select name='radicado_doc' id='radicado_doc' class="form-control">
+        <select name='radicado_doc' id='radicado_doc' class="form-control @error('radicado') is-invalid @enderror">
           <option selected="" value="{{$DocumentoAux[0]->radicado_doc}}">{{$DocumentoAux[0]->radicado_doc}}</option>
           @foreach ($ListaCasos as $caso)
             <option value= {{$caso->radicado}}>{{$caso->radicado}}</option>
           @endforeach
         </select>
+        @error('radicado')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+        @enderror  
         <div class="input-group-prepend">
             <span class="input-group-text"><i class="fas fa-archive"></i></span>
         </div>
@@ -49,7 +54,12 @@
         <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-comments"></i></span>
         </div>
-        <input name="descripcion" id="descripcion" class="form-control" value="{{$DocumentoAux[0]->descripcion}}" type="text" required>
+        <input name="descripcion" id="descripcion" class="form-control @error('descripcion') is-invalid @enderror" value="{{$DocumentoAux[0]->descripcion}}" type="text" required>
+        @error('descripcion')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+        @enderror
     </div>
     <br>
     <div class="input-group mb-3">

@@ -42,7 +42,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-id-card"></i> </span>
             </div>
-            <input id="cedula" type="" placeholder="* Cedula" class="form-control @error('cedula') is-invalid @enderror" name="cedula" value="{{ old('cedula') }}" required autocomplete="cedula" autofocus>
+            <input id="cedula" type="" placeholder="* Número de identificación" class="form-control @error('cedula') is-invalid @enderror" name="cedula" value="{{ old('cedula') }}" required autocomplete="cedula" autofocus>
             @error('cedula')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -76,7 +76,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
             </div>
-            <input id="email" type="email" placeholder="* Correo" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+            <input id="email" type="email" placeholder="* Correo Electrónico" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
             @error('email')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

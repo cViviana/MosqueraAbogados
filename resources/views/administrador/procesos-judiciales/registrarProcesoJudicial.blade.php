@@ -88,7 +88,7 @@
             <div class="col-md-6">
                 <div class="form-group texto"> 
                     <select class="form-control select2 select2-hidden-accessible @error('cliente') is-invalid @enderror"  name='cliente' id='cliente' style="width: 100%;" tabindex="-1" aria-hidden="true" value= "{{ old('abogadoPpal') }}">
-                        <option selected="">* Cliente</option>
+                        <option disabled selected>* Cliente</option>
                         @foreach ($Clientes as $cli)
                         <option value= {{$cli->numero}}>{{$cli->numero}} - {{$cli->nombre}}</option>
                         @endforeach
@@ -103,7 +103,7 @@
             <div class="col-md-6">
                 <div class="input-group texto"> 
                     <select class="form-control select2 select2-hidden-accessible @error('contraparte') is-invalid @enderror" name='contraparte' id='contraparte' style="width: 100%;" tabindex="-1" aria-hidden="true" value= "{{ old('abogadoPpal') }}">
-                        <option selected="">* Contraparte</option>
+                        <option disabled selected>* Contraparte</option>
                         @foreach ($Contraparte as $contr)
                         <option value= {{$contr->numero}}>{{$contr->numero}} - {{$contr->nombre}}</option>
                         @endforeach

@@ -13,7 +13,12 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-plus-square"></i></span>
             </div>
-            <input type="text" name='nombre' id='nombre' class="form-control" placeholder="* Nuevo tipo de documento" value="{{$tipo->nombre}}" required>
+            <input type="text" name='nombre' id='nombre' class="form-control @error('nombre') is-invalid @enderror" placeholder="* Nuevo tipo de documento" value="{{$tipo->nombre}}" required>
+            @error('nombre')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+            @enderror
         </div>
         <input type="hidden" name="id" id='id' value="{{$tipo->id}}">
         <br>
