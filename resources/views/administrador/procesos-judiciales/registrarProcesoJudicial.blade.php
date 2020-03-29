@@ -25,10 +25,6 @@
                     IDENTIFICACIÓN DEL PROCESO
                 </div>
             </div>
-<<<<<<< HEAD
-            <input name='radicado' id='radicado' class="form-control" placeholder="* Número de Radicado" value="{{ old('radicado') }}" type="text" required>
-=======
->>>>>>> 1433d0c262f092fc8089753279e8cc63e3b6f985
         </div>
         <div class="input-group">
             <div class="input-group-prepend">
@@ -43,11 +39,6 @@
                     ABOGADOS A CARGO
                 </div>
             </div>
-<<<<<<< HEAD
-            <select name='abogadoAux' id='abogadoAux' class="form-control">
-                <option selected="">* Abogado Auxiliar</option>
-                @foreach ($Usuarios as $us)
-=======
         </div>
         <div class="row">
             <div class="col-md-6">
@@ -55,7 +46,6 @@
                     <select class="form-control select2 select2-hidden-accessible" name='abogadoPpal' id='abogadoPpal' style="width: 100%;" tabindex="-1" aria-hidden="true" value= "{{ old('abogadoPpal') }}">
                     <option disabled selected>* Abogado Principal</option>
                     <@foreach ($Usuarios as $us)
->>>>>>> 1433d0c262f092fc8089753279e8cc63e3b6f985
                     <option value= {{$us->cedula}}>{{$us->cedula}} - {{$us->nombre}}</option>
                     @endforeach
                     </select> 
@@ -138,11 +128,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
             </div>
-<<<<<<< HEAD
-            <input type="text" name='fecha_fin' id='fecha_fin' class="form-control" placeholder="Fecha de Finalización AAAA-MM-DD">
-=======
             <input type="text" name='fecha_fin' id='fecha_fin' readonly="readonly" class="form-control" placeholder="Fecha de Finalización AAAA-MM-DD">
->>>>>>> 1433d0c262f092fc8089753279e8cc63e3b6f985
         </div>
         <br>
         <button type="submit" class="btn btn-primary">Registrar Caso</button>

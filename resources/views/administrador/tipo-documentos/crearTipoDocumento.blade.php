@@ -13,7 +13,12 @@
         <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-plus-square"></i></span>
         </div>
-        <input type="text" id='nombre'name='nombre' class="form-control" placeholder="* Nuevo tipo de documento" required>
+        <input type="text" id='nombre'name='nombre' class="form-control @error('nombre') is-invalid @enderror" placeholder="* Nuevo tipo de documento" required>
+        @error('nombre')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+        @enderror
       </div>
       <br>
       <button type="submit" class="btn btn-primary">Agregar</button>

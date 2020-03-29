@@ -8,15 +8,6 @@
         
         <div class="card-body">
             <div class="container_formulario" id="contenedorMensajes">
-                @if(count($errors) > 0)
-                    <div class="alert alert-danger" role="alert">
-                        <ul>
-                            @foreach($errors->all() as $error)
-                                <li> {{$error}} </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
                 @if (session()->has('men'))
                     <div class="alert alert-success animated fadeIn">
                         {{session('men')}}

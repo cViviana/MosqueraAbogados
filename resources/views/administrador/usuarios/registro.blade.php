@@ -1,4 +1,4 @@
-@extends('diseño-base.plantilla-registrar-usuario')
+@extends('diseño-base.plantilla-registrar')
 @section("resaltar-usuarios", "active")
 @section("resaltar-registrarUsuario", "active")
 

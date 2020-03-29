@@ -39,13 +39,13 @@ class valFormRegCliente extends FormRequest
     {
         return [
             'numero.max' => 'El número de identificación debe ser mayor a 7 dígitos y menor a 60 dígitos.',
-            'numero.min' => 'El número debe contener al menos 8 caracteres.',
-            'nombre.max' => 'El nombre debe ser menor a 60 caracteres.',
+            'numero.min' => 'La identificación debe contener al menos 8 caracteres.',
+            'nombre.max' => 'La identificación debe ser menor a 60 caracteres.',
             'tipo.in' => 'Por favor seleccione el tipo de persona, JURÍDICA O NATURAL.',
             'telefono.digits_between' => 'El número de teléfono debe ser mayor a 6 dígitos y menor a 20 dígitos.',
             'telefono.numeric' => 'El teléfono debe ser un valor numérico.',
             'email.max' => 'El correo electrónico debe ser menor a 60 caracteres.',
-            'email.email' => 'Por favor ingrese un correo electrónico válido.'
+            'email.email' => 'Por favor, ingrese un correo electrónico válido.'
         ];
     }
 

@@ -26,7 +26,12 @@
                     <i class="fa fa-user"></i>
                 </span>
             </div>
-            <input name='nombre' id='nombre' class="form-control" value= "{{ old('nombre') }}" placeholder="* Nombre completo" type="text" required>
+            <input name='nombre' id='nombre' class="form-control @error('nombre') is-invalid @enderror" value= "{{ old('nombre') }}" placeholder="* Nombre completo" type="text" required>
+            @error('nombre')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
         </div>
         
         <br>
@@ -34,29 +39,49 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-list"></i></span>
             </div>
-            <select name='tipo' id='tipo' class="form-control">
+            <select name='tipo' id='tipo' class="form-control @error('tipo') is-invalid @enderror">
                 <option selected="">* Seleccione el tipo de persona</option>
                 <option value="natural">Persona natural</option>
                 <option value="juridica">Persona jurídica</option>
             </select>
+            @error('tipo')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-id-card"></i></span>
             </div>
-            <input name='numero' id='numero' class="form-control" value= "{{ old('numero') }}"placeholder="* Número de identificación" type="text" required>
+            <input name='numero' id='numero' class="form-control @error('numero') is-invalid @enderror" value= "{{ old('numero') }}"placeholder="* Número de identificación" type="text" required>
+            @error('numero')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
         </div>
         <br>
         <div class="input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-phone-square"></i></span>
             </div>
-            <input name='telefono' id='telefono' class="form-control" value= "{{ old('telefono') }}" placeholder="* Número de teléfono" type="text" required>
+            <input name='telefono' id='telefono' class="form-control @error('telefono') is-invalid @enderror" value= "{{ old('telefono') }}" placeholder="* Número de teléfono" type="text" required>
+            @error('telefono')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
         </div>
         <br>
         <div class="input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-envelope"></i></span>
             </div>
-            <input name='email' id='email' class="form-control" value= "{{ old('email') }}"placeholder="Correo electrónico" type="text">
+            <input name='email' id='email' class="form-control @error('email') is-invalid @enderror" value= "{{ old('email') }}"placeholder="Correo electrónico" type="text">
+            @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
         </div>
         <input type="hidden" name="roll" id='roll' value="cliente">
         <br>
