@@ -26,12 +26,10 @@ class Documento extends Model
     //esta funcion guarda en la base de datos en la tabla documento , previamente debe estar creado el
     //tipo de documento y la ubicacion fisica
     public function guardar(Documento $doc , $radicado,$tipo, $ubicacion, $request){
-
         //Subimos el archivo con FileController y nos retorna la request con el path
         $file = new FileController;
         $path = $file->store($request);
         $doc->path = Crypt::encryptString($path);
-
         if($path != null){
           $doc->docCorrespondeTipo()->associate($tipo);
           $doc->docEstaUbicacion()->associate($ubicacion);
