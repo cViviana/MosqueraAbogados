@@ -49,7 +49,9 @@
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
-            <br>
+        </div>
+        <br>
+        <div class="input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-id-card"></i></span>
             </div>
