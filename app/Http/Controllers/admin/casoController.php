@@ -93,16 +93,17 @@ class casoController extends Controller
       return $ListaCasos;
     }
     public function editarControlador(valFormRegCaso $request){
-
       $objCaso = $this->buscarControlador($request->radicado);
       if($objCaso != null){
+        if( $this->validarCliente($request->cliente,$request->contraparte) == true && $this->validarUsuarios($request->abogadoPpal)==true){
           $objCaso->fill($request->all());
-        /*$objCliente = $request->cliente;
-        $objContraparte = $request->contraparte;
-        if($objCliente )*/
-        $objCaso->actualizar($objCaso, $request->cliente, $request->contraparte, $request->abogadoPpal, $request->abogadoAux);
-        $men =" Éxito. Se actualizó el caso con radicado: ".$objCaso->radicado;
-        return redirect()->route('listarCasos')->with('men', $men);
+          $objCaso->actualizar($objCaso, $request->cliente, $request->contraparte, $request->abogadoPpal, $request->abogadoAux);
+          $men =" Éxito. Se actualizó el caso con radicado: ".$objCaso->radicado;
+          return redirect()->route('listarCasos')->with('men', $men);
+        }else{
+              $mensajeNoActualizacion ="Verifique los campos. Alguno se encuentra sin seleccionar";
+              return redirect()->route('listarCasos')->with('mensajeNoActualizacion', $mensajeNoActualizacion);
+              }
       }else{
         $mensajeNoActualizacion = "No existe un caso con el radicado: ".$caso. " para editar";
         return redirect()->route('listarCasos')->with('mensajeNoActualizacion', $mensajeNoActualizacion);

@@ -24,12 +24,13 @@ class valFormRegCaso extends FormRequest
     public function rules()
     {
         $now = new \DateTime();
-      
+
         return [
             'radicado'=>'required|string|max:191',
             'estado'=> 'required|in:activo,cerrado',
             'fecha_inicio'=> 'required|date',
             'descripcion'=>'required|string|max:191',
+            'abogadoPpal'=>'required',
             'cliente'=>'required|string|max:191',
             'contraparte'=>'required|string|max:191',
         ];
