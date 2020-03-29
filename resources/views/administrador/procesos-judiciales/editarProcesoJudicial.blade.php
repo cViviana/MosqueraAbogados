@@ -120,8 +120,8 @@
                 <span class="input-group-text"><i class="fa fa-tasks"></i></span>
             </div>
             <select name='estado' id='estado' class="form-control @error('estado') is-invalid @enderror">
-                <option selected="selected" value="{{$caso->estado}}" disabled selected>{{$caso->estado}}</option>
-                <option disabled selected>* Seleccionar el estado</option>
+                <option selected="selected" value="{{$caso->estado}}" >{{$caso->estado}}</option>
+                <option >* Seleccionar el estado</option>
                 <option value='activo'>Activo</option>
                 <option value='cerrado'>Cerrado</option>
             </select>
@@ -137,7 +137,7 @@
                 <span class="input-group-text"><i class="fa fa-comments"></i></span>
             </div>
             <input name='descripcion' id='descripcion' class="form-control @error('descripcion') is-invalid @enderror" placeholder="* Descripción" type="text" required
-                value = {{$caso->descripcion}}>
+                value = "{{$caso->descripcion}}" >
             @error('descripcion')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
