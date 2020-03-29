@@ -120,8 +120,7 @@
                 <span class="input-group-text"><i class="fa fa-tasks"></i></span>
             </div>
             <select name='estado' id='estado' class="form-control @error('estado') is-invalid @enderror">
-                <option selected="selected" value="{{$caso->estado}}" disabled selected>{{$caso->estado}}</option>
-                <option disabled selected>* Seleccionar el estado</option>
+                <option selected="selected" value="{{$caso->estado}}">{{$caso->estado}}</option>
                 <option value='activo'>Activo</option>
                 <option value='cerrado'>Cerrado</option>
             </select>
@@ -137,7 +136,7 @@
                 <span class="input-group-text"><i class="fa fa-comments"></i></span>
             </div>
             <input name='descripcion' id='descripcion' class="form-control @error('descripcion') is-invalid @enderror" placeholder="* Descripción" type="text" required
-                value = {{$caso->descripcion}}>
+                value = "{{$caso->descripcion}}">
             @error('descripcion')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -161,7 +160,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
             </div>
-            <input type="text" name='fecha_fin' id='fecha_fin' class="form-control @error('fecha_fin') is-invalid @enderror" placeholder="                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Fecha de Finalización" value='{{$caso->fecha_fin}}'>
+            <input type="text" name='fecha_fin' id='fecha_fin' class="form-control @error('fecha_fin') is-invalid @enderror" placeholder="Fecha de Finalización AAAA-MM-DD" value='{{$caso->fecha_fin}}'>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Fecha de Finalización" value='{{$caso->fecha_fin}}'>
             @error('fecha_fin')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
