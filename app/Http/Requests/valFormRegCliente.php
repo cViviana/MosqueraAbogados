@@ -27,7 +27,7 @@ class valFormRegCliente extends FormRequest
     public function rules()
     {
         return [
-            'numero' => 'required|min:8|string',
+            'numero' => 'required|min:8|string|max:30',
             'nombre' => 'required|string|max:60',
             'tipo'=> 'required|in:juridica,natural',
             'telefono' => 'required|numeric|digits_between:7,20',
@@ -38,7 +38,7 @@ class valFormRegCliente extends FormRequest
     public function messages()
     {
         return [
-            'numero.max' => 'El número de identificación debe ser mayor a 7 dígitos y menor a 60 dígitos.',
+            'numero.max' => 'El número de identificación debe ser mayor a 7 dígitos y menor a 30 dígitos.',
             'numero.min' => 'La identificación debe contener al menos 8 caracteres.',
             'nombre.max' => 'La identificación debe ser menor a 60 caracteres.',
             'tipo.in' => 'Por favor seleccione el tipo de persona, JURÍDICA O NATURAL.',

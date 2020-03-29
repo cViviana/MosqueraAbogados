@@ -24,14 +24,8 @@ class valFormTipoDoc extends FormRequest
     public function rules()
     {
         return [
-            'nombre'=> 'required|unique:tipo_documento|string'
+            'nombre'=> 'required|string'
         ];
     }
 
-    public function messages()
-    {
-        return [
-            'nombre.unique' => 'Este tipo de documento ya existe'
-        ];
-    }
 }

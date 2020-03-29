@@ -11,10 +11,15 @@ use Exception;
 class tipoController extends Controller
 {
   public function guardarControlador(valFormTipoDoc $request){
-    $objTipo= new Tipo($request->all());
-    $objTipo->guardar($objTipo);
-    $men = "Éxito. El tipo de documento ha sido guardado.";
-    return redirect()->route('crearTipoDocumento')->with('men', $men);
+    try{
+      $objTipo= new Tipo($request->all());
+      $objTipo->guardar($objTipo);
+      $men = "Éxito. El tipo de documento ha sido guardado.";
+      return redirect()->route('crearTipoDocumento')->with('men', $men);
+    }catch(Exception $e){
+      $menError = "Este tipo de documento ya se encuentra registrado.";
+      return redirect()->route('crearTipoDocumento')->with('men', $menError);
+    }
   }
 
   public function eliminarControlador($id){
@@ -35,16 +40,27 @@ class tipoController extends Controller
   }
 
   public function editarControlador(valFormTipoDoc $request){
-    $objTipo = $this->buscar($request->id);
-    if( $objTipo != null ){
-      $objTipo->fill($request->all());
-      $objTipo->guardar($objTipo);
-      $men = "Éxito. Se actualizaron los datos de forma exitosa.";
-      return redirect()->route('listarTiposDocumentos')->with(["men" => $men, "TiposDocumentos" => $this->listar()]);
-    }else{
-      $mensajeNoActualizacion = "El identificador ingresado es inválido.";
-      return redirect()->route('listarTiposDocumentos')->with(["mensajeNoActualizacion" => $mensajeNoActualizacion, "TiposDocumentos" => $this->listar()]);
+    try{
+      $objTipo = $this->buscar($request->id);
+      if( ($objTipo->id == $request->id) && ($objTipo->nombre == $request->nombre) ){
+        $mensajeNoActualizacion = "No se presentó ninguna actualización";
+        return redirect()->route('listarTiposDocumentos')->with(["men" => $mensajeNoActualizacion, "TiposDocumentos" => $this->listar()]);
+      }
+  
+      if( $objTipo != null ){
+        $objTipo->fill($request->all());
+        $objTipo->guardar($objTipo);
+        $men = "Éxito. Se actualizaron los datos de forma exitosa.";
+        return redirect()->route('listarTiposDocumentos')->with(["men" => $men, "TiposDocumentos" => $this->listar()]);
+      }else{
+        $mensajeNoActualizacion = "El identificador ingresado es inválido.";
+        return redirect()->route('listarTiposDocumentos')->with(["mensajeNoActualizacion" => $mensajeNoActualizacion, "TiposDocumentos" => $this->listar()]);
+      }
+    }catch(Exception $e){
+      $mensajeNoActualizacion = "Este tipo de documento ya se encuentra registrado.";
+      return redirect()->route('crearTipoDocumento')->with('mensajeNoActualizacion', $mensajeNoActualizacion);
     }
+
   }
 
   public function tipoControlador(Request $request){

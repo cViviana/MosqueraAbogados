@@ -25,7 +25,6 @@
 @endsection
 
 @section('nombre-campos-columnas')
-    <th scope="col">Código</th>
     <th scope="col">Nombre</th>
     <th scope="col">Editar</th>
     <th scope="col">Eliminar</th>
@@ -34,7 +33,7 @@
 @section('listado-columnas')
     @foreach($TiposDocumentos as $tipoDocumento)
     <tr>
-        <td>{{$tipoDocumento->id}}</td>
+
         <td>{{$tipoDocumento->nombre}}</td>
         <td>
             <a href="{{route('editarTipoDocumento', $tipoDocumento->id)}}" class="btn btn-primary">
