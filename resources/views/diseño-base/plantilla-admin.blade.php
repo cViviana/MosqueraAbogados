@@ -300,13 +300,13 @@
   <script>
     $('#fecha_inicio').datepicker({ 
       dateFormat: 'yy-mm-dd', 
-      minDate: 1,
+      minDate: 0,
       changeMonth: true,
       changeYear: true
     }).val();
     $('#fecha_fin').datepicker({ 
       dateFormat: 'yy-mm-dd', 
-      minDate: 2,
+      minDate: 1,
       changeMonth: true,
       changeYear: true
     }).val();
