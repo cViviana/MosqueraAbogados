@@ -91,7 +91,6 @@
 				<br>
 				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.1971534974596!2d-76.60445958590995!3d2.4412833577784587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e300305f48b2eb3%3A0xa7ad8e3d77634c51!2sCra.%202%20%233-88%2C%20Popay%C3%A1n%2C%20Cauca!5e0!3m2!1ses!2sco!4v1585376736745!5m2!1ses!2sco" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 			</div>
-           
 		</div>
 	</section>
 	<!--================Contact Area =================-->

@@ -4,7 +4,7 @@
 @section('seccion')
 <div class="text-center">
     <div class="alert alert-danger" role="alert">
-        Tu usuario no tiene los permisos para realizar esta funcion!
+        Tu usuario no tiene los permisos para realizar esta función
     </div>
     <div  >
         <span>
@@ -12,10 +12,10 @@
         </span>
     </div>
     <p class="lead text-gray-800 mb-5">
-        Pagina No Encontrada
+        Página No Encontrada
     </p>
     <p class="text-gray-500 mb-0">
-        Lo sentimos con tu cuenta de usuario no es posible  realizar estas funciones
+        Lo sentimos, con tu cuenta de usuario no es posible realizar estas funciones.
     </p>
     <p class="text-gray-500 mb-0">
         Si deseas hacer uso de esta funcionalidad ingresa con otra cuenta <br>
