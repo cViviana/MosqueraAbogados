@@ -118,7 +118,7 @@ Route::prefix('admin')->group(
     Route::view('/tipoDocumento','administrador/tipoDocumento')->name('tipoDocumento')->middleware('permiso:editar');
     Route::get('/verDocumento/{id}','admin\documento_controller@verDocumento')->name('verDocumento')->middleware('permiso:vista');
     Route::get('/editarDocumento/{id}','admin\documento_controller@editarDocumento')->name('editarDocumento')->middleware('permiso:editar');
-    Route::post('/guardarDocumento','admin\documento_controller@guardarControlador')->name('guardarDocumento')->middleware('permiso:crear');
+    Route::post('/guardarDocumento','admin\documento_controller@guardarControlador')->name('guardarDocumento')->middleware('permiso:editar');
     Route::post('/actualizarDocumento','admin\documento_controller@actualizarDocumento')->name('actualizarDocumento')->middleware('permiso:editar');
     Route::get('/eliminarDocumento/{id}','admin\documento_controller@eliminarDocumento')->name('eliminarDocumento')->middleware('permiso:eliminar');
 
