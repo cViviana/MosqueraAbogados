@@ -111,7 +111,7 @@
       <li class="nav-item @yield("resaltar-ubicacion-documentos")">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ubicaciondocumentos" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fa fa-archive" aria-hidden="true"></i>
-          <span>Ubicación Documentos</span>
+          <span>Ubicación Física</span>
         </a>
         <div id="ubicaciondocumentos" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
