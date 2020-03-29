@@ -14,7 +14,7 @@
             {{session('mensajeNoActualizacion')}}
         </div>
     @endif
-@endsection 
+@endsection
 
 @section('formulario')
     <form action="{{route('actualizarCliente')}}" class="texto_campos" method="post">
@@ -40,7 +40,7 @@
                 <span class="input-group-text"><i class="fa fa-list"></i></span>
             </div>
             <select name='tipo' id='tipo' class="form-control @error('tipo') is-invalid @enderror">
-                <option selected="selected" value="{{$Cliente->tipo}}" disabled selected>Persona {{$Cliente->tipo}}</option>
+                <option selected="selected" value="{{$Cliente->tipo}}">Persona {{$Cliente->tipo}}</option>
                 <option value="natural">Persona Natural</option>
                 <option value="juridica">Persona Juridica</option>
             </select>
