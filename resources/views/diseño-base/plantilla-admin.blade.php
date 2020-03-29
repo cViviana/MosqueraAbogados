@@ -17,6 +17,7 @@
 
   <!-- Custom styles for this template-->
   <link href="{{ asset ('admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
+  <link href="{{ asset ('selector/estilos.css') }}" rel="stylesheet">
 
   <!-- Custom styles for this page -->
   <link href="{{ asset ('admin/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
@@ -284,6 +285,21 @@
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="{{ asset('https://code.jquery.com/ui/1.12.1/jquery-ui.js') }}"></script>
+
+  <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js') }}"></script>
+  <link href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css') }}" rel="stylesheet" /> 
+
+<script type="application/javascript">
+    $(document).ready(function() {
+      $('.select2').select2({
+        closeOnSelect: false
+      });
+    });
+</script>
+
+
+
+
 
   <script>
     $('#fecha_inicio').datepicker({ 

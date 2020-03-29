@@ -8,46 +8,72 @@
 @section('formulario')
 <form action="{{route('guardarDocumento')}}" method="post" enctype="multipart/form-data">
   {{csrf_field()}}
-    <br>
-    <div class="input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fas fa-boxes"></i></span>
+  <div class="row">
+        <div class="col-md-6">
+            <div class="form-group texto"> 
+                IDENTIFICACION DEL PROCESO
+            </div>
         </div>
-        <select name='radicado_doc' id='radicado_doc' class="form-control">
-          <option selected="">* Radicado</option>
-          @foreach ($ListaCasos as $caso)
-            <option value= {{$caso->radicado}}>{{$caso->radicado}}</option>
-          @endforeach
-        </select>
     </div>
-    <br>
-    <div class="input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fas fa-boxes"></i></span>
+    <div class="row">
+      <div class="col-md-12">
+          <div class="form-group texto"> 
+              <select class="form-control select2 select2-hidden-accessible" name='radicado_doc' id='radicado_doc' style="width: 100%;" tabindex="-1" aria-hidden="true" value= "{{ old('abogadoPpal') }}">
+              <option selected="">* Radicado</option>
+              @foreach ($ListaCasos as $caso)
+              <option value= {{$caso->radicado}}>{{$caso->radicado}}</option>
+              @endforeach
+              </select> 
+          </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group texto"> 
+                UBICACION DOCUMENTOS
+            </div>
         </div>
-        <select name='ubicacion_id' id='ubicacion_id'class="form-control">
-            <option selected="">* Ubicación Física (Archivador - Gaveta) </option>
-            @foreach ($ListaUbicaciones as $ubicacion)
-              <option value= {{$ubicacion->id}}>{{$ubicacion->numArchivero}} - {{$ubicacion->numGaveta}}</option>
-            @endforeach
-        </select>
-
     </div>
-    <br>
-    <div class="input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fas fa-project-diagram"></i></span>
-        </div>
-        <select name='tipo_id' id='tipo_id' class="form-control">
-            <option selected="">* Tipo documento</option>
-            @foreach ($ListaTipos as $tipo)
-              <option value= {{$tipo->id}}>{{$tipo->nombre}}</option>
-            @endforeach
-        </select>
+    <div class="row">
+      <div class="col-md-12">
+          <div class="form-group texto"> 
+              <select class="form-control select2 select2-hidden-accessible" name='ubicacion_id' id='ubicacion_id' style="width: 100%;" tabindex="-1" aria-hidden="true" value= "{{ old('abogadoPpal') }}">
+                <option selected="">* Ubicación Física (Archivador - Gaveta) </option>
+                @foreach ($ListaUbicaciones as $ubicacion)
+                  <option value= {{$ubicacion->id}}>{{$ubicacion->numArchivero}} - {{$ubicacion->numGaveta}}</option>
+                @endforeach
+              </select> 
+          </div>
+      </div>
     </div>
-    <div class="vinculo">
-        <a class="vinculo" href="{{route('crearTipoDocumento')}}" title="Añadir tipo">Añadir nuevo tipo de documento</a>
+    <div class="row">
+      <div class="col-md-6">
+          <div class="form-group texto"> 
+              TIPO DOCUMENTO
+          </div>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-md-12">
+          <div class="form-group texto"> 
+              <select class="form-control select2 select2-hidden-accessible" name='tipo_id' id='tipo_id' style="width: 100%;" tabindex="-1" aria-hidden="true" value= "{{ old('abogadoPpal') }}">
+                <option selected="">* Tipo documento</option>
+                @foreach ($ListaTipos as $tipo)
+                  <option value= {{$tipo->id}}>{{$tipo->nombre}}</option>
+                @endforeach
+              </select> 
+              <a class="vinculo" href="{{route('crearTipoDocumento')}}" title="Añadir tipo">Añadir nuevo tipo de documento</a>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+          <div class="form-group texto"> 
+              DESCRIPCION DOCUMENTO
+          </div>
+      </div>
+    </div>
+    
     <div class="input-group">
         <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-comments"></i></span>
