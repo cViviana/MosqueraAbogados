@@ -28,7 +28,8 @@ class Ubicacion extends Model
   }
 
   public function listar(){
-    return $this::all();
+    //return $this::all();
+    return  $this::orderByRaw('numArchivero ASC', 'numGaveta ASC')->get();
   }
 
   public function existeUbicacion(valFormRegUbi $request){
