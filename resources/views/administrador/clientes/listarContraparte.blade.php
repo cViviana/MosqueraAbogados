@@ -25,7 +25,7 @@
 @endsection
 
 @section('nombre-campos-columnas')
-    <th scope="col">Número</th>
+    <th scope="col">Identificación</th>
     <th scope="col">Nombre</th>
     <th scope="col">Tipo</th>
     <th scope="col">Teléfono</th>

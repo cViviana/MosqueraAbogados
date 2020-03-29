@@ -154,7 +154,7 @@ class userController extends Controller
                 return redirect()->route('cambioContrasenia')->with('mensajeDiferentes', $mensajeDiferentes);
             }
         }
-        $mensajeContraseñaIncorrecta = "La contraseña ingresada no es correcta.";
+        $mensajeContraseñaIncorrecta = "La contraseña antigua ingresada no es correcta.";
         return redirect()->route('cambioContrasenia')->with('mensajeContraseñaIncorrecta', $mensajeContraseñaIncorrecta);
     }
 
