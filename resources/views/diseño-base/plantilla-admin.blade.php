@@ -285,6 +285,12 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="{{ asset('https://code.jquery.com/ui/1.12.1/jquery-ui.js') }}"></script>
 
+  <link rel="stylesheet" href="//select2-4.0.13/dist/css/select2.css">
+    <script src="{{ asset('select2-4.0.13/dist/js/select2.js') }}"></script>
+    <script>
+      $(document).ready(function() { $("#id").select2(); });
+    </script>
+
   <script>
     $('#fecha_inicio').datepicker({ 
       dateFormat: 'yy-mm-dd', 
