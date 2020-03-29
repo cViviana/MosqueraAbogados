@@ -173,3 +173,17 @@
         <div class="texto_campos">Los campos con (*) son obligatorios</div>
     </form>
 @endsection
+@section('script')
+    <script>
+        $('#fecha_inicio').datepicker({ 
+        dateFormat: 'yy-mm-dd', 
+        changeMonth: true,
+        changeYear: true
+        }).val();
+        $('#fecha_fin').datepicker({ 
+        dateFormat: 'yy-mm-dd', 
+        changeMonth: true,
+        changeYear: true
+        }).val();
+    </script>
+@endsection

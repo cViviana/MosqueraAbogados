@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class valFormRegCaso extends FormRequest
+class valFormEditarCaso extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -30,6 +30,7 @@ class valFormRegCaso extends FormRequest
             'estado'=> 'required|in:activo,cerrado',
             'fecha_inicio'=> 'required|date',
             'fecha_fin'=> 'date|after:fecha_inicio|nullable',
+            'fecha_inicio'=> 'date|before:fecha_fin',
             'descripcion'=>'required|string|max:191',
             'abogadoPpal'=>'required',
             'cliente'=>'required|string|max:191',
@@ -46,6 +47,7 @@ class valFormRegCaso extends FormRequest
             'fecha_inicio.required' => 'La fecha de inicio es un campo obligatorio',
             'fecha_inicio.date' => 'Formato de fecha de inicio incorrecto',
             'fecha_fin.after' => 'La fecha de finalización debe ser posterior a la fecha de inicio',
+            'fecha_fin.after' => 'La fecha de inicio debe ser antes de la fecha de finalización',
             'descripcion.max' => 'La descripción debe ser menor a 191 caracteres.',
             'cliente.max' => 'Los datos del cliente debe ser menor a 191 caracteres.',
             'cliente.max' => 'Los datos de la contraparte debe ser menor a 191 caracteres.'

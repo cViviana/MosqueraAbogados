@@ -297,20 +297,7 @@
     });
 </script>
 
-  <script>
-    $('#fecha_inicio').datepicker({ 
-      dateFormat: 'yy-mm-dd', 
-      minDate: 0,
-      changeMonth: true,
-      changeYear: true
-    }).val();
-    $('#fecha_fin').datepicker({ 
-      dateFormat: 'yy-mm-dd', 
-      minDate: 1,
-      changeMonth: true,
-      changeYear: true
-    }).val();
-  </script>
+  @yield("script")
 
   <script type="application/javascript">
     $('input[type="file"]').change(function(e){
