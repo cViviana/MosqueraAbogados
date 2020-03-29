@@ -57,7 +57,7 @@
           <span class="input-group-text"><i class="far fa-file"></i></span>
       </div>
       <div class="custom-file">
-        <input type="file" class="form-control custom-file-input" id="file" name="file" required>
+        <input type="file" class="form-control custom-file-input" id="file" name="file">
         <label class="custom-file-label" for="file">Seleccionar Documento</label>
       </div>
     </div>

@@ -87,98 +87,152 @@ class DatabaseSeeder extends Seeder
 
         //USUARIOS
         DB::table('users')->insert([
-            'cedula' => '404040',
-            'nombre' => 'Orlando Mosquera',
-            'email' => 'OM@gmail.com',
-            'telefono' => '40404040',
+            'cedula' => '34617667',
+            'nombre' => 'Orlando De Jesus Mosquera Solarte',
+            'email' => 'omosquera@unicauca.edu.co',
+            'telefono' => '3122894603',
             'password' => Hash::make('proyecto1'),
         ]);
 
-        $user = User::find('404040');
+        $user = User::find('34617667');
         $user->assignRole('Abogado jefe');
 
 
         DB::table('users')->insert([
-            'cedula' => '101010',
-            'nombre' => 'Juan Solarte',
-            'email' => 'juan@gmail.com',
-            'telefono' => '10101010',
+            'cedula' => '1061808363',
+            'nombre' => 'Juan Camilo Solarte Orozco',
+            'email' => 'juansolarteo98@gmail.com',
+            'telefono' => '3125929647',
             'password' => Hash::make('proyecto1'),
         ]);
 
-        $user = User::find('101010');
+        $user = User::find('1061808363');
         $user->assignRole('Abogado auxiliar');
 
         DB::table('users')->insert([
-            'cedula' => '202020',
-            'nombre' => 'Maria',
-            'email' => 'Maria@gmail.com',
-            'telefono' => '20202020',
+            'cedula' => '1061683462',
+            'nombre' => 'Maria Paula Aristizabal',
+            'email' => 'mparistizabal@unicauca.edu.co',
+            'telefono' => '3159827563',
             'password' => Hash::make('proyecto1'),
         ]);
 
-        $user = User::find('202020');
+        $user = User::find('1061683462');
         $user->assignRole('Secretaria');
 
         //CLIENTES
 
         DB::table('cliente')->insert([
-            'numero' => '606060',
-            'nombre' => 'Viviana',
+            'numero' => '1061543413',
+            'nombre' => 'Leidy Viviana Cortes',
             'tipo' => 'natural',
-            'telefono' => '606060',
-            'email' => 'viviana@gmail.com',
+            'telefono' => '3209426518',
+            'email' => 'leidy@gmail.com',
             'roll' => 'cliente',
         ]);
 
         DB::table('cliente')->insert([
-            'numero' => '707070',
-            'nombre' => 'Victor',
+            'numero' => '1061689213',
+            'nombre' => 'Jhon Melo',
+            'tipo' => 'natural',
+            'telefono' => '317389449',
+            'email' => 'JhonM@gmail.com',
+            'roll' => 'cliente',
+        ]);
+
+        DB::table('cliente')->insert([
+            'numero' => '10617820124',
+            'nombre' => 'Victor Rendon',
             'tipo' => 'juridica',
-            'telefono' => '70707070',
+            'telefono' => '8203018',
             'email' => 'victor@gmail.com',
             'roll' => 'contraparte',
         ]);
 
         DB::table('cliente')->insert([
-            'numero' => '808080',
-            'nombre' => 'Angelica',
+            'numero' => '1061739120',
+            'nombre' => 'Angelica Pinto',
             'tipo' => 'natural',
-            'telefono' => '80808080',
+            'telefono' => '3019329123',
             'email' => 'angelica@gmail.com',
             'roll' => 'contraparte'
         ]);
 
         //UBICACIÓN
         DB::table('ubicacion_fisica')->insert([
-            'numArchivero' => '10',
+            'numArchivero' => '1',
+            'numGaveta' => '1'
+        ]);
+
+        DB::table('ubicacion_fisica')->insert([
+            'numArchivero' => '1',
+            'numGaveta' => '2'
+        ]);
+
+        DB::table('ubicacion_fisica')->insert([
+            'numArchivero' => '11',
             'numGaveta' => '15'
         ]);
 
         DB::table('ubicacion_fisica')->insert([
             'numArchivero' => '20',
-            'numGaveta' => '20'
+            'numGaveta' => '26'
+        ]);
+
+        DB::table('ubicacion_fisica')->insert([
+            'numArchivero' => '1',
+            'numGaveta' => '2'
+        ]);
+
+        DB::table('ubicacion_fisica')->insert([
+            'numArchivero' => '3',
+            'numGaveta' => '8'
+        ]);
+
+        DB::table('ubicacion_fisica')->insert([
+            'numArchivero' => '3',
+            'numGaveta' => '7'
         ]);
 
         //TIPO DOCUMENTO
         DB::table('tipo_documento')->insert([
-            'nombre' => 'familia'
+            'nombre' => 'Sociedades civiles'
         ]);
 
         DB::table('tipo_documento')->insert([
-            'nombre' => 'legal'
+            'nombre' => 'Sociedades mercantiles'
         ]);
 
+        DB::table('tipo_documento')->insert([
+            'nombre' => 'Acta de constitución'
+        ]);
+
+        DB::table('tipo_documento')->insert([
+            'nombre' => 'Legalidad'
+        ]);
+
+        DB::table('tipo_documento')->insert([
+            'nombre' => 'Firmas personales'
+        ]);
         //CASO
 
         DB::table('caso')->insert([
-            'radicado' => '1111',
+            'radicado' => '98124',
             'estado' => 'activo',
             'fecha_inicio' => '2020-04-06',
-            'descripcion' => 'prueba1',
+            'descripcion' => 'Perdida de bienes',
+            'cliente' => '1061543413',
+            'contraparte' => '10617820124'
+        ]);
+
+        DB::table('caso')->insert([
+            'radicado' => '16124',
+            'estado' => 'activo',
+            'fecha_inicio' => '2020-03-31',
+            'descripcion' => 'Denuncia de acoso sexual',
             'fecha_fin' => '2020-04-15',
-            'cliente' => '606060',
-            'contraparte' => '707070'
+            'cliente' => '1061689213',
+            'contraparte' => '1061739120'
         ]);
 
         //DOCUMENTO

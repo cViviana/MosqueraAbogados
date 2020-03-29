@@ -26,12 +26,10 @@ class Documento extends Model
     //esta funcion guarda en la base de datos en la tabla documento , previamente debe estar creado el
     //tipo de documento y la ubicacion fisica
     public function guardar(Documento $doc , $radicado,$tipo, $ubicacion, $request){
-
         //Subimos el archivo con FileController y nos retorna la request con el path
         $file = new FileController;
         $path = $file->store($request);
         $doc->path = Crypt::encryptString($path);
-
         if($path != null){
           $doc->docCorrespondeTipo()->associate($tipo);
           $doc->docEstaUbicacion()->associate($ubicacion);
@@ -43,7 +41,26 @@ class Documento extends Model
           return false;
         }
     }
-
+    public function actualizarDocumento($nuevoDoc)
+    {
+      //dd($nuevoDoc);
+      $doc=$this->buscar($nuevoDoc->id);
+      if($doc != null){
+        $doc->docCorrespondeTipo()->dissociate($doc->tipo_id);
+        $doc->docCorrespondeTipo()->associate($nuevoDoc->tipo_id);
+        $doc->docEstaUbicacion()->dissociate($doc->ubicacion_id);
+        $doc->docEstaUbicacion()->associate($nuevoDoc->ubicacion_id);
+        $doc->docCaso()->dissociate($doc->radicado_doc);
+        $doc->docCaso()->associate($nuevoDoc->radicado_doc);
+        $doc->descripcion = $nuevoDoc->descripcion;
+        $doc->timestamps = false;
+        $doc->save();
+        return true;
+      }else{
+        $men = " Error al  actualizar el documento";
+        return redirect()->route('listarDocumentosRadicado',$nuevoDoc->radicado_doc)->with('men',$men);
+      }
+    }
     public function listarDocumentos($radicado)
     {
       return $this::with(['docCorrespondeTipo:id,nombre','docEstaUbicacion:id,numArchivero,numGaveta'])->where('radicado_doc','=',$radicado)->get();
