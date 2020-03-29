@@ -69,17 +69,18 @@ class Caso extends Model
     }
 
     Public function actualizarPivote(Caso $objCaso,$abogadoPpal, $abogadoAux){
+      $objAbogadoAuxReal = new User;
+      $objAbogadoAuxReal= $objAbogadoAuxReal->buscar($abogadoAux);
       $usuarios = DB::table('dirige')->where('dir_radicado', $objCaso->radicado)->select('dir_cedula')->get();
       $numUsuario=$usuarios->count();
       $objCaso->dirige()->detach($usuarios->first());
-
-      if($abogadoAux != $abogadoPpal && $abogadoAux != '* Auxiliar 1' ){
+      if($abogadoAux != $abogadoPpal && $objAbogadoAuxReal != null ){
          if($numUsuario==2){
            $objCaso->dirige()->detach($usuarios->last());
          }
          $objCaso->dirige()->attach($abogadoAux);
       }
-      if($abogadoAux == '* Auxiliar 1' && $numUsuario == 2){
+      if($objAbogadoAuxReal == null && $numUsuario == 2){
         $objCaso->dirige()->detach($usuarios->last());
       }
         $objCaso->dirige()->attach($abogadoPpal);
