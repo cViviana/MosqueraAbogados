@@ -36,4 +36,17 @@ class valFormRegCaso extends FormRequest
         ];
     }
 
+    public function messages()
+    {
+        return [
+            'radicado.max' => 'El número de radicado debe ser menor a 191 dígitos.',
+            'estado.required' => 'El estado del caso es un campo obligatorio',
+            'abogadoPpal.required' => 'El campo de Abogado Principal del caso es obligatorio',
+            'fecha_inicio.required' => 'La fecha de inicio es un campo obligatorio',
+            'fecha_inicio.date' => 'Formato de fecha de inicio incorrecto',
+            'descripcion.max' => 'La descripción debe ser menor a 191 caracteres.',
+            'cliente.max' => 'Los datos del cliente debe ser menor a 191 caracteres.',
+            'cliente.max' => 'Los datos de la contraparte debe ser menor a 191 caracteres.'
+        ];
+    }
 }
