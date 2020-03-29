@@ -69,7 +69,7 @@ class userController extends Controller
                 return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeNoEliminado', $mensajeNoEliminado);
             }
         }catch(Exception $e){
-            $mensajeNoEliminado = "El usuario no pude ser eliminado ya que pertenece a un caso judicial de la firma.";
+            $mensajeNoEliminado = "El usuario no puede ser eliminado ya que pertenece a un caso judicial de la firma.";
             return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeNoEliminado', $mensajeNoEliminado);
         }
     }
@@ -92,7 +92,8 @@ class userController extends Controller
             if($destino == 'actualizar')
                 return view('administrador.usuarios.editarUsuario', ['User' => $objUser] );
         }else{
-            dd('el usuario no existe, no sea estupido');
+            $mensajeNoExiste = "El usuario no existe";
+            return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeNoExiste', $mensajeNoExiste);
         }
     }
 
@@ -118,7 +119,7 @@ class userController extends Controller
                 return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeRolErroneo', $mensajeRolErroneo);
             }
         }else{
-            $mensajeRolNoAsignado = "La cedula del usuario no existe";
+            $mensajeRolNoAsignado = "La cédula del usuario no existe";
             return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeRolNoAsignado', $mensajeRolNoAsignado);
         }
     }

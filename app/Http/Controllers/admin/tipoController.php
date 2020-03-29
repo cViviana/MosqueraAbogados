@@ -22,7 +22,7 @@ class tipoController extends Controller
       $objTipo = $this->buscar($id);
       if($objTipo != null ){
         $objTipo->eliminar($objTipo);
-        $mensajeEliminado = "Éxito. El tipo de documento fue eliminado con satisfación.";
+        $mensajeEliminado = "Éxito. El tipo de documento fue eliminado con satisfacción.";
         return redirect()->route('listarTiposDocumentos')->with(["men" => $mensajeEliminado, "TiposDocumentos" => $this->listar()]);
       }else{
         $mensajeNoEliminado = "El identificador ingresado es inválido.";
@@ -39,7 +39,7 @@ class tipoController extends Controller
     if( $objTipo != null ){
       $objTipo->fill($request->all());
       $objTipo->guardar($objTipo);
-      $men = "Éxito. Se actualizaron los datos de forma éxitosa.";
+      $men = "Éxito. Se actualizaron los datos de forma exitosa.";
       return redirect()->route('listarTiposDocumentos')->with(["men" => $men, "TiposDocumentos" => $this->listar()]);
     }else{
       $mensajeNoActualizacion = "El identificador ingresado es inválido.";

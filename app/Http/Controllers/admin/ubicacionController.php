@@ -45,7 +45,7 @@ class ubicacionController extends Controller
         if( $objUbicacion != null){
           $objUbicacion->fill($request->all());
           $objUbicacion->guardar($objUbicacion);
-          $mensajeActualizacion = "Éxito. Se actualizaron los datos de forma éxitosa.";
+          $mensajeActualizacion = "Éxito. Se actualizaron los datos de forma exitosa.";
           return redirect()->route('listarUbicaciones')->with(["men" => $mensajeActualizacion, "ubicaciones" => $this->listar()]);
         }else{
           $mensajeNoActualizacion="El identificador ingresado es inválido.";
