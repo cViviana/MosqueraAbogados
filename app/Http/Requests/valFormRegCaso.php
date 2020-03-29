@@ -35,16 +35,4 @@ class valFormRegCaso extends FormRequest
         ];
     }
 
-    public function messages(){
-      return [
-        'radicado.'=>'Esta el radicado',
-        'tipo'=> 'tipo esta cerrado',
-        'fecha_inicio'=> 'fecha inicio mal',
-        'fecha_fin' => 'fecha fin mal ',
-        'descripcion'=>'des mal',
-        'cliente'=>' malo cliente',
-        'contraparte'=>'malo contraparte',
-
-      ];
-    }
 }
