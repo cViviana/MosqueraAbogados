@@ -103,7 +103,7 @@
         <div id="tipodocumentos" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item @yield("resaltar-crearTipoDocumento")" href="{{route('crearTipoDocumento')}}">Crear un tipo</a>
-            <a class="collapse-item @yield("resaltar-listarTiposDocumentos")" href="{{route('listarTiposDocumentos')}}">Listar tipos de documentos</a>
+            <a class="collapse-item @yield("resaltar-listarTiposDocumentos")" href="{{route('listarTiposDocumentos')}}">Listar tipos <br> de documentos</a>
           </div>
         </div>
       </li>
