@@ -10,6 +10,7 @@
     <p>Nombre: <strong>{!!$nombre!!}</strong></p>
     <p>Correo: <strong>{!!$email!!}</strong></p>
     <p>Asunto: <strong>{!!$asunto!!}</strong></p>
+    <p>telefono: <strong>{!!$telefono!!}</strong></p>
     <p>Mensaje: <strong>{!!$mensaje!!}</strong></p>
 </body>
 </html>
