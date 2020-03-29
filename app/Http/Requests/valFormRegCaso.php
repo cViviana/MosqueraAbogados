@@ -29,6 +29,7 @@ class valFormRegCaso extends FormRequest
             'radicado'=>'required|string|max:191',
             'estado'=> 'required|in:activo,cerrado',
             'fecha_inicio'=> 'required|date',
+            'fecha_fin'=> 'date|after:fecha_inicio|nullable',
             'descripcion'=>'required|string|max:191',
             'abogadoPpal'=>'required',
             'cliente'=>'required|string|max:191',
