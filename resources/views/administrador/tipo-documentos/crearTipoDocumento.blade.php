@@ -5,6 +5,17 @@
 @section('titulo','Información de Tipo de Documento')
 @section('titulo-formulario', "CREAR UN TIPO DE DOCUMENTO")
 
+@section('contenedor-mensajes')
+    @if (session()->has('menError'))
+        <div class="alert alert-danger animated fadeIn">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{session('menError')}}
+        </div>
+    @endif
+@endsection
+
 @section("formulario")
   <form action="{{route('agregarTipoDocumento')}}"class="texto_campos" method="post">
   {{csrf_field()}}

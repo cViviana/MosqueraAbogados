@@ -23,13 +23,11 @@
         </div>
     @endif
     @if (session()->has('mensajeRolErroneo'))
-        <div class="flash-message">
-            <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                {{session('mensajeRolErroneo')}}
-            </div>
+        <div class="alert alert-danger animated fadeIn">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{session('mensajeRolErroneo')}}
         </div>
     @endif
     @if (session()->has('mensajeRolNoAsignado'))

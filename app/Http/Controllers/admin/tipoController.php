@@ -18,7 +18,7 @@ class tipoController extends Controller
       return redirect()->route('crearTipoDocumento')->with('men', $men);
     }catch(Exception $e){
       $menError = "Este tipo de documento ya se encuentra registrado.";
-      return redirect()->route('crearTipoDocumento')->with('men', $menError);
+      return redirect()->route('crearTipoDocumento')->with('menError', $menError);
     }
   }
 
@@ -44,7 +44,7 @@ class tipoController extends Controller
       $objTipo = $this->buscar($request->id);
       if( ($objTipo->id == $request->id) && ($objTipo->nombre == $request->nombre) ){
         $mensajeNoActualizacion = "No se presentó ninguna actualización";
-        return redirect()->route('listarTiposDocumentos')->with(["men" => $mensajeNoActualizacion, "TiposDocumentos" => $this->listar()]);
+        return redirect()->route('listarTiposDocumentos')->with(["mensajeNoActualizacion" => $mensajeNoActualizacion, "TiposDocumentos" => $this->listar()]);
       }
   
       if( $objTipo != null ){
