@@ -87,8 +87,13 @@ class userController extends Controller
     public function userControlador($cedula,$destino){
         $objUser = $this->buscar($cedula);
         if($objUser != null){
-            if($destino == 'asignarRol')
-                return view('administrador.usuarios.rol', ['User' => $objUser] );
+            if($destino == 'asignarRol'){
+                if(auth()->user()->can('crear'))
+                    return view('administrador.usuarios.rol', ['User' => $objUser] );
+                else
+                    return redirect()->route('accesoDenegado');
+            }
+
             if($destino == 'actualizar')
                 return view('administrador.usuarios.editarUsuario', ['User' => $objUser] );
         }else{
