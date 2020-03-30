@@ -24,7 +24,7 @@ class clienteController extends Controller
             $mensajeRegistro = "Éxito. ". $request->nombre ." con identificación ".
                         $request->numero ." ha sido registrado.";
 
-            return redirect()->route($ruta)->with('mensajeRegistro', $mensajeRegistro);
+            return redirect()->route($ruta)->with('men', $mensajeRegistro);
         }else{
             $mensajeNoRegistro = "Ya existe la identificación ". $request->numero ." del cliente ".
                         $request->nombre;
