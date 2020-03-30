@@ -5,6 +5,27 @@
 @section('titulo','Información de documentos')
 @section('titulo-listar', 'LISTADO DE DOCUMENTOS')
 
+@section('contenedor-mensajes')
+    @if (session()->has('mensajeNoActualizacion'))
+        <div class="alert alert-danger animated fadeIn">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{session('mensajeNoActualizacion')}}
+        </div>
+    @endif
+@endsection
+@section('contenedor-mensajes')
+    @if (session()->has('mensajeNoEliminado'))
+        <div class="alert alert-danger animated fadeIn">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{session('mensajeNoEliminado')}}
+        </div>
+    @endif
+@endsection
+
 @section("nombre-campos-columnas")
     <th scope="col">Núm. Radicado</th>
     <th scope="col">Cliente</th>

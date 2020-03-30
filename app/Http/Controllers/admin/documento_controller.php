@@ -28,15 +28,15 @@ class documento_controller extends Controller
        $objDocumento = new Documento($request->all());
        $guardar = $objDocumento->guardar($objDocumento,$request->radicado_doc,$request->tipo_id,$request->ubicacion_id,$request);
        if($guardar == true){
-         $men = "Documento guardado correctamente";
-         return redirect()->route('subirDocumento')->with('men',$men);
+         $men = "Éxito. Documento guardado correctamente";
+         return redirect()->route('subirDocumento')->with('men', $men);
        }else{
-            $men = "Su documento no pudo ser guardado. Intente de nuevo.";
-            return redirect()->route('subirDocumento')->with('men',$men);
+            $mensajeNoRegistro = "Su documento no pudo ser guardado. Intente de nuevo.";
+            return redirect()->route('subirDocumento')->with('mensajeNoRegistro', $mensajeNoRegistro);
        }
     }else{
-         $men = "Ubicación Física - Tipo Documento - Radicado Incorrecto";
-         return redirect()->route('subirDocumento')->with('men',$men);
+         $mensajeNoRegistro = "Ubicación Física - Tipo Documento - Radicado Incorrecto";
+         return redirect()->route('subirDocumento')->with('mensajeNoRegistro',$mensajeNoRegistro);
     }
 
    }
@@ -83,13 +83,14 @@ class documento_controller extends Controller
      if($request->file != null){
        $doc->eliminar($request->id);
        $this->guardarControlador($request);
-       $men = "Se actualizó correctamente el documento";
+       $men = "Éxito. Se actualizó correctamente el documento.";
      }else{
       if($this->validarGuardar($request)== true){
             $doc=$doc->actualizarDocumento($request);
-            $men = "Se actualizó correctamente el documento";
+            $men = "Éxito. Se actualizó correctamente el documento.";
         }else {
-          $men = "Error al actuli el documento";
+          $mensajeNoActualizacion = "Error al actualizar el documento.";
+          return redirect()->route('listarDocumentosRadicado',$request->radicado_doc)->with('mensajeNoActualizacion',$mensajeNoActualizacion);
         }
      }
      return redirect()->route('listarDocumentosRadicado',$request->radicado_doc)->with('men',$men);
@@ -123,8 +124,8 @@ class documento_controller extends Controller
         $men = "Se eliminó correctamente el documento ".$nombre;
         return redirect()->route('listarDocumentosRadicado',$radicado)->with('men',$men);
       }else{
-        $men = "Error a al eliminar el documento ".$nombre.".Intente nuevamente";
-        return redirect()->route('listarDocumentosRadicado',$radicado)->with('men',$men);
+        $mensajeNoEliminado = "Error a al eliminar el documento ".$nombre.". Intente nuevamente";
+        return redirect()->route('listarDocumentosRadicado',$radicado)->with('mensajeNoEliminado', $mensajeNoEliminado);
       }
    }
 }
