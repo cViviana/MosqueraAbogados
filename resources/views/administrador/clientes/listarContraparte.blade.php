@@ -43,14 +43,14 @@
             <td>{{$cliente->telefono}}</td>
             <td>{{$cliente->email}}</td>
             <td>
-                <a href="{{route('editarCliente', $cliente->numero)}}" class="btn btn-primary">
+                <a href="{{route('editarCliente', $cliente->numero)}}" class="btn btn-primary btn-sm">
                     <i class="fas fa-user-edit"></i>
                 </a>
             </td>
             <td>
                 <form action="{{route('eliminarCliente', [$cliente->numero,'contraparte'])}}"  method="get">
                     @csrf
-                    <button class="btn btn-danger" onclick="return confirm('Esta seguro que desea eliminar')" type="submit">
+                    <button class="btn btn-danger btn-sm" onclick="return confirm('Esta seguro que desea eliminar')" type="submit">
                         <i class="fa fa-user-times" aria-hidden="true"></i>
                     </button>
                 </form>

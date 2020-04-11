@@ -40,7 +40,7 @@
         <td>{{$caso->clienteCaso->nombre}}</td>
         <td>{{$caso->clienteContraparte->nombre}}</td>
         <td>
-            <a href="{{route('listarDocumentosRadicado',$caso->radicado)}}" class="btn btn-primary">
+            <a href="{{route('listarDocumentosRadicado',$caso->radicado)}}" class="btn btn-primary btn-sm">
                 <i class="fas fa-eye"></i>
             </a>
         </td>

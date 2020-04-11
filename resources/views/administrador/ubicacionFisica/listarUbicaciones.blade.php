@@ -37,14 +37,14 @@
             <td>{{$ubicacion->numArchivero}}</td>
             <td>{{$ubicacion->numGaveta}}</td>
             <td>
-                <a href="{{route('editarUbicacion', $ubicacion->id)}}" class="btn btn-primary">
+                <a href="{{route('editarUbicacion', $ubicacion->id)}}" class="btn btn-primary btn-sm">
                     <i class="fas fa-edit"></i>
                 </a>
             </td>
             <td>
                 <form action="{{route('eliminarUbicacion', $ubicacion->id)}}"  method="get">
                 @csrf
-                    <button class="btn btn-danger" type="submit" onclick="this.parentElement.style.display='none'; return confirm('Esta seguro que desea eliminar')">
+                    <button class="btn btn-danger btn-sm" type="submit" onclick="this.parentElement.style.display='none'; return confirm('Esta seguro que desea eliminar')">
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </button>
                 </form>

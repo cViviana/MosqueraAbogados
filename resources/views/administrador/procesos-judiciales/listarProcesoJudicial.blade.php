@@ -46,12 +46,12 @@
                 @endforeach
             </td>
             <td>
-                <a href="{{route('listarDocumentosRadicado',$caso->radicado)}}" class="btn btn-info">
+                <a href="{{route('listarDocumentosRadicado',$caso->radicado)}}" class="btn btn-info btn-sm">
                 <i class="fas fa-folder-open"></i>
                 </a>
             </td>
             <td>
-                <a href="{{route('editarCaso',$caso->radicado)}}" class="btn btn-primary">
+                <a href="{{route('editarCaso',$caso->radicado)}}" class="btn btn-primary btn-sm">
                     <i class="fas fa-edit"></i>
                 </a>
             </td>

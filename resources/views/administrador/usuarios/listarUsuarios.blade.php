@@ -70,20 +70,20 @@
             <td>{{$usuario->telefono}}</td>
             <td>{{$usuario->name}}</td>
             <td>
-                <a href="{{route('buscarUsuario', [$usuario->cedula,'asignarRol'])}}" class="btn btn-info">
+                <a href="{{route('buscarUsuario', [$usuario->cedula,'asignarRol'])}}" class="btn btn-info btn-sm">
                     <!--Asginar Rol-->
                     <i class="fa fa-plus" aria-hidden="true"></i>
                 </a>
             </td>
             <td>
-                <a href="{{route('editarUsuario', [$usuario->cedula,'actualizar'])}}" class="btn btn-primary">
+                <a href="{{route('editarUsuario', [$usuario->cedula,'actualizar'])}}" class="btn btn-primary btn-sm">
                     <i class="fas fa-user-edit"></i>
                 </a>
             </td>
             <td>
                 <form action="{{route('eliminarUsuario', [$usuario->cedula])}}"  method="get">
                     @csrf
-                    <button class="btn btn-danger" onclick="return confirm('Esta seguro que desea eliminar')" type="submit">
+                    <button class="btn btn-danger btn-sm" onclick="return confirm('Esta seguro que desea eliminar')" type="submit">
                         <i class="fa fa-user-times" aria-hidden="true"></i>
                     </button>
                 </form>

@@ -70,12 +70,24 @@ a {
 .row.m0 {
   margin: 0px; }
 
+  html  {
+
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+
+}
+
 body {
   line-height: 24px;
   font-size: 14px;
   font-family: "Raleway", sans-serif;
   font-weight: 400;
-  color: #777777; }
+  color: #777777; 
+  overflow-x: hidden;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "myriad", myriad;
