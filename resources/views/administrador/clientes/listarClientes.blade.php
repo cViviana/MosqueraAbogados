@@ -48,12 +48,12 @@
                 </a>
             </td>
             <td>
-                
-                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalEliminar">
+
+                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalEliminar{{$cliente->numero}}">
                     <i class="fa fa-user-times" aria-hidden="true"></i>
                 </button>
                 <!-- Modal -->
-                <div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labelledby="modalEliminarLabel" aria-hidden="true">
+                <div class="modal fade" id="modalEliminar{{$cliente->numero}}" tabindex="0" role="dialog" aria-labelledby="modalEliminarLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -63,16 +63,16 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                Esta seguro que desea eliminar
+                                Esta seguro que desea eliminar {{$cliente->numero}}
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                                 <button type="button" class="btn btn-danger" onclick="event.preventDefault();
-                                    document.getElementById('form-eliminar-usuario').submit();" type="button" data-dismiss="modal">
+                                    document.getElementById('form-eliminar-usuario-{{$cliente->numero}}').submit();" type="button" data-dismiss="modal">
                                     Aceptar
                                 </button>
 
-                                <form id="form-eliminar-usuario" action="{{route('eliminarCliente', [$cliente->numero,'cliente'])}}" method="get" style="display: none;">
+                                <form id="form-eliminar-usuario-{{$cliente->numero}}" action="{{route('eliminarCliente', [$cliente->numero,'cliente'])}}" method="get" style="display: none;">
                                     @csrf
                                 </form>
                             </div>
