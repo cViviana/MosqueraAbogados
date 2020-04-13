@@ -43,17 +43,42 @@
             <td>{{$cliente->telefono}}</td>
             <td>{{$cliente->email}}</td>
             <td>
-                <a href="{{route('editarCliente', $cliente->numero)}}" class="btn btn-primary">
+                <a href="{{route('editarCliente', $cliente->numero)}}" class="btn btn-primary btn-sm">
                     <i class="fas fa-user-edit"></i>
                 </a>
             </td>
             <td>
-                <form action="{{route('eliminarCliente', [$cliente->numero,'cliente'])}}" method="get">
-                    @csrf
-                    <button class="btn btn-danger items" onclick="return confirm('Esta seguro que desea eliminar')" type="submit">
-                        <i class="fa fa-user-times" aria-hidden="true"></i>
-                    </button>
-                </form>
+                
+                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalEliminar">
+                    <i class="fa fa-user-times" aria-hidden="true"></i>
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labelledby="modalEliminarLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalEliminarLabel">Confirmar Accion</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Esta seguro que desea eliminar
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-danger" onclick="event.preventDefault();
+                                    document.getElementById('form-eliminar-usuario').submit();" type="button" data-dismiss="modal">
+                                    Aceptar
+                                </button>
+
+                                <form id="form-eliminar-usuario" action="{{route('eliminarCliente', [$cliente->numero,'cliente'])}}" method="get" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </td>
         </tr>
     @endforeach
