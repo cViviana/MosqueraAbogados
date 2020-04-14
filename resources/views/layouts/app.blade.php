@@ -35,7 +35,7 @@
     <div class="header_area" id="app">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-                <a class="navbar-brand logo_h" href="/"><img src="{{ asset('img/logo-2.png')}}"></a>
+                <a class="navbar-brand logo_h" href="{{route('inicio')}}"><img src="{{ asset('img/logo-2.png')}}"></a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

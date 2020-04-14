@@ -40,6 +40,12 @@
                             </button>
                         </div>
                     </div>
+                    <div class="card-footer">
+                        <div class="texto_campos d-flex justify-content-center">
+                            Los campos con  (*) son obligatorios
+                            <br>
+                        </div>
+                    </div>
                 </form>
             </div>
             

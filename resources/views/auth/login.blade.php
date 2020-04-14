@@ -46,18 +46,18 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                    <div class="d-flex justify-content-center">
-                        @if (Route::has('password.request'))
-                            <a class="btn btn-link" href="{{ route('password.request') }}">
-                                {{ __('¿Has olvidado tu contraseña?') }}
-                            </a>
-                        @endif
-                        
-                    </div>
-                    <div class="texto_campos d-flex justify-content-center">
-                        Los campos con (*) son obligatorios
-                        <br>
-                    </div>
+                        <div class="d-flex justify-content-center">
+                            @if (Route::has('password.request'))
+                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    {{ __('¿Has olvidado tu contraseña?') }}
+                                </a>
+                            @endif
+                            
+                        </div>
+                        <div class="texto_campos d-flex justify-content-center">
+                            Los campos con (*) son obligatorios
+                            <br>
+                        </div>
                     </div>
                 </form>
             </div>
