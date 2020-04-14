@@ -34,7 +34,7 @@
 
 		<!--================ Start service Area =================-->
 		<section class="service-area section_gap">
-			<div class="container"></div>
+			<div class="container-fluid">
 
 				<div class="row justify-content-center">
 					<!-- single service -->
