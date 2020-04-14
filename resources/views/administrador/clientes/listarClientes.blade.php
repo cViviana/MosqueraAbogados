@@ -38,8 +38,8 @@
     @foreach($Clientes as $cliente)
         <tr>
             <td>{{$cliente->numero}}</td>
-            <td>{{$cliente->nombre}}</td>
-            <td>{{$cliente->tipo}}</td>
+            <td style="text-transform:capitalize">{{$cliente->nombre}}</td>
+            <td style="text-transform:capitalize">{{$cliente->tipo}}</td>
             <td>{{$cliente->telefono}}</td>
             <td>{{$cliente->email}}</td>
             <td>
@@ -63,7 +63,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                Esta seguro que desea eliminar {{$cliente->numero}}
+                                Esta seguro que desea eliminar  al cliente {{$cliente->nombre}} con Identificación {{$cliente->numero}} 
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
