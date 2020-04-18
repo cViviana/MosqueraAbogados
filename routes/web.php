@@ -25,6 +25,8 @@ Route::view('/contacto','usuario-general/contacto')->name('contacto');
 
 Route::post('mail','MailController@postMail');
 
+//Route::post('index/{id}','admin\documento_controller@verDocumento')->name('index');
+
 //ROLES
 Route::view('/asignarRoll', 'auth/rol')->name('asignarRoll');
 Auth::routes();
@@ -116,7 +118,7 @@ Route::prefix('admin')->group(
     Route::get('/listarDocumentos/{radicado_doc}','admin\documento_controller@listarControlador')->name('listarDocumentosRadicado')->middleware('permiso:vista');
     Route::get('/subirDocumento','admin\documento_controller@index')->name('subirDocumento')->middleware('permiso:editar');
     Route::view('/tipoDocumento','administrador/tipoDocumento')->name('tipoDocumento')->middleware('permiso:editar');
-    Route::get('/verDocumento/{id}','admin\documento_controller@verDocumento')->name('verDocumento')->middleware('permiso:vista');
+    Route::post('/verDocumento/{id}','admin\documento_controller@verDocumento')->name('verDocumento')->middleware('permiso:vista');
     Route::get('/editarDocumento/{id}','admin\documento_controller@editarDocumento')->name('editarDocumento')->middleware('permiso:editar');
     Route::post('/guardarDocumento','admin\documento_controller@guardarControlador')->name('guardarDocumento')->middleware('permiso:editar');
     Route::post('/actualizarDocumento','admin\documento_controller@actualizarDocumento')->name('actualizarDocumento')->middleware('permiso:editar');

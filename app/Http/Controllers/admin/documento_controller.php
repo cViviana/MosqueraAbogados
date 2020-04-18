@@ -60,9 +60,8 @@ class documento_controller extends Controller
    {
      $doc = new Documento;
      $direccion = $doc->verDoc($id);
-     //dd($direccion);
      $file = new FileController;
-     $file->index($direccion);
+     return $file->index($direccion);
    }
 
    public function editarDocumento($id)

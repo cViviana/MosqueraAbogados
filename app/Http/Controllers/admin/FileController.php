@@ -4,18 +4,20 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\File;
-use App\Documento;
 use Illuminate\Support\Facades\Storage;
 use Aws\S3\Exception\S3Exception as S3;
 
 class FileController extends Controller
 {
+   /**
+   * Display a listing of the resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
   public function index($direccion)
   {
     try{
       return Storage::disk('s3')->response($direccion);
-
     }catch (S3 $e){
       return $e;
     }
@@ -43,7 +45,7 @@ class FileController extends Controller
   {
       // Retornamos una descarga especificando el driver dropbox
       // e indicándole al método download el nombre del archivo.
-      return Storage::disk('dropbox')->download($file);
+      return Storage::disk('s3')->download($file);
   }
 
   public function destroy($file)
