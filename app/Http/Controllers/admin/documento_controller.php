@@ -59,8 +59,10 @@ class documento_controller extends Controller
    public function verDocumento($id)
    {
      $doc = new Documento;
-     $path = $doc->verDoc($id);
-     return redirect($path);
+     $direccion = $doc->verDoc($id);
+     //dd($direccion);
+     $file = new FileController;
+     $file->index($direccion);
    }
 
    public function editarDocumento($id)

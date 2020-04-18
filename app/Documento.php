@@ -28,13 +28,13 @@ class Documento extends Model
     public function guardar(Documento $doc , $radicado,$tipo, $ubicacion, $request){
         //Subimos el archivo con FileController y nos retorna la request con el path
         $file = new FileController;
-        $path = $file->store($request);
-        $doc->path = Crypt::encryptString($path);
-        if($path != null){
+        $nombreArchivo = $file->store($request);
+        $doc->path = Crypt::encryptString($radicado.'/'.$nombreArchivo);
+        if($nombreArchivo != null){
           $doc->docCorrespondeTipo()->associate($tipo);
           $doc->docEstaUbicacion()->associate($ubicacion);
           $doc->docCaso()->associate($radicado);
-          $doc->nombreArchivo = $request->file('file')->getClientOriginalName();
+          $doc->nombreArchivo = $nombreArchivo;
           $doc->save();
           return true;
         }else{
@@ -75,8 +75,8 @@ class Documento extends Model
     public function verDoc($id)
     {
       $doc = $this->buscar($id);
-      $path = Crypt::decryptString($doc->path);
-      return $path;
+      $direccion = Crypt::decryptString($doc->path);
+      return $direccion;
     }
 
     public function buscar($id)

@@ -7,46 +7,35 @@ use Illuminate\Http\Request;
 use App\File;
 use App\Documento;
 use Illuminate\Support\Facades\Storage;
-use Spatie\Dropbox\Client;
-use Spatie\Dropbox\Exceptions\BadRequest;
+use Aws\S3\Exception\S3Exception as S3;
 
 class FileController extends Controller
 {
-  public function __construct()
+  public function index($direccion)
   {
-      // Necesitamos obtener una instancia de la clase Client la cual tiene algunos métodos
-      // que serán necesarios.
     try{
-      $this->dropbox = Storage::disk('dropbox')->getDriver()->getAdapter()->getClient();
-    }catch (BadRequest $e){
-      $men = "Error en el Dropbox";
-      return redirect()->route('subirDocumento')->with('men',$men);
+      return Storage::disk('s3')->response($direccion);
+
+    }catch (S3 $e){
+      return $e;
     }
   }
 
   public function store(Request $request)
   {
       try{
-        // Guardamos el archivo indicando el driver y el método putFileAs el cual recibe
-        // el directorio donde será almacenado, el archivo y el nombre.
-        // ¡No olvides validar todos estos datos antes de guardar el archivo!
+        if($request->hasFile('file')) {
 
-        Storage::disk('dropbox')->putFileAs(
-            '/'.$request->radicado_doc.'/',
-            $request->file('file'),
-            $request->file('file')->getClientOriginalName()
-        );
-        //dd($request->file('file')->getClientOriginalName());
+           $nombreArchivo = $request->file('file')->getClientOriginalName();
 
-        // Creamos el enlace publico en dropbox utilizando la propiedad dropbox
-        // definida en el constructor de la clase y almacenamos la respuesta.
-        $response = $this->dropbox->createSharedLinkWithSettings(
-            '/'.$request->radicado_doc.'/'.$request->file('file')->getClientOriginalName(),
-            ["requested_visibility" => "public"]
-        );
-        //$request["path"] = $response['url'];
-        return $response['url'];
-      }catch (BadRequest $e){
+           $direccion = $request->radicado_doc.'/'.$nombreArchivo;
+
+           //Guardar el archivo
+           Storage::disk('s3')->put($direccion, fopen($request->file('file'), 'r+'));
+
+           return $nombreArchivo;
+        }
+      }catch (S3 $e){
         return null;
       }
   }
@@ -62,7 +51,7 @@ class FileController extends Controller
       // Eliminamos el archivo en dropbox llamando a la clase
       // instanciada en la propiedad dropbox.
     try{
-      $this->dropbox->delete($file);
+      Storage::disk('s3')->delete($file);
     }catch (BadRequest $e){
       $men = "Error en el Dropbox al eliminar documento";
       return redirect()->route('subirDocumento')->with('men',$men);

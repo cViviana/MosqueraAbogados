@@ -28,7 +28,7 @@
             </a>
         </td>
         <td>
-            <a href="{{route('verDocumento',$doc->id)}}" class="btn btn-primary btn-sm" target="_blank">
+            <a href="{{route('verDocumento',$doc->id)}}" class="btn btn-primary btn-sm" target="_blank" enctype="multipart/form-data">
                 <i class="fas fa-eye"></i>
             </a>
         </td>

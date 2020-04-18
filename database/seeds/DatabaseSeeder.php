@@ -180,11 +180,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('ubicacion_fisica')->insert([
-            'numArchivero' => '1',
-            'numGaveta' => '2'
-        ]);
-
-        DB::table('ubicacion_fisica')->insert([
             'numArchivero' => '3',
             'numGaveta' => '8'
         ]);
