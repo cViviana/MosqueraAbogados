@@ -28,14 +28,13 @@
             </a>
         </td>
         <td>
-            <div class="card-body">
-                <form action="{{route('verDocumento', $doc->id) }}" method="post" enctype="multipart/form-data">
+            <form action="{{route('verDocumento', $doc->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    <input type="submit" class="btn btn-primary">
-                </form>
-            </div>
-
-
+                    <button class="btn btn-success btn-sm">
+                        <i class="fas fa-book-reader"></i>
+                    </button>
+                    
+            </form>
         </td>
         <td>
             <form action="{{route('eliminarDocumento',$doc->id)}}"  method="get">
