@@ -55,6 +55,10 @@ class userController extends Controller
             $objUser = $this->buscar($cedula);
             $mensajeNoEliminado = "";
             if ($objUser != null){
+                if(auth()->user()->cedula == $objUser->cedula){
+                    $mensajeNoEliminado = "El perfil con sesión actual no puede ser eliminado";
+                    return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeNoEliminado', $mensajeNoEliminado);
+                }
                 $eliminado = $objUser->eliminar($objUser);
                 if($eliminado){
                     $mensajeEliminado = "El usuario se eliminó de forma satisfactoria.";
@@ -72,12 +76,6 @@ class userController extends Controller
             $mensajeNoEliminado = "El usuario no puede ser eliminado ya que pertenece a un caso judicial de la firma.";
             return redirect()->route('listarUsuarios', ['Usuarios' => $this->listar()])->with('mensajeNoEliminado', $mensajeNoEliminado);
         }
-    }
-
-    //eliminar metodo
-    public function editarControlador($cedula){
-        $objUser = $this->buscar($cedula); //enviar el la ruta $objUser
-        return view('administrador.usuarios.editarUsuario');
     }
 
     //userControlador sera un metodo en el cual nos permitira buscar y retornar
