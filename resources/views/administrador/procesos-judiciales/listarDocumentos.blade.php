@@ -66,7 +66,7 @@
                                     <tr>
                                         <th scope="row">Leer</th>
                                         <td>
-                                            <form action="{{route('verDocumento', $doc->id) }}" method="post" enctype="multipart/form-data">
+                                            <form action="{{route('verDocumento', $doc->id) }}" method="post" target="_blank" >
                                                 @csrf
                                                 <button class="btn btn-success btn-sm">
                                                     <i class="fas fa-book-reader"></i>
@@ -124,7 +124,7 @@
                 </div>
             </div>
         </td>
-                                    
+
         <!---<td>{{$doc->docEstaUbicacion->numArchivero}} - {{$doc->docEstaUbicacion->numGaveta}}</td>
         <td>{{$doc->docCorrespondeTipo->nombre}}</td>
         <td>{{$doc->descripcion}}</td>
