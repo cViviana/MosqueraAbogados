@@ -20,8 +20,9 @@ class casoController extends Controller
       $listaContraparte = new Cliente;
       $Contraparte = $listaContraparte->listarPorRoll('contraparte');
       $listaUsuarios = new User;
-      $Usuarios = $listaUsuarios->listar();
-      return view('administrador.procesos-judiciales.registrarProcesoJudicial', compact('Clientes','Contraparte','Usuarios') );
+      $abogadosJefe = $listaUsuarios->listarPorRollUsuario(1);
+      $abogadosAux = $listaUsuarios->listarPorRollUsuario(2);
+      return view('administrador.procesos-judiciales.registrarProcesoJudicial', compact('Clientes','Contraparte','abogadosJefe','abogadosAux') );
     }
 
     public function guardar(valFormRegCaso $request){
@@ -125,8 +126,9 @@ class casoController extends Controller
           $listaContraparte = new Cliente;
           $Contraparte = $listaContraparte->listarPorRoll('contraparte');
           $listaUsuarios = new User;
-          $Usuarios = $listaUsuarios->listar();
-            return view('administrador.procesos-judiciales.editarProcesoJudicial', compact('caso','Clientes','Contraparte','Usuarios'));
+          $abogadosJefe = $listaUsuarios->listarPorRollUsuario(1);
+          $abogadosAux = $listaUsuarios->listarPorRollUsuario(2);
+            return view('administrador.procesos-judiciales.editarProcesoJudicial', compact('caso','Clientes','Contraparte','abogadosJefe','abogadosAux'));
         }else{
           $mensajeNoActualizacion ="No existe un caso con el radicado: ".$caso. " para editar";
           return redirect()->route('listarCasos')->with('mensajeNoActualizacion', $mensajeNoActualizacion);
@@ -137,4 +139,5 @@ class casoController extends Controller
       $objCaso = new Caso();
       return $objCaso->buscar($radicado);
     }
+
 }

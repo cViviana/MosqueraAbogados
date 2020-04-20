@@ -58,7 +58,7 @@ class User extends Authenticatable
     }
 
     public function eliminar(User $objUser){
-      
+
       //si vamos a eliminar un usuario hay q verificar que la firman no se  vaya
       //a quedar sin un abogado jefe
 
@@ -76,7 +76,7 @@ class User extends Authenticatable
     public function existeRestriccionJefe(User $objUser){
       //traemos la lista de todos los usuarios con su rol llamando a "listar()"
       $array =  ($this->listar())->all();
-      
+
       //la variable contador nos servira para conocer si existen mas de 1 jefe y asi nos permitira
       //eliminarlo, la variable bandera nos servira para conocer si el usuario es jefe
       $contador = 0;
@@ -101,17 +101,15 @@ class User extends Authenticatable
     }
 
     public function listar(){
-      
+
       //Realizamos una consulta interna para obtener el nombre del rol en el caso que el usario tenga
       //uno, despues hacemos un rightjoin para poder imprimir los usuarios que tenga un rol y
-      //los que aun no se les alla asignado uno.
-
+      //los que aun no se les haya asignado uno.
       $usuarios = DB::table(
-
         //realizamos un doble join con el objetivo de mostrar el nombre del rol del usuario
         DB::table('model_has_roles')->join('users', 'model_id' , '=' ,'cedula')
         ->join('roles','role_id','=','id')
-        ->select('model_has_roles.model_id','users.cedula','users.nombre','users.email','users.telefono','roles.name')
+        ->select('model_has_roles.model_id','model_has_roles.role_id','users.cedula','users.nombre','users.email','users.telefono','roles.name')
 
       )->rightJoin('users','model_id','=','users.cedula')->get();
 
@@ -139,7 +137,14 @@ class User extends Authenticatable
     }
 
     public function cambiarContraseña(User $objUser, $password){
-      
+
+    }
+
+    public function listarPorRollUsuario($value)
+    {
+      $collection= $this->listar();
+      $filtered = $collection->where('role_id', $value);
+      return $filtered;
     }
 
 }

@@ -21,7 +21,7 @@
     {{csrf_field()}}
          <div class="row">
             <div class="col-md-6">
-                <div class="form-group texto"> 
+                <div class="form-group texto">
                     IDENTIFICACIÓN DEL PROCESO
                 </div>
             </div>
@@ -40,7 +40,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <div class="form-group texto"> 
+                <div class="form-group texto">
                     <br>
                     ABOGADOS A CARGO
                 </div>
@@ -48,13 +48,13 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <div class="form-group texto"> 
+                <div class="form-group texto">
                     <select class="form-control select2 select2-hidden-accessible @error('abogadoPpal') is-invalid @enderror" name='abogadoPpal' id='abogadoPpal' style="width: 100%;" tabindex="-1" aria-hidden="true" value= "{{ old('abogadoPpal') }}">
                     <option disabled selected>* Abogado Principal</option>
-                    <@foreach ($Usuarios as $us)
-                        <option value= {{$us->cedula}}>{{$us->cedula}} - {{$us->nombre}}</option>
+                    <@foreach ($abogadosJefe as $usa)
+                        <option value= {{$usa->cedula}}>{{$usa->cedula}} - {{$usa->nombre}}</option>
                     @endforeach
-                    </select> 
+                    </select>
                     @error('abogadoPpal')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -63,13 +63,13 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="input-group texto"> 
+                <div class="input-group texto">
                     <select class="form-control select2 select2-hidden-accessible @error('abogadoAux') is-invalid @enderror" name='abogadoAux' id='abogadoAux'style="width: 100%;" tabindex="-1" aria-hidden="true" value= "{{ old('abogadoPpal') }}">
                         <option selected>Abogado Auxiliar</option>
-                        <@foreach ($Usuarios as $us)
+                        <@foreach ($abogadosAux as $us)
                         <option value= {{$us->cedula}}>{{$us->cedula}} - {{$us->nombre}}</option>
                         @endforeach
-                    </select> 
+                    </select>
                     @error('abogadoAux')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -80,20 +80,20 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <div class="form-group texto"> 
+                <div class="form-group texto">
                     PARTES INVOLUCRADAS
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <div class="form-group texto"> 
+                <div class="form-group texto">
                     <select class="form-control select2 select2-hidden-accessible @error('cliente') is-invalid @enderror"  name='cliente' id='cliente' style="width: 100%;" tabindex="-1" aria-hidden="true" value= "{{ old('abogadoPpal') }}">
                         <option disabled selected>* Cliente</option>
                         @foreach ($Clientes as $cli)
                         <option value= {{$cli->numero}}>{{$cli->numero}} - {{$cli->nombre}}</option>
                         @endforeach
-                    </select> 
+                    </select>
                     @error('cliente')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -102,13 +102,13 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="input-group texto"> 
+                <div class="input-group texto">
                     <select class="form-control select2 select2-hidden-accessible @error('contraparte') is-invalid @enderror" name='contraparte' id='contraparte' style="width: 100%;" tabindex="-1" aria-hidden="true" value= "{{ old('abogadoPpal') }}">
                         <option disabled selected>* Contraparte</option>
                         @foreach ($Contraparte as $contr)
                         <option value= {{$contr->numero}}>{{$contr->numero}} - {{$contr->nombre}}</option>
                         @endforeach
-                    </select> 
+                    </select>
                     @error('contraparte')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -119,12 +119,12 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <div class="form-group texto"> 
+                <div class="form-group texto">
                     DATOS DEL PROCESO
                 </div>
             </div>
         </div>
-        
+
         <div class="input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-tasks"></i></span>
@@ -170,7 +170,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
             </div>
-            <input type="text" name='fecha_fin' id='fecha_fin' class="form-control @error('fecha_fin') is-invalid @enderror" placeholder="Fecha de Finalización AAAA-MM-DD" value="{{$caso->fecha_fin}}">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+            <input type="text" name='fecha_fin' id='fecha_fin' class="form-control @error('fecha_fin') is-invalid @enderror" placeholder="Fecha de Finalización AAAA-MM-DD" value="{{$caso->fecha_fin}}">
             @error('fecha_fin')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -184,13 +184,13 @@
 @endsection
 @section('script')
     <script>
-        $('#fecha_inicio').datepicker({ 
-        dateFormat: 'yy-mm-dd', 
+        $('#fecha_inicio').datepicker({
+        dateFormat: 'yy-mm-dd',
         changeMonth: true,
         changeYear: true
         }).val();
-        $('#fecha_fin').datepicker({ 
-        dateFormat: 'yy-mm-dd', 
+        $('#fecha_fin').datepicker({
+        dateFormat: 'yy-mm-dd',
         changeMonth: true,
         changeYear: true
         }).val();
